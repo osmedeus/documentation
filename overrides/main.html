@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block announce %}
+<style>
+a,a:hover,a:click, a:visited{
+  border:none;
+  outline:none;
+  text-decoration:none;
+  color:inherit;
+  -webkit-tap-highlight-color: white;
+}
+</style>
+<section class="announce">
+  <a href="{{ '../' ~ base_url }}/donation" class="announce">
+    <strong>
+    If you love my tools and would like to support my work. 
+    Please check out some donation methods here
+<span class="twemoji heart">
+  {% include ".icons/fontawesome/regular/heart.svg" %}
+</span>
+</strong>
+  </a>
+</section>
+{% endblock %}
