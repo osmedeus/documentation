@@ -1,6 +1,7 @@
 site_name: Osmedeus Next Generation - A Workflow Engine for Offensive Security
 site_url: https://docs.osmedeus.org/
 site_description: Osmedeus Next Generation
+docs_dir: src
 
 theme:
   name: material

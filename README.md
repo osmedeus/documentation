@@ -3,5 +3,7 @@
 ## Build
 
 ```shell
-mkdocs build
+mkdocs serve
+
+mkdocs build -d docs
 ```
