@@ -1,4 +1,4 @@
-# :fontawesome-solid-home: Introduction
+# :octicons-light-bulb-16: Introduction
 
 <figure markdown> 
   ![Intro](static/images/intro.png)
@@ -18,11 +18,11 @@ The Engine has successfully found a tremendous number of security vulnerabilitie
 
 ## Gettting Started
 
-!!! info "[Click here to know how to Installtion Osmedeus](#)"
+!!! info "[Click here to know how to Installtion Osmedeus](/installation/)"
 
-!!! question "[Learn more about the Architechture of Osmedeus](#)"
+!!! question "[Learn more about the Architechture of Osmedeus](/architecture/)"
 
-!!! example "[Demo Video can be found here](#)"
+!!! example "[Demo Video can be found here](https://www.youtube.com/playlist?list=PLiifzv5MjIo3JqKeG5EXbSKDBlqa7v14P)"
 
 
 ## Features

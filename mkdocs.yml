@@ -44,8 +44,8 @@ copyright: <a href="https://twitter.com/j3ssiejjj">Copyright &copy; 2021 Ai Ho (
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/j3ssie
-      name: j3ssie on Github
+      link: https://github.com/osmedeus
+      name: Osmedeus on Github
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/OsmedeusEngine
       name: Osmedeus on Twitter
@@ -86,7 +86,7 @@ nav:
   - Workflow: 
     - Understand the Workflow: workflow.md
     - Parameters: workflow/parameters.md
-    - Write Your Own Workflow: workflow/write-your-own-workflow.md
+    - Customize Your Own Workflow: workflow/customize-your-own-workflow.md
   - Scripts:
     - Defination: references/scripts.md
     - IO Scripts: references/io-utils.md

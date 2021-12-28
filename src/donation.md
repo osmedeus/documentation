@@ -1,6 +1,10 @@
 # :blue_heart: Donation 
 
-If you love my tools and would like to support my work, please check out some donation methods below. 
+If you love my tools and would like to support my work, please check out some donation methods below.
+
+## :large_orange_diamond: Sponsor
+
+If you or your organization would like to sponsor this project and show inthis project feel free to contact me via **[:material-twitter: here](https://twitter.com/OsmedeusEngine)**
 
 ## For Everyone 
 
