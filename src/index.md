@@ -20,7 +20,7 @@ The Engine has successfully found a tremendous number of security vulnerabilitie
 
 !!! info "[Click here to know how to Installtion Osmedeus](/installation/)"
 
-!!! question "[Learn more about the Architechture of Osmedeus](/architecture/)"
+!!! question "[Learn more about the Architecture of Osmedeus](/architecture/)"
 
 !!! example "[Demo Video can be found here](https://www.youtube.com/playlist?list=PLiifzv5MjIo3JqKeG5EXbSKDBlqa7v14P)"
 
