@@ -7,7 +7,7 @@ There are some places that tokens will store in Osmedeus below
 
 ### Main token file
 
-By default all main tokens will be store at `~/osmedeus-base/private-alias.rc`
+By default all main tokens will be store at `~/osmedeus-base/token/osm-default.rc`
 
 There some essential tokens in the token file. 
     - The Github token is needed for github search.
@@ -33,9 +33,9 @@ export TELEGRAM_MICS_CHANNEL=-100XXXXX
 After modified the tokens, then run commands below to reload token to the osmedeus config.yaml
 
 ```shell
-# or edit file private-alias.rc
-# add osmedeus-base/private-alias.rc to your ~/.bashrc file
-echo 'source $HOME/osmedeus-base/private-alias.rc' >> ~/.bashrc && source ~/.bashrc
+# or edit file osm-default.rc
+# add osmedeus-base/token/osm-default.rc to your ~/.bashrc file
+echo 'source $HOME/osmedeus-base/token/osm-default.rc' >> ~/.bashrc && source ~/.bashrc
 
 # reload config to osmedeus
 osmedeus config reload
@@ -71,7 +71,7 @@ You can setup telegram tokens at **[Setup Token & API Key](/installation/token/#
 
 ### Follow **[this video](https://youtube.com/playlist?list=PLiifzv5MjIo3JqKeG5EXbSKDBlqa7v14P)** for more detail.
 
-All of your storages setup will be store at `~/osmedeus-base/storages-alias.rc`
+All of your storages setup will be store at `~/osmedeus-base/token/storages-alias.rc`
 
 ### Modify the content of Storages Config file
 
@@ -112,7 +112,7 @@ export SUBDOMAIN_REPO=git@gitlab.com:not-j3ssie/your-osmd-subdomain
 
 # or edit file storages-alias.rc
 # add osmedeus-base/storages-alias.rc to your ~/.bashrc file
-echo 'source $HOME/osmedeus-base/storages-alias.rc' >> ~/.bashrc && source ~/.bashrc
+echo 'source $HOME/osmedeus-base/token/storages-alias.rc' >> ~/.bashrc && source ~/.bashrc
 
 # reload config to osmedeus
 osmedeus config reload

@@ -55,6 +55,9 @@ extra:
     - icon: fontawesome/brands/patreon
       link: https://www.patreon.com/j3ssie
       name: j3ssie on patreon
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/gy4SWhpaPU
+      name: Osmedeus on discord
   analytics:
     provider: google
     property: UA-109222024-1
@@ -86,7 +89,9 @@ nav:
   - Workflow: 
     - Understand the Workflow: workflow.md
     - Parameters: workflow/parameters.md
-    - Customize Your Own Workflow: workflow/customize-your-own-workflow.md
+    - Other Fields: workflow/other-fields.md
+    - Use Your Own wordlists: workflow/use-your-own-wordlists.md
+    - Write Your Own Workflow: workflow/customize-your-own-workflow.md
   - Scripts:
     - Defination: references/scripts.md
     - IO Scripts: references/io-utils.md

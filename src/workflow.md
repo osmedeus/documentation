@@ -1,8 +1,10 @@
 # :brain: Understand the workflow
 
-!!! Warning "All Workflow files are YAML-based. Make sure you follow the YAML syntax otherwise, it would work"
+Workflow is a way to represent your methodology as YAML files.
 
 ![routine-detail](static/workflow/routine-detail.png){ loading=lazy }
+
+!!! Warning "All Workflow files are YAML-based so make sure you follow the YAML syntax. Otherwise, it wouldn't work"
 
 - **Module** contains detail of multiple step.
 - **Flow** contains multiple module and also define order how to run these modules.
@@ -93,7 +95,7 @@ steps: # all step run in serial
       - SortU("{{.Storages}}/paths/{{.Workspace}}/paths-{{.Workspace}}.csv")
 ```
 
-## Default workflow
+## Default Community workflow
 
 ```text
 $ osmedeus scan -f [flow-name] -t example.com

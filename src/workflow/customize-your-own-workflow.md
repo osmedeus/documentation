@@ -1,27 +1,18 @@
 # :writing_hand_tone1: Customize your own workflow
 
-!!! Warning "All Workflow files are YAML-based. Make sure you follow the YAML syntax otherwise, it would work"
+!!! Warning "All Workflow files are YAML-based so make sure you follow the YAML syntax. Otherwise, it wouldn't work"
 
 After the installation process is finished, your workflow will be stored at `~/osmedeus-base/workflow`.
 
-You can edit any YAML file with your custom methodology and start using it right away.
 
-## Use your own wordlists
+## Tweaking commands or threads of the tools depend on your machine specification
 
-You can start your own wordlists to brute force dns and directory at `~/osmedeus-base/workflow`
-Table below is how I like to structure it but you can edit any file if you want.
+You can start tweaking the workflow right away by edit any command in module file at `~/osmedeus-base/workflow/general/` folder
 
-| Directory Wordlists                         | Description                               |
-|:--------------------------------------------|:------------------------------------------|
-| `~/osmedeus-base/data/content/small.txt`    | Use for Directory scan of common module  |
-| `~/osmedeus-base/data/content/medium.txt`   | Use for Directory scan of medium module  |
-| `~/osmedeus-base/data/content/big.txt`      | Use for Directory scan of slow module    |
+## Fork another one from community workflow
 
-
-| Dns Wordlists                               | Description                               |
-|:--------------------------------------------|:------------------------------------------|
-| `~/osmedeus-base/data/dns/shorts.txt`       | Use for Dns Brute-forcing module  |
-
+For example if you want to custom your https://github.com/osmedeus/osmedeus-workflow
 
 ## Writing a new flow
 
+create a new flow file at `~/osmedeus-base/workflow/your-workflow.yaml`
