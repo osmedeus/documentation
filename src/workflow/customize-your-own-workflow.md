@@ -5,9 +5,11 @@
 After the installation process is finished, your workflow will be stored at `~/osmedeus-base/workflow`.
 
 
-## Tweaking commands or threads of the tools depend on your machine specification
+## Tweaking commands or threads of the tool depend on your machine specification
 
 You can start tweaking the workflow right away by edit any command in module file at `~/osmedeus-base/workflow/general/` folder
+
+
 
 ## Fork another one from community workflow
 

@@ -566,6 +566,8 @@ a,a:hover,a:click, a:visited{
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4">
@@ -640,17 +642,24 @@ a,a:hover,a:click, a:visited{
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#default-community-workflow" class="md-nav__link">
-    Default Community workflow
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="default-workflow/" class="md-nav__link">
+        Default Community workflow
+      </a>
     </li>
   
 
@@ -915,7 +924,7 @@ a,a:hover,a:click, a:visited{
                 
 
 <h1 id="understand-the-workflow"><img alt="🧠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f9e0.svg" title=":brain:" /> Understand the workflow<a class="headerlink" href="#understand-the-workflow" title="Permanent link">&para;</a></h1>
-<p>Workflow is a way to represent your methodology as YAML files.</p>
+<p>Workflow is the core of the Osmedeus Engine which represents your methodology as YAML files.</p>
 <p><img alt="routine-detail" loading="lazy" src="../static/workflow/routine-detail.png" /></p>
 <div class="admonition warning">
 <p class="admonition-title">All Workflow files are YAML-based so make sure you follow the YAML syntax. Otherwise, it wouldn't work</p>
@@ -1000,26 +1009,6 @@ a,a:hover,a:click, a:visited{
     <span class="nt">scripts</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">SortU(&quot;{{.Storages}}/paths/{{.Workspace}}/paths-{{.Workspace}}.csv&quot;)</span>
 </code></pre></div>
-<h2 id="default-community-workflow">Default Community workflow<a class="headerlink" href="#default-community-workflow" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ osmedeus scan -f [flow-name] -t example.com
-
-   general - run normal routine (default)
-      cidr - Scan for CIDR File
-   domains - run normal routine but without subdomain scan
-      fast - run normal routine but for hts with low resources
-       ips - Scan for list of IPs
-     ossub - run slow routine with only subdomain enumeration
-   general - run general routine with only subdomain enumeration
-     pcidr - Scan for single CIDR with slow mode
-     qcidr - Scan for CIDR File but for quick port
-     quick - run normal routine
-     scidr - Scan for single CIDR
-      slow - run slow routine
-     scidr - Scan for single CIDR
-      sync - Sync result based on git
-      urls - Scan for List of URLs
-      vuln - run fast routine with vuln scan
-</code></pre></div>
 
               
             </article>
@@ -1054,13 +1043,13 @@ a,a:hover,a:click, a:visited{
       
       
         
-        <a href="parameters/" class="md-footer__link md-footer__link--next" aria-label="Next: Parameters" rel="next">
+        <a href="default-workflow/" class="md-footer__link md-footer__link--next" aria-label="Next: Default Community workflow" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Parameters
+              Default Community workflow
             </div>
           </div>
           <div class="md-footer__button md-icon">

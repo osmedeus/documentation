@@ -1,6 +1,6 @@
 # :brain: Understand the workflow
 
-Workflow is a way to represent your methodology as YAML files.
+Workflow is the core of the Osmedeus Engine which represents your methodology as YAML files.
 
 ![routine-detail](static/workflow/routine-detail.png){ loading=lazy }
 
@@ -93,28 +93,4 @@ steps: # all step run in serial
       - "{{.Binaries}}/go/ffuf-mod -H 'X-Forwarded-For: 127.0.0.1' -t {{.fthreads}} -recursion-depth {{.recursion}} -D -e 'asp,aspx,php,html,htm,jsp,cgi' -timeout 15 -get-hash -ac -s -fc '429,404,400' -of json -o {{.Output}}/directory/raw-{{._id_}}.json -u '{{.line}}/FUZZ' -w {{.wordlists}}:FUZZ"
     scripts:
       - SortU("{{.Storages}}/paths/{{.Workspace}}/paths-{{.Workspace}}.csv")
-```
-
-## Default Community workflow
-
-```text
-$ osmedeus scan -f [flow-name] -t example.com
-
-   general - run normal routine (default)
-      cidr - Scan for CIDR File
-   domains - run normal routine but without subdomain scan
-      fast - run normal routine but for hts with low resources
-       ips - Scan for list of IPs
-     ossub - run slow routine with only subdomain enumeration
-   general - run general routine with only subdomain enumeration
-     pcidr - Scan for single CIDR with slow mode
-     qcidr - Scan for CIDR File but for quick port
-     quick - run normal routine
-     scidr - Scan for single CIDR
-      slow - run slow routine
-     scidr - Scan for single CIDR
-      sync - Sync result based on git
-      urls - Scan for List of URLs
-      vuln - run fast routine with vuln scan
-
 ```

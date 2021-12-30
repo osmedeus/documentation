@@ -10,14 +10,14 @@
       
       
       
-        <link rel="canonical" href="https://docs.osmedeus.org/workflow/parameters/">
+        <link rel="canonical" href="https://docs.osmedeus.org/workflow/default-workflow/">
       
       <link rel="icon" href="../../static/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.5">
     
     
       
-        <title>Parameters - Osmedeus Next Generation - A Workflow Engine for Offensive Security</title>
+        <title>Default Community workflow - Osmedeus Next Generation - A Workflow Engine for Offensive Security</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#parameters" class="md-skip">
+        <a href="#default-community-workflow" class="md-skip">
           Skip to content
         </a>
       
@@ -137,7 +137,7 @@ a,a:hover,a:click, a:visited{
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Parameters
+              Default Community workflow
             
           </span>
         </div>
@@ -600,20 +600,6 @@ a,a:hover,a:click, a:visited{
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../default-workflow/" class="md-nav__link">
-        Default Community workflow
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -626,12 +612,12 @@ a,a:hover,a:click, a:visited{
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Parameters
+          Default Community workflow
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Parameters
+        Default Community workflow
       </a>
       
         
@@ -650,15 +636,15 @@ a,a:hover,a:click, a:visited{
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#default-parameters-that-built-in-the-engine" class="md-nav__link">
-    Default Parameters that built-in the Engine
+  <a href="#anatomy-of-public-community-methodology" class="md-nav__link">
+    Anatomy of Public Community methodology
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#parameters-generated-from-input" class="md-nav__link">
-    Parameters generated from input
+  <a href="#list-all-flow-avaliable" class="md-nav__link">
+    List all flow avaliable
   </a>
   
 </li>
@@ -667,6 +653,20 @@ a,a:hover,a:click, a:visited{
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters/" class="md-nav__link">
+        Parameters
+      </a>
     </li>
   
 
@@ -916,83 +916,22 @@ a,a:hover,a:click, a:visited{
               
                 
 
-<h1 id="parameters"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2h9m3-4v-2H6v2h12z"/></svg></span> Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h1>
-<p>Parameters will be replace when the routine running.</p>
-<h2 id="default-parameters-that-built-in-the-engine">Default Parameters that built-in the Engine<a class="headerlink" href="#default-parameters-that-built-in-the-engine" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th align="left">Default variable</th>
-<th align="left">Assume you use default config at <code>~/.osmedeus/config.yaml</code></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>{{.Workspaces}}</code></td>
-<td align="left">Workspaces path <code>~/.osmedeus/workspaces</code></td>
-</tr>
-<tr>
-<td align="left"><code>{{.Storages}}</code></td>
-<td align="left">Storages path <code>~/.osmedeus/storages</code></td>
-</tr>
-<tr>
-<td align="left"><code>{{.Binaries}}</code></td>
-<td align="left">Binary path <code>~/osmedeus-base/binaries</code></td>
-</tr>
-<tr>
-<td align="left"><code>{{.Data}}</code></td>
-<td align="left">Data path <code>~/osmedeus-base/data</code></td>
-</tr>
-<tr>
-<td align="left"><code>{{.Scripts}}</code></td>
-<td align="left">Script path <code>~/osmedeus-base/scripts</code></td>
-</tr>
-<tr>
-<td align="left"><code>{{.BaseFolder}}</code></td>
-<td align="left">Base path <code>~/osmedeus-base</code></td>
-</tr>
-<tr>
-<td align="left"><code>{{.Workflow}}</code></td>
-<td align="left">Workflow path <code>~/osmedeus-base/workflow</code></td>
-</tr>
-<tr>
-<td align="left"><code>{{.Cloud}}</code></td>
-<td align="left">Cloud path <code>~/osmedeus-base/cloud</code></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="parameters-generated-from-input">Parameters generated from input<a class="headerlink" href="#parameters-generated-from-input" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th align="left">Dynamic variable</th>
-<th align="left">E.g command: <code>osmedeus scan -t example.com</code></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>{{.Target}}</code></td>
-<td align="left"><code>example.com</code></td>
-</tr>
-<tr>
-<td align="left"><code>{{.Workspace}}</code></td>
-<td align="left">just like <code>{{.Target}}</code> but strip out <code>/</code> char  to <code>_</code>. For example <code>example.com/a/b --&gt; example.com_a_b</code></td>
-</tr>
-<tr>
-<td align="left"><code>{{.Output}}</code></td>
-<td align="left"><code>{{.Output}} == {{.Workspaces}} + {{.Workspace}}</code></td>
-</tr>
-<tr>
-<td align="left"><code>{{.Org}}</code></td>
-<td align="left"><code>example</code></td>
-</tr>
-<tr>
-<td align="left"><code>{{.custom}}</code></td>
-<td align="left">Extra param take from <code>--params 'custom=anything'</code></td>
-</tr>
-</tbody>
-</table>
+<h1 id="default-community-workflow">Default Community workflow<a class="headerlink" href="#default-community-workflow" title="Permanent link">&para;</a></h1>
+<h2 id="anatomy-of-public-community-methodology">Anatomy of Public Community methodology<a class="headerlink" href="#anatomy-of-public-community-methodology" title="Permanent link">&para;</a></h2>
+<p><img alt="intro" loading="lazy" src="/static/workflow/community-workflow.png" /></p>
+<h2 id="list-all-flow-avaliable">List all flow avaliable<a class="headerlink" href="#list-all-flow-avaliable" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>$ osmedeus scan -f <span class="o">[</span>flow-name<span class="o">]</span> -t example.com
+
+   general - run normal routine <span class="c1"># default workflow</span>
+      cidr - Scan <span class="k">for</span> CIDR File
+   domains - run normal routine but without subdomain scan
+      fast - run fast routine
+      slow - run slow routine
+      sync - Sync result based on git
+      <span class="nb">test</span> - testing workflow
+      urls - Scan <span class="k">for</span> List of URLs
+      vuln - run fast routine with vuln scan
+</code></pre></div>
 
               
             </article>
@@ -1011,7 +950,7 @@ a,a:hover,a:click, a:visited{
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../default-workflow/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Default Community workflow" rel="prev">
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Understand the Workflow" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1020,20 +959,20 @@ a,a:hover,a:click, a:visited{
               <span class="md-footer__direction">
                 Previous
               </span>
-              Default Community workflow
+              Understand the Workflow
             </div>
           </div>
         </a>
       
       
         
-        <a href="../other-fields/" class="md-footer__link md-footer__link--next" aria-label="Next: Other Fields" rel="next">
+        <a href="../parameters/" class="md-footer__link md-footer__link--next" aria-label="Next: Parameters" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Other Fields
+              Parameters
             </div>
           </div>
           <div class="md-footer__button md-icon">

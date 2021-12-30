@@ -88,6 +88,7 @@ nav:
     - Detail Structure of Osmedeus: structure.md
   - Workflow: 
     - Understand the Workflow: workflow.md
+    - Default Community workflow: workflow/default-workflow.md
     - Parameters: workflow/parameters.md
     - Other Fields: workflow/other-fields.md
     - Use Your Own wordlists: workflow/use-your-own-wordlists.md

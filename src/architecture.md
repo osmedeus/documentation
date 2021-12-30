@@ -7,9 +7,12 @@
 
 ![intro](static/architecture/routine.png){ loading=lazy }
 
-The tool contains a **Core Engine** written in Golang that is responsible for handling all the logic and a **Workflow** which is a collection of YAML files that describe your methodology.
+The tool has two main components:
 
-**Target** can be anything like domain, url, IP, CIDR or anything that fit your workflow.
+- [x] **Core Engine** written in Golang that is responsible for handling all the logic and a 
+- [x] **Workflow** which is a collection of YAML files that describe your methodology
+
+**Target** can be domain, url, IP, CIDR or anything that fit your workflow.
 
 ## Comparison to the old version
 
