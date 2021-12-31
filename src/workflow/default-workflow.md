@@ -1,10 +1,10 @@
-# Default Community workflow
+# :earth_asia: Default Community workflow
 
 ## Anatomy of Public Community methodology
 
-![intro](/static/workflow/community-workflow.png){ loading=lazy }
+![community-workflow](/static/workflow/community-workflow.png){ loading=lazy }
 
-## List all flow avaliable
+## List all flow available
 
 ```shell
 $ osmedeus scan -f [flow-name] -t example.com

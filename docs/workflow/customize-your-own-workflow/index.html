@@ -394,6 +394,8 @@ a,a:hover,a:click, a:visited{
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2">
@@ -458,6 +460,20 @@ a,a:hover,a:click, a:visited{
     <li class="md-nav__item">
       <a href="../../installation/usage/" class="md-nav__link">
         Usage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/web-ui/" class="md-nav__link">
+        Web UI
       </a>
     </li>
   
@@ -692,22 +708,22 @@ a,a:hover,a:click, a:visited{
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tweaking-commands-or-threads-of-the-tool-depend-on-your-machine-specification" class="md-nav__link">
-    Tweaking commands or threads of the tool depend on your machine specification
+  <a href="#1-tweaking-commands-or-threads-of-the-tool-depends-on-your-machine-specification" class="md-nav__link">
+    1. Tweaking commands or threads of the tool depends on your machine specification
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#fork-another-one-from-community-workflow" class="md-nav__link">
-    Fork another one from community workflow
+  <a href="#2-fork-another-one-from-community-workflow" class="md-nav__link">
+    2. Fork another one from community workflow
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#writing-a-new-flow" class="md-nav__link">
-    Writing a new flow
+  <a href="#3-writing-a-new-flow" class="md-nav__link">
+    3. Writing a new flow
   </a>
   
 </li>
@@ -928,12 +944,23 @@ a,a:hover,a:click, a:visited{
 <p class="admonition-title">All Workflow files are YAML-based so make sure you follow the YAML syntax. Otherwise, it wouldn't work</p>
 </div>
 <p>After the installation process is finished, your workflow will be stored at <code>~/osmedeus-base/workflow</code>.</p>
-<h2 id="tweaking-commands-or-threads-of-the-tool-depend-on-your-machine-specification">Tweaking commands or threads of the tool depend on your machine specification<a class="headerlink" href="#tweaking-commands-or-threads-of-the-tool-depend-on-your-machine-specification" title="Permanent link">&para;</a></h2>
-<p>You can start tweaking the workflow right away by edit any command in module file at <code>~/osmedeus-base/workflow/general/</code> folder</p>
-<h2 id="fork-another-one-from-community-workflow">Fork another one from community workflow<a class="headerlink" href="#fork-another-one-from-community-workflow" title="Permanent link">&para;</a></h2>
-<p>For example if you want to custom your https://github.com/osmedeus/osmedeus-workflow</p>
-<h2 id="writing-a-new-flow">Writing a new flow<a class="headerlink" href="#writing-a-new-flow" title="Permanent link">&para;</a></h2>
-<p>create a new flow file at <code>~/osmedeus-base/workflow/your-workflow.yaml</code></p>
+<h2 id="1-tweaking-commands-or-threads-of-the-tool-depends-on-your-machine-specification">1. Tweaking commands or threads of the tool depends on your machine specification<a class="headerlink" href="#1-tweaking-commands-or-threads-of-the-tool-depends-on-your-machine-specification" title="Permanent link">&para;</a></h2>
+<p>You can start tweaking the workflow right away by edit any command in module file at <code>~/osmedeus-base/workflow/general/</code> folder.</p>
+<p>For example you can edit the thread of ffuf command <strong><a href="https://github.com/osmedeus/osmedeus-workflow/blob/main/general/dirbscan.yaml#L42">here</a></strong> on dirbscan module</p>
+<p><img alt="tweaking-module" loading="lazy" src="/static/workflow/tweaking-module.png" /></p>
+<h2 id="2-fork-another-one-from-community-workflow">2. Fork another one from community workflow<a class="headerlink" href="#2-fork-another-one-from-community-workflow" title="Permanent link">&para;</a></h2>
+<p>Fork this repo from here https://github.com/osmedeus/osmedeus-workflow and change anything you want and put it to <code>~/osmedeus-base/workflow</code> folder.</p>
+<h2 id="3-writing-a-new-flow">3. Writing a new flow<a class="headerlink" href="#3-writing-a-new-flow" title="Permanent link">&para;</a></h2>
+<p>Create a new flow file at <code>~/osmedeus-base/workflow/your-workflow.yaml</code> and folder <code>you-workflow</code> to store your modules file</p>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">your-workflow</span>
+<span class="nt">desc</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">run normal routine</span>
+<span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">you-workflow</span>
+<span class="nt">validator</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">domain</span>
+
+<span class="nt">routines</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">your-module-here</span>
+</code></pre></div>
 
               
             </article>
