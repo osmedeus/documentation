@@ -1,7 +1,7 @@
 # :octicons-light-bulb-16: Introduction
 
 <figure markdown> 
-  ![Intro](static/images/intro.png)
+  ![Build your own reconnaissance system](static/images/intro.png)
 </figure>
 
 !!! note "[The Introduction Presentation can be found here](https://docs.google.com/presentation/d/1Mu6JqzIpLiPbwXtPraFJRNBCAu5OXZn4SMIcl8hvMWI/edit#slide=id.gadf93641a2_2_75)"

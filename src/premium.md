@@ -6,8 +6,8 @@ You can choose some  **:heartpulse: [donation methods here](/donation) :heartpul
 
 ## My methodology
 
-![intro](static/premium/my-methodlogy.png){ loading=lazy }
+![my-methodlogy](static/premium/my-methodlogy.png){ loading=lazy }
 
 ## Support Distributed Scan
 
-![intro](static/premium/cloud-scan.png){ loading=lazy }
+![cloud-scan](static/premium/cloud-scan.png){ loading=lazy }

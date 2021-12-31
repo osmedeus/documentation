@@ -8,7 +8,11 @@ Open a new terminal or tmux and run
 osmedeus server
 ```
 
-The server will be avaliable at HTTPS URL here: `https://your-vps-ip:8000/ui/`
+The server will be avaliable at **HTTPS** URL here: `https://your-vps-ip:8000/ui/`
+
+![login](/static/architecture/ui-login.png){ loading=lazy }
+
+
 
 Then get the credentials from this file.
 
@@ -22,5 +26,6 @@ client:
 ...
 
 ```
+![home](/static/architecture/ui-home.png){ loading=lazy }
 
-<!-- ![routine-detail](static/workflow/routine-detail.png){ loading=lazy } -->
+![workspace](/static/architecture/ui-workspace.png){ loading=lazy }
