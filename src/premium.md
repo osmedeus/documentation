@@ -1,14 +1,21 @@
 # :diamond_shape_with_a_dot_inside: What is Premium Package?
 
+!!! tip "[**:heartpulse: You can choose some  **:heartpulse: donation methods here :heartpulse:** to get the premium package **:heartpulse:](/donation/)"
+
 **Premium package** is where I share some of the cutting edge features of Osmedeus and my Methodology that including Workflow and Wordlists have been fully tested by me.
 
-You can choose some  **:heartpulse: [donation methods here](/donation) :heartpulse:** to get the premium package.
+
+What you will get?
+
+- [x] My private workflow which is fully tested on many site.
+- [x] Wordlists that I collected from many sources for a long time.
+- [x] Private third-party tools made the result a lot more accurate.
+- [x] My Private Jaeles Signatures.
+
 
 ## My methodology
 
 ![my-methodlogy](static/premium/my-methodlogy.png){ loading=lazy }
-
-Besides some of the private tools, you also can access the wordlists that I collect for many sources for a long time
 
 ## Git Storages natively supported
 
@@ -17,3 +24,5 @@ Even though you can use Git Storages by writing your workflow. The premium workf
 ## Support Distributed Scan
 
 ![cloud-scan](static/premium/cloud-scan.png){ loading=lazy }
+
+![cloud-scan](static/premium/cloud-scan-do.jpeg){ loading=lazy }

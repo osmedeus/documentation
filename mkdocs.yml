@@ -2,6 +2,8 @@ site_name: Osmedeus Next Generation - A Workflow Engine for Offensive Security
 site_url: https://docs.osmedeus.org/
 site_description: Osmedeus Next Generation
 docs_dir: src
+repo_url: https://github.com/j3ssie/osmedeus
+repo_name: j3ssie/osmedeus
 
 theme:
   name: material
@@ -16,7 +18,8 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
-
+  icon:
+    repo: fontawesome/brands/git-alt
   logo: static/images/favicon.png
   favicon: static/images/favicon.png
   font:
@@ -101,5 +104,6 @@ nav:
     - Notification Scripts: references/noti-scripts.md
   - Premium Package: 
     - What is Premium Package?: premium.md
+    - How to Install the Premium Package?: premium/install-premium-package.md
     - Donation: donation.md
   - FAQ: faq.md
