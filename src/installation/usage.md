@@ -51,12 +51,67 @@ osmedeus scan help
 
 ## scan - Actually start a scan based on predefined flow
 
+```shell
+# Practical Scan Usage:
+
+## Start a simple scan with default 'general' flow
+osmedeus scan -t sample.com
+
+## Start a general scan but exclude some of the module
+osmedeus scan -t sample.com -x screenshot -x spider
+
+## Start a simple scan with other flow
+osmedeus scan -f vuln -t sample.com
+
+## Use a custom wordlist
+osmedeus scan -t sample.com -p 'wordlists={{.Data}}/wordlists/content/big.txt' -p 'fthreads=40'
+
+## Scan list of targets
+osmedeus scan -T list_of_targets.txt
+
+## Get target from a stdin and start the scan with 2 concurrency
+cat list_of_targets.txt | osmedeus scan -c 2
+
+```
+
 ## server - Start web UI server
 
+```shell
+osmedeus server --port 9000
+```
+
 ## utils - Utility to get some information from the system
+
+```shell
+osmedeus utils tmux ls
+osmedeus utils tmux logs -A -l 10
+osmedeus utils ps
+osmedeus utils ps --proc 'jaeles'
+osmedeus utils cron --cmd 'osmdeus scan -t example.com' --sch 60
+osmedeus utils cron --for --cmd 'osmedeus scan -t example.com'
+```
 
 ## health - Run diagnostics to check configurations
 
 *** 
 
 ## cloud - Run scan in Distributed Cloud mode
+
+``` shell
+# Cloud Usage
+  osmedeus cloud -f [flowName] -t [target]
+  osmedeus cloud -m [modulePath] -t [target]
+  osmedeus cloud -c 10 -f [flowName] -T [targetsFile]
+  osmedeus cloud --token xxx -G -c 10 -f [flowName] -T [targetsFile]
+  osmedeus cloud --chunk -c 10 -f [flowName] -t [targetsFile]
+```
+
+## provider - Cloud utils for Distributed Mode
+
+```shell
+# Provider Usage
+osmedeus provider build
+osmedeus provider build --token xxx --rebuild --ic
+osmedeus provider create --name 'sample'
+osmedeus provider health --debug
+```

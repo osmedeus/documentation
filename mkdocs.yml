@@ -86,7 +86,7 @@ nav:
     - Setup Token & API Key: installation/token.md
     - Setup for Distributed Scan: installation/cloud-setup.md
     - Usage: installation/usage.md
-    - Web UI: installation/web-ui.md
+    - Web UI (Experimental): installation/web-ui.md
   - Architecture:
     - Overview: architecture.md
     - Detail Structure of Osmedeus: structure.md
@@ -105,5 +105,5 @@ nav:
   - Premium Package: 
     - What is Premium Package?: premium.md
     - How to Install the Premium Package?: premium/install-premium-package.md
-    - Donation: donation.md
+    - Sponsor & Donation: donation.md
   - FAQ: faq.md
