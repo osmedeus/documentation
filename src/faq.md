@@ -1,10 +1,10 @@
 # :question: FAQ
 
 ???+ question "How to setup the Osmedeus?"
-    Please check out installation guide [here](/installation/) 
+    Please check out **[installation guide here](/installation/)**
 
-???+ info "Where I can get a live support?"
-    You can Join **[Discord Server here](https://discord.gg/gy4SWhpaPU)** to see if anyone can help
+???+ success "I love the Osmedeus community. Is there any premium subscription?"
+    Please check out the **[premium package here](/premium/)**
 
 ???+ question "Is it support Windows?"
     Unfortunately not, it was designed for Linux only. You will need to use Docker or VM if you really want to run Osmedeus on Windows.
@@ -17,10 +17,22 @@
     I recommend using VPS since it takes a lot of network bandwidth, the minimum spec would be 1 CPU 2GB RAM. You can of course increase or decrease the threads in the workflow to make it work in any spec
 
 ???+ info "Does the X scan run tool Y or not??"
-    1. Read the flow and module files to see what the step running.
+    1. Read the flow and module files to see what a step actually run
     2. Seriously, read the flow and module files.
     3. Remember that you were warned twice about reading the flow and module files.
     4. Just search your tool command no the workflow folder.
 
 ???+ question "where can I find result after the scan done?"
     All of your scan data store at `~/.osmedeus/workspaces/`
+
+???+ info "I got some error while running the scan?"
+    ![having-error-with-some-tools](/static/faq/having-error-with-some-tools.png){ loading=lazy }
+    You can use `osmedeus health` command to check if the install is okay or not.
+
+    Sometimes error show up mean some of the tools require token to run like `github-subdomains` but you can ignore it since I already catch the error
+
+???+ question "Where I can get a live support?"
+    You can Join **[Discord Server here](https://discord.gg/gy4SWhpaPU)** to see if anyone can help
+
+???+ info "I have an awesome idea, how can I implement it in Osmedeus?"
+    You can Join **[Discord Server here](https://discord.gg/gy4SWhpaPU)** or contact me via **[:material-twitter: here](https://twitter.com/OsmedeusEngine)** to see if it worth to add.

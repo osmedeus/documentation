@@ -937,9 +937,9 @@ a,a:hover,a:click, a:visited{
 
 
 <h1 id="faq"><img alt="❓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2753.svg" title=":question:" /> FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h1>
-<details class="question" open="open"><summary>How to setup the Osmedeus?</summary><p>Please check out installation guide <a href="/installation/">here</a> </p>
+<details class="question" open="open"><summary>How to setup the Osmedeus?</summary><p>Please check out <strong><a href="/installation/">installation guide here</a></strong></p>
 </details>
-<details class="info" open="open"><summary>Where I can get a live support?</summary><p>You can Join <strong><a href="https://discord.gg/gy4SWhpaPU">Discord Server here</a></strong> to see if anyone can help</p>
+<details class="success" open="open"><summary>I love the Osmedeus community. Is there any premium subscription?</summary><p>Please check out the <strong><a href="/premium/">premium package here</a></strong></p>
 </details>
 <details class="question" open="open"><summary>Is it support Windows?</summary><p>Unfortunately not, it was designed for Linux only. You will need to use Docker or VM if you really want to run Osmedeus on Windows.</p>
 </details>
@@ -949,13 +949,21 @@ Then you will be invited to backer channel to get direct support then</p>
 <details class="question" open="open"><summary>What is the specification required to run Osmedeus?</summary><p>I recommend using VPS since it takes a lot of network bandwidth, the minimum spec would be 1 CPU 2GB RAM. You can of course increase or decrease the threads in the workflow to make it work in any spec</p>
 </details>
 <details class="info" open="open"><summary>Does the X scan run tool Y or not??</summary><ol>
-<li>Read the flow and module files to see what the step running.</li>
+<li>Read the flow and module files to see what a step actually run</li>
 <li>Seriously, read the flow and module files.</li>
 <li>Remember that you were warned twice about reading the flow and module files.</li>
 <li>Just search your tool command no the workflow folder.</li>
 </ol>
 </details>
 <details class="question" open="open"><summary>where can I find result after the scan done?</summary><p>All of your scan data store at <code>~/.osmedeus/workspaces/</code></p>
+</details>
+<details class="info" open="open"><summary>I got some error while running the scan?</summary><p><img alt="having-error-with-some-tools" loading="lazy" src="/static/faq/having-error-with-some-tools.png" />
+You can use <code>osmedeus health</code> command to check if the install is okay or not.</p>
+<p>Sometimes error show up mean some of the tools require token to run like <code>github-subdomains</code> but you can ignore it since I already catch the error</p>
+</details>
+<details class="question" open="open"><summary>Where I can get a live support?</summary><p>You can Join <strong><a href="https://discord.gg/gy4SWhpaPU">Discord Server here</a></strong> to see if anyone can help</p>
+</details>
+<details class="info" open="open"><summary>I have an awesome idea, how can I implement it in Osmedeus?</summary><p>You can Join <strong><a href="https://discord.gg/gy4SWhpaPU">Discord Server here</a></strong> or contact me via <strong><a href="https://twitter.com/OsmedeusEngine"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg></span> here</a></strong> to see if it worth to add.</p>
 </details>
 
               
