@@ -1,9 +1,10 @@
 # :diamond_shape_with_a_dot_inside: What is Premium Package?
 
-!!! tip "[**:heartpulse: You can choose some  **:heartpulse: donation methods here :heartpulse:** to get the premium package **:heartpulse:](/donation/)"
+!!! tip ":material-diamond: How much does it cost?"
 
-**Premium package** is where I share some of the cutting edge features of Osmedeus and my Methodology that including Workflow and Wordlists have been fully tested by me.
+    You can start to join my **[Patreon](https://patreon.com/j3ssie)** starting at :heartpulse: [**3$ / month](https://patreon.com/j3ssie)** :heartpulse: to see a [private post](https://www.patreon.com/posts/60580071) contains a installation guide for the Premium package
 
+    You can choose some  **[:small_blue_diamond: donation methods here :small_blue_diamond:](/donation/)** to get the premium package with minimum **5$**
 
 What you will get?
 
@@ -25,4 +26,5 @@ Even though you can use Git Storages by writing your workflow. The premium workf
 
 ![cloud-scan](static/premium/cloud-scan.png){ loading=lazy }
 
-![cloud-scan](static/premium/cloud-scan-do.jpeg){ loading=lazy }
+![cloud-scan-do](static/premium/cloud-scan-do.jpeg){ loading=lazy }
+
