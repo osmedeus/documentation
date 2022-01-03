@@ -65,6 +65,10 @@ osmedeus scan -f vuln -t sample.com
 
 ## Scan for CIDR with file contains CIDR with the format '1.2.3.4/24'
 osmedeus scan -f cidr -t list-of-cidrs.txt
+osmedeus scan -f cidr -t '1.2.3.4/24' # this will auto convert the single input to the file and run
+
+# directly run on vuln scan and directory scan on list of domains
+osmedeus scan -f vuln-and-dirb -t list-of-domains.txt
 
 ## Use a custom wordlist
 osmedeus scan -t sample.com -p 'wordlists={{.Data}}/wordlists/content/big.txt' -p 'fthreads=40'
