@@ -4,6 +4,9 @@
 
 Currently, Osmedeus only support Digital Ocean and Linode provider. The default cloud config store at `~/osmedeus-base/cloud/config.yaml`.
 
+
+1. First of all you will need your token store in `~/osmedeus-base/cloud/config.yaml`
+
 #### Digital Ocean
 
 ```yaml
@@ -29,3 +32,5 @@ clouds:
     size: "g6-standard-1"
     region: "us-east"
 ```
+
+##

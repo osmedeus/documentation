@@ -49,7 +49,7 @@ osmedeus help
 osmedeus scan help
 ```
 
-## scan - Actually start a scan based on predefined flow
+## scan - Actually start a scan based on predefined workflow
 
 ```shell
 # Practical Scan Usage:
@@ -62,6 +62,9 @@ osmedeus scan -t sample.com -x screenshot -x spider
 
 ## Start a simple scan with other flow
 osmedeus scan -f vuln -t sample.com
+
+## Scan for CIDR with file contains CIDR with the format '1.2.3.4/24'
+osmedeus scan -f cidr -t list-of-cidrs.txt
 
 ## Use a custom wordlist
 osmedeus scan -t sample.com -p 'wordlists={{.Data}}/wordlists/content/big.txt' -p 'fthreads=40'
@@ -93,6 +96,9 @@ osmedeus utils cron --for --cmd 'osmedeus scan -t example.com'
 
 ## health - Run diagnostics to check configurations
 
+```shell
+osmedeus health
+```
 *** 
 
 ## cloud - Run scan in Distributed Cloud mode

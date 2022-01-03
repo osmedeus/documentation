@@ -83,10 +83,10 @@ nav:
   - Home: index.md
   - Getting Started:
     - Installation: installation.md
-    - Setup Token & API Key: installation/token.md
-    - Setup for Distributed Scan: installation/cloud-setup.md
     - Usage: installation/usage.md
     - Web UI (Experimental): installation/web-ui.md
+    - Setup Token & API Key: installation/token.md
+    - Setup for Distributed Scan: installation/cloud-setup.md
   - Architecture:
     - Overview: architecture.md
     - Detail Structure of Osmedeus: structure.md

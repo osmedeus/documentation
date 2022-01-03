@@ -11,7 +11,7 @@
 
 ???+ info "What are the donation tiers and how much should I donate to be eligible for the premium package?"
     You can join the Patreon here www.patreon.com/j3ssie or here https://docs.osmedeus.org/donation/ to see a private post contains a download link for premium packages. 
-    Then you will be invited to backer channel to get direct support then
+    After that you will be invited to backer channel to get direct support then
 
 ???+ question "What is the specification required to run Osmedeus?"
     I recommend using VPS since it takes a lot of network bandwidth, the minimum spec would be 1 CPU 2GB RAM. You can of course increase or decrease the threads in the workflow to make it work in any spec
@@ -22,7 +22,7 @@
     3. Remember that you were warned twice about reading the flow and module files.
     4. Just search your tool command no the workflow folder.
 
-???+ question "where can I find result after the scan done?"
+???+ question "Where can I find result after the scan done?"
     All of your scan data store at `~/.osmedeus/workspaces/`
 
 ???+ info "I got some error while running the scan?"
@@ -34,5 +34,8 @@
 ???+ question "Where I can get a live support?"
     You can Join **[Discord Server here](https://discord.gg/gy4SWhpaPU)** to see if anyone can help
 
-???+ info "I have an awesome idea, how can I implement it in Osmedeus?"
+???+ info "I have an awesome idea, How can I implement it in Osmedeus?"
     You can Join **[Discord Server here](https://discord.gg/gy4SWhpaPU)** or contact me via **[:material-twitter: here](https://twitter.com/OsmedeusEngine)** to see if it worth to add.
+
+???+ question "I ran the scan but there's no vulnerability found?"
+    It's simply that there's no vulnerability. It very depends on your Target.
