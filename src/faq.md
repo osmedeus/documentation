@@ -1,4 +1,4 @@
-# :question: FAQ
+# :question: Frequently Asked Questions
 
 ???+ question "How to setup the Osmedeus?"
     Please check out **[installation guide here](/installation/)**

@@ -67,7 +67,7 @@ osmedeus scan -f vuln -t sample.com
 osmedeus scan -f cidr -t list-of-cidrs.txt
 osmedeus scan -f cidr -t '1.2.3.4/24' # this will auto convert the single input to the file and run
 
-# directly run on vuln scan and directory scan on list of domains
+## Directly run on vuln scan and directory scan on list of domains
 osmedeus scan -f vuln-and-dirb -t list-of-domains.txt
 
 ## Use a custom wordlist
