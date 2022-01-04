@@ -27,8 +27,7 @@ unzip -q build-osm.zip && cd build-osm
 osmedeus health
 ```
 
----
-
+***
 
 ## Verify the installation process
 

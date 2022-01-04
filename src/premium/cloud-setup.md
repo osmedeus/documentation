@@ -40,6 +40,23 @@ clouds:
 After changing the api key in `~/osmedeus-base/cloud/config.yaml`.
 Changing the **CLOUD_BUILD_REPO** variables at `/root/osmedeus-base/token/cloud-variables.rc` to the URL that you were gave to download the premium package.
 
+
+```shell
+# reload config to osmedeus
+osmedeus config reload
+
+# and check if your config is loaded or not
+cat /root/.osmedeus/config.yaml
+
+...
+cloud:
+  build_repo: https://xxx/premium.sh
+  cloud_public_key: /root/osmedeus-base/cloud/ssh/cloud.pub
+  cloud_secret_key: /root/osmedeus-base/cloud/ssh/cloud.privte
+...
+
+```
+
 ***
 
 ## 2. Create both public and private SSH Key

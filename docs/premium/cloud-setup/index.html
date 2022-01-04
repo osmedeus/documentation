@@ -1098,6 +1098,19 @@ a,a:hover,a:click, a:visited{
 </code></pre></div>
 <p>After changing the api key in <code>~/osmedeus-base/cloud/config.yaml</code>.
 Changing the <strong>CLOUD_BUILD_REPO</strong> variables at <code>/root/osmedeus-base/token/cloud-variables.rc</code> to the URL that you were gave to download the premium package.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># reload config to osmedeus</span>
+osmedeus config reload
+
+<span class="c1"># and check if your config is loaded or not</span>
+cat /root/.osmedeus/config.yaml
+
+...
+cloud:
+  build_repo: https://xxx/premium.sh
+  cloud_public_key: /root/osmedeus-base/cloud/ssh/cloud.pub
+  cloud_secret_key: /root/osmedeus-base/cloud/ssh/cloud.privte
+...
+</code></pre></div>
 <hr />
 <h2 id="2-create-both-public-and-private-ssh-key">2. Create both public and private SSH Key<a class="headerlink" href="#2-create-both-public-and-private-ssh-key" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>ssh-keygen -t ed25519 -C <span class="s2">&quot;your_email@example.com&quot;</span>
