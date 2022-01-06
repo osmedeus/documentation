@@ -14,7 +14,9 @@ If you or your organization would like to sponsor this project or show your logo
  
 <a href="https://www.buymeacoffee.com/j3ssie" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
-[Become a backer](https://opencollective.com/osmedeus) and you will appear here.
+***
+
+**[Become a backer on opencollective](https://opencollective.com/osmedeus)** and you will appear here.
 [![Backers](https://opencollective.com/osmedeus/backers.svg?width=890)](https://opencollective.com/osmedeus#backers)
 
 ## For Crypto Fan

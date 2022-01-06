@@ -7,9 +7,9 @@
 
 ## 1. Create API Key denpend on your cloud provider
 
-First of all, you will need your token store in `~/osmedeus-base/cloud/config.yaml` as the format below.
+First of all, you will need your token store in `~/osmedeus-base/cloud/provider.yaml` as the format below.
 
-> Currently, Osmedeus only support Digital Ocean and Linode provider. The default cloud config store at `~/osmedeus-base/cloud/config.yaml`.
+> Currently, Osmedeus only support Digital Ocean and Linode provider. The default cloud config store at `~/osmedeus-base/cloud/provider.yaml`.
 
 #### Digital Ocean
 
@@ -37,7 +37,7 @@ clouds:
     region: "us-east"
 ```
 
-After changing the api key in `~/osmedeus-base/cloud/config.yaml`.
+After changing the api key in `~/osmedeus-base/cloud/provider.yaml`.
 Changing the **CLOUD_BUILD_REPO** variables at `/root/osmedeus-base/token/cloud-variables.rc` to the URL that you were gave to download the premium package.
 
 
@@ -51,7 +51,7 @@ cat /root/.osmedeus/config.yaml
 ...
 cloud:
   build_repo: https://xxx/premium.sh
-  cloud_public_key: /root/osmedeus-base/cloud/ssh/cloud.pub
+  cloud_public_key: /root/osmedeus-base/cloud/ssh/cloud
   cloud_secret_key: /root/osmedeus-base/cloud/ssh/cloud.privte
 ...
 
@@ -62,16 +62,24 @@ cloud:
 ## 2. Create both public and private SSH Key
 
 ```shell
-ssh-keygen -t ed25519 -C "your_email@example.com"
+ssh-keygen -t ed25519 -C "your_email@example.com" -f cloud -q -N ''
 ```
 
 Store these keys to `/root/osmedeus-base/cloud/ssh` and naming them corresponding to your config at `/root/osmedeus-base/token/cloud-variables.rc`.
 
-Default one should be name as 
+Default one should be name like this
 
+```shell
+$ ls /root/osmedeus-base/cloud/ssh/cloud
+cloud cloud.privte
 ```
-/root/osmedeus-base/cloud/ssh/cloud.pub
-/root/osmedeus-base/cloud/ssh/cloud.privte
+
+You can also check if everything okay by run the command
+
+```shell
+
+osmedeus health cloud
+
 ```
 
 ## 3. Create a snapshot with build command

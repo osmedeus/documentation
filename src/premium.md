@@ -13,7 +13,7 @@ What you will get?
 - [x] Private third-party tools made the result a lot more accurate.
 - [x] My Private Jaeles Signatures.
 
-You can see the [full structure here](/structure/#folders-that-osmedeus-will-store-data-into-source)
+You can see the **[full structure here](/structure/#folders-that-osmedeus-will-store-data-into-source)**
 
 ## My methodology
 
