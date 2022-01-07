@@ -114,7 +114,7 @@ post_run:
 
 ***
 
-### [subdomain module](https://github.com/osmedeus/osmedeus-workflow/blob/main/general/dirbscan.yaml)
+### [dirbscan module](https://github.com/osmedeus/osmedeus-workflow/blob/main/general/dirbscan.yaml)
 
 ```yaml
 name: dirbscan
