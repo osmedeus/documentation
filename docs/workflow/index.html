@@ -647,6 +647,26 @@ a,a:hover,a:click, a:visited{
     Module
   </a>
   
+    <nav class="md-nav" aria-label="Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subdomain-module" class="md-nav__link">
+    subdomain module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subdomain-module_1" class="md-nav__link">
+    subdomain module
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1091,8 +1111,139 @@ a,a:hover,a:click, a:visited{
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">summary</span>
 </code></pre></div>
 <h2 id="module">Module<a class="headerlink" href="#module" title="Permanent link">&para;</a></h2>
-<p><img alt="module-1" loading="lazy" src="../static/workflow/module-1.png" /></p>
-<p><img alt="module-2" loading="lazy" src="../static/workflow/module-2.png" /></p>
+<h3 id="subdomain-module"><a href="https://github.com/osmedeus/osmedeus-workflow/blob/main/general/subdomain.yaml">subdomain module</a><a class="headerlink" href="#subdomain-module" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">subdomain</span>
+<span class="nt">desc</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Scanning for subdomain</span>
+
+<span class="nt">report</span><span class="p">:</span>
+  <span class="nt">final</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Output}}/subdomain/final-{{.Workspace}}.txt&quot;</span>
+    <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Output}}/subdomain/more-{{.Workspace}}.txt&quot;</span>
+
+<span class="c1"># {{.Output}} == {{.Workspaces}} + {{.Workspace}} but strip &quot;/&quot; char</span>
+<span class="nt">pre_run</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CreateFolder(&quot;{{.Storages}}/subdomain/{{.Workspace}}/&quot;)</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CreateFolder(&quot;{{.Storages}}/summary/{{.Workspace}}/&quot;)</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CreateFolder(&quot;{{.Output}}/subdomain/&quot;)</span>
+
+<span class="nt">params</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">subthreads</span><span class="p">:</span> <span class="s">&quot;50&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">amassTimeout</span><span class="p">:</span> <span class="s">&quot;3h&quot;</span>
+
+<span class="nt">steps</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">required</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/amass&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/subfinder&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/assetfinder&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/findomain&quot;</span>
+    <span class="nt">commands</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;timeout</span><span class="nv"> </span><span class="s">-k</span><span class="nv"> </span><span class="s">1m</span><span class="nv"> </span><span class="s">{{.amassTimeout}}</span><span class="nv"> </span><span class="s">{{.Binaries}}/amass</span><span class="nv"> </span><span class="s">enum</span><span class="nv"> </span><span class="s">-config</span><span class="nv"> </span><span class="s">{{.Data}}/configs/amass.ini</span><span class="nv"> </span><span class="s">-d</span><span class="nv"> </span><span class="s">{{.Target}}</span><span class="nv"> </span><span class="s">-o</span><span class="nv"> </span><span class="s">{{.Output}}/subdomain/{{.Workspace}}-amass.txt</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">/dev/null</span><span class="nv"> </span><span class="s">2&gt;&amp;1&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/assetfinder</span><span class="nv"> </span><span class="s">-subs-only</span><span class="nv"> </span><span class="s">{{.Target}}</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">{{.Output}}/subdomain/{{.Workspace}}-assetfinder.txt&quot;</span>
+  <span class="c1"># these two commands will run in parallels</span>
+  <span class="p p-Indicator">-</span> <span class="nt">commands</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/findomain</span><span class="nv"> </span><span class="s">-u</span><span class="nv"> </span><span class="s">{{.Output}}/subdomain/{{.Workspace}}-findomain.txt</span><span class="nv"> </span><span class="s">-t</span><span class="nv"> </span><span class="s">{{.Target}}</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">/dev/null</span><span class="nv"> </span><span class="s">2&gt;&amp;1&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/subfinder</span><span class="nv"> </span><span class="s">-d</span><span class="nv"> </span><span class="s">{{.Target}}</span><span class="nv"> </span><span class="s">-t</span><span class="nv"> </span><span class="s">{{.subthreads}}</span><span class="nv"> </span><span class="s">-o</span><span class="nv"> </span><span class="s">{{.Output}}/subdomain/{{.Workspace}}-subfinder.txt</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">/dev/null</span><span class="nv"> </span><span class="s">2&gt;&amp;1&quot;</span>
+
+  <span class="c1"># cleaning some result</span>
+  <span class="p p-Indicator">-</span> <span class="nt">scripts</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Append(&quot;{{.Output}}/subdomain/sum-{{.Workspace}}.txt&quot;, &quot;{{.Output}}/subdomain/{{.Workspace}}-amass.txt&quot;)</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Append(&quot;{{.Output}}/subdomain/sum-{{.Workspace}}.txt&quot;, &quot;{{.Output}}/subdomain/{{.Workspace}}-subfinder.txt&quot;)</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Append(&quot;{{.Output}}/subdomain/sum-{{.Workspace}}.txt&quot;, &quot;{{.Output}}/subdomain/{{.Workspace}}-assetfinder.txt&quot;)</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Append(&quot;{{.Output}}/subdomain/sum-{{.Workspace}}.txt&quot;, &quot;{{.Output}}/subdomain/{{.Workspace}}-findomain.txt&quot;)</span>
+      <span class="c1"># remove junk subdomain like sample@subdomain.com and 1-2-3.subdomain.com format</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ExecCmd(&quot;cat {{.Output}}/subdomain/sum-{{.Workspace}}.txt | {{.Binaries}}/cleansub -t &#39;{{.Target}}&#39; &gt; {{.Output}}/subdomain/final-{{.Workspace}}.txt&quot;)</span>
+  <span class="p p-Indicator">-</span> <span class="nt">scripts</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">SortU(&quot;{{.Output}}/subdomain/final-{{.Workspace}}.txt&quot;)</span>
+
+  <span class="c1"># get more related domains</span>
+  <span class="p p-Indicator">-</span> <span class="nt">required</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/metabigor&quot;</span>
+    <span class="c1"># assume you run &#39;osmedeus scan -t example.com&#39; then {{.Org}} == &#39;example&#39;</span>
+    <span class="nt">commands</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;echo</span><span class="nv"> </span><span class="s">&#39;{{.Org}}&#39;</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">{{.Binaries}}/metabigor</span><span class="nv"> </span><span class="s">cert</span><span class="nv"> </span><span class="s">--json</span><span class="nv"> </span><span class="s">-o</span><span class="nv"> </span><span class="s">{{.Output}}/subdomain/more-json-{{.Workspace}}.txt&quot;</span>
+    <span class="nt">scripts</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ExecCmd(&quot;cat {{.Output}}/subdomain/more-json-{{.Workspace}}.txt | jq -r &#39;.Domain&#39; | sed &#39;s/\*.//g&#39; | sort -u &gt; {{.Output}}/subdomain/more-{{.Workspace}}.txt&quot;)</span>
+
+<span class="nt">post_run</span><span class="p">:</span>
+  <span class="c1"># delete all files in workspaces folder except a file lists in report section</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Cleaning(&quot;{{.Output}}/subdomain/&quot;)</span>
+</code></pre></div>
+<hr />
+<h3 id="subdomain-module_1"><a href="https://github.com/osmedeus/osmedeus-workflow/blob/main/general/dirbscan.yaml">subdomain module</a><a class="headerlink" href="#subdomain-module_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dirbscan</span>
+<span class="nt">desc</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Run Dirbscan</span>
+
+<span class="nt">report</span><span class="p">:</span>
+  <span class="nt">final</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Output}}/directory/beautify-{{.Workspace}}.txt&quot;</span>
+    <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Output}}/directory/paths-{{.Workspace}}.csv&quot;</span>
+
+<span class="nt">params</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">inputfile</span><span class="p">:</span> <span class="s">&quot;{{.Output}}/probing/http-{{.Workspace}}.txt&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">wordlists</span><span class="p">:</span> <span class="s">&quot;{{.Data}}/wordlists/content/small.txt&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">lines</span><span class="p">:</span> <span class="s">&quot;20&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">fthreads</span><span class="p">:</span> <span class="s">&#39;20&#39;</span> <span class="c1"># threads for single site</span>
+  <span class="p p-Indicator">-</span> <span class="nt">dirbThreads</span><span class="p">:</span> <span class="s">&#39;10&#39;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">dlimit</span><span class="p">:</span> <span class="s">&#39;50000&#39;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">recursion</span><span class="p">:</span> <span class="s">&#39;0&#39;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">commitLength</span><span class="p">:</span> <span class="s">&#39;400&#39;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">chan</span><span class="p">:</span> <span class="s">&#39;#mics&#39;</span>
+
+<span class="nt">pre_run</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CreateFolder(&quot;{{.Storages}}/paths/{{.Workspace}}&quot;)</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CreateFolder(&quot;{{.Output}}/directory&quot;)</span>
+
+<span class="nt">steps</span><span class="p">:</span>
+  <span class="c1"># check if the size is too big, We don&#39;t want tons of garbage here</span>
+  <span class="p p-Indicator">-</span> <span class="nt">conditions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;FileLength(&#39;{{.inputfile}}&#39;)</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">{{.dlimit}}&quot;</span>
+    <span class="nt">scripts</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ErrPrintf(&quot;Filter&quot;, &quot;Got input file greater than {{.dlimit}} line&quot;)</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Exit(1)</span>
+
+  <span class="c1"># # make a header for csv file</span>
+  <span class="c1"># - commands:</span>
+  <span class="c1">#     - echo &#39;url,status,length,words,lines,redirectlocation&#39; &gt; {{.Output}}/directory/beautify-{{.Workspace}}.csv</span>
+
+  <span class="p p-Indicator">-</span> <span class="nt">required</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/ffuf&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.inputfile}}&quot;</span>
+    <span class="nt">source</span><span class="p">:</span> <span class="s">&quot;{{.inputfile}}&quot;</span>
+    <span class="nt">threads</span><span class="p">:</span> <span class="s">&#39;{{.dirbThreads}}&#39;</span>
+    <span class="nt">commands</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/ffuf</span><span class="nv"> </span><span class="s">-t</span><span class="nv"> </span><span class="s">{{.fthreads}}</span><span class="nv"> </span><span class="s">-timeout</span><span class="nv"> </span><span class="s">15</span><span class="nv"> </span><span class="s">-ac</span><span class="nv"> </span><span class="s">-fc</span><span class="nv"> </span><span class="s">&#39;429,403,404&#39;</span><span class="nv"> </span><span class="s">-D</span><span class="nv"> </span><span class="s">-e</span><span class="nv"> </span><span class="s">&#39;asp,aspx,pl,php,html,htm,jsp,cgi&#39;</span><span class="nv"> </span><span class="s">-of</span><span class="nv"> </span><span class="s">json</span><span class="nv"> </span><span class="s">-o</span><span class="nv"> </span><span class="s">{{.Output}}/directory/raw-{{._id_}}.json</span><span class="nv"> </span><span class="s">-u</span><span class="nv"> </span><span class="s">&#39;{{.line}}/FUZZ&#39;</span><span class="nv"> </span><span class="s">-w</span><span class="nv"> </span><span class="s">{{.wordlists}}:FUZZ&quot;</span>
+    <span class="nt">scripts</span><span class="p">:</span>
+      <span class="c1"># get result in csv</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ExecCmd(&quot;cat {{.Output}}/directory/raw-{{._id_}}.json | jq -r &#39;.results[] | [.url,.status,.length,.words,.lines,.redirectlocation] | join(\&quot;,\&quot;)&#39; &gt; {{.Output}}/directory/raw-{{._id_}}-{{.Workspace}}.csv&quot;)</span>
+      <span class="c1"># join to final result</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ExecCmd(&quot;cat {{.Output}}/directory/raw-{{._id_}}-{{.Workspace}}.csv &gt;&gt; {{.Output}}/directory/beautify-{{.Workspace}}.csv&quot;)</span>
+      <span class="c1"># noti small file to telegram</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ExecCmd(&quot;cat {{.Output}}/directory/raw-{{._id_}}-{{.Workspace}}.csv | {{.Binaries}}/csvtk pretty -I -s &#39; | &#39; -W 75 &gt; {{.Output}}/directory/beautify-{{._id_}}-{{.Workspace}}.txt&quot;)</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TeleMessByFile(&quot;{{.chan}}&quot;, &quot;{{.Output}}/directory/beautify-{{._id_}}-{{.Workspace}}.txt&quot;)</span>
+      <span class="c1"># sorting &amp; clean up</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">SortU(&quot;{{.Output}}/directory/beautify-{{.Workspace}}.csv&quot;)</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ExecCmd(&quot;rm -rf {{.Output}}/directory/beautify-{{._id_}}-{{.Workspace}}.txt {{.Output}}/directory/raw-{{._id_}}-{{.Workspace}}.csv {{.Output}}/directory/raw-{{._id_}}.json {{.Output}}/directory/unique-{{._id_}}.json&quot;)</span>
+    <span class="c1"># generate final beautify every 400 domains has been scanned</span>
+    <span class="nt">pconditions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;({{._id_}}</span><span class="nv"> </span><span class="s">%</span><span class="nv"> </span><span class="s">{{.commitLength}})</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">0&quot;</span>
+    <span class="nt">pscripts</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ExecCmd(&quot;cat {{.Output}}/directory/beautify-{{.Workspace}}.csv | {{.Binaries}}/csvtk pretty -I -s &#39; | &#39; -W 75 &gt; {{.Output}}/directory/beautify-{{.Workspace}}.txt&quot;)</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ExecCmd(&quot;cat {{.Output}}/directory/beautify-{{.Workspace}}.txt &gt;&gt; {{.Storages}}/paths/{{.Workspace}}/beautify-{{.Workspace}}.txt&quot;)</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">PushFolder(&quot;{{.Storages}}/paths/&quot;)</span>
+
+  <span class="c1"># clean up and notify to summary channel</span>
+  <span class="p p-Indicator">-</span> <span class="nt">required</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Output}}/directory/beautify-{{.Workspace}}.csv&quot;</span>
+    <span class="nt">scripts</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ExecCmd(&quot;cat {{.Output}}/directory/beautify-{{.Workspace}}.csv | {{.Binaries}}/csvtk pretty -I -s &#39; | &#39; -W 75 &gt; {{.Output}}/directory/beautify-{{.Workspace}}.txt&quot;)</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ExecCmd(&quot;cat {{.Storages}}/paths/{{.Workspace}}/paths-{{.Workspace}}.csv | {{.Binaries}}/csvtk pretty -I -s &#39; | &#39; -W 75 &gt; {{.Storages}}/paths/{{.Workspace}}/beautify-{{.Workspace}}.txt&quot;)</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TeleMessByFile(&quot;#dirb&quot;, &quot;{{.Output}}/directory/beautify-{{.Workspace}}.txt&quot;)</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ExecCmd(&#39;cat {{.Output}}/directory/beautify-{{.Workspace}}.txt&#39;)</span>
+
+<span class="nt">post_run</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TotalDirb(&quot;{{.Output}}/directory/beautify-{{.Workspace}}.txt&quot;)</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">PushFolder(&quot;{{.Storages}}/paths/&quot;)</span>
+</code></pre></div>
 <h2 id="step">Step<a class="headerlink" href="#step" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="nt">steps</span><span class="p">:</span> <span class="c1"># all step run in serial</span>
 
@@ -1107,7 +1258,9 @@ a,a:hover,a:click, a:visited{
     <span class="nt">commands</span><span class="p">:</span> <span class="c1"># unix command and it will be run in parallel</span>
       <span class="p p-Indicator">-</span> <span class="s">&quot;unix</span><span class="nv"> </span><span class="s">command</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">here&quot;</span>
       <span class="p p-Indicator">-</span> <span class="s">&quot;unix</span><span class="nv"> </span><span class="s">command</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">here&quot;</span>
-    <span class="nt">scripts</span><span class="p">:</span>
+    <span class="nt">scripts</span><span class="p">:</span> 
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ExecCmd(&quot;unix command 3 heret&quot;)</span> <span class="c1"># command 3 and 4 below it will be run in serial</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ExecCmd(&quot;unix command 4 here&quot;)</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">SortU(&quot;filename-here.txt&quot;)</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TeleMessByFile(&quot;#dirb&quot;, &quot;beautify-{{.Workspace}}.txt&quot;)</span>
 
