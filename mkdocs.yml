@@ -96,17 +96,18 @@ nav:
     - Other Fields: workflow/other-fields.md
     - Use Your Own wordlists: workflow/use-your-own-wordlists.md
     - Write Your Own Workflow: workflow/customize-your-own-workflow.md
-  - Scripts:
-    - Defination: references/scripts.md
-    - IO Scripts: references/io-utils.md
-    - Git Scripts: references/git-scripts.md
-    - Notification Scripts: references/noti-scripts.md
+    - Scripts:
+      - Defination: references/scripts.md
+      - IO Scripts: references/io-utils.md
+      - Git Scripts: references/git-scripts.md
+      - Notification Scripts: references/noti-scripts.md
   - Premium Package: 
     - What is Premium Package?: premium.md
     - Sponsor & Donation: donation.md
     - How to Install the Premium Package?: premium/install-premium-package.md
     - Setup for Distributed Scan: premium/cloud-setup.md
-  - FAQ: 
+  - References & FAQ: 
     - Frequently Asked Questions: faq.md
     - Common Issues: issue.md
+    - References: reference.md
 

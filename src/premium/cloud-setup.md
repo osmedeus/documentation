@@ -41,6 +41,11 @@ After changing the api key in `~/osmedeus-base/cloud/provider.yaml`.
 
 ***
 
+
+???+ tip ""
+    The variables not load to the `config.yaml`. Try to logut & login to your vps again. OS Env variables getting weird sometimes
+
+
 Changing the **CLOUD_BUILD_REPO** variables at `/root/osmedeus-base/token/cloud-variables.rc` to the URL that you were given to download the premium package.
 
 
@@ -87,7 +92,7 @@ cloud cloud.privte
 
 ## 3. Create a snapshot with the build command
 
-This will need [packer](https://www.packer.io/downloads) installed on your machine.
+This will need [packer v1.7.8](https://www.packer.io/downloads) installed on your machine.
 
 ```shell
 osmedeus provider build --rebuild
