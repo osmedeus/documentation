@@ -105,6 +105,8 @@ osmedeus utils cron --for --cmd 'osmedeus scan -t example.com'
 
 ```shell
 osmedeus health
+osmedeus health cloud --debug
+osmedeus health git --debug
 ```
 *** 
 

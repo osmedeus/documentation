@@ -954,15 +954,15 @@ a,a:hover,a:click, a:visited{
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-create-a-snapshot-with-build-command" class="md-nav__link">
-    3. Create a snapshot with build command
+  <a href="#3-create-a-snapshot-with-the-build-command" class="md-nav__link">
+    3. Create a snapshot with the build command
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-now-youre-ready-to-go-with-the-config" class="md-nav__link">
-    4. Now you're ready to go with the config
+  <a href="#4-now-youre-ready-to-start-the-scan" class="md-nav__link">
+    4. Now you're ready to start the scan
   </a>
   
 </li>
@@ -1069,13 +1069,13 @@ a,a:hover,a:click, a:visited{
 
 <h1 id="cloud-config-for-distributed-scan"><img alt="☁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2601.svg" title=":cloud:" /> Cloud config for distributed scan<a class="headerlink" href="#cloud-config-for-distributed-scan" title="Permanent link">&para;</a></h1>
 <div class="admonition info">
-<p class="admonition-title">This is only avalible in premium package</p>
+<p class="admonition-title">This is only available in the premium package</p>
 </div>
 <p><img alt="cloud-setup" loading="lazy" src="/static/premium/cloud-setup.png" /></p>
 <h2 id="1-create-api-key-denpend-on-your-cloud-provider">1. Create API Key denpend on your cloud provider<a class="headerlink" href="#1-create-api-key-denpend-on-your-cloud-provider" title="Permanent link">&para;</a></h2>
 <p>First of all, you will need your token store in <code>~/osmedeus-base/cloud/provider.yaml</code> as the format below.</p>
 <blockquote>
-<p>Currently, Osmedeus only support Digital Ocean and Linode provider. The default cloud config store at <code>~/osmedeus-base/cloud/provider.yaml</code>.</p>
+<p>Currently, Osmedeus only support Digital Ocean and Linode provider.  </p>
 </blockquote>
 <h4 id="digital-ocean">Digital Ocean<a class="headerlink" href="#digital-ocean" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="nt">clouds</span><span class="p">:</span>
@@ -1096,9 +1096,12 @@ a,a:hover,a:click, a:visited{
     <span class="nt">size</span><span class="p">:</span> <span class="s">&quot;g6-standard-1&quot;</span>
     <span class="nt">region</span><span class="p">:</span> <span class="s">&quot;us-east&quot;</span>
 </code></pre></div>
-<p>After changing the api key in <code>~/osmedeus-base/cloud/provider.yaml</code>.
-Changing the <strong>CLOUD_BUILD_REPO</strong> variables at <code>/root/osmedeus-base/token/cloud-variables.rc</code> to the URL that you were gave to download the premium package.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># reload config to osmedeus</span>
+<p>After changing the api key in <code>~/osmedeus-base/cloud/provider.yaml</code>.</p>
+<hr />
+<p>Changing the <strong>CLOUD_BUILD_REPO</strong> variables at <code>/root/osmedeus-base/token/cloud-variables.rc</code> to the URL that you were given to download the premium package.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span> ~/.bashrc
+
+<span class="c1"># reload config to osmedeus</span>
 osmedeus config reload
 
 <span class="c1"># and check if your config is loaded or not</span>
@@ -1113,26 +1116,27 @@ cloud:
 </code></pre></div>
 <hr />
 <h2 id="2-create-both-public-and-private-ssh-key">2. Create both public and private SSH Key<a class="headerlink" href="#2-create-both-public-and-private-ssh-key" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>ssh-keygen -t ed25519 -C <span class="s2">&quot;your_email@example.com&quot;</span> -f cloud -q -N <span class="s1">&#39;&#39;</span>
+<p><img alt="cloud-setup" loading="lazy" src="/static/premium/cloud-healthcheck.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># This will auto generate the SSH Key if it not found it yet</span>
+osmedeus health cloud --debug
 </code></pre></div>
-<p>Store these keys to <code>/root/osmedeus-base/cloud/ssh</code> and naming them corresponding to your config at <code>/root/osmedeus-base/token/cloud-variables.rc</code>.</p>
-<p>Default one should be name like this</p>
+<hr />
+<!-- Store these keys to `/root/osmedeus-base/cloud/ssh` and naming them corresponding to your config at `/root/osmedeus-base/token/cloud-variables.rc`. -->
+
+<p>Default SSH Keys should be named like this</p>
 <div class="highlight"><pre><span></span><code>$ ls /root/osmedeus-base/cloud/ssh/cloud
 cloud cloud.privte
 </code></pre></div>
-<p>You can also check if everything okay by run the command</p>
-<div class="highlight"><pre><span></span><code>osmedeus health cloud --debug
-</code></pre></div>
-<h2 id="3-create-a-snapshot-with-build-command">3. Create a snapshot with build command<a class="headerlink" href="#3-create-a-snapshot-with-build-command" title="Permanent link">&para;</a></h2>
+<h2 id="3-create-a-snapshot-with-the-build-command">3. Create a snapshot with the build command<a class="headerlink" href="#3-create-a-snapshot-with-the-build-command" title="Permanent link">&para;</a></h2>
 <p>This will need <a href="https://www.packer.io/downloads">packer</a> installed on your machine.</p>
 <div class="highlight"><pre><span></span><code>osmedeus provider build --rebuild
 
 <span class="c1"># or enable debug mode to see what&#39;s going on</span>
 osmedeus provider build --rebuild --debug
 </code></pre></div>
-<p>the result of the command will looks like this</p>
+<p>the result of the command should look like this</p>
 <p><img alt="cloud-setup" loading="lazy" src="/static/premium/create-snapshot.png" /></p>
-<h2 id="4-now-youre-ready-to-go-with-the-config">4. Now you're ready to go with the config<a class="headerlink" href="#4-now-youre-ready-to-go-with-the-config" title="Permanent link">&para;</a></h2>
+<h2 id="4-now-youre-ready-to-start-the-scan">4. Now you're ready to start the scan<a class="headerlink" href="#4-now-youre-ready-to-start-the-scan" title="Permanent link">&para;</a></h2>
 <p><img alt="cloud-setup" loading="lazy" src="/static/premium/cloud-scan-start.png" /></p>
 
               

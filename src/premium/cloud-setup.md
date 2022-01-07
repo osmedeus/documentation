@@ -1,6 +1,6 @@
 # :cloud: Cloud config for distributed scan
 
-!!! info "This is only avalible in premium package"
+!!! info "This is only available in the premium package"
 
 
 ![cloud-setup](/static/premium/cloud-setup.png){ loading=lazy }
@@ -9,7 +9,7 @@
 
 First of all, you will need your token store in `~/osmedeus-base/cloud/provider.yaml` as the format below.
 
-> Currently, Osmedeus only support Digital Ocean and Linode provider. The default cloud config store at `~/osmedeus-base/cloud/provider.yaml`.
+> Currently, Osmedeus only support Digital Ocean and Linode provider.  
 
 #### Digital Ocean
 
@@ -38,10 +38,15 @@ clouds:
 ```
 
 After changing the api key in `~/osmedeus-base/cloud/provider.yaml`.
-Changing the **CLOUD_BUILD_REPO** variables at `/root/osmedeus-base/token/cloud-variables.rc` to the URL that you were gave to download the premium package.
+
+***
+
+Changing the **CLOUD_BUILD_REPO** variables at `/root/osmedeus-base/token/cloud-variables.rc` to the URL that you were given to download the premium package.
 
 
 ```shell
+source ~/.bashrc
+
 # reload config to osmedeus
 osmedeus config reload
 
@@ -61,28 +66,26 @@ cloud:
 
 ## 2. Create both public and private SSH Key
 
+![cloud-setup](/static/premium/cloud-healthcheck.png){ loading=lazy }
+
 ```shell
-ssh-keygen -t ed25519 -C "your_email@example.com" -f cloud -q -N ''
+# This will auto generate the SSH Key if it not found it yet
+osmedeus health cloud --debug
+
 ```
 
-Store these keys to `/root/osmedeus-base/cloud/ssh` and naming them corresponding to your config at `/root/osmedeus-base/token/cloud-variables.rc`.
+*** 
 
-Default one should be name like this
+<!-- Store these keys to `/root/osmedeus-base/cloud/ssh` and naming them corresponding to your config at `/root/osmedeus-base/token/cloud-variables.rc`. -->
+
+Default SSH Keys should be named like this
 
 ```shell
 $ ls /root/osmedeus-base/cloud/ssh/cloud
 cloud cloud.privte
 ```
 
-You can also check if everything okay by run the command
-
-```shell
-
-osmedeus health cloud --debug
-
-```
-
-## 3. Create a snapshot with build command
+## 3. Create a snapshot with the build command
 
 This will need [packer](https://www.packer.io/downloads) installed on your machine.
 
@@ -93,10 +96,10 @@ osmedeus provider build --rebuild
 osmedeus provider build --rebuild --debug
 ```
 
-the result of the command will looks like this
+the result of the command should look like this
 
 ![cloud-setup](/static/premium/create-snapshot.png){ loading=lazy }
 
-## 4. Now you're ready to go with the config
+## 4. Now you're ready to start the scan
 
 ![cloud-setup](/static/premium/cloud-scan-start.png){ loading=lazy }
