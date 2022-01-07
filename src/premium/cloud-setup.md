@@ -78,7 +78,7 @@ You can also check if everything okay by run the command
 
 ```shell
 
-osmedeus health cloud
+osmedeus health cloud --debug
 
 ```
 
