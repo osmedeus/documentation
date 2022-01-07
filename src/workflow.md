@@ -27,11 +27,11 @@ routines:
       - ssame
   - modules:
       - screenshot
-  - modules: # these module will be run in parallel
+  - modules: # these modules will be run in parallel
       - fingerprint
       - spider
       - sto
-  - modules:  # these module will be run in parallel
+  - modules:  # these modules will be run in parallel
       - archive
       - ipspace
   - modules:
