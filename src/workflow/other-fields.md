@@ -51,7 +51,9 @@ you can also add `-file` after each name to validate input as a file (e.g: `cidr
 
 This field shows a list of files that will show up on the Web UI modules.
 
- Also when call the cleaning script like `Cleaning("{{.Output}}/subdomain/")`. It will delete all the things in the subdomain folder except the file in the report section.
+Also when call the cleaning script like `Cleaning("{{.Output}}/subdomain/")`. It will delete all the things in the subdomain folder except the file in the report section.
+
+When you're using `--resume` flag. This is also the file that the core engine check if the module is already run or not too.
 
 
 ```yaml
