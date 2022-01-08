@@ -81,8 +81,6 @@ osmedeus health cloud --debug
 
 *** 
 
-<!-- Store these keys to `/root/osmedeus-base/cloud/ssh` and naming them corresponding to your config at `/root/osmedeus-base/token/cloud-variables.rc`. -->
-
 Default SSH Keys should be named like this
 
 ```shell
@@ -104,6 +102,18 @@ osmedeus provider build --rebuild --debug
 the result of the command should look like this
 
 ![cloud-setup](/static/premium/create-snapshot.png){ loading=lazy }
+
+***
+
+If you have any errors make sure to check the content of these first
+
+- [x] your api key is in `~/osmedeus-base/cloud/provider.yaml`.
+- [x] run `osmedeus config reload` to make sure everything loaded.
+- [x] run `osmedeus config reload` to make sure everything loaded.
+- [x] run `cat /root/.osmedeus/config.yaml` and check the `cloud:` section to make sure everything loaded.
+- [x] `ls /root/osmedeus-base/cloud/ssh/cloud` have two SSH Keys.
+- [x] [packer v1.7.8](https://www.packer.io/downloads) is ready on your host machine.
+
 
 ## 4. Now you're ready to start the scan
 

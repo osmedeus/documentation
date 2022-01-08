@@ -27,8 +27,7 @@
   osmedeus scan -t target.com -w workspace_name --debug
   osmedeus scan -f single -t www.sample.com
   osmedeus scan -f ovuln-T list_of_target.txt
-  osmedeus scan -m ~/osmedeus-base/workflow/test/dirbscan.yaml -t list_of_urls.txt
-  osmedeus health
+  osmedeus scan -m ~/osmedeus-base/workflow/direct-module/dirbscan.yaml -t http-file.txt
   ls ~/.osmedeus/storages/summary/ | osmedeus scan -m ~/osmedeus-base/workflow/test/dirbscan.yaml
   ls ~/.osmedeus/storages/summary/ | osmedeus scan -m ~/osmedeus-base/workflow/test/busting.yaml -D
 
@@ -57,7 +56,10 @@ osmedeus scan help
 ## Start a simple scan with default 'general' flow
 osmedeus scan -t sample.com
 
-## Start a general scan but exclude some of the module
+## Start a scan directly with a module with inputs as a list of http domains like this https://sub.example.com
+osmedeus scan -m ~/osmedeus-base/workflow/direct-module/dirbscan.yaml -t http-file.txt
+
+## Start a general scan but exclude some of the modules
 osmedeus scan -t sample.com -x screenshot -x spider
 
 ## Start a simple scan with other flow

@@ -1126,8 +1126,6 @@ cloud:
 osmedeus health cloud --debug
 </code></pre></div>
 <hr />
-<!-- Store these keys to `/root/osmedeus-base/cloud/ssh` and naming them corresponding to your config at `/root/osmedeus-base/token/cloud-variables.rc`. -->
-
 <p>Default SSH Keys should be named like this</p>
 <div class="highlight"><pre><span></span><code>$ ls /root/osmedeus-base/cloud/ssh/cloud
 cloud cloud.privte
@@ -1141,6 +1139,16 @@ osmedeus provider build --rebuild --debug
 </code></pre></div>
 <p>the result of the command should look like this</p>
 <p><img alt="cloud-setup" loading="lazy" src="/static/premium/create-snapshot.png" /></p>
+<hr />
+<p>If you have any errors make sure to check the content of these first</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> your api key is in <code>~/osmedeus-base/cloud/provider.yaml</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> run <code>osmedeus config reload</code> to make sure everything loaded.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> run <code>osmedeus config reload</code> to make sure everything loaded.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> run <code>cat /root/.osmedeus/config.yaml</code> and check the <code>cloud:</code> section to make sure everything loaded.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>ls /root/osmedeus-base/cloud/ssh/cloud</code> have two SSH Keys.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.packer.io/downloads">packer v1.7.8</a> is ready on your host machine.</li>
+</ul>
 <h2 id="4-now-youre-ready-to-start-the-scan">4. Now you're ready to start the scan<a class="headerlink" href="#4-now-youre-ready-to-start-the-scan" title="Permanent link">&para;</a></h2>
 <p><img alt="cloud-setup" loading="lazy" src="/static/premium/cloud-scan-start.png" /></p>
 

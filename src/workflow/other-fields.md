@@ -27,7 +27,7 @@ routines:
 
 ## Validator
 
-Validator tag allows you to check the format of the input first before actually running the scan.
+The validator tag allows you to check the format of the input first before actually running the scan.
 
 ```yaml
 validator: domain # -t example.com
