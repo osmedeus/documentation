@@ -691,6 +691,13 @@ a,a:hover,a:click, a:visited{
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#reports" class="md-nav__link">
+    Reports
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1071,6 +1078,21 @@ a,a:hover,a:click, a:visited{
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> cidr</li>
 </ul>
 <p>you can also add <code>-file</code> after each name to validate input as a file (e.g: <code>cidr-file</code>).</p>
+<h2 id="reports">Reports<a class="headerlink" href="#reports" title="Permanent link">&para;</a></h2>
+<p>This field shows a list of files that will show up on the Web UI modules.</p>
+<p>Also when call the cleaning script like <code>Cleaning("{{.Output}}/subdomain/")</code>. It will delete all the things in the subdomain folder except the file in the report section.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dirbscan</span>
+<span class="nt">desc</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Run Dirbscan</span>
+
+<span class="nt">report</span><span class="p">:</span>
+  <span class="nt">final</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Output}}/directory/beautify-{{.Workspace}}.txt&quot;</span>
+    <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Output}}/directory/paths-{{.Workspace}}.csv&quot;</span>
+
+<span class="nt">params</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">inputfile</span><span class="p">:</span> <span class="s">&quot;{{.Output}}/probing/http-{{.Workspace}}.txt&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">wordlists</span><span class="p">:</span> <span class="s">&quot;{{.Data}}/wordlists/content/small.txt&quot;</span>
+</code></pre></div>
 
               
             </article>

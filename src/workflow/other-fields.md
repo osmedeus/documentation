@@ -45,3 +45,26 @@ Here are some built-in formats that available in the Engine
 - [x] cidr
 
 you can also add `-file` after each name to validate input as a file (e.g: `cidr-file`).
+
+
+## Reports
+
+This field shows a list of files that will show up on the Web UI modules.
+
+ Also when call the cleaning script like `Cleaning("{{.Output}}/subdomain/")`. It will delete all the things in the subdomain folder except the file in the report section.
+
+
+```yaml
+
+name: dirbscan
+desc: Run Dirbscan
+
+report:
+  final:
+    - "{{.Output}}/directory/beautify-{{.Workspace}}.txt"
+    - "{{.Output}}/directory/paths-{{.Workspace}}.csv"
+
+params:
+  - inputfile: "{{.Output}}/probing/http-{{.Workspace}}.txt"
+  - wordlists: "{{.Data}}/wordlists/content/small.txt"
+```
