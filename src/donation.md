@@ -4,7 +4,7 @@ If you love my tools and would like to support my work, please check out some do
 
 ## :large_orange_diamond: Sponsor
 
-If you or your organization would like to sponsor this project or show your logo in this project feel free to contact me via **[:material-twitter: here](https://twitter.com/OsmedeusEngine)**
+You or your organization would like to sponsor my projects or show your logo on the project documentation page  feel free to contact me via **[:material-twitter: here](https://twitter.com/OsmedeusEngine)**
 
 ## For Everyone 
 

@@ -496,6 +496,13 @@ a,a:hover,a:click, a:visited{
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#view-results-in-your-workspace-via-static-path" class="md-nav__link">
+    View results in your workspace via static path
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1047,6 +1054,19 @@ client:
 </code></pre></div>
 <img alt="home" loading="lazy" src="/static/architecture/ui-home.png" /></p>
 <p><img alt="workspace" loading="lazy" src="/static/architecture/ui-workspace.png" /></p>
+<h2 id="view-results-in-your-workspace-via-static-path">View results in your workspace via static path<a class="headerlink" href="#view-results-in-your-workspace-via-static-path" title="Permanent link">&para;</a></h2>
+<p>By default, the webserver will allow you to view your workspace folder as a static file via the endpoints <code>/random-prefix-here/workspaces/</code>.</p>
+<p>You can see the detail below.</p>
+<div class="highlight"><pre><span></span><code>cat ~/.osmedeus/config.yaml
+
+server:
+  ...
+  prefix: random-prefix-here
+  ...
+
+
+curl -k https://your-webserver:8000/random-prefix-here/workspaces/sample.com/subdomain/final-sample.com.txt
+</code></pre></div>
 
               
             </article>

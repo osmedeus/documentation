@@ -29,3 +29,23 @@ client:
 ![home](/static/architecture/ui-home.png){ loading=lazy }
 
 ![workspace](/static/architecture/ui-workspace.png){ loading=lazy }
+
+## View results in your workspace via static path
+
+By default, the webserver will allow you to view your workspace folder as a static file via the endpoints `/random-prefix-here/workspaces/`.
+
+You can see the detail below.
+
+```shell
+cat ~/.osmedeus/config.yaml
+
+server:
+  ...
+  prefix: random-prefix-here
+  ...
+
+
+curl -k https://your-webserver:8000/random-prefix-here/workspaces/sample.com/subdomain/final-sample.com.txt
+```
+
+
