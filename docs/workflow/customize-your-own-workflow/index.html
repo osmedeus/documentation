@@ -866,6 +866,8 @@ a,a:hover,a:click, a:visited{
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5">
@@ -930,6 +932,20 @@ a,a:hover,a:click, a:visited{
     <li class="md-nav__item">
       <a href="../../premium/cloud-setup/" class="md-nav__link">
         Setup for Distributed Scan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../premium/git-setup/" class="md-nav__link">
+        Git Setup for Premium Package
       </a>
     </li>
   
@@ -1054,6 +1070,9 @@ a,a:hover,a:click, a:visited{
 <p><img alt="tweaking-module" loading="lazy" src="/static/workflow/tweaking-module.png" /></p>
 <h2 id="2-fork-another-one-from-community-workflow">2. Fork another one from community workflow<a class="headerlink" href="#2-fork-another-one-from-community-workflow" title="Permanent link">&para;</a></h2>
 <p>Fork this repo from here https://github.com/osmedeus/osmedeus-workflow and change anything you want and put it to <code>~/osmedeus-base/workflow</code> folder.</p>
+<p>or you can put it in a custom folder then use this command.
+<div class="highlight"><pre><span></span><code>osmedeus scan --wfFolder ~/custom-workflow/ -f your-custom-workflow -t sample.com
+</code></pre></div></p>
 <h2 id="3-writing-a-new-flow">3. Writing a new flow<a class="headerlink" href="#3-writing-a-new-flow" title="Permanent link">&para;</a></h2>
 <p>Create a new flow file at <code>~/osmedeus-base/workflow/your-workflow.yaml</code> and folder <code>you-workflow</code> to store your modules file</p>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">your-workflow</span>

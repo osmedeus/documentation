@@ -527,40 +527,6 @@ a,a:hover,a:click, a:visited{
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#setup-storages" class="md-nav__link">
-    Setup Storages
-  </a>
-  
-    <nav class="md-nav" aria-label="Setup Storages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#follow-this-video-for-more-detail" class="md-nav__link">
-    Follow this video for more detail.
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#modify-the-content-of-storages-config-file" class="md-nav__link">
-    Modify the content of Storages Config file
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#load-the-storages-variables-to-osmedeus-config" class="md-nav__link">
-    Load the storages variables to Osmedeus config
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -903,6 +869,8 @@ a,a:hover,a:click, a:visited{
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5">
@@ -967,6 +935,20 @@ a,a:hover,a:click, a:visited{
     <li class="md-nav__item">
       <a href="../../premium/cloud-setup/" class="md-nav__link">
         Setup for Distributed Scan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../premium/git-setup/" class="md-nav__link">
+        Git Setup for Premium Package
       </a>
     </li>
   
@@ -1125,65 +1107,6 @@ osmedeus config reload
 <p><img alt="intro" loading="lazy" src="../../static/noti/telegram-noti-2.png" /></p>
 <p>You can setup telegram tokens at <strong><a href="/installation/token/#main-token-file">Setup Token &amp; API Key</a></strong></p>
 <hr />
-<h2 id="setup-storages">Setup Storages<a class="headerlink" href="#setup-storages" title="Permanent link">&para;</a></h2>
-<div class="admonition help">
-<p>Note that this setup is <strong>Optional</strong>. You can still use the tool perfectly fine without it!</p>
-</div>
-<h3 id="follow-this-video-for-more-detail">Follow <strong><a href="https://youtube.com/playlist?list=PLiifzv5MjIo3JqKeG5EXbSKDBlqa7v14P">this video</a></strong> for more detail.<a class="headerlink" href="#follow-this-video-for-more-detail" title="Permanent link">&para;</a></h3>
-<p>All of your storages setup will be store at <code>~/osmedeus-base/token/storages-alias.rc</code></p>
-<h3 id="modify-the-content-of-storages-config-file">Modify the content of Storages Config file<a class="headerlink" href="#modify-the-content-of-storages-config-file" title="Permanent link">&para;</a></h3>
-<p>Create your SSH key and add to a user have access to all of the repos below. Save that key as <code>~/.osmedeus/secret_key.private</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># for storages</span>
-<span class="nb">export</span> <span class="nv">SECRET_KEY</span><span class="o">=</span>~/.osmedeus/secret_key.private
-<span class="c1"># core one</span>
-<span class="nb">export</span> <span class="nv">SUMMARY_REPO</span><span class="o">=</span>git@gitlab.com:not-j3ssie/your-osmd-summary
-<span class="nb">export</span> <span class="nv">VULN_REPO</span><span class="o">=</span>git@gitlab.com:not-j3ssie/your-osmd-vuln
-<span class="nb">export</span> <span class="nv">PATHS_REPO</span><span class="o">=</span>git@gitlab.com:not-j3ssie/your-osmd-paths
-<span class="nb">export</span> <span class="nv">HTTP_REPO</span><span class="o">=</span>git@gitlab.com:not-j3ssie/your-osmd-http
-
-<span class="c1"># mics one</span>
-<span class="nb">export</span> <span class="nv">ASSETS_REPO</span><span class="o">=</span>git@gitlab.com:not-j3ssie/your-osmd-assets
-<span class="nb">export</span> <span class="nv">PORTS_REPO</span><span class="o">=</span>git@gitlab.com:not-j3ssie/your-osmd-ports
-<span class="nb">export</span> <span class="nv">SUBDOMAIN_REPO</span><span class="o">=</span>git@gitlab.com:not-j3ssie/your-osmd-subdomain
-</code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">Please change your username and repository name</p>
-<p>Note that <code>not-j3ssie</code> is your gitlab username and <code>your-osmd-summary</code> is your Gitlab repo name.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Run these commands below if you not using git before</p>
-<div class="highlight"><pre><span></span><code>git config --global user.name <span class="s2">&quot;your_gitlab_user&quot;</span>
-git config --global user.email <span class="s2">&quot;your_gitlab_uid@users.noreply.gitlab.com&quot;</span>
-</code></pre></div>
-</div>
-<hr />
-<h3 id="load-the-storages-variables-to-osmedeus-config">Load the storages variables to Osmedeus config<a class="headerlink" href="#load-the-storages-variables-to-osmedeus-config" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># or edit file storages-alias.rc</span>
-<span class="c1"># add osmedeus-base/storages-alias.rc to your ~/.bashrc file</span>
-<span class="nb">echo</span> <span class="s1">&#39;source $HOME/osmedeus-base/token/storages-alias.rc&#39;</span> &gt;&gt; ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bashrc
-
-<span class="c1"># reload config to osmedeus</span>
-osmedeus config reload
-
-<span class="c1"># finally you can check the content of ~/.osmedeus/config.yaml file</span>
-<span class="c1"># to see if config actually change or not like below</span>
-cat ~/.osmedeus/config.yaml
-
-<span class="c1"># The content should be showed like this</span>
-<span class="c1"># ...</span>
-<span class="c1"># storages:</span>
-<span class="c1"># ...</span>
-<span class="c1">#   summary_repo: git@gitlab.com:j3ssie/dosm-summary</span>
-<span class="c1">#   summary_storage: ~/.osmedeus/storages/summary</span>
-<span class="c1"># ...</span>
-
-<span class="c1"># now run the health check again it will clone the </span>
-osmedeus health
-
-
-<span class="c1"># then check out your storages folder at `~/.osmedeus/storages`</span>
-ls ~/.osmedeus/storages/summary/ 
-</code></pre></div>
 
               
             </article>

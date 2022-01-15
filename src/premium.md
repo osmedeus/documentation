@@ -6,7 +6,7 @@
 
     You can choose some  **[:small_blue_diamond: donation methods here :small_blue_diamond:](/donation/)** to get the premium package with minimum **5$**
 
-What you will get?
+## What you will get?
 
 - [x] My private workflow which is fully tested on many site.
 - [x] Wordlists that I collected from many sources for a long time.
@@ -21,7 +21,7 @@ You can see the **[full structure here](/structure/#folders-that-osmedeus-will-s
 
 ## Git Storages natively supported
 
-Even though you can use Git Storages by writing your workflow. The premium workflow also comes with storages script. All you need to do is setup your Gitlab repository.
+Even though you can use Git Storages by writing your workflow. The premium workflow also comes with the storages script. All you need to do is set up your [Gitlab repository](/premium/git-setup/).
 
 ## Support Distributed Scan
 

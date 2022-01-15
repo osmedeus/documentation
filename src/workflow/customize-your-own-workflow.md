@@ -18,6 +18,11 @@ For example you can edit the thread of ffuf command **[here](https://github.com/
 
 Fork this repo from here https://github.com/osmedeus/osmedeus-workflow and change anything you want and put it to `~/osmedeus-base/workflow` folder.
 
+or you can put it in a custom folder then use this command.
+```shell
+osmedeus scan --wfFolder ~/custom-workflow/ -f your-custom-workflow -t sample.com
+```
+
 ## 3. Writing a new flow
 
 Create a new flow file at `~/osmedeus-base/workflow/your-workflow.yaml` and folder `you-workflow` to store your modules file

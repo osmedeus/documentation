@@ -106,6 +106,7 @@ nav:
     - Sponsor & Donation: donation.md
     - How to Install the Premium Package?: premium/install-premium-package.md
     - Setup for Distributed Scan: premium/cloud-setup.md
+    - Git Setup for Premium Package: premium/git-setup.md
   - References & FAQ: 
     - Frequently Asked Questions: faq.md
     - Common Issues: issue.md
