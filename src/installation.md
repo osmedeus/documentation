@@ -25,7 +25,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/osmedeus/osmedeus-base/m
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/osmedeus/osmedeus-base/master/install-macos.sh)"
 ```
 
-**[Some other changes](installation/install-note/#when-install-on-macos)** you might need to make if you really want to use Osmedeus on MacOS
+**[Some other changes](/installation/install-note/#when-install-on-macos)** you might need to make if you're really want to use Osmedeus on MacOS
 
 ***
 
