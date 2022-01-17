@@ -86,6 +86,7 @@ nav:
     - Usage: installation/usage.md
     - Web UI (Experimental): installation/web-ui.md
     - Setup Token & API Key: installation/token.md
+    - Installation Notes: installation/install-note.md
   - Architecture:
     - Overview: architecture.md
     - Detail Structure of Osmedeus: structure.md

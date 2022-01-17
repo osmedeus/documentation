@@ -17,3 +17,7 @@ The tool has two main components:
 ## Comparison to the old version
 
 ![intro](static/architecture/comparison.png){ loading=lazy }
+
+## How does the Osmedeus actually works?
+
+

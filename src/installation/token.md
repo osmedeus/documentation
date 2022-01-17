@@ -59,6 +59,5 @@ By Default Amass config will be store at `~/osmedeus-base/data/configs/amass.ini
 
 ![intro](../static/noti/telegram-noti-2.png){ loading=lazy }
 
-You can setup telegram tokens at **[Setup Token & API Key](/installation/token/#main-token-file)**
-
+You can now using **[Notification Scripts](references/noti-scripts/)** in your Workflow
 ***

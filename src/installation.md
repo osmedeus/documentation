@@ -3,7 +3,7 @@
 !!! info "[Follow this link to see a video instruction](https://www.youtube.com/playlist?list=PLiifzv5MjIo3JqKeG5EXbSKDBlqa7v14P)"
 
 
-## Install from a base repository
+## :fontawesome-brands-linux: Install from a base repository
 
 !!! warning ""
     **NOTE** that you need some essential tools like `curl, wget, git, zip, tmux` and login as **root** to start
@@ -15,7 +15,21 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/osmedeus/osmedeus-base/m
 
 ***
 
-## Install from a build release
+
+## :material-apple: Install for MacOS (experimental)
+
+!!! warning ""
+    **NOTE** that you need to install **[homebrew](https://brew.sh/)** first.
+
+```shell
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/osmedeus/osmedeus-base/master/install-macos.sh)"
+```
+
+**[Some other changes](installation/install-note/#when-install-on-macos)** you might need to make if you really want to use Osmedeus on MacOS
+
+***
+
+## :package: Install from a build release
 
 Make sure you login as **root** otherwise run `sudo su` first then put `build-osm.zip` to any folder (e.g: `/opt/`)
 
@@ -27,9 +41,17 @@ unzip -q build-osm.zip && cd build-osm
 osmedeus health
 ```
 
+
+## :material-docker: Using Docker
+
+```shell
+docker run -it j3ssie/osmedeus:latest scan -t example.com
+```
+
+
 ***
 
-## Verify the installation process
+## :heavy_check_mark: Verify the installation process
 
 Just run the command `osmedeus health`. If you see the content like a image below then it's mean the installation process has been success.
 

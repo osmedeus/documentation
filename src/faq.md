@@ -39,3 +39,12 @@
 
 ???+ question "I ran the scan but there's no vulnerability found?"
     It's simply that there's no vulnerability. It very depends on your Target.
+
+
+???+ info "How can I update my premium package?"
+    You can Join **[Discord Server here](https://discord.gg/gy4SWhpaPU)** to see if anyone can help
+
+???+ question "Why my scan stuck at portscan?"
+    It stay there because it get a sudo password prompt. Some special tools require *root* permission to run like **nmap**. Make sure you allow **nmap** can be run without sudo password prompt.
+
+

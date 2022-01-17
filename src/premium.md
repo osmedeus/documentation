@@ -6,14 +6,14 @@
 
     You can choose some  **[:small_blue_diamond: donation methods here :small_blue_diamond:](/donation/)** to get the premium package with minimum **5$**
 
-## What you will get?
+## What will you get?
 
-- [x] My private workflow which is fully tested on many site.
+- [x] My **(private workflow)[#my-methodology]** which is fully tested on many site.
 - [x] Wordlists that I collected from many sources for a long time.
 - [x] Private third-party tools made the result a lot more accurate.
 - [x] My Private Jaeles Signatures.
 
-You can see the **[full structure here](/structure/#folders-that-osmedeus-will-store-data-into-source)**
+![details](static/architecture/osmedeus-details-folder.png){ loading=lazy }
 
 ## My methodology
 
