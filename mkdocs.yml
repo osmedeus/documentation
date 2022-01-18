@@ -83,6 +83,7 @@ nav:
   - Home: index.md
   - Getting Started:
     - Installation: installation.md
+    - Using Docker: installation/using-docker.md
     - Usage: installation/usage.md
     - Web UI (Experimental): installation/web-ui.md
     - Setup Token & API Key: installation/token.md

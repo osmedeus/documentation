@@ -41,13 +41,7 @@ unzip -q build-osm.zip && cd build-osm
 osmedeus health
 ```
 
-
-## :material-docker: Using Docker
-
-```shell
-docker run -it j3ssie/osmedeus:latest scan -t example.com
-```
-
+## [:material-docker: Using Docker](/installation/using-docker/)
 
 ***
 

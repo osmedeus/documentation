@@ -10,14 +10,14 @@
       
       
       
-        <link rel="canonical" href="https://docs.osmedeus.org/workflow/customize-your-own-workflow/">
+        <link rel="canonical" href="https://docs.osmedeus.org/installation/using-docker/">
       
       <link rel="icon" href="../../static/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.5">
     
     
       
-        <title>Write Your Own Workflow - Osmedeus Next Generation - A Workflow Engine for Offensive Security</title>
+        <title>Using Docker - Osmedeus Next Generation - A Workflow Engine for Offensive Security</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#customize-your-own-workflow" class="md-skip">
+        <a href="#using-docker" class="md-skip">
           Skip to content
         </a>
       
@@ -137,7 +137,7 @@ a,a:hover,a:click, a:visited{
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Write Your Own Workflow
+              Using Docker
             
           </span>
         </div>
@@ -243,13 +243,15 @@ a,a:hover,a:click, a:visited{
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../installation/" class="md-tabs__link">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
         Getting Started
       </a>
     </li>
@@ -275,15 +277,13 @@ a,a:hover,a:click, a:visited{
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../workflow/" class="md-tabs__link">
         Workflow
       </a>
     </li>
@@ -388,12 +388,14 @@ a,a:hover,a:click, a:visited{
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -430,7 +432,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../../installation/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         Installation
       </a>
     </li>
@@ -442,11 +444,66 @@ a,a:hover,a:click, a:visited{
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../installation/using-docker/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Using Docker
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Using Docker
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#building-docker-image" class="md-nav__link">
+    Building docker image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-scan" class="md-nav__link">
+    Running the scan
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-web-ui" class="md-nav__link">
+    Run the Web UI
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -458,7 +515,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../../installation/usage/" class="md-nav__link">
+      <a href="../usage/" class="md-nav__link">
         Usage
       </a>
     </li>
@@ -472,7 +529,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../../installation/web-ui/" class="md-nav__link">
+      <a href="../web-ui/" class="md-nav__link">
         Web UI (Experimental)
       </a>
     </li>
@@ -486,7 +543,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../../installation/token/" class="md-nav__link">
+      <a href="../token/" class="md-nav__link">
         Setup Token & API Key
       </a>
     </li>
@@ -500,7 +557,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../../installation/install-note/" class="md-nav__link">
+      <a href="../install-note/" class="md-nav__link">
         Installation Notes
       </a>
     </li>
@@ -588,14 +645,12 @@ a,a:hover,a:click, a:visited{
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -634,7 +689,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../workflow/" class="md-nav__link">
         Understand the Workflow
       </a>
     </li>
@@ -648,7 +703,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../default-workflow/" class="md-nav__link">
+      <a href="../../workflow/default-workflow/" class="md-nav__link">
         Default Community workflow
       </a>
     </li>
@@ -662,7 +717,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../parameters/" class="md-nav__link">
+      <a href="../../workflow/parameters/" class="md-nav__link">
         Parameters
       </a>
     </li>
@@ -676,7 +731,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../other-fields/" class="md-nav__link">
+      <a href="../../workflow/other-fields/" class="md-nav__link">
         Other Fields
       </a>
     </li>
@@ -690,7 +745,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../use-your-own-wordlists/" class="md-nav__link">
+      <a href="../../workflow/use-your-own-wordlists/" class="md-nav__link">
         Use Your Own wordlists
       </a>
     </li>
@@ -702,66 +757,11 @@ a,a:hover,a:click, a:visited{
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Write Your Own Workflow
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../workflow/customize-your-own-workflow/" class="md-nav__link">
         Write Your Own Workflow
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-tweaking-commands-or-threads-of-the-tool-depends-on-your-machine-specification" class="md-nav__link">
-    1. Tweaking commands or threads of the tool depends on your machine specification
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-fork-another-one-from-community-workflow" class="md-nav__link">
-    2. Fork another one from community workflow
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-writing-a-new-flow" class="md-nav__link">
-    3. Writing a new flow
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1086,35 +1086,41 @@ a,a:hover,a:click, a:visited{
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/j3ssie/osmedeus/edit/master/docs/workflow/customize-your-own-workflow.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/j3ssie/osmedeus/edit/master/docs/installation/using-docker.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-<h1 id="customize-your-own-workflow"><img alt="✍🏻" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/270d-1f3fb.svg" title=":writing_hand_tone1:" /> Customize your own workflow<a class="headerlink" href="#customize-your-own-workflow" title="Permanent link">&para;</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">All Workflow files are YAML-based so make sure you follow the YAML syntax. Otherwise, it wouldn't work</p>
-</div>
-<p>After the installation process is finished, your workflow will be stored at <code>~/osmedeus-base/workflow</code>.</p>
-<h2 id="1-tweaking-commands-or-threads-of-the-tool-depends-on-your-machine-specification">1. Tweaking commands or threads of the tool depends on your machine specification<a class="headerlink" href="#1-tweaking-commands-or-threads-of-the-tool-depends-on-your-machine-specification" title="Permanent link">&para;</a></h2>
-<p>You can start tweaking the workflow right away by edit any command in module file at <code>~/osmedeus-base/workflow/general/</code> folder.</p>
-<p>For example you can edit the thread of ffuf command <strong><a href="https://github.com/osmedeus/osmedeus-workflow/blob/main/general/dirbscan.yaml#L42">here</a></strong> on dirbscan module</p>
-<p><img alt="tweaking-module" loading="lazy" src="/static/workflow/tweaking-module.png" /></p>
-<h2 id="2-fork-another-one-from-community-workflow">2. Fork another one from community workflow<a class="headerlink" href="#2-fork-another-one-from-community-workflow" title="Permanent link">&para;</a></h2>
-<p>Fork this repo from here https://github.com/osmedeus/osmedeus-workflow and change anything you want and put it to <code>~/osmedeus-base/workflow</code> folder.</p>
-<p>or you can put it in a custom folder then use this command.
-<div class="highlight"><pre><span></span><code>osmedeus scan --wfFolder ~/custom-workflow/ -f your-custom-workflow -t sample.com
-</code></pre></div></p>
-<h2 id="3-writing-a-new-flow">3. Writing a new flow<a class="headerlink" href="#3-writing-a-new-flow" title="Permanent link">&para;</a></h2>
-<p>Create a new flow file at <code>~/osmedeus-base/workflow/your-workflow.yaml</code> and folder <code>you-workflow</code> to store your modules file</p>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">your-workflow</span>
-<span class="nt">desc</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">run normal routine</span>
-<span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">you-workflow</span>
-<span class="nt">validator</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">domain</span>
+<h1 id="using-docker"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.81 10.25c-.06-.04-.56-.43-1.64-.43-.28 0-.56.03-.84.08-.21-1.4-1.38-2.11-1.43-2.14l-.29-.17-.18.27c-.24.36-.43.77-.51 1.19-.2.8-.08 1.56.33 2.21-.49.28-1.29.35-1.46.35H2.62c-.34 0-.62.28-.62.63 0 1.15.18 2.3.58 3.38.45 1.19 1.13 2.07 2 2.61.98.6 2.59.94 4.42.94.79 0 1.61-.07 2.42-.22 1.12-.2 2.2-.59 3.19-1.16A8.3 8.3 0 0 0 16.78 16c1.05-1.17 1.67-2.5 2.12-3.65h.19c1.14 0 1.85-.46 2.24-.85.26-.24.45-.53.59-.87l.08-.24-.19-.14m-17.96.99h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H3.85c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.43 0h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H6.28c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.47 0h1.75c.1 0 .17-.07.17-.16V9.5c0-.08-.06-.16-.17-.16H8.75c-.08 0-.15.07-.15.16v1.58c0 .09.06.16.15.16m2.44 0h1.77c.08 0 .15-.07.15-.16V9.5c0-.08-.06-.16-.15-.16h-1.77c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16M6.28 9h1.76c.08 0 .16-.09.16-.18V7.25c0-.09-.07-.16-.16-.16H6.28c-.09 0-.16.06-.16.16v1.57c.01.09.07.18.16.18m2.47 0h1.75c.1 0 .17-.09.17-.18V7.25c0-.09-.06-.16-.17-.16H8.75c-.08 0-.15.06-.15.16v1.57c0 .09.06.18.15.18m2.44 0h1.77c.08 0 .15-.09.15-.18V7.25c0-.09-.07-.16-.15-.16h-1.77c-.08 0-.15.06-.15.16v1.57c0 .09.07.18.15.18m0-2.28h1.77c.08 0 .15-.07.15-.16V5c0-.1-.07-.17-.15-.17h-1.77c-.08 0-.15.06-.15.17v1.56c0 .08.07.16.15.16m2.46 4.52h1.76c.09 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16h-1.76c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16"/></svg></span> Using Docker<a class="headerlink" href="#using-docker" title="Permanent link">&para;</a></h1>
+<h2 id="building-docker-image">Building docker image<a class="headerlink" href="#building-docker-image" title="Permanent link">&para;</a></h2>
+<p>If you want to build for the premium package just change the <code>https://raw.githubusercontent.com/osmedeus/osmedeus-base/master/install.sh</code> to the install URL that I gave you.</p>
+<div class="highlight"><pre><span></span><code>git clone --depth<span class="o">=</span><span class="m">1</span> git@github.com:osmedeus/osmedeus-base.git
+<span class="nb">cd</span> osmedeus-base/
+docker build -t j3ssie/osmedeus:latest .
+</code></pre></div>
+<h2 id="running-the-scan">Running the scan<a class="headerlink" href="#running-the-scan" title="Permanent link">&para;</a></h2>
+<figure>
+<p><img alt="crypto-donate" src="static/architecture/using-docker.png" /></p>
+</figure>
+<div class="highlight"><pre><span></span><code><span class="c1"># create a volume with name `osmws` first, if you want to keep workspace data</span>
+docker volume create osmws
 
-<span class="nt">routines</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">modules</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">your-module-here</span>
+<span class="c1"># run the scan</span>
+docker run -it --rm -v osmws:/root/.osmedeus/workspaces j3ssie/osmedeus:latest scan -f fast -t sample.com
+
+
+<span class="c1"># access the docker via bash if you want to see a raw result of the previous or current scan</span>
+docker ps
+
+docker <span class="nb">exec</span> -it &lt;container-id&gt; /bin/bash
+</code></pre></div>
+<h2 id="run-the-web-ui">Run the Web UI<a class="headerlink" href="#run-the-web-ui" title="Permanent link">&para;</a></h2>
+<p>Note that <code>osmedeus-scanner</code> is just the name, you can use anything you want</p>
+<div class="highlight"><pre><span></span><code><span class="c1">## Start the web server</span>
+docker run -d --name osmedeus-scanner -v osmws:/root/.osmedeus/workspaces -p <span class="m">8000</span>:8000 j3ssie/osmedeus:latest server
+
+<span class="c1">## grepping for password</span>
+docker <span class="nb">exec</span> -it osmedeus-scanner -v osmws:/root/.osmedeus/workspaces grep password /root/.osmedeus/config.yaml <span class="p">|</span> head -1
 </code></pre></div>
 
               
@@ -1134,7 +1140,7 @@ a,a:hover,a:click, a:visited{
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../use-your-own-wordlists/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Use Your Own wordlists" rel="prev">
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installation" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1143,20 +1149,20 @@ a,a:hover,a:click, a:visited{
               <span class="md-footer__direction">
                 Previous
               </span>
-              Use Your Own wordlists
+              Installation
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../references/scripts/" class="md-footer__link md-footer__link--next" aria-label="Next: Defination" rel="next">
+        <a href="../usage/" class="md-footer__link md-footer__link--next" aria-label="Next: Usage" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Defination
+              Usage
             </div>
           </div>
           <div class="md-footer__button md-icon">
