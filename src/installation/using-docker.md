@@ -15,7 +15,7 @@ docker build -t j3ssie/osmedeus:latest .
 ## Running the scan
 
 <figure markdown> 
-  ![crypto-donate](static/architecture/using-docker.png)
+  ![crypto-donate](/static/architecture/using-docker.png)
 </figure>
 
 ```shell
