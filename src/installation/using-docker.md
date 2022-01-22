@@ -4,7 +4,9 @@
 
 ## Building docker image
 
-If you want to build for the premium package just change the ` https://raw.githubusercontent.com/osmedeus/osmedeus-base/master/install.sh` to the install URL that I gave you.
+!!! question "How to Build docker file for the premium package?"
+    Just change the `https://raw.githubusercontent.com/osmedeus/osmedeus-base/master/install.sh` in `Dockerfile` to the install URL that I gave you.
+
 
 ```shell
 git clone --depth=1 git@github.com:osmedeus/osmedeus-base.git
