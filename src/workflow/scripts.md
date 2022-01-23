@@ -31,9 +31,8 @@ const (
 	CleanWebanalyze  = "CleanWebanalyze"
 	CleanArjun       = "CleanArjun"
 	GenNucleiReport  = "GenNucleiReport"
-	CleanJSONHttpx  = "CleanJSONHttpx"
+	CleanJSONHttpx   = "CleanJSONHttpx"
 )
-
 
 const (
 	ExecCmd           = "ExecCmd"
@@ -42,13 +41,14 @@ const (
 	ExecContain       = "ExecContain"
 )
 
-const (
-	Sleep      = "Sleep"
-	Exit       = "Exit"
-	CastToInt  = "CastToInt"
-	StripSlash = "StripSlash"
-	Printf     = "Printf"
-)
 
+const (
+    Sleep      = "Sleep"
+    Exit       = "Exit"
+    CastToInt  = "CastToInt"
+    StripSlash = "StripSlash"
+    Printf     = "Printf"
+    Cat        = "Cat"
+)
 
 ```

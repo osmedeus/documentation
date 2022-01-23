@@ -8,7 +8,7 @@
 
 ## What will you get?
 
-- [x] My **(private workflow)[#my-methodology]** which is fully tested on many site.
+- [x] My **[private workflow](#my-methodology)** which is fully tested on many site.
 - [x] Wordlists that I collected from many sources for a long time.
 - [x] Private third-party tools made the result a lot more accurate.
 - [x] My Private Jaeles Signatures.

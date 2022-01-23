@@ -804,7 +804,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../../references/scripts/" class="md-nav__link">
+      <a href="../../workflow/scripts/" class="md-nav__link">
         Defination
       </a>
     </li>
@@ -818,7 +818,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../../references/io-utils/" class="md-nav__link">
+      <a href="../../workflow/io-utils/" class="md-nav__link">
         IO Scripts
       </a>
     </li>
@@ -832,7 +832,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../../references/git-scripts/" class="md-nav__link">
+      <a href="../../workflow/git-scripts/" class="md-nav__link">
         Git Scripts
       </a>
     </li>
@@ -846,7 +846,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../../references/noti-scripts/" class="md-nav__link">
+      <a href="../../workflow/noti-scripts/" class="md-nav__link">
         Notification Scripts
       </a>
     </li>
@@ -1103,6 +1103,9 @@ client:
 <img alt="home" loading="lazy" src="/static/architecture/ui-home.png" /></p>
 <p><img alt="workspace" loading="lazy" src="/static/architecture/ui-workspace.png" /></p>
 <h2 id="view-results-in-your-workspace-via-static-path">View results in your workspace via static path<a class="headerlink" href="#view-results-in-your-workspace-via-static-path" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p><strong>NOTE</strong> that this static path doesn't require authentication. Be careful when you exposed this prefix to other people.</p>
+</div>
 <p>By default, the webserver will allow you to view your workspace folder as a static file via the endpoints <code>/random-prefix-here/workspaces/</code>.</p>
 <p>You can see the detail below.</p>
 <div class="highlight"><pre><span></span><code>cat ~/.osmedeus/config.yaml

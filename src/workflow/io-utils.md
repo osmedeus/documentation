@@ -2,7 +2,7 @@
 
 ```go
 const (
-	SortU          = "SortU"
+	SortU           = "SortU"
     SplitFile       = "SplitFile"
 	Append          = "Append"
 	Copy            = "Copy"

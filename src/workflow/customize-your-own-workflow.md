@@ -9,10 +9,13 @@ After the installation process is finished, your workflow will be stored at `~/o
 
 You can start tweaking the workflow right away by edit any command in module file at `~/osmedeus-base/workflow/general/` folder.
 
-For example you can edit the thread of ffuf command **[here](https://github.com/osmedeus/osmedeus-workflow/blob/main/general/dirbscan.yaml#L42)** on dirbscan module
+For example you can edit the thread of ffuf command **[here](https://github.com/osmedeus/osmedeus-workflow/blob/main/general/dirbscan.yaml#13)** on dirbscan module
 
 ![tweaking-module](/static/workflow/tweaking-module.png){ loading=lazy }
 
+You can also use the `force-params: true` in flow file to override the threads in module file like **[this flow](https://github.com/osmedeus/osmedeus-workflow/blob/main/gently-extensive.yaml)**
+
+![tweaking-module](/static/workflow/gently-workflow.png){ loading=lazy }
 
 ## 2. Fork another one from community workflow
 

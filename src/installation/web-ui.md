@@ -32,6 +32,9 @@ client:
 
 ## View results in your workspace via static path
 
+!!! warning ""
+    **NOTE** that this static path doesn't require authentication. Be careful when you exposed this prefix to other people.
+
 By default, the webserver will allow you to view your workspace folder as a static file via the endpoints `/random-prefix-here/workspaces/`.
 
 You can see the detail below.

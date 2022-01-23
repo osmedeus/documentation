@@ -59,5 +59,6 @@ By Default Amass config will be store at `~/osmedeus-base/data/configs/amass.ini
 
 ![intro](../static/noti/telegram-noti-2.png){ loading=lazy }
 
-You can now using **[Notification Scripts](references/noti-scripts/)** in your Workflow
+You can now using **[Notification Scripts](/workflow/noti-scripts/)** in your Workflow
+
 ***

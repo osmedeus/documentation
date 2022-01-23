@@ -99,10 +99,10 @@ nav:
     - Use Your Own wordlists: workflow/use-your-own-wordlists.md
     - Write Your Own Workflow: workflow/customize-your-own-workflow.md
     - Scripts:
-      - Defination: references/scripts.md
-      - IO Scripts: references/io-utils.md
-      - Git Scripts: references/git-scripts.md
-      - Notification Scripts: references/noti-scripts.md
+      - Defination: workflow/scripts.md
+      - IO Scripts: workflow/io-utils.md
+      - Git Scripts: workflow/git-scripts.md
+      - Notification Scripts: workflow/noti-scripts.md
   - Premium Package: 
     - What is Premium Package?: premium.md
     - Sponsor & Donation: donation.md

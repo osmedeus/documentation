@@ -754,7 +754,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../references/scripts/" class="md-nav__link">
+      <a href="../workflow/scripts/" class="md-nav__link">
         Defination
       </a>
     </li>
@@ -768,7 +768,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../references/io-utils/" class="md-nav__link">
+      <a href="../workflow/io-utils/" class="md-nav__link">
         IO Scripts
       </a>
     </li>
@@ -782,7 +782,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../references/git-scripts/" class="md-nav__link">
+      <a href="../workflow/git-scripts/" class="md-nav__link">
         Git Scripts
       </a>
     </li>
@@ -796,7 +796,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../references/noti-scripts/" class="md-nav__link">
+      <a href="../workflow/noti-scripts/" class="md-nav__link">
         Notification Scripts
       </a>
     </li>
@@ -1053,19 +1053,21 @@ a,a:hover,a:click, a:visited{
 </details>
 <details class="question" open="open"><summary>Is it support Windows?</summary><p>Unfortunately not, it was designed for Linux only. You will need to use Docker or VM if you really want to run Osmedeus on Windows.</p>
 </details>
-<details class="info" open="open"><summary>What are the donation tiers and how much should I donate to be eligible for the premium package?</summary><p>You can join the Patreon here www.patreon.com/j3ssie or here https://docs.osmedeus.org/donation/ to see a private post contains a download link for premium packages. 
+<details class="info" open="open"><summary>What are the donation tiers and how much should I donate to be eligible for the premium package?</summary><p>You can join the <a href="https://www.patreon.com/j3ssie"><strong>Patreon here</strong></a> or <a href="https://docs.osmedeus.org/donation/"><strong>here</strong></a> to see a private post contains a download link for premium packages. 
 After that you will be invited to backer channel to get direct support then</p>
 </details>
 <details class="question" open="open"><summary>What is the specification required to run Osmedeus?</summary><p>I recommend using VPS since it takes a lot of network bandwidth, the minimum spec would be 1 CPU 2GB RAM. You can of course increase or decrease the threads in the workflow to make it work in any spec</p>
 </details>
-<details class="info" open="open"><summary>Does the X scan run tool Y or not??</summary><ol>
+<details class="info" open="open"><summary>How can I update my Osmedeus?</summary><p>Just run the install script again and it will be updated.</p>
+</details>
+<details class="info" open="open"><summary>Does the X scan run tool Y or not?</summary><ol>
 <li>Read the flow and module files to see what a step actually run</li>
 <li>Seriously, read the flow and module files.</li>
 <li>Remember that you were warned twice about reading the flow and module files.</li>
 <li>Just search your tool command no the workflow folder.</li>
 </ol>
 </details>
-<details class="question" open="open"><summary>Where can I find result after the scan done?</summary><p>All of your scan data store at <code>~/.osmedeus/workspaces/</code></p>
+<details class="question" open="open"><summary>Where can I find the result after the scan done?</summary><p>All of your scan data store at <code>~/.osmedeus/workspaces/</code></p>
 </details>
 <details class="info" open="open"><summary>I got some error while running the scan?</summary><p><img alt="having-error-with-some-tools" loading="lazy" src="/static/faq/having-error-with-some-tools.png" />
 You can use <code>osmedeus health</code> command to check if the install is okay or not.</p>
@@ -1075,11 +1077,20 @@ You can use <code>osmedeus health</code> command to check if the install is okay
 </details>
 <details class="info" open="open"><summary>I have an awesome idea, How can I implement it in Osmedeus?</summary><p>You can Join <strong><a href="https://discord.gg/gy4SWhpaPU">Discord Server here</a></strong> or contact me via <strong><a href="https://twitter.com/OsmedeusEngine"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg></span> here</a></strong> to see if it worth to add.</p>
 </details>
-<details class="question" open="open"><summary>I ran the scan but there's no vulnerability found?</summary><p>It's simply that there's no vulnerability. It very depends on your Target.</p>
+<details class="question" open="open"><summary>I ran the scan but there's no vulnerability found?</summary><p>It's simply that there's no vulnerability. It very depends on your target.</p>
 </details>
-<details class="info" open="open"><summary>How can I update my premium package?</summary><p>You can Join <strong><a href="https://discord.gg/gy4SWhpaPU">Discord Server here</a></strong> to see if anyone can help</p>
+<details class="info" open="open"><summary>How can I update my premium package?</summary><p>Just run the install script for premium package again and it will be updated.</p>
 </details>
-<details class="question" open="open"><summary>Why was my scan stuck at portscan?</summary><p>It stay there because it get a sudo password prompt. Some special tools require <em>root</em> permission to run like <strong>nmap</strong>. Make sure you allow <strong>nmap</strong> can be run without sudo password prompt.</p>
+<details class="question" open="open"><summary>Why was my scan stuck at portscan?</summary><p>It will stay there because it got a sudo password prompt. Some special tools require <em>root</em> permission to run like <strong>nmap</strong>. Make sure you allow <strong>nmap</strong> can be run without sudo password prompt.</p>
+</details>
+<details class="question" open="open"><summary>Why was my scan portscan take so long?</summary><p>It's probably because cloud provider / home network limit your portscan or just simply your input is too big. Try to run with <code>--debug</code> then you can manually check with the raw command that the portscan module actually running.</p>
+</details>
+<details class="info" open="open"><summary>What is the difference between this flow to other flow?</summary><ol>
+<li>Read the flow files to see what difference in them.</li>
+<li>Seriously, Read the flow files.</li>
+<li>Remember that you were warned twice about reading read the flow files.</li>
+<li>Just use diff comparison of each flow file and see what difference field mean <a href="/workflow/"><strong>here</strong></a></li>
+</ol>
 </details>
 
               

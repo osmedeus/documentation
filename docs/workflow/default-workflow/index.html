@@ -804,7 +804,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../../references/scripts/" class="md-nav__link">
+      <a href="../scripts/" class="md-nav__link">
         Defination
       </a>
     </li>
@@ -818,7 +818,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../../references/io-utils/" class="md-nav__link">
+      <a href="../io-utils/" class="md-nav__link">
         IO Scripts
       </a>
     </li>
@@ -832,7 +832,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../../references/git-scripts/" class="md-nav__link">
+      <a href="../git-scripts/" class="md-nav__link">
         Git Scripts
       </a>
     </li>
@@ -846,7 +846,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../../references/noti-scripts/" class="md-nav__link">
+      <a href="../noti-scripts/" class="md-nav__link">
         Notification Scripts
       </a>
     </li>
@@ -1090,15 +1090,19 @@ a,a:hover,a:click, a:visited{
 <h2 id="list-all-flow-available">List all flow available<a class="headerlink" href="#list-all-flow-available" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>$ osmedeus scan -f <span class="o">[</span>flow-name<span class="o">]</span> -t example.com
 
-   general - run normal routine <span class="c1"># default workflow</span>
-      cidr - Scan <span class="k">for</span> CIDR File
-   domains - run normal routine but without subdomain scan
-      fast - run fast routine
-      slow - run slow routine
-      sync - Sync result based on git
-      <span class="nb">test</span> - testing workflow
-      urls - Scan <span class="k">for</span> List of URLs
-      vuln - run fast routine with vuln scan
+            general - run normal routine <span class="c1"># default workflow</span>
+               cidr - Scan <span class="k">for</span> CIDR File
+            domains - run normal routine but without subdomain scan
+          extensive - run extensive routine with more <span class="k">in</span>-depth module
+               fast - run fast routine
+   gently-extensive - run extensive routine but with very low threads
+     gently-general - run normal routine but with very low threads
+         quick-cidr - Scan <span class="k">for</span> CIDR File but focus on common HTTP Ports
+               sync - Sync result based on git
+               <span class="nb">test</span> - testing workflow
+               urls - Scan <span class="k">for</span> List of URLs
+      vuln-and-dirb - directly run on vuln scan and directory scan on list of domains
+               vuln - run fast routine with vuln scan
 </code></pre></div>
 
               
