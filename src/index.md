@@ -28,8 +28,8 @@ The Engine has successfully found a tremendous number of security vulnerabilitie
 ## Features
 
 :rocket: Significantly speed up your recon process <br />
-:white_check_mark: Easy to organize and optimize results  <br />
-:white_check_mark: Easy to customize your workflow  <br />
-:white_check_mark: Easy to integrate with new tools  <br />
+:white_check_mark: Organize your scan results  <br />
+:white_check_mark: Efficiently to customize and optimize your recon process  <br />
+:white_check_mark: Seamlessly integrate with new public and private tools  <br />
 :white_check_mark: Easy to scale across large number of targets  <br />
 :white_check_mark: Easy to synchronize the results across many places  <br />

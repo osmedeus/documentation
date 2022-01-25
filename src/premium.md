@@ -1,5 +1,7 @@
 # :diamond_shape_with_a_dot_inside: What is Premium Package?
 
+Premium Package is where you will get the access to exclusive and cutting-edge features.
+
 !!! tip ":material-diamond: How much does it cost?"
 
     You can start to join my **[Patreon](https://patreon.com/j3ssie)** starting at :heartpulse: **[5$ / month](https://patreon.com/j3ssie)** :heartpulse: to see a [private post](https://www.patreon.com/posts/60580071) contains a installation guide for the Premium package
