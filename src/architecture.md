@@ -1,7 +1,11 @@
 # :fontawesome-brands-codepen: Architecture
 
-
 ![intro](static/architecture/architecture.png){ loading=lazy }
+
+## Manifest
+
+The main philosophy of **Osmedeus** was never meant to be the that replace your tools or any other tools.
+It was designed to build a foundation with the capability and flexibility that allow you to make your recon system faster, cleaner and much more powerful.
 
 ## The structure of the Osmedeus
 

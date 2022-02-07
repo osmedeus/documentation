@@ -1099,6 +1099,9 @@ a,a:hover,a:click, a:visited{
 <div class="admonition help">
 <p>Note that this setup is <strong>Optional</strong>. You can still use the tool perfectly fine without it!</p>
 </div>
+<div class="admonition warning">
+<p>You should only store your token in the <code>osm-default.rc</code> file. Modify the <code>~/.osmedeus/config.yaml</code> will work but you will lose your token when running the config reload.</p>
+</div>
 <p>There are some places that tokens will store in Osmedeus below</p>
 <h3 id="main-token-file">Main token file<a class="headerlink" href="#main-token-file" title="Permanent link">&para;</a></h3>
 <p>By default all main tokens will be store at <code>~/osmedeus-base/token/osm-default.rc</code></p>
@@ -1138,7 +1141,6 @@ osmedeus config reload
 <p><img alt="intro" loading="lazy" src="../../static/noti/telegram-noti-1.png" /></p>
 <p><img alt="intro" loading="lazy" src="../../static/noti/telegram-noti-2.png" /></p>
 <p>You can now using <strong><a href="/workflow/noti-scripts/">Notification Scripts</a></strong> in your Workflow</p>
-<hr />
 
               
             </article>

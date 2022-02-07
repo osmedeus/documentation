@@ -127,8 +127,11 @@ osmedeus health git --debug
 
 ```shell
 # Provider Usage
-osmedeus provider build
-osmedeus provider build --token xxx --rebuild --ic
-osmedeus provider create --name 'sample'
-osmedeus provider health --debug
+  osmedeus provider wizard
+  osmedeus provider validate
+  osmedeus provider build --token xxx --rebuild --ic
+  osmedeus provider create --name 'sample'
+  osmedeus provider health --debug
+  osmedeus provider list
+  osmedeus provider delete --id 34317111 --id 34317112
 ```

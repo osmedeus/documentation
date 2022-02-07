@@ -43,13 +43,15 @@ osmedeus health
 
 ## [:material-docker: Using Docker](/installation/using-docker/)
 
+Pull the Docker image by running `docker pull j3ssie/osmedeus` and follow [**this page**](/installation/using-docker/) for in depth usage.
+
 ***
 
 ## :heavy_check_mark: Verify the installation process
 
 Just run the command `osmedeus health`. If you see the content like a image below then it's mean the installation process has been success.
 
-![intro](static/images/osm-install-verify.png){ loading=lazy }
+![intro](static/images/osm-health.png){ loading=lazy }
 
 !!! info "The installation process is still success if you see this message. It's just one of many :diamonds: Premium features :diamonds:"
 

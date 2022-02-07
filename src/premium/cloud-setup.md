@@ -2,76 +2,37 @@
 
 !!! info "This is only available in the premium package"
 
+## Here is how the scan looks like
 
-![cloud-setup](/static/premium/cloud-setup.png){ loading=lazy }
+![cloud-start-scan](/static/premium/cloud-scan-start.png){ loading=lazy }
 
-## 1. Create API Key denpend on your cloud provider
+
+## Setup with the wizard
+
+Just run `osmedeus provider wizard` then fill your API keys, press enter to use default value.
+
+
+![cloud-wizard](/static/premium/provider-wizard.png){ loading=lazy }
+
+You can also do some other actions to your provider with `osmedeus provider` command
+
+![cloud-utils](/static/premium/provider-utils.png){ loading=lazy }
+
+***
+
+## Manual Setup
+
+### 1. Create API Key denpend on your cloud provider
 
 First of all, you will need your token store in `~/osmedeus-base/cloud/provider.yaml` as the format below.
 
 > Currently, Osmedeus only support Digital Ocean and Linode provider.  
 
-#### Digital Ocean
-
-```yaml
-clouds:
-  - token: "your-api-token"
-    provider: "digitalocean"
-    name: "do-osmp"
-    default_image: "debian-10-x64"
-    size: "s-2vcpu-4gb"
-    region: "sfo3"
-
-```
-
-#### Linode
-
-```yaml
-clouds:
-  - token: "your-api-token"
-    provider: "linode"
-    name: "linode-osmp"
-    default_image: "linode/debian10"
-    # or can use --size 'g6-standard-1'
-    size: "g6-standard-1"
-    region: "us-east"
-```
-
-After changing the api key in `~/osmedeus-base/cloud/provider.yaml`.
-
-***
+![cloud-setup](/static/premium/cloud-manual-setup.png){ loading=lazy }
 
 
-???+ tip ""
-    The variables not load to the `config.yaml`. Try to logut & login to your vps again. OS Env variables getting weird sometimes
+### 2. Create both public and private SSH Key
 
-
-Changing the **CLOUD_BUILD_REPO** variables at `/root/osmedeus-base/token/cloud-variables.rc` to the URL that you were given to download the premium package.
-
-
-```shell
-source ~/.bashrc
-
-# reload config to osmedeus
-osmedeus config reload
-
-# and check if your config is loaded or not
-cat /root/.osmedeus/config.yaml
-
-...
-cloud:
-  build_repo: https://xxx/premium.sh
-  cloud_public_key: /root/osmedeus-base/cloud/ssh/cloud
-  cloud_secret_key: /root/osmedeus-base/cloud/ssh/cloud.privte
-...
-
-```
-
-***
-
-## 2. Create both public and private SSH Key
-
-![cloud-setup](/static/premium/cloud-healthcheck.png){ loading=lazy }
 
 ```shell
 # This will auto generate the SSH Key if it not found it yet
@@ -79,18 +40,9 @@ osmedeus health cloud --debug
 
 ```
 
-*** 
+### 3. Create a snapshot with the build command
 
-Default SSH Keys should be named like this
-
-```shell
-$ ls /root/osmedeus-base/cloud/ssh/cloud
-cloud cloud.privte
-```
-
-## 3. Create a snapshot with the build command
-
-This will need [packer v1.7.8](https://www.packer.io/downloads) installed on your machine.
+This will need [**packer v1.7.8**](https://www.packer.io/downloads) installed on your machine.
 
 ```shell
 osmedeus provider build --rebuild
@@ -105,16 +57,9 @@ the result of the command should look like this
 
 ***
 
-If you have any errors make sure to check the content of these first
+If you have any error make sure to check the content of these first
 
 - [x] your api key is in `~/osmedeus-base/cloud/provider.yaml`.
 - [x] run `osmedeus config reload` to make sure everything loaded.
-- [x] run `osmedeus config reload` to make sure everything loaded.
-- [x] run `cat /root/.osmedeus/config.yaml` and check the `cloud:` section to make sure everything loaded.
 - [x] `ls /root/osmedeus-base/cloud/ssh/cloud` have two SSH Keys.
 - [x] [packer v1.7.8](https://www.packer.io/downloads) is ready on your host machine.
-
-
-## 4. Now you're ready to start the scan
-
-![cloud-setup](/static/premium/cloud-scan-start.png){ loading=lazy }

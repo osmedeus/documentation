@@ -3,6 +3,10 @@
     Note that this setup is **Optional**. You can still use the tool perfectly fine without it!
 
 
+!!! warning ""
+    You should only store your token in the `osm-default.rc` file. Modify the `~/.osmedeus/config.yaml` will work but you will lose your token when running the config reload.
+
+
 There are some places that tokens will store in Osmedeus below
 
 ### Main token file
@@ -60,5 +64,3 @@ By Default Amass config will be store at `~/osmedeus-base/data/configs/amass.ini
 ![intro](../static/noti/telegram-noti-2.png){ loading=lazy }
 
 You can now using **[Notification Scripts](/workflow/noti-scripts/)** in your Workflow
-
-***

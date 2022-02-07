@@ -60,3 +60,9 @@
     2. Seriously, Read the flow files.
     3. Remember that you were warned twice about reading read the flow files.
     4. Just use diff comparison of each flow file and see what difference field mean [**here**](/workflow/)
+
+???+ question "Where should I put my token (Github, Shodan, etc)?"
+    All you need to do is follow [**this guide**](/installation/token/)
+
+???+ info "I found a new tool that pretty awesome. Can you add it in Osmedeus?"
+    Yes, just follow this page to added it to your workflow [**this guide**](/workflow/customize-your-own-workflow/).
