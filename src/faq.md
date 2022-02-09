@@ -16,9 +16,8 @@
 ???+ question "What is the specification required to run Osmedeus?"
     I recommend using VPS since it takes a lot of network bandwidth, the minimum spec would be 1 CPU 2GB RAM. You can of course increase or decrease the threads in the workflow to make it work in any spec
 
-
 ???+ info "How can I update my Osmedeus?"
-    Just run the install script again and it will be updated.
+    Just run the install script again and it will be updated. Run `rm -rf /root/osmedeus-base /root/.osmedeus` first if you want to have a fresh install.
 
 ???+ info "Does the X scan run tool Y or not?"
     1. Read the flow and module files to see what a step actually run

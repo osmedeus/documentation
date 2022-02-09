@@ -963,22 +963,22 @@ a,a:hover,a:click, a:visited{
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#follow-this-video-for-more-detail" class="md-nav__link">
-    Follow this video for more detail.
+  <a href="#1-modify-the-content-of-storages-config-file-at-osmedeus-basetokenstorages-aliasrc" class="md-nav__link">
+    1. Modify the content of Storages Config file at ~/osmedeus-base/token/storages-alias.rc
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#modify-the-content-of-storages-config-file" class="md-nav__link">
-    Modify the content of Storages Config file
+  <a href="#2-load-the-storages-variables-to-osmedeus-config" class="md-nav__link">
+    2. Load the storages variables to Osmedeus config
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#load-the-storages-variables-to-osmedeus-config" class="md-nav__link">
-    Load the storages variables to Osmedeus config
+  <a href="#3-reload-the-config-to-clone-repo" class="md-nav__link">
+    3. Reload the config to clone repo
   </a>
   
 </li>
@@ -1106,65 +1106,55 @@ a,a:hover,a:click, a:visited{
 
 <h1 id="git-setup-for-premium-package"><img alt="☁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2601.svg" title=":cloud:" /> Git Setup for Premium Package<a class="headerlink" href="#git-setup-for-premium-package" title="Permanent link">&para;</a></h1>
 <div class="admonition info">
-<p class="admonition-title">This is only available in the premium package</p>
+<p class="admonition-title">This feature is quite complex and only available in the premium package. Make sure you understand to tools and its concept of it first</p>
 </div>
-<h2 id="setup-storages">Setup Storages<a class="headerlink" href="#setup-storages" title="Permanent link">&para;</a></h2>
 <div class="admonition help">
 <p>Note that this setup is <strong>Optional</strong>. You can still use the tool perfectly fine without it!</p>
 </div>
-<h3 id="follow-this-video-for-more-detail">Follow <strong><a href="https://youtube.com/playlist?list=PLiifzv5MjIo3JqKeG5EXbSKDBlqa7v14P">this video</a></strong> for more detail.<a class="headerlink" href="#follow-this-video-for-more-detail" title="Permanent link">&para;</a></h3>
-<p>All of your storages setup will be store at <code>~/osmedeus-base/token/storages-alias.rc</code></p>
-<h3 id="modify-the-content-of-storages-config-file">Modify the content of Storages Config file<a class="headerlink" href="#modify-the-content-of-storages-config-file" title="Permanent link">&para;</a></h3>
-<p>Create your SSH key and add to a user have access to all of the repos below. Save that key as <code>~/.osmedeus/secret_key.private</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># for storages</span>
-<span class="nb">export</span> <span class="nv">SECRET_KEY</span><span class="o">=</span>~/.osmedeus/secret_key.private
+<h2 id="setup-storages">Setup Storages<a class="headerlink" href="#setup-storages" title="Permanent link">&para;</a></h2>
+<p>Check out <strong>the Private Playlist</strong> on the <strong>#backer</strong> channel in Discord to see a Video Instruction.</p>
+<h3 id="1-modify-the-content-of-storages-config-file-at-osmedeus-basetokenstorages-aliasrc">1. Modify the content of Storages Config file at <code>~/osmedeus-base/token/storages-alias.rc</code><a class="headerlink" href="#1-modify-the-content-of-storages-config-file-at-osmedeus-basetokenstorages-aliasrc" title="Permanent link">&para;</a></h3>
+<p>Please change your username and repository name from <code>not-j3ssie</code> is your gitlab username and <code>your-osmd-summary</code> is your Gitlab repo name.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">ENABLE_GIT_STORAGES</span><span class="o">=</span>TRUE
+<span class="nb">export</span> <span class="nv">GIT_SSH_COMMAND</span><span class="o">=</span><span class="s1">&#39;ssh -o StrictHostKeyChecking=no -i ~/.osmedeus/storages_key&#39;</span>
+
+<span class="c1"># for storages</span>
+<span class="nb">export</span> <span class="nv">SECRET_KEY</span><span class="o">=</span>~/.osmedeus/storages_key
+
 <span class="c1"># core one</span>
-<span class="nb">export</span> <span class="nv">SUMMARY_REPO</span><span class="o">=</span>git@gitlab.com:not-j3ssie/your-osmd-summary
-<span class="nb">export</span> <span class="nv">VULN_REPO</span><span class="o">=</span>git@gitlab.com:not-j3ssie/your-osmd-vuln
-<span class="nb">export</span> <span class="nv">PATHS_REPO</span><span class="o">=</span>git@gitlab.com:not-j3ssie/your-osmd-paths
-<span class="nb">export</span> <span class="nv">HTTP_REPO</span><span class="o">=</span>git@gitlab.com:not-j3ssie/your-osmd-http
+<span class="nb">export</span> <span class="nv">SUMMARY_REPO</span><span class="o">=</span>git@gitlab.com:your_gitlab_username/dosm-summary
+<span class="nb">export</span> <span class="nv">VULN_REPO</span><span class="o">=</span>git@gitlab.com:your_gitlab_username/dosm-vuln
+<span class="nb">export</span> <span class="nv">PATHS_REPO</span><span class="o">=</span>git@gitlab.com:your_gitlab_username/dosm-paths
+<span class="nb">export</span> <span class="nv">HTTP_REPO</span><span class="o">=</span>git@gitlab.com:your_gitlab_username/dosm-http
 
 <span class="c1"># mics one</span>
-<span class="nb">export</span> <span class="nv">ASSETS_REPO</span><span class="o">=</span>git@gitlab.com:not-j3ssie/your-osmd-assets
-<span class="nb">export</span> <span class="nv">PORTS_REPO</span><span class="o">=</span>git@gitlab.com:not-j3ssie/your-osmd-ports
-<span class="nb">export</span> <span class="nv">SUBDOMAIN_REPO</span><span class="o">=</span>git@gitlab.com:not-j3ssie/your-osmd-subdomain
+<span class="nb">export</span> <span class="nv">ASSETS_REPO</span><span class="o">=</span>git@gitlab.com:your_gitlab_username/dosm-assets
+<span class="nb">export</span> <span class="nv">PORTS_REPO</span><span class="o">=</span>git@gitlab.com:your_gitlab_username/dosm-ports
+<span class="nb">export</span> <span class="nv">MICS_REPO</span><span class="o">=</span>git@gitlab.com:your_gitlab_username/dosm-cloud
+<span class="nb">export</span> <span class="nv">SUBDOMAIN_REPO</span><span class="o">=</span>git@gitlab.com:your_gitlab_username/dosm-subdomain
 </code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">Please change your username and repository name</p>
-<p>Note that <code>not-j3ssie</code> is your gitlab username and <code>your-osmd-summary</code> is your Gitlab repo name.</p>
-</div>
+<h3 id="2-load-the-storages-variables-to-osmedeus-config">2. Load the storages variables to Osmedeus config<a class="headerlink" href="#2-load-the-storages-variables-to-osmedeus-config" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Run these commands below if you not using git before</p>
 <div class="highlight"><pre><span></span><code>git config --global user.name <span class="s2">&quot;your_gitlab_user&quot;</span>
 git config --global user.email <span class="s2">&quot;your_gitlab_uid@users.noreply.gitlab.com&quot;</span>
 </code></pre></div>
 </div>
-<hr />
-<h3 id="load-the-storages-variables-to-osmedeus-config">Load the storages variables to Osmedeus config<a class="headerlink" href="#load-the-storages-variables-to-osmedeus-config" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># or edit file storages-alias.rc</span>
-<span class="c1"># add osmedeus-base/storages-alias.rc to your ~/.bashrc file</span>
-<span class="nb">echo</span> <span class="s1">&#39;source $HOME/osmedeus-base/token/storages-alias.rc&#39;</span> &gt;&gt; ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bashrc
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s1">&#39;source $HOME/osmedeus-base/token/storages-alias.rc&#39;</span> &gt;&gt; ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bashrc
 
 <span class="c1"># reload config to osmedeus</span>
 osmedeus config reload
+</code></pre></div>
+<p>This will generate the public key at <code>/root/.osmedeus/storages_key.pub</code>. Please add this public key at to your gitlab profile.</p>
+<p>You can also check if the config was loaded or not </p>
+<div class="highlight"><pre><span></span><code>cat ~/.osmedeus/config.yaml  <span class="p">|</span> grep <span class="s1">&#39;secret_key&#39;</span>
+</code></pre></div>
+<h3 id="3-reload-the-config-to-clone-repo">3. Reload the config to clone repo<a class="headerlink" href="#3-reload-the-config-to-clone-repo" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">#reload config to cloning the repo</span>
 
-<span class="c1"># finally you can check the content of ~/.osmedeus/config.yaml file</span>
-<span class="c1"># to see if config actually change or not like below</span>
-cat ~/.osmedeus/config.yaml
+osmedeus config reload --debug
 
-<span class="c1"># The content should be showed like this</span>
-<span class="c1"># ...</span>
-<span class="c1"># storages:</span>
-<span class="c1"># ...</span>
-<span class="c1">#   summary_repo: git@gitlab.com:j3ssie/dosm-summary</span>
-<span class="c1">#   summary_storage: ~/.osmedeus/storages/summary</span>
-<span class="c1"># ...</span>
-
-<span class="c1"># now run the health check again it will clone the </span>
-osmedeus health
-
-
-<span class="c1"># then check out your storages folder at `~/.osmedeus/storages`</span>
+<span class="c1"># then check out your storages folder at `~/.osmedeus/storages/summary`</span>
 ls ~/.osmedeus/storages/summary/ 
 </code></pre></div>
 
