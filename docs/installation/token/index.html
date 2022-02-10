@@ -1138,9 +1138,28 @@ osmedeus config reload
 <p>Note that this setup is <strong>Optional</strong>. You can still use the tool perfectly fine without it!</p>
 </div>
 <h2 id="notification-with-telegram">Notification with Telegram<a class="headerlink" href="#notification-with-telegram" title="Permanent link">&para;</a></h2>
+<p>Follow <a href="https://core.telegram.org/bots/faq#how-do-i-create-a-bot"><strong>this guide</strong></a> to generate your API token and put it to the <code>~/osmedeus-base/token/osm-default.rc</code>.
+Then reload your config with the command <code>osmedeus config reload</code> to load the API key.</p>
 <p><img alt="intro" loading="lazy" src="../../static/noti/telegram-noti-1.png" /></p>
 <p><img alt="intro" loading="lazy" src="../../static/noti/telegram-noti-2.png" /></p>
-<p>You can now using <strong><a href="/workflow/noti-scripts/">Notification Scripts</a></strong> in your Workflow</p>
+<p>You can now using <strong><a href="/workflow/noti-scripts/">Notification Scripts</a></strong> in your Workflow. </p>
+<hr />
+<p>You can search in the workflow for <code>TeleMessByFile</code> script which will send the message as the content of a file to a specific channel.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Content of the file `~/osmedeus-base/token/osm-default.rc` is represent for specific channel name as below</span>
+<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_CHANNEL=-100XXXXX           --&gt;</span> <span class="c1">#general</span>
+<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_STATUS_CHANNEL=-100XXXXX    --&gt;</span> <span class="c1">#status</span>
+<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_REPORT_CHANNEL=-100XXXXX    --&gt;</span> <span class="c1">#report</span>
+<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_SENSITIVE_CHANNEL=-100XXXXX --&gt;</span> <span class="c1">#sensitive</span>
+<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_DIRB_CHANNEL=-100XXXXX      --&gt;</span> <span class="c1">#dirb</span>
+<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_MICS_CHANNEL=-100XXXXX      --&gt;</span> <span class="c1">#mics</span>
+
+<span class="c1"># this will send the file &#39;{{.Output}}/vuln/sensitive/sensitivescan-{{.Workspace}}-{{.TS}}.txt&#39; to the channel TELEGRAM_SENSITIVE_CHANNEL above</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TeleMessByFile(&quot;#sensitive&quot;, &quot;{{.Output}}/vuln/sensitive/sensitivescan-{{.Workspace}}-{{.TS}}.txt&quot;)</span>
+
+
+<span class="c1"># this will send the file &#39;Start the scan {{.Target}}&#39; to the channel TELEGRAM_MICS_CHANNEL above </span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TeleMess(&quot;#mics&quot;, &quot;Start the scan {{.Target}}&quot;)</span>
+</code></pre></div>
 
               
             </article>

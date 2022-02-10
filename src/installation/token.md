@@ -59,8 +59,34 @@ By Default Amass config will be store at `~/osmedeus-base/data/configs/amass.ini
 
 ## Notification with Telegram
 
+Follow [**this guide**](https://core.telegram.org/bots/faq#how-do-i-create-a-bot) to generate your API token and put it to the `~/osmedeus-base/token/osm-default.rc`.
+Then reload your config with the command `osmedeus config reload` to load the API key.
+
 ![intro](../static/noti/telegram-noti-1.png){ loading=lazy }
 
 ![intro](../static/noti/telegram-noti-2.png){ loading=lazy }
 
-You can now using **[Notification Scripts](/workflow/noti-scripts/)** in your Workflow
+You can now using **[Notification Scripts](/workflow/noti-scripts/)** in your Workflow. 
+
+***
+
+You can search in the workflow for `TeleMessByFile` script which will send the message as the content of a file to a specific channel.
+
+```yaml
+
+# Content of the file `~/osmedeus-base/token/osm-default.rc` is represent for specific channel name as below
+export TELEGRAM_CHANNEL=-100XXXXX           --> #general
+export TELEGRAM_STATUS_CHANNEL=-100XXXXX    --> #status
+export TELEGRAM_REPORT_CHANNEL=-100XXXXX    --> #report
+export TELEGRAM_SENSITIVE_CHANNEL=-100XXXXX --> #sensitive
+export TELEGRAM_DIRB_CHANNEL=-100XXXXX      --> #dirb
+export TELEGRAM_MICS_CHANNEL=-100XXXXX      --> #mics
+
+# this will send the file '{{.Output}}/vuln/sensitive/sensitivescan-{{.Workspace}}-{{.TS}}.txt' to the channel TELEGRAM_SENSITIVE_CHANNEL above
+- TeleMessByFile("#sensitive", "{{.Output}}/vuln/sensitive/sensitivescan-{{.Workspace}}-{{.TS}}.txt")
+
+
+# this will send the file 'Start the scan {{.Target}}' to the channel TELEGRAM_MICS_CHANNEL above 
+- TeleMess("#mics", "Start the scan {{.Target}}")
+
+```
