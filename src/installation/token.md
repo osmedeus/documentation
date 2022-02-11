@@ -70,7 +70,7 @@ You can now using **[Notification Scripts](/workflow/noti-scripts/)** in your Wo
 
 ***
 
-You can search in the workflow for `TeleMessByFile` script which will send the message as the content of a file to a specific channel.
+You can search `TeleMessByFile` script in the workflow which will send the message as the content of a file to a specific channel.
 
 ```yaml
 
