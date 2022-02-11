@@ -11,16 +11,16 @@
 
 ## Showcases
 
-The Engine has successfully found a tremendous number of security vulnerabilities in many big companies out there with **:fire: [My reconnaissance methodlogy](/premium/#my-methodology) :fire:**
+The Engine has successfully found a tremendous number of security vulnerabilities in many big companies out there with **:fire: [My reconnaissance methodology](/premium/#my-methodology) :fire:**
 
 ![hof](static/images/hall-of-fame.png){ loading=lazy }
 
 
 ## Gettting Started
 
-!!! info "[Click here to know how to Installtion Osmedeus](/installation/)"
+!!! info "[Click here to know how to Installation Osmedeus](/installation/)"
 
-!!! question "[Learn more about the Architechture of Osmedeus](/architecture/)"
+!!! question "[Learn more about the Architecture of Osmedeus](/architecture/)"
 
 !!! example "[Demo Video can be found here](https://www.youtube.com/playlist?list=PLiifzv5MjIo3JqKeG5EXbSKDBlqa7v14P)"
 
