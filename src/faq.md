@@ -65,3 +65,8 @@
 
 ???+ info "I found a new tool that pretty awesome. Can you add it in Osmedeus?"
     Yes, just follow this page to added it to your workflow [**this guide**](/workflow/customize-your-own-workflow/).
+
+???+ question "Why Osmedeus didn't found any vulnerability even when I scan it with the intentionally vulnerable app?"
+    Again it very much depends on your target. Osmedeus is really shine on large scope targets not the single intentionally vulnerable webapp. Just scan some random VDP and you will see the result.
+    The reason it won't find any vulnerability on the intentionally vulnerable app is the vulnscan module won't support it. But you're always welcome to custom the workflow to do so.
+
