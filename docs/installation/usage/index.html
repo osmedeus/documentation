@@ -282,11 +282,18 @@ a,a:hover,a:click, a:visited{
   
   
   
+    
+
+  
+  
+  
     <li class="md-tabs__item">
       <a href="../../workflow/" class="md-tabs__link">
         Workflow
       </a>
     </li>
+  
+
   
 
       
@@ -549,6 +556,13 @@ a,a:hover,a:click, a:visited{
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#report-show-report-of-existing-workspace" class="md-nav__link">
+    report - Show report of existing workspace
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -696,14 +710,6 @@ a,a:hover,a:click, a:visited{
         
           
         
-          
-        
-          
-        
-          
-        
-          
-        
       
       
         <label class="md-nav__link" for="__nav_4">
@@ -723,9 +729,47 @@ a,a:hover,a:click, a:visited{
   
   
   
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" data-md-state="indeterminate" type="checkbox" id="__nav_4_1" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          Understand the Workflow
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Understand the Workflow" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Understand the Workflow
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../workflow/" class="md-nav__link">
-        Understand the Workflow
+        Overview
       </a>
     </li>
   
@@ -774,29 +818,8 @@ a,a:hover,a:click, a:visited{
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../workflow/use-your-own-wordlists/" class="md-nav__link">
-        Use Your Own wordlists
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../workflow/customize-your-own-workflow/" class="md-nav__link">
-        Write Your Own Workflow
-      </a>
+        </ul>
+      </nav>
     </li>
   
 
@@ -813,7 +836,76 @@ a,a:hover,a:click, a:visited{
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" data-md-state="indeterminate" type="checkbox" id="__nav_4_7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" data-md-state="indeterminate" type="checkbox" id="__nav_4_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Write Your Own Workflow
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Write Your Own Workflow" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Write Your Own Workflow
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/customize-your-own-workflow/" class="md-nav__link">
+        Customize your own Workflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/use-your-own-wordlists/" class="md-nav__link">
+        Use Your Own wordlists
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" data-md-state="indeterminate" type="checkbox" id="__nav_4_3" checked>
       
       
       
@@ -828,13 +920,13 @@ a,a:hover,a:click, a:visited{
         
       
       
-        <label class="md-nav__link" for="__nav_4_7">
+        <label class="md-nav__link" for="__nav_4_3">
           Scripts
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Scripts" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_7">
+        <label class="md-nav__title" for="__nav_4_3">
           <span class="md-nav__icon md-icon"></span>
           Scripts
         </label>
@@ -1096,7 +1188,7 @@ a,a:hover,a:click, a:visited{
   
     <li class="md-nav__item">
       <a href="../../reference/" class="md-nav__link">
-        References
+        Mentions
       </a>
     </li>
   
@@ -1138,6 +1230,7 @@ a,a:hover,a:click, a:visited{
   osmedeus scan -m /path/to/module.yaml -t <span class="o">[</span>target<span class="o">]</span> --params <span class="s1">&#39;port=9200&#39;</span>
   osmedeus scan -m /path/to/module.yaml -t <span class="o">[</span>target<span class="o">]</span> -l /tmp/log.log
   cat targets <span class="p">|</span> osmedeus scan -f sample
+  osmedeus scan --chunk --chunk-part <span class="m">40</span> -c <span class="m">2</span> -f cidr -t list-of-cidr.txt
 
 <span class="c1"># Cloud Usage:</span>
   osmedeus provider build
@@ -1236,6 +1329,13 @@ osmedeus health git --debug
   osmedeus provider health --debug
   osmedeus provider list
   osmedeus provider delete --id <span class="m">34317111</span> --id <span class="m">34317112</span>
+</code></pre></div>
+<h2 id="report-show-report-of-existing-workspace">report - Show report of existing workspace<a class="headerlink" href="#report-show-report-of-existing-workspace" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Report Usage</span>
+  osmedeus report list
+  osmedeus report view --raw -t target.com
+  osmedeus report view --static -t target.com
+  osmedeus report view --raw --static --ip &lt;your-public-ip&gt; -t target.com
 </code></pre></div>
 
               

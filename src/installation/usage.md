@@ -14,6 +14,7 @@
   osmedeus scan -m /path/to/module.yaml -t [target] --params 'port=9200'
   osmedeus scan -m /path/to/module.yaml -t [target] -l /tmp/log.log
   cat targets | osmedeus scan -f sample
+  osmedeus scan --chunk --chunk-part 40 -c 2 -f cidr -t list-of-cidr.txt
 
 # Cloud Usage:
   osmedeus provider build
@@ -134,4 +135,15 @@ osmedeus health git --debug
   osmedeus provider health --debug
   osmedeus provider list
   osmedeus provider delete --id 34317111 --id 34317112
+```
+
+
+## report - Show report of existing workspace
+
+```shell
+# Report Usage
+  osmedeus report list
+  osmedeus report view --raw -t target.com
+  osmedeus report view --static -t target.com
+  osmedeus report view --raw --static --ip <your-public-ip> -t target.com
 ```

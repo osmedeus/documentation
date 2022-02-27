@@ -68,5 +68,7 @@
 
 ???+ question "Why Osmedeus didn't found any vulnerability even when I scan it with the intentionally vulnerable app?"
     Again it very much depends on your target. Osmedeus is really shine on large scope targets not the single intentionally vulnerable webapp. Just scan some random VDP and you will see the result.
-    The reason it won't find any vulnerability on the intentionally vulnerable app is the vulnscan module won't support it. But you're always welcome to custom the workflow to do so.
+    The reason it won't find any vulnerability on the intentionally vulnerable app is the vulnscan module won't support it. But you're always welcome to customize the workflow to do so.
 
+???+ info "Is it support Proxy?"
+    Nope, natively it doesn't support proxy. But since the design of the tool is running other 3rd tools and a lot of them doesn't support proxy by default. I've already consider proxychains but it's make it extremely slow and broke a lot of thing.

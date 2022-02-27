@@ -92,12 +92,14 @@ nav:
     - Overview: architecture.md
     - Detail Structure of Osmedeus: structure.md
   - Workflow: 
-    - Understand the Workflow: workflow.md
-    - Default Community workflow: workflow/default-workflow.md
-    - Parameters: workflow/parameters.md
-    - Other Fields: workflow/other-fields.md
-    - Use Your Own wordlists: workflow/use-your-own-wordlists.md
-    - Write Your Own Workflow: workflow/customize-your-own-workflow.md
+    - Understand the Workflow:
+      - Overview: workflow.md
+      - Default Community workflow: workflow/default-workflow.md
+      - Parameters: workflow/parameters.md
+      - Other Fields: workflow/other-fields.md
+    - Write Your Own Workflow:
+      - Customize your own Workflow: workflow/customize-your-own-workflow.md
+      - Use Your Own wordlists: workflow/use-your-own-wordlists.md
     - Scripts:
       - Defination: workflow/scripts.md
       - IO Scripts: workflow/io-utils.md
@@ -112,5 +114,5 @@ nav:
   - References & FAQ: 
     - Frequently Asked Questions: faq.md
     - Common Issues: issue.md
-    - References: reference.md
+    - Mentions: reference.md
 
