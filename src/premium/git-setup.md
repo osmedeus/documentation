@@ -11,7 +11,7 @@ Check out **the Private Playlist** on the **#backer** channel in Discord to see 
 
 ### 1. Modify the content of Storages Config file at `~/osmedeus-base/token/storages-alias.rc`
 
-Please change your username and repository name from `not-j3ssie` is your gitlab username and `your-osmd-summary` is your Gitlab repo name.
+Please change your username and repository name from `your_gitlab_username` is your gitlab username and `dosm-*` are your Gitlab repo names.
 
 
 ```shell
