@@ -23,7 +23,7 @@
     1. Read the flow and module files to see what a step actually run
     2. Seriously, read the flow and module files.
     3. Remember that you were warned twice about reading the flow and module files.
-    4. Just search your tool command no the workflow folder.
+    4. Just search your tool command in the workflow folder.
 
 ???+ question "Where can I find the result after the scan done?"
     All of your scan data store at `~/.osmedeus/workspaces/`
@@ -64,11 +64,11 @@
     All you need to do is follow [**this guide**](/installation/token/)
 
 ???+ info "I found a new tool that pretty awesome. Can you add it in Osmedeus?"
-    Yes, just follow this page to added it to your workflow [**this guide**](/workflow/customize-your-own-workflow/).
+    Yes, just follow [**this guide**](/workflow/customize-your-own-workflow/) to add it to your workflow.
 
 ???+ question "Why Osmedeus didn't found any vulnerability even when I scan it with the intentionally vulnerable app?"
     Again it very much depends on your target. Osmedeus is really shine on large scope targets not the single intentionally vulnerable webapp. Just scan some random VDP and you will see the result.
     The reason it won't find any vulnerability on the intentionally vulnerable app is the vulnscan module won't support it. But you're always welcome to customize the workflow to do so.
 
 ???+ info "Is it support Proxy?"
-    Nope, natively it doesn't support proxy. But since the design of the tool is running other 3rd tools and a lot of them doesn't support proxy by default. I've already consider proxychains but it's make it extremely slow and broke a lot of thing.
+    Nope, natively it doesn't support proxy. But since the design of the tool is running other 3rd tools and a lot of them doesn't support proxy by default. I've already consider **proxychains** but it's make it extremely slow and broke a lot of thing.
