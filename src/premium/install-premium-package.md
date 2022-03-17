@@ -6,3 +6,5 @@ It's very simple. Once your donation is completed. Send me an DM on **[Discord](
 
 
 ## What does the install script actually do?
+
+Well just look at the content of the script.

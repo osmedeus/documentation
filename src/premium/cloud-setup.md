@@ -2,6 +2,8 @@
 
 !!! info "This is only available in the premium package"
 
+!!! quote "Currently only these providers are supported: DigitalOcean, Linode"
+
 ## Here is how the scan looks like
 
 ![cloud-start-scan](/static/premium/cloud-scan-start.png){ loading=lazy }
