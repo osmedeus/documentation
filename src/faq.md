@@ -3,11 +3,17 @@
 ???+ question "How to setup the Osmedeus?"
     Please check out **[installation guide here](/installation/)**
 
-???+ success "I love the Osmedeus community. Is there any premium subscription?"
-    Please check out the **[premium package here](/premium/)**
+???+ success "I love the Osmedeus Community version. Is there any premium subscription?"
+    Please check out **[the premium package here](/premium/)**
+
+???+ info "What will you get from the Osmedeus Premium Package?"
+    You can see what included in the package in **[the premium package page](/premium/)**
 
 ???+ question "Is it support Windows?"
-    Unfortunately not, it was designed for Linux only. You will need to use Docker or VM if you really want to run Osmedeus on Windows.
+    Unfortunately not, it was designed for Linux only. You will need to use Docker, WSL or a VM if you really want to run Osmedeus on Windows.
+
+???+ info "I got some error while install Osmedeus on my machine. How can I fix it?"
+    Maybe run `sudo su` first and then run `rm -rf ~/osmedeus-base ~/.osmedeus` and then run the install script again to have fresh installation.
 
 ???+ info "What are the donation tiers and how much should I donate to be eligible for the premium package?"
     You can join the [**Patreon here**](https://www.patreon.com/j3ssie) or [**here**](https://docs.osmedeus.org/donation/) to see a private post contains a download link for premium packages. 
@@ -18,12 +24,6 @@
 
 ???+ info "How can I update my Osmedeus?"
     Just run the install script again and it will be updated. Run `rm -rf /root/osmedeus-base /root/.osmedeus` first if you want to have a fresh install.
-
-???+ info "Does the X scan run tool Y or not?"
-    1. Read the flow and module files to see what a step actually run
-    2. Seriously, read the flow and module files.
-    3. Remember that you were warned twice about reading the flow and module files.
-    4. Just search your tool command in the workflow folder.
 
 ???+ question "Where can I find the result after the scan done?"
     All of your scan data store at `~/.osmedeus/workspaces/`
@@ -43,10 +43,8 @@
 ???+ question "I ran the scan but there's no vulnerability found?"
     It's simply that there's no vulnerability. It very depends on your target.
 
-
 ???+ info "How can I update my premium package?"
     Just run the install script for premium package again and it will be updated.
-
 
 ???+ question "Why was my scan stuck at portscan?"
     It will stay there because it got a sudo password prompt. Some special tools require *root* permission to run like **nmap**. Make sure you allow **nmap** can be run without sudo password prompt.
@@ -61,14 +59,32 @@
     4. Just use diff comparison of each flow file and see what difference field mean [**here**](/workflow/)
 
 ???+ question "Where should I put my token (Github, Shodan, etc)?"
-    All you need to do is follow [**this guide**](/installation/token/)
+    All you need to do is follow [**this guide to setup the token**](/installation/token/)
 
-???+ info "I found a new tool that pretty awesome. Can you add it in Osmedeus?"
+???+ info "I found a new tool that is pretty awesome. Can you add it in Osmedeus?"
     Yes, just follow [**this guide**](/workflow/customize-your-own-workflow/) to add it to your workflow.
 
-???+ question "Why Osmedeus didn't found any vulnerability even when I scan it with the intentionally vulnerable app?"
-    Again it very much depends on your target. Osmedeus is really shine on large scope targets not the single intentionally vulnerable webapp. Just scan some random VDP and you will see the result.
-    The reason it won't find any vulnerability on the intentionally vulnerable app is the vulnscan module won't support it. But you're always welcome to customize the workflow to do so.
+???+ question "Why Osmedeus didn't find any vulnerability even when I scan it with the intentionally vulnerable app?"
+    Again it very much depends on your target. Osmedeus really shine on large scope targets, not the single intentionally vulnerable web app. Just scan some random VDP then you will see the result.
+    The reason it won't find any vulnerability on the intentionally vulnerable app is the **vulnscan** module won't support it. But you're always welcome to customize the workflow to do so.
 
 ???+ info "Is it support Proxy?"
-    Nope, natively it doesn't support proxy. But since the design of the tool is running other 3rd tools and a lot of them doesn't support proxy by default. I've already consider **proxychains** but it's make it extremely slow and broke a lot of thing.
+    Nope, natively it doesn't support proxy. But since the design of the tool is running other 3rd tools and a lot of them doesn't support proxy by default. I've already consider **proxychains** but it makes it extremely slow and broke a lot of things.
+
+???+ question "I run the cloud scan with `-c 1` why it's only spin up 1 vps?"
+    It's only ran in 1 vps because you only have 1 target run like `osmedeus cloud -c 2 -f general -t sample.com -t another.com` will run 2 vps.
+
+???+ info "I accidently terminated the scan. How can I restart or resume it?"
+    Just run the command again to start a fresh scan or run the same command with `--resume` flag to resume the scan if any reports file exist.
+
+???+ question "I stop the scan with `Ctrl+C` in the middle of it. Is it possible to create a summary report?"
+    Yes, you can the `osmedeus report` command will check the runtime file in workspace and will show what store in there.
+
+???+ info "Why you use multiple tools for the same purpose in your workflow?"
+    I choose some tools over the others because they gave more accurate results. You can always manually test to see the result then decide which one is better. Of course, you are always welcome to customize your workflow to do so.
+
+???+ question "Does the X scan run tool Y or not?"
+    1. Read the flow and module files to see what a step actually run
+    2. Seriously, read the flow and module files.
+    3. Remember that you were warned twice about reading the flow and module files.
+    4. Just search your tool command in the workflow folder.

@@ -1,23 +1,14 @@
 # :diamond_shape_with_a_dot_inside: What is Premium Package?
 
-Premium Package is where you will get the access to exclusive and cutting-edge features.
-
 !!! tip ":material-diamond: How much does it cost?"
 
     You can start to join my **[Patreon](https://patreon.com/j3ssie)** starting at :heartpulse: **[5$ / month](https://patreon.com/j3ssie)** :heartpulse: to see a [private post](https://www.patreon.com/posts/60580071) contains a installation guide for the Premium package
 
     You can choose some  **[:small_blue_diamond: donation methods here :small_blue_diamond:](/donation/)** to get the premium package with minimum **5$**
 
-## What will you get?
+![details](static/premium/premium-package.gif){ loading=lazy }
 
-- [x] My **[private workflow](#my-methodology)** which is fully tested on many site.
-- [x] Wordlists that I collected from many sources for a long time.
-- [x] Private third-party tools made the result a lot more accurate.
-- [x] My Private Jaeles Signatures.
-
-![details](static/architecture/osmedeus-details-folder.png){ loading=lazy }
-
-## My methodology
+## Anatomy of the private workflow (my methodology)
 
 ![my-methodlogy](static/premium/my-methodlogy.png){ loading=lazy }
 
@@ -31,3 +22,6 @@ Even though you can use Git Storages by writing your workflow. The premium workf
 
 ![cloud-scan-do](static/premium/cloud-scan-do.jpeg){ loading=lazy }
 
+## Details structure of the package
+
+![details](static/architecture/osmedeus-details-folder.png){ loading=lazy }

@@ -287,7 +287,7 @@ a,a:hover,a:click, a:visited{
   
     <li class="md-tabs__item">
       <a href="../workflow/" class="md-tabs__link">
-        Workflow
+        Write Your Own Workflow
       </a>
     </li>
   
@@ -417,6 +417,8 @@ a,a:hover,a:click, a:visited{
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2">
@@ -453,6 +455,20 @@ a,a:hover,a:click, a:visited{
     <li class="md-nav__item">
       <a href="../installation/using-docker/" class="md-nav__link">
         Using Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/practical-usage/" class="md-nav__link">
+        Practical Usage
       </a>
     </li>
   
@@ -614,14 +630,14 @@ a,a:hover,a:click, a:visited{
       
       
         <label class="md-nav__link" for="__nav_4">
-          Workflow
+          Write Your Own Workflow
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Workflow" data-md-level="1">
+      <nav class="md-nav" aria-label="Write Your Own Workflow" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
-          Workflow
+          Write Your Own Workflow
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1134,9 +1150,13 @@ a,a:hover,a:click, a:visited{
 <h1 id="frequently-asked-questions"><img alt="❓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2753.svg" title=":question:" /> Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permanent link">&para;</a></h1>
 <details class="question" open="open"><summary>How to setup the Osmedeus?</summary><p>Please check out <strong><a href="/installation/">installation guide here</a></strong></p>
 </details>
-<details class="success" open="open"><summary>I love the Osmedeus community. Is there any premium subscription?</summary><p>Please check out the <strong><a href="/premium/">premium package here</a></strong></p>
+<details class="success" open="open"><summary>I love the Osmedeus Community version. Is there any premium subscription?</summary><p>Please check out <strong><a href="/premium/">the premium package here</a></strong></p>
 </details>
-<details class="question" open="open"><summary>Is it support Windows?</summary><p>Unfortunately not, it was designed for Linux only. You will need to use Docker or VM if you really want to run Osmedeus on Windows.</p>
+<details class="info" open="open"><summary>What will you get from the Osmedeus Premium Package?</summary><p>You can see what included in the package in <strong><a href="/premium/">the premium package page</a></strong></p>
+</details>
+<details class="question" open="open"><summary>Is it support Windows?</summary><p>Unfortunately not, it was designed for Linux only. You will need to use Docker, WSL or a VM if you really want to run Osmedeus on Windows.</p>
+</details>
+<details class="info" open="open"><summary>I got some error while install Osmedeus on my machine. How can I fix it?</summary><p>Maybe run <code>sudo su</code> first and then run <code>rm -rf ~/osmedeus-base ~/.osmedeus</code> and then run the install script again to have fresh installation.</p>
 </details>
 <details class="info" open="open"><summary>What are the donation tiers and how much should I donate to be eligible for the premium package?</summary><p>You can join the <a href="https://www.patreon.com/j3ssie"><strong>Patreon here</strong></a> or <a href="https://docs.osmedeus.org/donation/"><strong>here</strong></a> to see a private post contains a download link for premium packages. 
 After that you will be invited to backer channel to get direct support then</p>
@@ -1144,13 +1164,6 @@ After that you will be invited to backer channel to get direct support then</p>
 <details class="question" open="open"><summary>What is the specification required to run Osmedeus?</summary><p>I recommend using VPS since it takes a lot of network bandwidth, the minimum spec would be 1 CPU 2GB RAM. You can of course increase or decrease the threads in the workflow to make it work in any spec</p>
 </details>
 <details class="info" open="open"><summary>How can I update my Osmedeus?</summary><p>Just run the install script again and it will be updated. Run <code>rm -rf /root/osmedeus-base /root/.osmedeus</code> first if you want to have a fresh install.</p>
-</details>
-<details class="info" open="open"><summary>Does the X scan run tool Y or not?</summary><ol>
-<li>Read the flow and module files to see what a step actually run</li>
-<li>Seriously, read the flow and module files.</li>
-<li>Remember that you were warned twice about reading the flow and module files.</li>
-<li>Just search your tool command in the workflow folder.</li>
-</ol>
 </details>
 <details class="question" open="open"><summary>Where can I find the result after the scan done?</summary><p>All of your scan data store at <code>~/.osmedeus/workspaces/</code></p>
 </details>
@@ -1177,14 +1190,29 @@ You can use <code>osmedeus health</code> command to check if the install is okay
 <li>Just use diff comparison of each flow file and see what difference field mean <a href="/workflow/"><strong>here</strong></a></li>
 </ol>
 </details>
-<details class="question" open="open"><summary>Where should I put my token (Github, Shodan, etc)?</summary><p>All you need to do is follow <a href="/installation/token/"><strong>this guide</strong></a></p>
+<details class="question" open="open"><summary>Where should I put my token (Github, Shodan, etc)?</summary><p>All you need to do is follow <a href="/installation/token/"><strong>this guide to setup the token</strong></a></p>
 </details>
-<details class="info" open="open"><summary>I found a new tool that pretty awesome. Can you add it in Osmedeus?</summary><p>Yes, just follow <a href="/workflow/customize-your-own-workflow/"><strong>this guide</strong></a> to add it to your workflow.</p>
+<details class="info" open="open"><summary>I found a new tool that is pretty awesome. Can you add it in Osmedeus?</summary><p>Yes, just follow <a href="/workflow/customize-your-own-workflow/"><strong>this guide</strong></a> to add it to your workflow.</p>
 </details>
-<details class="question" open="open"><summary>Why Osmedeus didn't found any vulnerability even when I scan it with the intentionally vulnerable app?</summary><p>Again it very much depends on your target. Osmedeus is really shine on large scope targets not the single intentionally vulnerable webapp. Just scan some random VDP and you will see the result.
-The reason it won't find any vulnerability on the intentionally vulnerable app is the vulnscan module won't support it. But you're always welcome to customize the workflow to do so.</p>
+<details class="question" open="open"><summary>Why Osmedeus didn't find any vulnerability even when I scan it with the intentionally vulnerable app?</summary><p>Again it very much depends on your target. Osmedeus really shine on large scope targets, not the single intentionally vulnerable web app. Just scan some random VDP then you will see the result.
+The reason it won't find any vulnerability on the intentionally vulnerable app is the <strong>vulnscan</strong> module won't support it. But you're always welcome to customize the workflow to do so.</p>
 </details>
-<details class="info" open="open"><summary>Is it support Proxy?</summary><p>Nope, natively it doesn't support proxy. But since the design of the tool is running other 3rd tools and a lot of them doesn't support proxy by default. I've already consider <strong>proxychains</strong> but it's make it extremely slow and broke a lot of thing.</p>
+<details class="info" open="open"><summary>Is it support Proxy?</summary><p>Nope, natively it doesn't support proxy. But since the design of the tool is running other 3rd tools and a lot of them doesn't support proxy by default. I've already consider <strong>proxychains</strong> but it makes it extremely slow and broke a lot of things.</p>
+</details>
+<details class="question" open="open"><summary>I run the cloud scan with <code>-c 1</code> why it's only spin up 1 vps?</summary><p>It's only ran in 1 vps because you only have 1 target run like <code>osmedeus cloud -c 2 -f general -t sample.com -t another.com</code> will run 2 vps.</p>
+</details>
+<details class="info" open="open"><summary>I accidently terminated the scan. How can I restart or resume it?</summary><p>Just run the command again to start a fresh scan or run the same command with <code>--resume</code> flag to resume the scan if any reports file exist.</p>
+</details>
+<details class="question" open="open"><summary>I stop the scan with <code>Ctrl+C</code> in the middle of it. Is it possible to create a summary report?</summary><p>Yes, you can the <code>osmedeus report</code> command will check the runtime file in workspace and will show what store in there.</p>
+</details>
+<details class="info" open="open"><summary>Why you use multiple tools for the same purpose in your workflow?</summary><p>I choose some tools over the others because they gave more accurate results. You can always manually test to see the result then decide which one is better. Of course, you are always welcome to customize your workflow to do so.</p>
+</details>
+<details class="question" open="open"><summary>Does the X scan run tool Y or not?</summary><ol>
+<li>Read the flow and module files to see what a step actually run</li>
+<li>Seriously, read the flow and module files.</li>
+<li>Remember that you were warned twice about reading the flow and module files.</li>
+<li>Just search your tool command in the workflow folder.</li>
+</ol>
 </details>
 
               

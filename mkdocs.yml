@@ -84,6 +84,7 @@ nav:
   - Getting Started:
     - Installation: installation.md
     - Using Docker: installation/using-docker.md
+    - Practical Usage: installation/practical-usage.md
     - Usage: installation/usage.md
     - Web UI (Experimental): installation/web-ui.md
     - Setup Token & API Key: installation/token.md
@@ -91,7 +92,7 @@ nav:
   - Architecture:
     - Overview: architecture.md
     - Detail Structure of Osmedeus: structure.md
-  - Workflow: 
+  - Write Your Own Workflow: 
     - Understand the Workflow:
       - Overview: workflow.md
       - Default Community workflow: workflow/default-workflow.md

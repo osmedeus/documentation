@@ -1,4 +1,4 @@
-# Usage
+# Usage - Full usage message
 
 <figure markdown> 
   ![Usage](/static/images/usage.png)
