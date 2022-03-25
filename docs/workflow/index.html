@@ -723,18 +723,18 @@ a,a:hover,a:click, a:visited{
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#flow" class="md-nav__link">
-    Flow
+  <a href="#example-flow" class="md-nav__link">
+    Example Flow
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#module" class="md-nav__link">
-    Module
+  <a href="#example-modules" class="md-nav__link">
+    Example Modules
   </a>
   
-    <nav class="md-nav" aria-label="Module">
+    <nav class="md-nav" aria-label="Example Modules">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1225,7 +1225,7 @@ a,a:hover,a:click, a:visited{
 <li><strong>Flow</strong> contains multiple module and also define order how to run these modules.</li>
 <li><strong>Step</strong> is smallest part of the Osmedeus routine.</li>
 </ul>
-<h2 id="flow">Flow<a class="headerlink" href="#flow" title="Permanent link">&para;</a></h2>
+<h2 id="example-flow">Example Flow<a class="headerlink" href="#example-flow" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">general</span>
 <span class="nt">desc</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">run normal routine</span>
 <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">general</span> <span class="c1"># this is a folder name that will contains module file</span>
@@ -1261,7 +1261,7 @@ a,a:hover,a:click, a:visited{
   <span class="p p-Indicator">-</span> <span class="nt">modules</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">summary</span>
 </code></pre></div>
-<h2 id="module">Module<a class="headerlink" href="#module" title="Permanent link">&para;</a></h2>
+<h2 id="example-modules">Example Modules<a class="headerlink" href="#example-modules" title="Permanent link">&para;</a></h2>
 <h3 id="subdomain-module"><a href="https://github.com/osmedeus/osmedeus-workflow/blob/main/general/subdomain.yaml">subdomain module</a><a class="headerlink" href="#subdomain-module" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">subdomain</span>
 <span class="nt">desc</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Scanning for subdomain</span>
@@ -1287,7 +1287,7 @@ a,a:hover,a:click, a:visited{
       <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/subfinder&quot;</span>
       <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/assetfinder&quot;</span>
       <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/findomain&quot;</span>
-    <span class="nt">commands</span><span class="p">:</span>
+    <span class="nt">commands</span><span class="p">:</span> <span class="c1"># these two commands will run in parallels</span>
       <span class="p p-Indicator">-</span> <span class="s">&quot;timeout</span><span class="nv"> </span><span class="s">-k</span><span class="nv"> </span><span class="s">1m</span><span class="nv"> </span><span class="s">{{.amassTimeout}}</span><span class="nv"> </span><span class="s">{{.Binaries}}/amass</span><span class="nv"> </span><span class="s">enum</span><span class="nv"> </span><span class="s">-config</span><span class="nv"> </span><span class="s">{{.Data}}/configs/amass.ini</span><span class="nv"> </span><span class="s">-d</span><span class="nv"> </span><span class="s">{{.Target}}</span><span class="nv"> </span><span class="s">-o</span><span class="nv"> </span><span class="s">{{.Output}}/subdomain/{{.Workspace}}-amass.txt</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">/dev/null</span><span class="nv"> </span><span class="s">2&gt;&amp;1&quot;</span>
       <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/assetfinder</span><span class="nv"> </span><span class="s">-subs-only</span><span class="nv"> </span><span class="s">{{.Target}}</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">{{.Output}}/subdomain/{{.Workspace}}-assetfinder.txt&quot;</span>
   <span class="c1"># these two commands will run in parallels</span>
@@ -1352,16 +1352,12 @@ a,a:hover,a:click, a:visited{
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ErrPrintf(&quot;Filter&quot;, &quot;Got input file greater than {{.dlimit}} line&quot;)</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Exit(1)</span>
 
-  <span class="c1"># # make a header for csv file</span>
-  <span class="c1"># - commands:</span>
-  <span class="c1">#     - echo &#39;url,status,length,words,lines,redirectlocation&#39; &gt; {{.Output}}/directory/beautify-{{.Workspace}}.csv</span>
-
   <span class="p p-Indicator">-</span> <span class="nt">required</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/ffuf&quot;</span>
       <span class="p p-Indicator">-</span> <span class="s">&quot;{{.inputfile}}&quot;</span>
     <span class="nt">source</span><span class="p">:</span> <span class="s">&quot;{{.inputfile}}&quot;</span>
     <span class="nt">threads</span><span class="p">:</span> <span class="s">&#39;{{.dirbThreads}}&#39;</span>
-    <span class="nt">commands</span><span class="p">:</span>
+    <span class="nt">commands</span><span class="p">:</span> <span class="c1"># {{.Binaries}}/ffuf is ~/osmedeus/binaries/ffuf which is a place I store all the binaries but you already install it in your $PATH environment variable then you can just use - &quot;ffuf -t {{.fthreads}} ...&quot;</span>
       <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/ffuf</span><span class="nv"> </span><span class="s">-t</span><span class="nv"> </span><span class="s">{{.fthreads}}</span><span class="nv"> </span><span class="s">-timeout</span><span class="nv"> </span><span class="s">15</span><span class="nv"> </span><span class="s">-ac</span><span class="nv"> </span><span class="s">-fc</span><span class="nv"> </span><span class="s">&#39;429,403,404&#39;</span><span class="nv"> </span><span class="s">-D</span><span class="nv"> </span><span class="s">-e</span><span class="nv"> </span><span class="s">&#39;asp,aspx,pl,php,html,htm,jsp,cgi&#39;</span><span class="nv"> </span><span class="s">-of</span><span class="nv"> </span><span class="s">json</span><span class="nv"> </span><span class="s">-o</span><span class="nv"> </span><span class="s">{{.Output}}/directory/raw-{{._id_}}.json</span><span class="nv"> </span><span class="s">-u</span><span class="nv"> </span><span class="s">&#39;{{.line}}/FUZZ&#39;</span><span class="nv"> </span><span class="s">-w</span><span class="nv"> </span><span class="s">{{.wordlists}}:FUZZ&quot;</span>
     <span class="nt">scripts</span><span class="p">:</span>
       <span class="c1"># get result in csv</span>
@@ -1396,7 +1392,7 @@ a,a:hover,a:click, a:visited{
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">PushFolder(&quot;{{.Storages}}/paths/&quot;)</span>
 </code></pre></div>
 <h2 id="step">Step<a class="headerlink" href="#step" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nt">steps</span><span class="p">:</span> <span class="c1"># all step run in serial</span>
+<div class="highlight"><pre><span></span><code><span class="nt">steps</span><span class="p">:</span> <span class="c1"># all the steps will run in serial</span>
 
  <span class="c1"># variation 1 </span>
   <span class="p p-Indicator">-</span> <span class="nt">required</span><span class="p">:</span> <span class="c1"># Check if all the files exist or the step will not run</span>
@@ -1421,15 +1417,15 @@ a,a:hover,a:click, a:visited{
       <span class="p p-Indicator">-</span> <span class="s">&quot;unix</span><span class="nv"> </span><span class="s">command</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">here&quot;</span>
     <span class="nt">rscripts</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ErrPrintf(&quot;Filter&quot;, &quot;Got input file greater than 1000 line&quot;)</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Exit(1)</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Exit(1)</span> <span class="c1"># this will exit the module imeediately</span>
 
  <span class="c1">#########################</span>
 
  <span class="c1"># variation 2 that will run the step but with input is each like of &#39;source&#39; section</span>
   <span class="p p-Indicator">-</span> <span class="nt">source</span><span class="p">:</span> <span class="s">&quot;{{.inputfile}}&quot;</span> <span class="c1"># source file to loop through</span>
     <span class="nt">threads</span><span class="p">:</span> <span class="s">&#39;{{.dirbThreads}}&#39;</span>
-    <span class="nt">commands</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/go/ffuf-mod</span><span class="nv"> </span><span class="s">-H</span><span class="nv"> </span><span class="s">&#39;X-Forwarded-For:</span><span class="nv"> </span><span class="s">127.0.0.1&#39;</span><span class="nv"> </span><span class="s">-t</span><span class="nv"> </span><span class="s">{{.fthreads}}</span><span class="nv"> </span><span class="s">-recursion-depth</span><span class="nv"> </span><span class="s">{{.recursion}}</span><span class="nv"> </span><span class="s">-D</span><span class="nv"> </span><span class="s">-e</span><span class="nv"> </span><span class="s">&#39;asp,aspx,php,html,htm,jsp,cgi&#39;</span><span class="nv"> </span><span class="s">-timeout</span><span class="nv"> </span><span class="s">15</span><span class="nv"> </span><span class="s">-get-hash</span><span class="nv"> </span><span class="s">-ac</span><span class="nv"> </span><span class="s">-s</span><span class="nv"> </span><span class="s">-fc</span><span class="nv"> </span><span class="s">&#39;429,404,400&#39;</span><span class="nv"> </span><span class="s">-of</span><span class="nv"> </span><span class="s">json</span><span class="nv"> </span><span class="s">-o</span><span class="nv"> </span><span class="s">{{.Output}}/directory/raw-{{._id_}}.json</span><span class="nv"> </span><span class="s">-u</span><span class="nv"> </span><span class="s">&#39;{{.line}}/FUZZ&#39;</span><span class="nv"> </span><span class="s">-w</span><span class="nv"> </span><span class="s">{{.wordlists}}:FUZZ&quot;</span>
+    <span class="nt">commands</span><span class="p">:</span> <span class="c1"># {{.Binaries}} is the path to binaries which usually ~/osmedeus/binaries/ but you can use any tool inside your $PATH environment variable</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/ffuf-mod</span><span class="nv"> </span><span class="s">-H</span><span class="nv"> </span><span class="s">&#39;X-Forwarded-For:</span><span class="nv"> </span><span class="s">127.0.0.1&#39;</span><span class="nv"> </span><span class="s">-t</span><span class="nv"> </span><span class="s">{{.fthreads}}</span><span class="nv"> </span><span class="s">-recursion-depth</span><span class="nv"> </span><span class="s">{{.recursion}}</span><span class="nv"> </span><span class="s">-D</span><span class="nv"> </span><span class="s">-e</span><span class="nv"> </span><span class="s">&#39;asp,aspx,php,html,htm,jsp,cgi&#39;</span><span class="nv"> </span><span class="s">-timeout</span><span class="nv"> </span><span class="s">15</span><span class="nv"> </span><span class="s">-get-hash</span><span class="nv"> </span><span class="s">-ac</span><span class="nv"> </span><span class="s">-s</span><span class="nv"> </span><span class="s">-fc</span><span class="nv"> </span><span class="s">&#39;429,404,400&#39;</span><span class="nv"> </span><span class="s">-of</span><span class="nv"> </span><span class="s">json</span><span class="nv"> </span><span class="s">-o</span><span class="nv"> </span><span class="s">{{.Output}}/directory/raw-{{._id_}}.json</span><span class="nv"> </span><span class="s">-u</span><span class="nv"> </span><span class="s">&#39;{{.line}}/FUZZ&#39;</span><span class="nv"> </span><span class="s">-w</span><span class="nv"> </span><span class="s">{{.wordlists}}:FUZZ&quot;</span>
     <span class="nt">scripts</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">SortU(&quot;{{.Storages}}/paths/{{.Workspace}}/paths-{{.Workspace}}.csv&quot;)</span>
 </code></pre></div>

@@ -13,8 +13,8 @@ It was designed to build a foundation with the capability and flexibility that a
 
 The tool has two main components:
 
-- [x] **Core Engine** written in Golang that is responsible for handling all the logic and a 
-- [x] **Workflow** which is a collection of YAML files that describe your methodology
+- [x] **Core Engine** Written in Golang which is responsible for handling all the complex logic and provide a lot of built-in utilities to run your workflow much more efficient.
+- [x] **Workflow** which is a collection of YAML files that describe your methodology.
 
 **Target** can be domain, url, IP, CIDR or anything that fit your workflow.
 

@@ -10,7 +10,7 @@ Workflow is the core of the Osmedeus Engine which represents your methodology as
 - **Flow** contains multiple module and also define order how to run these modules.
 - **Step** is smallest part of the Osmedeus routine.
 
-## Flow
+## Example Flow
 
 ```yaml
 name: general
@@ -50,7 +50,7 @@ routines:
 
 ```
 
-## Module
+## Example Modules
 
 ### [subdomain module](https://github.com/osmedeus/osmedeus-workflow/blob/main/general/subdomain.yaml)
 ```yaml
@@ -78,7 +78,7 @@ steps:
       - "{{.Binaries}}/subfinder"
       - "{{.Binaries}}/assetfinder"
       - "{{.Binaries}}/findomain"
-    commands:
+    commands: # these two commands will run in parallels
       - "timeout -k 1m {{.amassTimeout}} {{.Binaries}}/amass enum -config {{.Data}}/configs/amass.ini -d {{.Target}} -o {{.Output}}/subdomain/{{.Workspace}}-amass.txt > /dev/null 2>&1"
       - "{{.Binaries}}/assetfinder -subs-only {{.Target}} > {{.Output}}/subdomain/{{.Workspace}}-assetfinder.txt"
   # these two commands will run in parallels
@@ -148,16 +148,12 @@ steps:
       - ErrPrintf("Filter", "Got input file greater than {{.dlimit}} line")
       - Exit(1)
 
-  # # make a header for csv file
-  # - commands:
-  #     - echo 'url,status,length,words,lines,redirectlocation' > {{.Output}}/directory/beautify-{{.Workspace}}.csv
-
   - required:
       - "{{.Binaries}}/ffuf"
       - "{{.inputfile}}"
     source: "{{.inputfile}}"
     threads: '{{.dirbThreads}}'
-    commands:
+    commands: # {{.Binaries}}/ffuf is ~/osmedeus/binaries/ffuf which is a place I store all the binaries but you already install it in your $PATH environment variable then you can just use - "ffuf -t {{.fthreads}} ..."
       - "{{.Binaries}}/ffuf -t {{.fthreads}} -timeout 15 -ac -fc '429,403,404' -D -e 'asp,aspx,pl,php,html,htm,jsp,cgi' -of json -o {{.Output}}/directory/raw-{{._id_}}.json -u '{{.line}}/FUZZ' -w {{.wordlists}}:FUZZ"
     scripts:
       # get result in csv
@@ -198,7 +194,7 @@ post_run:
 
 
 ```yaml
-steps: # all step run in serial
+steps: # all the steps will run in serial
 
  # variation 1 
   - required: # Check if all the files exist or the step will not run
@@ -223,15 +219,15 @@ steps: # all step run in serial
       - "unix command 2 here"
     rscripts:
       - ErrPrintf("Filter", "Got input file greater than 1000 line")
-      - Exit(1)
+      - Exit(1) # this will exit the module imeediately
 
  #########################
  
  # variation 2 that will run the step but with input is each like of 'source' section
   - source: "{{.inputfile}}" # source file to loop through
     threads: '{{.dirbThreads}}'
-    commands:
-      - "{{.Binaries}}/go/ffuf-mod -H 'X-Forwarded-For: 127.0.0.1' -t {{.fthreads}} -recursion-depth {{.recursion}} -D -e 'asp,aspx,php,html,htm,jsp,cgi' -timeout 15 -get-hash -ac -s -fc '429,404,400' -of json -o {{.Output}}/directory/raw-{{._id_}}.json -u '{{.line}}/FUZZ' -w {{.wordlists}}:FUZZ"
+    commands: # {{.Binaries}} is the path to binaries which usually ~/osmedeus/binaries/ but you can use any tool inside your $PATH environment variable
+      - "{{.Binaries}}/ffuf-mod -H 'X-Forwarded-For: 127.0.0.1' -t {{.fthreads}} -recursion-depth {{.recursion}} -D -e 'asp,aspx,php,html,htm,jsp,cgi' -timeout 15 -get-hash -ac -s -fc '429,404,400' -of json -o {{.Output}}/directory/raw-{{._id_}}.json -u '{{.line}}/FUZZ' -w {{.wordlists}}:FUZZ"
     scripts:
       - SortU("{{.Storages}}/paths/{{.Workspace}}/paths-{{.Workspace}}.csv")
 ```
