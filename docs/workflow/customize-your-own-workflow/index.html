@@ -834,8 +834,29 @@ a,a:hover,a:click, a:visited{
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-writing-a-new-flow" class="md-nav__link">
-    3. Writing a new flow
+  <a href="#3-add-your-new-tool-to-existing-workflow" class="md-nav__link">
+    3. Add your new tool to existing workflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-writing-a-new-flow" class="md-nav__link">
+    4. Writing a new flow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-writing-a-new-module" class="md-nav__link">
+    5. Writing a new module
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#51-add-a-new-module-to-exsting-workflow" class="md-nav__link">
+    5.1 Add a new module to exsting workflow
   </a>
   
 </li>
@@ -1201,26 +1222,201 @@ a,a:hover,a:click, a:visited{
 <p>After the installation process is finished, your workflow will be stored at <code>~/osmedeus-base/workflow</code>.</p>
 <h2 id="1-tweaking-commands-or-threads-of-the-tool-depends-on-your-machine-specification">1. Tweaking commands or threads of the tool depends on your machine specification<a class="headerlink" href="#1-tweaking-commands-or-threads-of-the-tool-depends-on-your-machine-specification" title="Permanent link">&para;</a></h2>
 <p>You can start tweaking the workflow right away by edit any command in module file at <code>~/osmedeus-base/workflow/general/</code> folder.</p>
-<p>For example you can edit the thread of ffuf command <strong><a href="https://github.com/osmedeus/osmedeus-workflow/blob/main/general/dirbscan.yaml#13">here</a></strong> on dirbscan module</p>
-<p><img alt="tweaking-module" loading="lazy" src="/static/workflow/tweaking-module.png" /></p>
+<p>For example you can edit the thread of ffuf command <strong><a href="https://github.com/osmedeus/osmedeus-workflow/blob/main/general/dirbscan.yaml#L13">here</a></strong> on dirbscan module</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># --snippet--</span>
+
+<span class="nt">params</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">inputfile</span><span class="p">:</span> <span class="s">&quot;{{.Output}}/probing/http-{{.Workspace}}.txt&quot;</span>
+<span class="c1">### You can start customizing the command here with the wordlist or the threads of ffuf tool</span>
+  <span class="p p-Indicator">-</span> <span class="nt">wordlists</span><span class="p">:</span> <span class="s">&quot;{{.Data}}/wordlists/content/small.txt&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">ffThreads</span><span class="p">:</span> <span class="s">&#39;20&#39;</span> <span class="c1"># threads for single site</span>
+<span class="c1">### </span>
+  <span class="p p-Indicator">-</span> <span class="nt">dirbThreads</span><span class="p">:</span> <span class="s">&#39;10&#39;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">lines</span><span class="p">:</span> <span class="s">&quot;20&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">dlimit</span><span class="p">:</span> <span class="s">&#39;50000&#39;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">recursion</span><span class="p">:</span> <span class="s">&#39;0&#39;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">commitLength</span><span class="p">:</span> <span class="s">&#39;400&#39;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">chan</span><span class="p">:</span> <span class="s">&#39;#mics&#39;</span>
+
+<span class="nt">pre_run</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CreateFolder(&quot;{{.Output}}/directory&quot;)</span>
+
+<span class="nt">steps</span><span class="p">:</span>
+  <span class="c1"># check if the size is too big, We don&#39;t want tons of garbage here</span>
+  <span class="p p-Indicator">-</span> <span class="nt">conditions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;FileLength(&#39;{{.inputfile}}&#39;)</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">{{.dlimit}}&quot;</span>
+    <span class="nt">scripts</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ErrPrintf(&quot;Filter&quot;, &quot;Got input file greater than {{.dlimit}} line&quot;)</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Exit(1)</span>
+
+  <span class="p p-Indicator">-</span> <span class="nt">required</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/ffuf&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.inputfile}}&quot;</span>
+    <span class="nt">source</span><span class="p">:</span> <span class="s">&quot;{{.inputfile}}&quot;</span>
+    <span class="nt">threads</span><span class="p">:</span> <span class="s">&#39;{{.dirbThreads}}&#39;</span>
+    <span class="nt">commands</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/ffuf</span><span class="nv"> </span><span class="s">-t</span><span class="nv"> </span><span class="s">{{.ffThreads}}</span><span class="nv"> </span><span class="s">-timeout</span><span class="nv"> </span><span class="s">15</span><span class="nv"> </span><span class="s">-ac</span><span class="nv"> </span><span class="s">-fc</span><span class="nv"> </span><span class="s">&#39;429,403,404&#39;</span><span class="nv"> </span><span class="s">-D</span><span class="nv"> </span><span class="s">-e</span><span class="nv"> </span><span class="s">&#39;asp,aspx,pl,php,html,htm,jsp,cgi&#39;</span><span class="nv"> </span><span class="s">-of</span><span class="nv"> </span><span class="s">json</span><span class="nv"> </span><span class="s">-o</span><span class="nv"> </span><span class="s">{{.Output}}/directory/raw-{{._id_}}.json</span><span class="nv"> </span><span class="s">-u</span><span class="nv"> </span><span class="s">&#39;{{.line}}/FUZZ&#39;</span><span class="nv"> </span><span class="s">-w</span><span class="nv"> </span><span class="s">{{.wordlists}}:FUZZ&quot;</span>
+
+<span class="c1"># --snippet--</span>
+</code></pre></div>
+<hr>
+
 <p>You can also use the <code>force-params: true</code> in flow file to override the threads in module file like <strong><a href="https://github.com/osmedeus/osmedeus-workflow/blob/main/gently-extensive.yaml">this flow</a></strong></p>
-<p><img alt="tweaking-module" loading="lazy" src="/static/workflow/gently-workflow.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gently-extensive</span>
+<span class="nt">desc</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">run extensive routine but with very low threads</span>
+<span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">general</span>
+<span class="nt">validator</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">domain</span>
+<span class="nt">force-params</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="nt">params</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">subfinderThreads</span><span class="p">:</span> <span class="s">&quot;20&quot;</span>
+  <span class="c1"># probing</span>
+  <span class="p p-Indicator">-</span> <span class="nt">dnsThreads</span><span class="p">:</span> <span class="s">&quot;300&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">httpThreads</span><span class="p">:</span> <span class="s">&quot;30&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">massdnsRateBrute</span><span class="p">:</span> <span class="s">&quot;300&quot;</span>
+  <span class="c1"># screenshot</span>
+  <span class="p p-Indicator">-</span> <span class="nt">screenThreads</span><span class="p">:</span> <span class="s">&quot;8&quot;</span>
+  <span class="c1"># fingerprint &amp; spider</span>
+  <span class="p p-Indicator">-</span> <span class="nt">ssthreads</span><span class="p">:</span> <span class="s">&quot;30&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">overviewThreads</span><span class="p">:</span> <span class="s">&#39;30&#39;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">stoThreads</span><span class="p">:</span> <span class="s">&#39;30&#39;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">spiderThreads</span><span class="p">:</span> <span class="s">&quot;5&quot;</span>
+
+  <span class="c1"># vulnscan</span>
+  <span class="p p-Indicator">-</span> <span class="nt">nucleiThreads</span><span class="p">:</span> <span class="s">&quot;30&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">jaelesThreads</span><span class="p">:</span> <span class="s">&quot;20&quot;</span>
+  <span class="c1"># dirbscan</span>
+  <span class="p p-Indicator">-</span> <span class="nt">ffThreads</span><span class="p">:</span> <span class="s">&#39;20&#39;</span> <span class="c1"># threads for single ffuf-scan</span>
+  <span class="p p-Indicator">-</span> <span class="nt">dirbThreads</span><span class="p">:</span> <span class="s">&#39;2&#39;</span> <span class="c1"># how many ffuf run at the same time</span>
+  <span class="c1"># portscan</span>
+  <span class="p p-Indicator">-</span> <span class="nt">ports</span><span class="p">:</span> <span class="s">&quot;0-65535&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">rateRustScan</span><span class="p">:</span> <span class="s">&quot;5000&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">nmapThreads</span><span class="p">:</span> <span class="s">&quot;10&quot;</span>
+
+<span class="nt">routines</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">flow</span><span class="p">:</span> <span class="s">&#39;extensive&#39;</span>
+    <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">subdomain</span>
+  <span class="p p-Indicator">-</span> <span class="nt">flow</span><span class="p">:</span> <span class="s">&#39;extensive&#39;</span>
+    <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">probing</span>
+  <span class="p p-Indicator">-</span> <span class="nt">flow</span><span class="p">:</span> <span class="s">&#39;extensive&#39;</span>
+    <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ssame</span>
+  <span class="p p-Indicator">-</span> <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">screenshot</span>
+  <span class="p p-Indicator">-</span> <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sto</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fingerprint</span>
+  <span class="p p-Indicator">-</span> <span class="nt">flow</span><span class="p">:</span> <span class="s">&#39;extensive&#39;</span>
+    <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">spider</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">archive</span>
+  <span class="p p-Indicator">-</span> <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ipspace</span>
+  <span class="p p-Indicator">-</span> <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">vulnscan</span>
+
+  <span class="p p-Indicator">-</span> <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">portscan</span>
+
+  <span class="p p-Indicator">-</span> <span class="nt">flow</span><span class="p">:</span> <span class="s">&#39;extensive&#39;</span>
+    <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">dirbscan</span>
+
+  <span class="p p-Indicator">-</span> <span class="nt">flow</span><span class="p">:</span> <span class="s">&#39;extensive&#39;</span>
+    <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">port-fingerprint</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pvulnscan</span> <span class="c1"># doing vulnscan + dirbscan on portscan result too</span>
+</code></pre></div>
+<hr>
+
 <h2 id="2-fork-another-one-from-community-workflow">2. Fork another one from community workflow<a class="headerlink" href="#2-fork-another-one-from-community-workflow" title="Permanent link">&para;</a></h2>
-<p>Fork this repo from here https://github.com/osmedeus/osmedeus-workflow and change anything you want and put it to <code>~/osmedeus-base/workflow</code> folder.</p>
-<p>or you can put it in a custom folder then use this command.
+<p>Fork this repo from here <a href="https://github.com/osmedeus/osmedeus-workflow"><strong>https://github.com/osmedeus/osmedeus-workflow</strong></a> and change anything you want and put it to <code>~/osmedeus-base/workflow</code> folder.</p>
+<p>or you can put it in a custom folder then use this command.</p>
 <div class="highlight"><pre><span></span><code>osmedeus scan --wfFolder ~/custom-workflow/ -f your-custom-workflow -t sample.com
-</code></pre></div></p>
-<h2 id="3-writing-a-new-flow">3. Writing a new flow<a class="headerlink" href="#3-writing-a-new-flow" title="Permanent link">&para;</a></h2>
-<p>Create a new flow file at <code>~/osmedeus-base/workflow/your-workflow.yaml</code> and folder <code>you-workflow</code> to store your modules file</p>
+</code></pre></div>
+<hr>
+
+<h2 id="3-add-your-new-tool-to-existing-workflow">3. Add your new tool to existing workflow<a class="headerlink" href="#3-add-your-new-tool-to-existing-workflow" title="Permanent link">&para;</a></h2>
+<p>For example, you have a new tool for subdomain enumeration called <code>awesome-subdomain-enum</code> and the usage of it is like <code>awesome-subdomain-enum -t sample.com -o output.txt</code>.</p>
+<p>You can easily add it to the existing workflow by adding the following command <code>awesome-subdomain-enum -t {{.Target}} &gt;&gt; {{.Output}}/subdomain/sum-{{.Workspace}}.txt</code> to the <a href="https://github.com/osmedeus/osmedeus-workflow/blob/main/general/subdomain.yaml#L30"><strong>subdomain.yaml</strong></a> file at <code>~/osmedeus-base/workflow/general/subdomain.yaml</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># --snippet--</span>
+
+<span class="nt">steps</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">required</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/amass&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/subfinder&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/assetfinder&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/findomain&quot;</span>
+    <span class="nt">commands</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;timeout</span><span class="nv"> </span><span class="s">-k</span><span class="nv"> </span><span class="s">1m</span><span class="nv"> </span><span class="s">{{.amassTimeout}}</span><span class="nv"> </span><span class="s">{{.Binaries}}/amass</span><span class="nv"> </span><span class="s">enum</span><span class="nv"> </span><span class="s">-config</span><span class="nv"> </span><span class="s">{{.Data}}/configs/amass.ini</span><span class="nv"> </span><span class="s">-d</span><span class="nv"> </span><span class="s">{{.Target}}</span><span class="nv"> </span><span class="s">-o</span><span class="nv"> </span><span class="s">{{.Output}}/subdomain/{{.Workspace}}-amass.txt</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">/dev/null</span><span class="nv"> </span><span class="s">2&gt;&amp;1&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/assetfinder</span><span class="nv"> </span><span class="s">-subs-only</span><span class="nv"> </span><span class="s">{{.Target}}</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">{{.Output}}/subdomain/{{.Workspace}}-assetfinder.txt&quot;</span>
+  <span class="c1"># these 3 commands will run in parallels</span>
+  <span class="p p-Indicator">-</span> <span class="nt">commands</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/findomain</span><span class="nv"> </span><span class="s">-u</span><span class="nv"> </span><span class="s">{{.Output}}/subdomain/{{.Workspace}}-findomain.txt</span><span class="nv"> </span><span class="s">-t</span><span class="nv"> </span><span class="s">{{.Target}}</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">/dev/null</span><span class="nv"> </span><span class="s">2&gt;&amp;1&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;{{.Binaries}}/subfinder</span><span class="nv"> </span><span class="s">-d</span><span class="nv"> </span><span class="s">{{.Target}}</span><span class="nv"> </span><span class="s">-t</span><span class="nv"> </span><span class="s">{{.subfinderThreads}}</span><span class="nv"> </span><span class="s">-o</span><span class="nv"> </span><span class="s">{{.Output}}/subdomain/{{.Workspace}}-subfinder.txt</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">/dev/null</span><span class="nv"> </span><span class="s">2&gt;&amp;1&quot;</span>
+      <span class="c1"># your new tool here</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;awesome-subdomain-enum</span><span class="nv"> </span><span class="s">-t</span><span class="nv"> </span><span class="s">{{.Target}}</span><span class="nv"> </span><span class="s">&gt;&gt;</span><span class="nv"> </span><span class="s">{{.Output}}/subdomain/sum-{{.Workspace}}.txt&quot;</span>
+
+<span class="c1"># --snippet--</span>
+</code></pre></div>
+<hr>
+
+<h2 id="4-writing-a-new-flow">4. Writing a new flow<a class="headerlink" href="#4-writing-a-new-flow" title="Permanent link">&para;</a></h2>
+<p>Create a new flow file at <code>~/osmedeus-base/workflow/your-workflow.yaml</code> by customize the <a href="https://github.com/osmedeus/osmedeus-workflow/blob/main/general.yaml"><strong>general</strong></a> flow file.</p>
+<div class="admonition tips">
+<p class="admonition-title">If you want to use your own modules, you can change the <code>type: general</code> to <code>type: you-workflow</code> specify the folder of your modules.</p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">your-workflow</span>
-<span class="nt">desc</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">run normal routine</span>
-<span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">you-workflow</span>
+<span class="nt">desc</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">run subdomain enumeration and content discovery</span>
+<span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">general</span> <span class="c1"># this is mean module file will be read from `~/osmedeus-base/workflow/general/` folder</span>
 <span class="nt">validator</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">domain</span>
 
 <span class="nt">routines</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">modules</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">your-module-here</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">subdomain</span>
+  <span class="p p-Indicator">-</span> <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">probing</span>
+  <span class="p p-Indicator">-</span> <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">dirbscan</span>
 </code></pre></div>
+<p>Now you can run your workflow with this command <code>osmedeus scan -f your-workflow -t sample.com</code></p>
+<hr>
+
+<h2 id="5-writing-a-new-module">5. Writing a new module<a class="headerlink" href="#5-writing-a-new-module" title="Permanent link">&para;</a></h2>
+<h2 id="51-add-a-new-module-to-exsting-workflow">5.1 Add a new module to exsting workflow<a class="headerlink" href="#51-add-a-new-module-to-exsting-workflow" title="Permanent link">&para;</a></h2>
+<p>Create a new module file at <code>~/osmedeus-base/workflow/general/your-module.yaml</code> by adding a new module file to the <code>general.yaml</code> flow file.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">general</span>
+<span class="nt">desc</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">run normal routine</span>
+<span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">general</span>
+<span class="nt">validator</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">domain</span>
+
+<span class="nt">routines</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">subdomain</span>
+  <span class="p p-Indicator">-</span> <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">probing</span>
+  <span class="p p-Indicator">-</span> <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fingerprint</span>
+  <span class="p p-Indicator">-</span> <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">screenshot</span>
+  <span class="p p-Indicator">-</span> <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">spider</span>
+  <span class="p p-Indicator">-</span> <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sto</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">archive</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ipspace</span>
+  <span class="p p-Indicator">-</span> <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">vulnscan</span>
+  <span class="p p-Indicator">-</span> <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">dirbscan</span>
+  <span class="p p-Indicator">-</span> <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">portscan</span>
+  <span class="p p-Indicator">-</span> <span class="nt">modules</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">your-module</span>
+</code></pre></div>
+<p>Now you can run your workflow with this command <code>osmedeus scan -f general -t sample.com</code></p>
 
               
             </article>
