@@ -4,10 +4,10 @@
   ![Build your own reconnaissance system](static/images/intro.png)
 </figure>
 
-!!! note "[The Introduction Presentation can be found here](https://docs.google.com/presentation/d/1Mu6JqzIpLiPbwXtPraFJRNBCAu5OXZn4SMIcl8hvMWI/edit#slide=id.gadf93641a2_2_75)"
+!!! note "[The Introduction Presentation can be found here](https://speakerdeck.com/j3ssie/build-your-own-reconnaissance-system-with-osmedeus-next-generation)"
 
 ## What is Osmedeus?
-**Osmedeus** is a Workflow Engine for Offensive Security. It was designed to build a foundation with the capability and flexibility that allow you to automatic run your reconnaissance methodology on a large number of targets.
+**Osmedeus** is a Workflow Engine for Offensive Security. It was designed to build a foundation with the capability and flexibility that allow you to automatically run your reconnaissance methodology on a large number of targets.
 
 ## Showcases
 

@@ -12,12 +12,11 @@
 ???+ question "Is it support Windows?"
     Unfortunately not, it was designed for Linux only. You will need to use Docker, WSL or a VM if you really want to run Osmedeus on Windows.
 
-???+ info "I got some error while install Osmedeus on my machine. How can I fix it?"
-    Maybe run `sudo su` first and then run `rm -rf ~/osmedeus-base ~/.osmedeus` and then run the install script again to have fresh installation.
+???+ info "I got some error while installing Osmedeus on my machine. How can I fix it?"
+    Maybe run `sudo su` first and then run `rm -rf ~/osmedeus-base ~/.osmedeus` and then run the install script again to have a clean installation.
 
 ???+ info "What are the donation tiers and how much should I donate to be eligible for the premium package?"
-    You can join the [**Patreon here**](https://www.patreon.com/j3ssie) or [**here**](https://docs.osmedeus.org/donation/) to see a private post contains a download link for premium packages. 
-    After that you will be invited to backer channel to get direct support then
+    You can join the [**Patreon here**](https://www.patreon.com/j3ssie) or [**here**](https://docs.osmedeus.org/donation/) to see a private post that contains a download link for premium packages. After that you will be invited to the backer channel to get direct support then
 
 ???+ question "What is the specification required to run Osmedeus?"
     I recommend using VPS since it takes a lot of network bandwidth, the minimum spec would be 1 CPU 2GB RAM. You can of course increase or decrease the threads in the workflow to make it work in any spec
@@ -41,16 +40,16 @@
     You can Join **[Discord Server here](https://discord.gg/gy4SWhpaPU)** or contact me via **[:material-twitter: here](https://twitter.com/OsmedeusEngine)** to see if it worth to add.
 
 ???+ question "I ran the scan but there's no vulnerability found?"
-    It's simply that there's no vulnerability. It very depends on your target.
+    It's simply that there's no vulnerability. It very much depends on your target.
 
 ???+ info "How can I update my premium package?"
-    Just run the install script for premium package again and it will be updated.
+    Just run the install script for the premium package again and it will be updated.
 
 ???+ question "Why was my scan stuck at portscan?"
     It will stay there because it got a sudo password prompt. Some special tools require *root* permission to run like **nmap**. Make sure you allow **nmap** can be run without sudo password prompt.
 
 ???+ question "Why was my scan portscan take so long?"
-    It's probably because cloud provider / home network limit your portscan or just simply your input is too big. Try to run with `--debug` then you can manually check with the raw command that the portscan module actually running.
+    It's probably because your cloud provider or your home network limit your portscan or just simply your input is too big. Try to run with `--debug` then you can manually check with the raw command that the portscan module actually running.
 
 ???+ info "What is the difference between this flow to other flow?"
     1. Read the flow files to see what difference in them.
@@ -72,9 +71,9 @@
     Nope, natively it doesn't support proxy. But since the design of the tool is running other 3rd tools and a lot of them doesn't support proxy by default. I've already consider **proxychains** but it makes it extremely slow and broke a lot of things.
 
 ???+ question "I run the cloud scan with `-c 1` why it's only spin up 1 vps?"
-    It's only ran in 1 vps because you only have 1 target run like `osmedeus cloud -c 2 -f general -t sample.com -t another.com` will run 2 vps.
+    It's only run in 1 vps because you only have 1 target run like `osmedeus cloud -c 2 -f general -t sample.com -t another.com` will run 2 vps.
 
-???+ info "I accidently terminated the scan. How can I restart or resume it?"
+???+ info "I accidentally terminated the scan. How can I restart or resume it?"
     Just run the command again to start a fresh scan or run the same command with `--resume` flag to resume the scan if any reports file exist.
 
 ???+ question "I stop the scan with `Ctrl+C` in the middle of it. Is it possible to create a summary report?"

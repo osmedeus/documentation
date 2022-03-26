@@ -868,9 +868,40 @@ a,a:hover,a:click, a:visited{
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Defination
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Defination
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-scripts" class="md-nav__link">
+    Core Scripts
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1151,20 +1182,36 @@ a,a:hover,a:click, a:visited{
 
 <h1 id="scripts"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M8.78 4.97a.75.75 0 0 1 0 1.06L2.81 12l5.97 5.97a.75.75 0 1 1-1.06 1.06l-6.5-6.5a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 0 1 1.06 0zm6.44 0a.75.75 0 0 0 0 1.06L21.19 12l-5.97 5.97a.75.75 0 1 0 1.06 1.06l6.5-6.5a.75.75 0 0 0 0-1.06l-6.5-6.5a.75.75 0 0 0-1.06 0z"/></svg></span> Scripts<a class="headerlink" href="#scripts" title="Permanent link">&para;</a></h1>
 <p aligh="center">
-Script is an alias for the Golang function that you can call from YAML Workflow that allows you to do complex logic which native support from the Osmedeus core engine.
+A Script is an alias for the Golang function that you can call from YAML Workflow that allows you to do complex logic which is native support from the Osmedeus core engine.
 </p>
 
 <figure>
 <p><img alt="scripts" src="/static/workflow/scripts.png" /></p>
 </figure>
 <hr />
+<h2 id="core-scripts">Core Scripts<a class="headerlink" href="#core-scripts" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="cm">/* File to store all the script for better reference */</span>
+
+<span class="kd">const</span> <span class="p">(</span>
+    <span class="nx">ExecCmd</span>           <span class="p">=</span> <span class="s">&quot;ExecCmd&quot;</span>
+    <span class="nx">ExecCmdB</span>          <span class="p">=</span> <span class="s">&quot;ExecCmdB&quot;</span>
+    <span class="nx">ExecCmdWithOutput</span> <span class="p">=</span> <span class="s">&quot;ExecCmdWithOutput&quot;</span>
+    <span class="nx">ExecContain</span>       <span class="p">=</span> <span class="s">&quot;ExecContain&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">const</span> <span class="p">(</span>
+    <span class="nx">Sleep</span>      <span class="p">=</span> <span class="s">&quot;Sleep&quot;</span>
+    <span class="nx">Exit</span>       <span class="p">=</span> <span class="s">&quot;Exit&quot;</span>
+    <span class="nx">CastToInt</span>  <span class="p">=</span> <span class="s">&quot;CastToInt&quot;</span>
+    <span class="nx">StripSlash</span> <span class="p">=</span> <span class="s">&quot;StripSlash&quot;</span>
+    <span class="nx">Printf</span>     <span class="p">=</span> <span class="s">&quot;Printf&quot;</span>
+    <span class="nx">Cat</span>        <span class="p">=</span> <span class="s">&quot;Cat&quot;</span>
+<span class="p">)</span>
 
 <span class="kd">const</span> <span class="p">(</span>
     <span class="nx">SetVar</span>   <span class="p">=</span> <span class="s">&quot;SetVar&quot;</span>
     <span class="nx">GetOSEnv</span> <span class="p">=</span> <span class="s">&quot;GetOSEnv&quot;</span>
 <span class="p">)</span>
-
 
 <span class="kd">const</span> <span class="p">(</span>
     <span class="nx">Cleaning</span>         <span class="p">=</span> <span class="s">&quot;Cleaning&quot;</span>
@@ -1178,23 +1225,6 @@ Script is an alias for the Golang function that you can call from YAML Workflow 
     <span class="nx">CleanArjun</span>       <span class="p">=</span> <span class="s">&quot;CleanArjun&quot;</span>
     <span class="nx">GenNucleiReport</span>  <span class="p">=</span> <span class="s">&quot;GenNucleiReport&quot;</span>
     <span class="nx">CleanJSONHttpx</span>   <span class="p">=</span> <span class="s">&quot;CleanJSONHttpx&quot;</span>
-<span class="p">)</span>
-
-<span class="kd">const</span> <span class="p">(</span>
-    <span class="nx">ExecCmd</span>           <span class="p">=</span> <span class="s">&quot;ExecCmd&quot;</span>
-    <span class="nx">ExecCmdB</span>          <span class="p">=</span> <span class="s">&quot;ExecCmdB&quot;</span>
-    <span class="nx">ExecCmdWithOutput</span> <span class="p">=</span> <span class="s">&quot;ExecCmdWithOutput&quot;</span>
-    <span class="nx">ExecContain</span>       <span class="p">=</span> <span class="s">&quot;ExecContain&quot;</span>
-<span class="p">)</span>
-
-
-<span class="kd">const</span> <span class="p">(</span>
-    <span class="nx">Sleep</span>      <span class="p">=</span> <span class="s">&quot;Sleep&quot;</span>
-    <span class="nx">Exit</span>       <span class="p">=</span> <span class="s">&quot;Exit&quot;</span>
-    <span class="nx">CastToInt</span>  <span class="p">=</span> <span class="s">&quot;CastToInt&quot;</span>
-    <span class="nx">StripSlash</span> <span class="p">=</span> <span class="s">&quot;StripSlash&quot;</span>
-    <span class="nx">Printf</span>     <span class="p">=</span> <span class="s">&quot;Printf&quot;</span>
-    <span class="nx">Cat</span>        <span class="p">=</span> <span class="s">&quot;Cat&quot;</span>
 <span class="p">)</span>
 </code></pre></div>
 
