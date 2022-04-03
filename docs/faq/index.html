@@ -1214,6 +1214,10 @@ The reason it won't find any vulnerability on the intentionally vulnerable app i
 </details>
 <details class="info" open="open"><summary>Where is your <strong>private signatures</strong> and <strong>wordlists</strong> in the premium package?</summary><p>It's all included in the package. The install script will download it all for you. You can also see the details structure <a href="https://docs.osmedeus.org/premium/#support-distributed-scan"><strong>here</strong></a>.</p>
 </details>
+<div class="admonition question">
+<p class="admonition-title">What is the <code>{{.Binaries}}</code> in the workflow?</p>
+</div>
+<p><code>{{.Binaries}}</code> will be replaced with <code>~/osmedeus/binaries/</code> where I store all the binaries for running the workflow . If you already install it in your $PATH environment variable then you can just use the tool directly like <code>your-tool -t {{.Target}}</code> instead of  <code>{{.Binaries}}/your-tool -t {{.Target}}</code></p>
 
               
             </article>

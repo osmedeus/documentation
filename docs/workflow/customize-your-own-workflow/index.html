@@ -1220,8 +1220,9 @@ a,a:hover,a:click, a:visited{
 <p class="admonition-title">All Workflow files are YAML-based so make sure you follow the YAML syntax. Otherwise, it wouldn't work</p>
 </div>
 <div class="admonition info">
-<p class="admonition-title"><code>{{.Binaries}}</code> will be replaced with <code>~/osmedeus/binaries/</code> where I store all the binaries for running the workflow . If you already install it in your $PATH environment variable then you can just use the tool directly like <code>your-tool -t {{.Target}}</code> instead of  <code>{{.Binaries}}/your-tool -t {{.Target}}</code></p>
+<p class="admonition-title">What is the <code>{{.Binaries}}</code> in the workflow?</p>
 </div>
+<p><code>{{.Binaries}}</code> will be replaced with <code>~/osmedeus/binaries/</code> where I store all the binaries for running the workflow . If you already install it in your $PATH environment variable then you can just use the tool directly like <code>your-tool -t {{.Target}}</code> instead of  <code>{{.Binaries}}/your-tool -t {{.Target}}</code></p>
 <p>After the installation process is finished, your workflow will be stored at <code>~/osmedeus-base/workflow</code>.</p>
 <h2 id="1-tweaking-commands-or-threads-of-the-tool-depends-on-your-machine-specification">1. Tweaking commands or threads of the tool depends on your machine specification<a class="headerlink" href="#1-tweaking-commands-or-threads-of-the-tool-depends-on-your-machine-specification" title="Permanent link">&para;</a></h2>
 <p>You can start tweaking the workflow right away by edit any command in module file at <code>~/osmedeus-base/workflow/general/</code> folder.</p>

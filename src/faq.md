@@ -88,3 +88,6 @@
 
 ???+ info "Where is your **private signatures** and **wordlists** in the premium package?"
     It's all included in the package. The install script will download it all for you. You can also see the details structure [**here**](https://docs.osmedeus.org/premium/#support-distributed-scan).
+
+!!! question "What is the `{{.Binaries}}` in the workflow?"
+  `{{.Binaries}}` will be replaced with `~/osmedeus/binaries/` where I store all the binaries for running the workflow . If you already install it in your $PATH environment variable then you can just use the tool directly like `your-tool -t {{.Target}}` instead of  `{{.Binaries}}/your-tool -t {{.Target}}`
