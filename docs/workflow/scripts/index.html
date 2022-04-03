@@ -1190,6 +1190,9 @@ A Script is an alias for the Golang function that you can call from YAML Workflo
 </figure>
 <hr />
 <h2 id="core-scripts">Core Scripts<a class="headerlink" href="#core-scripts" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Currently, I don't have time to fully document these scripts, but if you understand golang code you can read what it does from <a href="https://github.com/j3ssie/osmedeus/blob/main/core/runtime.go#L106"><strong>here</strong></a></p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="cm">/* File to store all the script for better reference */</span>
 
 <span class="kd">const</span> <span class="p">(</span>
@@ -1200,12 +1203,19 @@ A Script is an alias for the Golang function that you can call from YAML Workflo
 <span class="p">)</span>
 
 <span class="kd">const</span> <span class="p">(</span>
-    <span class="nx">Sleep</span>      <span class="p">=</span> <span class="s">&quot;Sleep&quot;</span>
-    <span class="nx">Exit</span>       <span class="p">=</span> <span class="s">&quot;Exit&quot;</span>
-    <span class="nx">CastToInt</span>  <span class="p">=</span> <span class="s">&quot;CastToInt&quot;</span>
-    <span class="nx">StripSlash</span> <span class="p">=</span> <span class="s">&quot;StripSlash&quot;</span>
-    <span class="nx">Printf</span>     <span class="p">=</span> <span class="s">&quot;Printf&quot;</span>
-    <span class="nx">Cat</span>        <span class="p">=</span> <span class="s">&quot;Cat&quot;</span>
+    <span class="nx">SortU</span>           <span class="p">=</span> <span class="s">&quot;SortU&quot;</span>
+    <span class="nx">SplitFile</span>       <span class="p">=</span> <span class="s">&quot;SplitFile&quot;</span>
+    <span class="nx">Append</span>          <span class="p">=</span> <span class="s">&quot;Append&quot;</span>
+    <span class="nx">Copy</span>            <span class="p">=</span> <span class="s">&quot;Copy&quot;</span>
+    <span class="nx">CreateFolder</span>    <span class="p">=</span> <span class="s">&quot;CreateFolder&quot;</span>
+    <span class="nx">DeleteFile</span>      <span class="p">=</span> <span class="s">&quot;DeleteFile&quot;</span>
+    <span class="nx">DeleteFolder</span>    <span class="p">=</span> <span class="s">&quot;DeleteFolder&quot;</span>
+    <span class="nx">SplitFileByPart</span> <span class="p">=</span> <span class="s">&quot;SplitFileByPart&quot;</span>
+    <span class="nx">FileLength</span>      <span class="p">=</span> <span class="s">&quot;FileLength&quot;</span>
+    <span class="nx">IsFile</span>          <span class="p">=</span> <span class="s">&quot;IsFile&quot;</span>
+    <span class="nx">EmptyDir</span>        <span class="p">=</span> <span class="s">&quot;EmptyDir&quot;</span>
+    <span class="nx">EmptyFile</span>       <span class="p">=</span> <span class="s">&quot;EmptyFile&quot;</span>
+    <span class="nx">ReadLines</span>       <span class="p">=</span> <span class="s">&quot;ReadLines&quot;</span>
 <span class="p">)</span>
 
 <span class="kd">const</span> <span class="p">(</span>

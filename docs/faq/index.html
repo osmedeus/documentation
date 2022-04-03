@@ -1154,7 +1154,7 @@ a,a:hover,a:click, a:visited{
 </details>
 <details class="info" open="open"><summary>What will you get from the Osmedeus Premium Package?</summary><p>You can see what included in the package in <strong><a href="/premium/">the premium package page</a></strong></p>
 </details>
-<details class="question" open="open"><summary>Is it support Windows?</summary><p>Unfortunately not, it was designed for Linux only. You will need to use Docker, WSL or a VM if you really want to run Osmedeus on Windows.</p>
+<details class="question" open="open"><summary>Is it support Windows?</summary><p>Unfortunately not, it was designed for Linux only. You will need to use Docker, WSL, or a VM if you really want to run Osmedeus on Windows.</p>
 </details>
 <details class="info" open="open"><summary>I got some error while installing Osmedeus on my machine. How can I fix it?</summary><p>Maybe run <code>sudo su</code> first and then run <code>rm -rf ~/osmedeus-base ~/.osmedeus</code> and then run the install script again to have a clean installation.</p>
 </details>
@@ -1168,7 +1168,6 @@ a,a:hover,a:click, a:visited{
 </details>
 <details class="info" open="open"><summary>I got some error while running the scan?</summary><p><img alt="having-error-with-some-tools" loading="lazy" src="/static/faq/having-error-with-some-tools.png" />
 You can use <code>osmedeus health</code> command to check if the install is okay or not.</p>
-<p>Sometimes error show up mean some of the tools require token to run like <code>github-subdomains</code> but you can ignore it since I already catch the error</p>
 </details>
 <details class="question" open="open"><summary>Where I can get a live support?</summary><p>You can Join <strong><a href="https://discord.gg/gy4SWhpaPU">Discord Server here</a></strong> to see if anyone can help</p>
 </details>
@@ -1212,6 +1211,8 @@ The reason it won't find any vulnerability on the intentionally vulnerable app i
 <li>Remember that you were warned twice about reading the flow and module files.</li>
 <li>Just search your tool command in the workflow folder.</li>
 </ol>
+</details>
+<details class="info" open="open"><summary>Where is your <strong>private signatures</strong> and <strong>wordlists</strong> in the premium package?</summary><p>It's all included in the package. The install script will download it all for you. You can also see the details structure <a href="https://docs.osmedeus.org/premium/#support-distributed-scan"><strong>here</strong></a>.</p>
 </details>
 
               

@@ -10,7 +10,7 @@
     You can see what included in the package in **[the premium package page](/premium/)**
 
 ???+ question "Is it support Windows?"
-    Unfortunately not, it was designed for Linux only. You will need to use Docker, WSL or a VM if you really want to run Osmedeus on Windows.
+    Unfortunately not, it was designed for Linux only. You will need to use Docker, WSL, or a VM if you really want to run Osmedeus on Windows.
 
 ???+ info "I got some error while installing Osmedeus on my machine. How can I fix it?"
     Maybe run `sudo su` first and then run `rm -rf ~/osmedeus-base ~/.osmedeus` and then run the install script again to have a clean installation.
@@ -30,8 +30,6 @@
 ???+ info "I got some error while running the scan?"
     ![having-error-with-some-tools](/static/faq/having-error-with-some-tools.png){ loading=lazy }
     You can use `osmedeus health` command to check if the install is okay or not.
-
-    Sometimes error show up mean some of the tools require token to run like `github-subdomains` but you can ignore it since I already catch the error
 
 ???+ question "Where I can get a live support?"
     You can Join **[Discord Server here](https://discord.gg/gy4SWhpaPU)** to see if anyone can help
@@ -87,3 +85,6 @@
     2. Seriously, read the flow and module files.
     3. Remember that you were warned twice about reading the flow and module files.
     4. Just search your tool command in the workflow folder.
+
+???+ info "Where is your **private signatures** and **wordlists** in the premium package?"
+    It's all included in the package. The install script will download it all for you. You can also see the details structure [**here**](https://docs.osmedeus.org/premium/#support-distributed-scan).

@@ -2,6 +2,8 @@
 
 !!! Warning "All Workflow files are YAML-based so make sure you follow the YAML syntax. Otherwise, it wouldn't work"
 
+!!! info "`{{.Binaries}}` will be replaced with `~/osmedeus/binaries/` where I store all the binaries for running the workflow . If you already install it in your $PATH environment variable then you can just use the tool directly like `your-tool -t {{.Target}}` instead of  `{{.Binaries}}/your-tool -t {{.Target}}`"
+
 After the installation process is finished, your workflow will be stored at `~/osmedeus-base/workflow`.
 
 
