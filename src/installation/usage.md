@@ -145,5 +145,5 @@ osmedeus health git --debug
   osmedeus report list
   osmedeus report view --raw -t target.com
   osmedeus report view --static -t target.com
-  osmedeus report view --raw --static --ip <your-public-ip> -t target.com
+  osmedeus report view --static --ip <your-public-ip> -t target.com
 ```
