@@ -47,7 +47,7 @@ steps:
     source: "{{.inputfile}}"
     threads: '{{.dirbThreads}}'
     commands:
-      - "{{.Binaries}}/ffuf -t {{.ffThreads}} -timeout 15 -ac -fc '429,403,404' -D -e 'asp,aspx,pl,php,html,htm,jsp,cgi' -of json -o {{.Output}}/directory/raw-{{._id_}}.json -u '{{.line}}/FUZZ' -w {{.wordlists}}:FUZZ"
+      - "{{.Binaries}}/ffuf -t {{.ffThreads}} -timeout 15 -ac -fc '429,403,404' -D -e 'asp,aspx,pl,php,html,htm,jsp,cgi' -of json -o {{.Output}}/directory/raw-[[._id_]].json -u '[[.line]]/FUZZ' -w {{.wordlists}}:FUZZ"
 
 # --snippet--
 

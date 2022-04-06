@@ -154,21 +154,21 @@ steps:
     source: "{{.inputfile}}"
     threads: '{{.dirbThreads}}'
     commands: # {{.Binaries}}/ffuf is ~/osmedeus/binaries/ffuf which is a place I store all the binaries but you already install it in your $PATH environment variable then you can just use - "ffuf -t {{.fthreads}} ..."
-      - "{{.Binaries}}/ffuf -t {{.fthreads}} -timeout 15 -ac -fc '429,403,404' -D -e 'asp,aspx,pl,php,html,htm,jsp,cgi' -of json -o {{.Output}}/directory/raw-{{._id_}}.json -u '{{.line}}/FUZZ' -w {{.wordlists}}:FUZZ"
+      - "{{.Binaries}}/ffuf -t {{.fthreads}} -timeout 15 -ac -fc '429,403,404' -D -e 'asp,aspx,pl,php,html,htm,jsp,cgi' -of json -o {{.Output}}/directory/raw-[[._id_]].json -u '[[.line]]/FUZZ' -w {{.wordlists}}:FUZZ"
     scripts:
       # get result in csv
-      - ExecCmd("cat {{.Output}}/directory/raw-{{._id_}}.json | jq -r '.results[] | [.url,.status,.length,.words,.lines,.redirectlocation] | join(\",\")' > {{.Output}}/directory/raw-{{._id_}}-{{.Workspace}}.csv")
+      - ExecCmd("cat {{.Output}}/directory/raw-[[._id_]].json | jq -r '.results[] | [.url,.status,.length,.words,.lines,.redirectlocation] | join(\",\")' > {{.Output}}/directory/raw-[[._id_]]-{{.Workspace}}.csv")
       # join to final result
-      - ExecCmd("cat {{.Output}}/directory/raw-{{._id_}}-{{.Workspace}}.csv >> {{.Output}}/directory/beautify-{{.Workspace}}.csv")
+      - ExecCmd("cat {{.Output}}/directory/raw-[[._id_]]-{{.Workspace}}.csv >> {{.Output}}/directory/beautify-{{.Workspace}}.csv")
       # noti small file to telegram
-      - ExecCmd("cat {{.Output}}/directory/raw-{{._id_}}-{{.Workspace}}.csv | {{.Binaries}}/csvtk pretty -I -s ' | ' -W 75 > {{.Output}}/directory/beautify-{{._id_}}-{{.Workspace}}.txt")
-      - TeleMessByFile("{{.chan}}", "{{.Output}}/directory/beautify-{{._id_}}-{{.Workspace}}.txt")
+      - ExecCmd("cat {{.Output}}/directory/raw-[[._id_]]-{{.Workspace}}.csv | {{.Binaries}}/csvtk pretty -I -s ' | ' -W 75 > {{.Output}}/directory/beautify-[[._id_]]-{{.Workspace}}.txt")
+      - TeleMessByFile("{{.chan}}", "{{.Output}}/directory/beautify-[[._id_]]-{{.Workspace}}.txt")
       # sorting & clean up
       - SortU("{{.Output}}/directory/beautify-{{.Workspace}}.csv")
-      - ExecCmd("rm -rf {{.Output}}/directory/beautify-{{._id_}}-{{.Workspace}}.txt {{.Output}}/directory/raw-{{._id_}}-{{.Workspace}}.csv {{.Output}}/directory/raw-{{._id_}}.json {{.Output}}/directory/unique-{{._id_}}.json")
+      - ExecCmd("rm -rf {{.Output}}/directory/beautify-[[._id_]]-{{.Workspace}}.txt {{.Output}}/directory/raw-[[._id_]]-{{.Workspace}}.csv {{.Output}}/directory/raw-[[._id_]].json {{.Output}}/directory/unique-[[._id_]].json")
     # generate final beautify every 400 domains has been scanned
     pconditions:
-      - "({{._id_}} % {{.commitLength}}) == 0"
+      - "([[._id_]] % {{.commitLength}}) == 0"
     pscripts:
       - ExecCmd("cat {{.Output}}/directory/beautify-{{.Workspace}}.csv | {{.Binaries}}/csvtk pretty -I -s ' | ' -W 75 > {{.Output}}/directory/beautify-{{.Workspace}}.txt")
       - ExecCmd("cat {{.Output}}/directory/beautify-{{.Workspace}}.txt >> {{.Storages}}/paths/{{.Workspace}}/beautify-{{.Workspace}}.txt")
@@ -227,7 +227,7 @@ steps: # all the steps will run in serial
   - source: "{{.inputfile}}" # source file to loop through
     threads: '{{.dirbThreads}}'
     commands: # {{.Binaries}} is the path to binaries which usually ~/osmedeus/binaries/ but you can use any tool inside your $PATH environment variable
-      - "{{.Binaries}}/ffuf-mod -H 'X-Forwarded-For: 127.0.0.1' -t {{.fthreads}} -recursion-depth {{.recursion}} -D -e 'asp,aspx,php,html,htm,jsp,cgi' -timeout 15 -get-hash -ac -s -fc '429,404,400' -of json -o {{.Output}}/directory/raw-{{._id_}}.json -u '{{.line}}/FUZZ' -w {{.wordlists}}:FUZZ"
+      - "{{.Binaries}}/ffuf-mod -H 'X-Forwarded-For: 127.0.0.1' -t {{.fthreads}} -recursion-depth {{.recursion}} -D -e 'asp,aspx,php,html,htm,jsp,cgi' -timeout 15 -get-hash -ac -s -fc '429,404,400' -of json -o {{.Output}}/directory/raw-[[._id_]].json -u '[[.line]]/FUZZ' -w {{.wordlists}}:FUZZ"
     scripts:
       - SortU("{{.Storages}}/paths/{{.Workspace}}/paths-{{.Workspace}}.csv")
 ```
