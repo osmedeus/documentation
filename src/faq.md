@@ -10,7 +10,7 @@
     You can see what included in the package in **[the premium package page](/premium/)**
 
 ???+ question "Does the premium package require a continuous subscription?"
-    For now, it's not. You can use it whatever you like. I push the update every week, so you might won't be able to get the latest version of Osmedeus if you cancel the subscription.
+    Currently, it's pay as you go. but I push the update every week, you might miss the latest version of it if you cancel the subscription.
 
 ???+ info "Is there any different document for the Premium Package?"
     Nope, it's all **[right here](/premium/)**
@@ -35,7 +35,6 @@
 
 ???+ info "How can I update my Osmedeus?"
     Just run the install script again and it will be updated. Run `rm -rf /root/osmedeus-base /root/.osmedeus` first if you want to have a fresh install.
-
 
 ???+ question "Where can I find the result after the scan done?"
     All of your scan data store at `~/.osmedeus/workspaces/`
