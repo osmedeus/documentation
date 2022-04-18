@@ -9,8 +9,20 @@
 ???+ info "What will you get from the Osmedeus Premium Package?"
     You can see what included in the package in **[the premium package page](/premium/)**
 
-???+ question "Is it support Windows?"
-    Unfortunately not, it was designed for Linux only. You will need to use Docker, WSL, or a VM if you really want to run Osmedeus on Windows.
+???+ question "Does the premium package require a continuous subscription?"
+    For now, it's not. You can use it whatever you like. I push the update every week, so you might won't be able to get the latest version of Osmedeus if you cancel the subscription.
+
+???+ info "Is there any different document for the Premium Package?"
+    Nope, it's all **[right here](/premium/)**
+
+???+ question "Is there any different document for the Premium Package?"
+    This is already included everything from my private Jaeles signatures and the custom wordlists.
+
+???+ info "Where can I get the private Jaeles signatures and the custom wordlists?"
+    **[The premium package page](/premium/)** already included everything from my private Jaeles signatures and the custom wordlists.
+
+???+ info "How can I upgrade from Osmedeus Community to Premium Package?"
+    Just run `rm -rf ~/osmedeus-base` first then run a install script from the premium package download page.
 
 ???+ info "I got some error while installing Osmedeus on my machine. How can I fix it?"
     Maybe run `sudo su` first and then run `rm -rf ~/osmedeus-base ~/.osmedeus` and then run the install script again to have a clean installation.
@@ -23,6 +35,7 @@
 
 ???+ info "How can I update my Osmedeus?"
     Just run the install script again and it will be updated. Run `rm -rf /root/osmedeus-base /root/.osmedeus` first if you want to have a fresh install.
+
 
 ???+ question "Where can I find the result after the scan done?"
     All of your scan data store at `~/.osmedeus/workspaces/`
