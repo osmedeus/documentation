@@ -3,6 +3,9 @@
 ???+ question "How to setup the Osmedeus?"
     Please check out **[installation guide here](/installation/)**
 
+???+ info "Does Osmedeus Support Windows or ARM based processor?"
+    Unfortunately, Osmedeus does not support Windows or ARM based processor. Please consider using WSL, Docker or Virtualization software to able to use Osmedeus on your machine.
+
 ???+ success "I love the Osmedeus Community version. Is there any premium subscription?"
     Please check out **[the premium package here](/premium/)**
 
