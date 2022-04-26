@@ -54,7 +54,7 @@ Now add the API Key and channel ID to the `~/osmedeus-base/token/osm-default.rc`
 
 ```shell
 # for telegram
-export TELEGRAM_API_TOKEN=1111114500:AAGx
+export TELEGRAM_API_TOKEN=1111111100:AAGx
 ## run this command to get channel ID: curl 'https://api.telegram.org/bot$TELEGRAM_API_TOKEN/sendMessage?chat_id=@osmpReports&text=hello'
 ## {"ok":true,"result":{"message_id":2,"sender_chat":{"id":-1001353928111,"title":"your-osm-channel","username":"yourOsmChannel","type":"channel"},"chat":{"id":-1001353928111,"title":"your-osm-channel","username":"yourOsmChannel","type":"channel"},"date":1650958729,"text":"hello"}}
 ## --> your channel ID is '-1001353928111'
