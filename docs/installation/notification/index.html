@@ -541,7 +541,7 @@ a,a:hover,a:click, a:visited{
       
         <li class="md-nav__item">
   <a href="#4-put-your-bot-api-key-and-channel-id-in-the-osm-defaultrc-file" class="md-nav__link">
-    4. Put your bot api key and channel ID in the osm-default.rc file
+    4. Put your bot API key and channel ID in the osm-default.rc file
   </a>
   
 </li>
@@ -1251,18 +1251,20 @@ a,a:hover,a:click, a:visited{
 <h2 id="2-create-a-telegram-channel">2. Create a Telegram Channel<a class="headerlink" href="#2-create-a-telegram-channel" title="Permanent link">&para;</a></h2>
 <figure>
 <p><img alt="create-bot" src="/static/noti/create-a-channel.png" />
-    Create a channel and add your bot to it. Now run the command below to get your channel ID</p>
+    Create a channel and add your bot to it. Keep it <strong>Public</strong> until you get the channel ID.</p>
 </figure>
 <h2 id="3-get-your-channel-id">3. Get your channel ID<a class="headerlink" href="#3-get-your-channel-id" title="Permanent link">&para;</a></h2>
 <figure>
 <p><img alt="create-bot" src="/static/noti/send-sample-text-to-get-channel-ID.png" /></p>
 </figure>
+<p>run the command below to get your channel ID</p>
 <div class="highlight"><pre><span></span><code>curl <span class="s1">&#39;https://api.telegram.org/bot5321597600:&lt;your-token-here&gt;/sendMessage?chat_id=@&lt;your-bot-URL-at-step-1&gt;&amp;text=hello&#39;</span>
-
-<span class="c1"># the output will looks like this {&quot;ok&quot;:true,&quot;result&quot;:{&quot;message_id&quot;:2,&quot;sender_chat&quot;:{&quot;id&quot;:-1001353928111,&quot;title&quot;:&quot;your-osm-channel&quot;,&quot;username&quot;:&quot;yourOsmChannel&quot;,&quot;type&quot;:&quot;channel&quot;},&quot;chat&quot;:{&quot;id&quot;:-1001353928111,&quot;title&quot;:&quot;your-osm-channel&quot;,&quot;username&quot;:&quot;yourOsmChannel&quot;,&quot;type&quot;:&quot;channel&quot;},&quot;date&quot;:1650958729,&quot;text&quot;:&quot;hello&quot;}}</span>
-<span class="c1"># --&gt; your channel ID is &#39;-1001353928111&#39;</span>
 </code></pre></div>
-<h2 id="4-put-your-bot-api-key-and-channel-id-in-the-osm-defaultrc-file">4. Put your bot api key and channel ID in the <code>osm-default.rc</code> file<a class="headerlink" href="#4-put-your-bot-api-key-and-channel-id-in-the-osm-defaultrc-file" title="Permanent link">&para;</a></h2>
+<p>the output will look like this</p>
+<p><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;ok&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;result&quot;</span><span class="p">:{</span><span class="nt">&quot;message_id&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;sender_chat&quot;</span><span class="p">:{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">-1001353928111</span><span class="p">,</span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;your-osm-channel&quot;</span><span class="p">,</span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="s2">&quot;yourOsmChannel&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;channel&quot;</span><span class="p">},</span><span class="nt">&quot;chat&quot;</span><span class="p">:{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">-1001353928111</span><span class="p">,</span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;your-osm-channel&quot;</span><span class="p">,</span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="s2">&quot;yourOsmChannel&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;channel&quot;</span><span class="p">},</span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="mi">1650958729</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;hello&quot;</span><span class="p">}}</span>
+</code></pre></div>
+grab your channel ID from the <code>id</code> field. In this case, it should be <code>-1001353928111</code>.</p>
+<h2 id="4-put-your-bot-api-key-and-channel-id-in-the-osm-defaultrc-file">4. Put your bot API key and channel ID in the <code>osm-default.rc</code> file<a class="headerlink" href="#4-put-your-bot-api-key-and-channel-id-in-the-osm-defaultrc-file" title="Permanent link">&para;</a></h2>
 <p>Now add the API Key and channel ID to the <code>~/osmedeus-base/token/osm-default.rc</code> file.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># for telegram</span>
 <span class="nb">export</span> <span class="nv">TELEGRAM_API_TOKEN</span><span class="o">=</span><span class="m">1111114500</span>:AAGx
@@ -1278,7 +1280,7 @@ a,a:hover,a:click, a:visited{
 <span class="nb">export</span> <span class="nv">TELEGRAM_MICS_CHANNEL</span><span class="o">=</span>-100XXXXX
 </code></pre></div>
 <p>You may also noticed that there are some telegram channels in the <code>osm-default.rc</code> file. You can set all of them to the same channel ID for simplicity. </p>
-<p>But if you want to have more visibility, repeat the step 2 and 3 above to have more channel ID and add it to the <code>osm-default.rc</code> file.</p>
+<p>But if you want to have more visibility, repeat steps 2 and 3 above to have more channel ID and add it to the <code>osm-default.rc</code> file.</p>
 <h2 id="5-reload-the-config-and-check-if-everything-is-working">5. Reload the config and check if everything is working<a class="headerlink" href="#5-reload-the-config-and-check-if-everything-is-working" title="Permanent link">&para;</a></h2>
 <p>After modified the tokens, then run commands below to reload token to the osmedeus config.yaml</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># or edit file osm-default.rc</span>

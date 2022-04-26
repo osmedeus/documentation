@@ -21,7 +21,7 @@
 
 <figure markdown> 
     ![create-bot](/static/noti/create-a-channel.png)
-    Create a channel and add your bot to it. Now run the command below to get your channel ID
+    Create a channel and add your bot to it. Keep it **Public** until you get the channel ID.
 </figure>
 
 
@@ -31,16 +31,22 @@
   ![create-bot](/static/noti/send-sample-text-to-get-channel-ID.png)
 </figure>
 
-```shell
+run the command below to get your channel ID
 
+```bash
 curl 'https://api.telegram.org/bot5321597600:<your-token-here>/sendMessage?chat_id=@<your-bot-URL-at-step-1>&text=hello'
-
-# the output will looks like this {"ok":true,"result":{"message_id":2,"sender_chat":{"id":-1001353928111,"title":"your-osm-channel","username":"yourOsmChannel","type":"channel"},"chat":{"id":-1001353928111,"title":"your-osm-channel","username":"yourOsmChannel","type":"channel"},"date":1650958729,"text":"hello"}}
-# --> your channel ID is '-1001353928111'
 ```
 
+the output will look like this
 
-## 4. Put your bot api key and channel ID in the `osm-default.rc` file
+```json
+{"ok":true,"result":{"message_id":2,"sender_chat":{"id":-1001353928111,"title":"your-osm-channel","username":"yourOsmChannel","type":"channel"},"chat":{"id":-1001353928111,"title":"your-osm-channel","username":"yourOsmChannel","type":"channel"},"date":1650958729,"text":"hello"}}
+```
+grab your channel ID from the `id` field. In this case, it should be `-1001353928111`.
+
+
+
+## 4. Put your bot API key and channel ID in the `osm-default.rc` file
 
 Now add the API Key and channel ID to the `~/osmedeus-base/token/osm-default.rc` file.
 
@@ -61,7 +67,7 @@ export TELEGRAM_MICS_CHANNEL=-100XXXXX
 
 You may also noticed that there are some telegram channels in the `osm-default.rc` file. You can set all of them to the same channel ID for simplicity. 
 
-But if you want to have more visibility, repeat the step 2 and 3 above to have more channel ID and add it to the `osm-default.rc` file.
+But if you want to have more visibility, repeat steps 2 and 3 above to have more channel ID and add it to the `osm-default.rc` file.
 
 ## 5. Reload the config and check if everything is working
 
