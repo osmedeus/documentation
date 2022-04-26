@@ -10,14 +10,14 @@
       
       
       
-        <link rel="canonical" href="https://docs.osmedeus.org/workflow/default-workflow/">
+        <link rel="canonical" href="https://docs.osmedeus.org/installation/notification/">
       
       <link rel="icon" href="../../static/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.5">
     
     
       
-        <title>Default Community workflow - Osmedeus Next Generation - A Workflow Engine for Offensive Security</title>
+        <title>Setup Notification - Osmedeus Next Generation - A Workflow Engine for Offensive Security</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#default-community-workflow" class="md-skip">
+        <a href="#notification-with-telegram" class="md-skip">
           Skip to content
         </a>
       
@@ -137,7 +137,7 @@ a,a:hover,a:click, a:visited{
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Default Community workflow
+              Setup Notification
             
           </span>
         </div>
@@ -243,13 +243,15 @@ a,a:hover,a:click, a:visited{
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../installation/" class="md-tabs__link">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
         Getting Started
       </a>
     </li>
@@ -275,8 +277,6 @@ a,a:hover,a:click, a:visited{
         
   
   
-    
-  
 
 
   
@@ -288,7 +288,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../workflow/" class="md-tabs__link">
         Write Your Own Workflow
       </a>
     </li>
@@ -395,12 +395,14 @@ a,a:hover,a:click, a:visited{
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -441,7 +443,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../../installation/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         Installation
       </a>
     </li>
@@ -455,7 +457,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../../installation/using-docker/" class="md-nav__link">
+      <a href="../using-docker/" class="md-nav__link">
         Using Docker
       </a>
     </li>
@@ -469,7 +471,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../../installation/token/" class="md-nav__link">
+      <a href="../token/" class="md-nav__link">
         Setup Token & API Key
       </a>
     </li>
@@ -481,11 +483,94 @@ a,a:hover,a:click, a:visited{
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../installation/notification/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Setup Notification
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Setup Notification
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-create-a-telegram-bot" class="md-nav__link">
+    1. Create a Telegram Bot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-create-a-telegram-channel" class="md-nav__link">
+    2. Create a Telegram Channel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-get-your-channel-id" class="md-nav__link">
+    3. Get your channel ID
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-put-your-bot-api-key-and-channel-id-in-the-osm-defaultrc-file" class="md-nav__link">
+    4. Put your bot api key and channel ID in the osm-default.rc file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-reload-the-config-and-check-if-everything-is-working" class="md-nav__link">
+    5. Reload the config and check if everything is working
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-run-the-test-workflow-to-see-everything-is-working-fine" class="md-nav__link">
+    6. Run the test workflow to see everything is working fine
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-see-what-noti-scripts-use-in-the-workflow" class="md-nav__link">
+    7. See what noti scripts use in the workflow.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -497,7 +582,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../../installation/install-note/" class="md-nav__link">
+      <a href="../install-note/" class="md-nav__link">
         Installation Notes
       </a>
     </li>
@@ -511,7 +596,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../../installation/usage/" class="md-nav__link">
+      <a href="../usage/" class="md-nav__link">
         Usage
       </a>
     </li>
@@ -525,7 +610,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../../installation/web-ui/" class="md-nav__link">
+      <a href="../web-ui/" class="md-nav__link">
         Web UI (Experimental)
       </a>
     </li>
@@ -539,7 +624,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../../installation/practical-usage/" class="md-nav__link">
+      <a href="../practical-usage/" class="md-nav__link">
         Practical Usage
       </a>
     </li>
@@ -627,14 +712,12 @@ a,a:hover,a:click, a:visited{
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -663,16 +746,14 @@ a,a:hover,a:click, a:visited{
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" data-md-state="indeterminate" type="checkbox" id="__nav_4_1" checked>
       
       
       
@@ -705,7 +786,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../workflow/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -717,59 +798,11 @@ a,a:hover,a:click, a:visited{
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Default Community workflow
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../workflow/default-workflow/" class="md-nav__link">
         Default Community workflow
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#anatomy-of-public-community-methodology" class="md-nav__link">
-    Anatomy of Public Community methodology
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#list-all-flow-available" class="md-nav__link">
-    List all flow available
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -781,7 +814,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../parameters/" class="md-nav__link">
+      <a href="../../workflow/parameters/" class="md-nav__link">
         Parameters
       </a>
     </li>
@@ -795,7 +828,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../other-fields/" class="md-nav__link">
+      <a href="../../workflow/other-fields/" class="md-nav__link">
         Other Fields
       </a>
     </li>
@@ -850,7 +883,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../customize-your-own-workflow/" class="md-nav__link">
+      <a href="../../workflow/customize-your-own-workflow/" class="md-nav__link">
         Customize your own Workflow
       </a>
     </li>
@@ -864,7 +897,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../use-your-own-wordlists/" class="md-nav__link">
+      <a href="../../workflow/use-your-own-wordlists/" class="md-nav__link">
         Use Your Own wordlists
       </a>
     </li>
@@ -923,7 +956,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../scripts/" class="md-nav__link">
+      <a href="../../workflow/scripts/" class="md-nav__link">
         Defination
       </a>
     </li>
@@ -937,7 +970,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../io-utils/" class="md-nav__link">
+      <a href="../../workflow/io-utils/" class="md-nav__link">
         IO Scripts
       </a>
     </li>
@@ -951,7 +984,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../git-scripts/" class="md-nav__link">
+      <a href="../../workflow/git-scripts/" class="md-nav__link">
         Git Scripts
       </a>
     </li>
@@ -965,7 +998,7 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../noti-scripts/" class="md-nav__link">
+      <a href="../../workflow/noti-scripts/" class="md-nav__link">
         Notification Scripts
       </a>
     </li>
@@ -1198,37 +1231,102 @@ a,a:hover,a:click, a:visited{
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/j3ssie/osmedeus/edit/master/docs/workflow/default-workflow.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/j3ssie/osmedeus/edit/master/docs/installation/notification.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-<h1 id="default-community-workflow"><img alt="🌏" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f30f.svg" title=":earth_asia:" /> Default Community workflow<a class="headerlink" href="#default-community-workflow" title="Permanent link">&para;</a></h1>
-<h2 id="anatomy-of-public-community-methodology">Anatomy of Public Community methodology<a class="headerlink" href="#anatomy-of-public-community-methodology" title="Permanent link">&para;</a></h2>
-<p><img alt="community-workflow" loading="lazy" src="/static/workflow/community-workflow.png" /></p>
-<h2 id="list-all-flow-available">List all flow available<a class="headerlink" href="#list-all-flow-available" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ osmedeus scan -f <span class="o">[</span>flow-name<span class="o">]</span> -t example.com
+<div class="admonition help">
+<p>Note that this setup is <strong>Optional</strong>. You can still use the tool perfectly fine without it!</p>
+</div>
+<div class="admonition warning">
+<p>You should only store your token in the <code>osm-default.rc</code> file. Modify the <code>~/.osmedeus/config.yaml</code> will work but you will lose your token when the next time you run the reload command.</p>
+</div>
+<h1 id="notification-with-telegram">Notification with Telegram<a class="headerlink" href="#notification-with-telegram" title="Permanent link">&para;</a></h1>
+<h2 id="1-create-a-telegram-bot">1. Create a Telegram Bot<a class="headerlink" href="#1-create-a-telegram-bot" title="Permanent link">&para;</a></h2>
+<figure>
+<p><img alt="create-bot" src="/static/noti/create-a-bot.png" />
+    Follow <a href="https://core.telegram.org/bots/faq#how-do-i-create-a-bot"><strong>this guide</strong></a> to generate your API token</p>
+</figure>
+<h2 id="2-create-a-telegram-channel">2. Create a Telegram Channel<a class="headerlink" href="#2-create-a-telegram-channel" title="Permanent link">&para;</a></h2>
+<figure>
+<p><img alt="create-bot" src="/static/noti/create-a-channel.png" />
+    Create a channel and add your bot to it. Now run the command below to get your channel ID</p>
+</figure>
+<h2 id="3-get-your-channel-id">3. Get your channel ID<a class="headerlink" href="#3-get-your-channel-id" title="Permanent link">&para;</a></h2>
+<figure>
+<p><img alt="create-bot" src="/static/noti/send-sample-text-to-get-channel-ID.png" /></p>
+</figure>
+<div class="highlight"><pre><span></span><code>curl <span class="s1">&#39;https://api.telegram.org/bot5321597600:&lt;your-token-here&gt;/sendMessage?chat_id=@&lt;your-bot-URL-at-step-1&gt;&amp;text=hello&#39;</span>
 
-<span class="c1">## List of all avalible workflow can be found here</span>
+<span class="c1"># the output will looks like this {&quot;ok&quot;:true,&quot;result&quot;:{&quot;message_id&quot;:2,&quot;sender_chat&quot;:{&quot;id&quot;:-1001353928111,&quot;title&quot;:&quot;your-osm-channel&quot;,&quot;username&quot;:&quot;yourOsmChannel&quot;,&quot;type&quot;:&quot;channel&quot;},&quot;chat&quot;:{&quot;id&quot;:-1001353928111,&quot;title&quot;:&quot;your-osm-channel&quot;,&quot;username&quot;:&quot;yourOsmChannel&quot;,&quot;type&quot;:&quot;channel&quot;},&quot;date&quot;:1650958729,&quot;text&quot;:&quot;hello&quot;}}</span>
+<span class="c1"># --&gt; your channel ID is &#39;-1001353928111&#39;</span>
+</code></pre></div>
+<h2 id="4-put-your-bot-api-key-and-channel-id-in-the-osm-defaultrc-file">4. Put your bot api key and channel ID in the <code>osm-default.rc</code> file<a class="headerlink" href="#4-put-your-bot-api-key-and-channel-id-in-the-osm-defaultrc-file" title="Permanent link">&para;</a></h2>
+<p>Now add the API Key and channel ID to the <code>~/osmedeus-base/token/osm-default.rc</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># for telegram</span>
+<span class="nb">export</span> <span class="nv">TELEGRAM_API_TOKEN</span><span class="o">=</span><span class="m">1111114500</span>:AAGx
+<span class="c1">## run this command to get channel ID: curl &#39;https://api.telegram.org/bot$TELEGRAM_API_TOKEN/sendMessage?chat_id=@osmpReports&amp;text=hello&#39;</span>
+<span class="c1">## {&quot;ok&quot;:true,&quot;result&quot;:{&quot;message_id&quot;:2,&quot;sender_chat&quot;:{&quot;id&quot;:-1001353928111,&quot;title&quot;:&quot;your-osm-channel&quot;,&quot;username&quot;:&quot;yourOsmChannel&quot;,&quot;type&quot;:&quot;channel&quot;},&quot;chat&quot;:{&quot;id&quot;:-1001353928111,&quot;title&quot;:&quot;your-osm-channel&quot;,&quot;username&quot;:&quot;yourOsmChannel&quot;,&quot;type&quot;:&quot;channel&quot;},&quot;date&quot;:1650958729,&quot;text&quot;:&quot;hello&quot;}}</span>
+<span class="c1">## --&gt; your channel ID is &#39;-1001353928111&#39;</span>
 
-+------------------+-----------------------------------------------------------------+
-<span class="p">|</span>    Flow Name     <span class="p">|</span>                           Description                           <span class="p">|</span>
-+------------------+-----------------------------------------------------------------+
-<span class="p">|</span> cidr             <span class="p">|</span> Scan <span class="k">for</span> CIDR File                                              <span class="p">|</span>
-<span class="p">|</span> domains          <span class="p">|</span> run normal routine but without subdomain scan                   <span class="p">|</span>
-<span class="p">|</span> extensive        <span class="p">|</span> run extensive routine with more <span class="k">in</span>-depth module                 <span class="p">|</span>
-<span class="p">|</span> fast             <span class="p">|</span> run fast routine                                                <span class="p">|</span>
-<span class="p">|</span> general          <span class="p">|</span> run normal routine                                              <span class="p">|</span>
-<span class="p">|</span> gently-cidr      <span class="p">|</span> Scan <span class="k">for</span> CIDR File                                              <span class="p">|</span>
-<span class="p">|</span> gently-extensive <span class="p">|</span> run extensive routine but with very low threads                 <span class="p">|</span>
-<span class="p">|</span> gently-general   <span class="p">|</span> run normal routine but with very low threads                    <span class="p">|</span>
-<span class="p">|</span> quick-cidr       <span class="p">|</span> Scan <span class="k">for</span> CIDR File but focus on common HTTP Ports               <span class="p">|</span>
-<span class="p">|</span> sync             <span class="p">|</span> Sync result based on git                                        <span class="p">|</span>
-<span class="p">|</span> <span class="nb">test</span>             <span class="p">|</span> testing workflow                                                <span class="p">|</span>
-<span class="p">|</span> urls             <span class="p">|</span> Scan <span class="k">for</span> List of URLs                                           <span class="p">|</span>
-<span class="p">|</span> vuln-and-dirb    <span class="p">|</span> directly run on vuln scan and directory scan on list of domains <span class="p">|</span>
-<span class="p">|</span> vuln             <span class="p">|</span> run fast routine with vuln scan                                 <span class="p">|</span>
-+------------------+-----------------------------------------------------------------+
+<span class="nb">export</span> <span class="nv">TELEGRAM_CHANNEL</span><span class="o">=</span>-100XXXXX
+<span class="nb">export</span> <span class="nv">TELEGRAM_STATUS_CHANNEL</span><span class="o">=</span>-100XXXXX
+<span class="nb">export</span> <span class="nv">TELEGRAM_REPORT_CHANNEL</span><span class="o">=</span>-100XXXXX
+<span class="nb">export</span> <span class="nv">TELEGRAM_SENSITIVE_CHANNEL</span><span class="o">=</span>-100XXXXX
+<span class="nb">export</span> <span class="nv">TELEGRAM_DIRB_CHANNEL</span><span class="o">=</span>-100XXXXX
+<span class="nb">export</span> <span class="nv">TELEGRAM_MICS_CHANNEL</span><span class="o">=</span>-100XXXXX
+</code></pre></div>
+<p>You may also noticed that there are some telegram channels in the <code>osm-default.rc</code> file. You can set all of them to the same channel ID for simplicity. </p>
+<p>But if you want to have more visibility, repeat the step 2 and 3 above to have more channel ID and add it to the <code>osm-default.rc</code> file.</p>
+<h2 id="5-reload-the-config-and-check-if-everything-is-working">5. Reload the config and check if everything is working<a class="headerlink" href="#5-reload-the-config-and-check-if-everything-is-working" title="Permanent link">&para;</a></h2>
+<p>After modified the tokens, then run commands below to reload token to the osmedeus config.yaml</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># or edit file osm-default.rc</span>
+<span class="c1"># add osmedeus-base/token/osm-default.rc to your ~/.bashrc file</span>
+<span class="nb">echo</span> <span class="s1">&#39;source $HOME/osmedeus-base/token/osm-default.rc&#39;</span> &gt;&gt; ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bashrc
+
+<span class="c1"># reload config to osmedeus</span>
+osmedeus config reload
+
+<span class="c1"># check if config is loaded to osmedeus config yet or not</span>
+cat ~/.osmedeus/config.yaml <span class="p">|</span> grep <span class="s1">&#39;telegram_&#39;</span>
+  telegram_channel: <span class="s2">&quot;-100XXXXX&quot;</span>
+  telegram_dirb_channel: <span class="s2">&quot;-100XXXXX&quot;</span> <span class="c1"># this should show your channel ID</span>
+  telegram_mics_channel: <span class="s2">&quot;-100XXXXX&quot;</span> 
+  telegram_report_channel: <span class="s2">&quot;-100XXXXX&quot;</span>
+  telegram_sensitive_channel: <span class="s2">&quot;-100XXXXX&quot;</span>
+  telegram_status_channel: <span class="s2">&quot;-100XXXXX&quot;</span>
+</code></pre></div>
+<h2 id="6-run-the-test-workflow-to-see-everything-is-working-fine">6. Run the test workflow to see everything is working fine<a class="headerlink" href="#6-run-the-test-workflow-to-see-everything-is-working-fine" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>osmedeus scan -m ~/osmedeus-base/workflow/test/noti.yaml -t sample.com
+</code></pre></div>
+<p>Check your telegram channel to see any message is sent.</p>
+<h2 id="7-see-what-noti-scripts-use-in-the-workflow">7. See what noti scripts use in the workflow.<a class="headerlink" href="#7-see-what-noti-scripts-use-in-the-workflow" title="Permanent link">&para;</a></h2>
+<div class="admonition success">
+<p class="admonition-title">By default the notification script already setup in the workflow, you will automatically see the notification when the scan is done.</p>
+</div>
+<figure>
+<p><img alt="Usage" src="/static/noti/telegram-noti-1.png" />
+   <br/>
+  <img alt="Usage" src="/static/noti/telegram-noti-2.png" />
+  Here is how the real results looks like.</p>
+</figure>
+<p>You can see more usage of <strong><a href="/workflow/noti-scripts/">notification scripts here</a></strong> </p>
+<p>You can also search <code>TeleMessByFile</code> script in the workflow which will send the message as the content of a file to a specific channel.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Content of the file `~/osmedeus-base/token/osm-default.rc` is represent for specific channel name as below</span>
+<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_CHANNEL=-100XXXXX           --&gt;</span> <span class="c1">#general</span>
+<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_STATUS_CHANNEL=-100XXXXX    --&gt;</span> <span class="c1">#status</span>
+<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_REPORT_CHANNEL=-100XXXXX    --&gt;</span> <span class="c1">#report</span>
+<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_SENSITIVE_CHANNEL=-100XXXXX --&gt;</span> <span class="c1">#sensitive</span>
+<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_DIRB_CHANNEL=-100XXXXX      --&gt;</span> <span class="c1">#dirb</span>
+<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_MICS_CHANNEL=-100XXXXX      --&gt;</span> <span class="c1">#mics</span>
+
+<span class="c1"># this will send the file &#39;{{.Output}}/vuln/sensitive/sensitivescan-{{.Workspace}}-{{.TS}}.txt&#39; to the channel TELEGRAM_SENSITIVE_CHANNEL above</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TeleMessByFile(&quot;#sensitive&quot;, &quot;{{.Output}}/vuln/sensitive/sensitivescan-{{.Workspace}}-{{.TS}}.txt&quot;)</span>
+
+
+<span class="c1"># this will send the file &#39;Start the scan {{.Target}}&#39; to the channel TELEGRAM_MICS_CHANNEL above </span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TeleMess(&quot;#mics&quot;, &quot;Start the scan {{.Target}}&quot;)</span>
 </code></pre></div>
 
               
@@ -1248,7 +1346,7 @@ a,a:hover,a:click, a:visited{
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview" rel="prev">
+        <a href="../token/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Setup Token &amp; API Key" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1257,20 +1355,20 @@ a,a:hover,a:click, a:visited{
               <span class="md-footer__direction">
                 Previous
               </span>
-              Overview
+              Setup Token & API Key
             </div>
           </div>
         </a>
       
       
         
-        <a href="../parameters/" class="md-footer__link md-footer__link--next" aria-label="Next: Parameters" rel="next">
+        <a href="../install-note/" class="md-footer__link md-footer__link--next" aria-label="Next: Installation Notes" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Parameters
+              Installation Notes
             </div>
           </div>
           <div class="md-footer__button md-icon">

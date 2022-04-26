@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#main-token-file" class="md-skip">
+        <a href="#amass-config" class="md-skip">
           Skip to content
         </a>
       
@@ -421,6 +421,8 @@ a,a:hover,a:click, a:visited{
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2">
@@ -467,10 +469,82 @@ a,a:hover,a:click, a:visited{
               
   
   
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Setup Token & API Key
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Setup Token & API Key
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#amass-config" class="md-nav__link">
+    Amass config
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#some-other-tokens" class="md-nav__link">
+    Some other tokens
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
   
     <li class="md-nav__item">
-      <a href="../practical-usage/" class="md-nav__link">
-        Practical Usage
+      <a href="../notification/" class="md-nav__link">
+        Setup Notification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install-note/" class="md-nav__link">
+        Installation Notes
       </a>
     </li>
   
@@ -509,82 +583,10 @@ a,a:hover,a:click, a:visited{
               
   
   
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Setup Token & API Key
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Setup Token & API Key
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#main-token-file" class="md-nav__link">
-    Main token file
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#amass-config" class="md-nav__link">
-    Amass config
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notification" class="md-nav__link">
-    Notification
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notification-with-telegram" class="md-nav__link">
-    Notification with Telegram
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
   
     <li class="md-nav__item">
-      <a href="../install-note/" class="md-nav__link">
-        Installation Notes
+      <a href="../practical-usage/" class="md-nav__link">
+        Practical Usage
       </a>
     </li>
   
@@ -1200,66 +1202,23 @@ a,a:hover,a:click, a:visited{
 <div class="admonition help">
 <p>Note that this setup is <strong>Optional</strong>. You can still use the tool perfectly fine without it!</p>
 </div>
-<div class="admonition warning">
-<p>You should only store your token in the <code>osm-default.rc</code> file. Modify the <code>~/.osmedeus/config.yaml</code> will work but you will lose your token when running the config reload.</p>
-</div>
 <p>There are some places that tokens will store in Osmedeus below</p>
-<h3 id="main-token-file">Main token file<a class="headerlink" href="#main-token-file" title="Permanent link">&para;</a></h3>
-<p>By default all main tokens will be store at <code>~/osmedeus-base/token/osm-default.rc</code></p>
-<p>There some essential tokens in the token file. 
-    - The Github token is needed for github search.
-    - All the <code>TELEGRAM_</code> is for notification.</p>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Amass config files <code>amass.ini</code> and <code>amass-extensive.ini</code> at  <strong><code>~/osmedeus-base/data/configs/</code></strong> which is mainly responsible for the subdomain enumeration.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Main config file <strong><code>~/osmedeus-base/token/osm-default.rc</code></strong> </p>
+</li>
+</ul>
+<h2 id="amass-config">Amass config<a class="headerlink" href="#amass-config" title="Permanent link">&para;</a></h2>
+<p>The <strong>amass.ini</strong> use for the general flow (default) when you run the scan with this command <code>osmedeus scan -t sample.com</code></p>
+<p>The <strong>amass-extensive.ini</strong> use for the extentive flow when you run the scan with this command <code>osmedeus scan -f extentive -t sample.com</code></p>
+<p>All of your token like Shodan, Censys, SecurityTrails and others should be store there.</p>
+<h2 id="some-other-tokens">Some other tokens<a class="headerlink" href="#some-other-tokens" title="Permanent link">&para;</a></h2>
+<p>Other API Keys that require to change to get more information is <code>GITHUB_TOKEN</code> at <code>~/osmedeus-base/token/osm-default.rc</code>. This token used by <code>github-subdomains</code> tools to get more subdomains.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Set github token for run github scan</span>
 <span class="nb">export</span> <span class="nv">GITHUB_TOKEN</span><span class="o">=</span>xxx,xxxx
-
-<span class="c1"># for telegram</span>
-<span class="nb">export</span> <span class="nv">TELEGRAM_API_TOKEN</span><span class="o">=</span><span class="m">1111114500</span>:AAGx
-<span class="c1">## use this command to get channel ID</span>
-<span class="c1">## curl &#39;https://api.telegram.org/bot$TELEGRAM_API_TOKEN/sendMessage?chat_id=@osmpReports&amp;text=hello&#39;</span>
-<span class="nb">export</span> <span class="nv">TELEGRAM_CHANNEL</span><span class="o">=</span>-100XXXXX
-<span class="nb">export</span> <span class="nv">TELEGRAM_STATUS_CHANNEL</span><span class="o">=</span>-100XXXXX
-<span class="nb">export</span> <span class="nv">TELEGRAM_REPORT_CHANNEL</span><span class="o">=</span>-100XXXXX
-<span class="nb">export</span> <span class="nv">TELEGRAM_SENSITIVE_CHANNEL</span><span class="o">=</span>-100XXXXX
-<span class="nb">export</span> <span class="nv">TELEGRAM_DIRB_CHANNEL</span><span class="o">=</span>-100XXXXX
-<span class="nb">export</span> <span class="nv">TELEGRAM_MICS_CHANNEL</span><span class="o">=</span>-100XXXXX
-</code></pre></div>
-<p>After modified the tokens, then run commands below to reload token to the osmedeus config.yaml</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># or edit file osm-default.rc</span>
-<span class="c1"># add osmedeus-base/token/osm-default.rc to your ~/.bashrc file</span>
-<span class="nb">echo</span> <span class="s1">&#39;source $HOME/osmedeus-base/token/osm-default.rc&#39;</span> &gt;&gt; ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bashrc
-
-<span class="c1"># reload config to osmedeus</span>
-osmedeus config reload
-</code></pre></div>
-<h3 id="amass-config">Amass config<a class="headerlink" href="#amass-config" title="Permanent link">&para;</a></h3>
-<p>By Default Amass config will be store at <code>~/osmedeus-base/data/configs/amass.ini</code></p>
-<hr />
-<h2 id="notification">Notification<a class="headerlink" href="#notification" title="Permanent link">&para;</a></h2>
-<div class="admonition help">
-<p>Note that this setup is <strong>Optional</strong>. You can still use the tool perfectly fine without it!</p>
-</div>
-<h2 id="notification-with-telegram">Notification with Telegram<a class="headerlink" href="#notification-with-telegram" title="Permanent link">&para;</a></h2>
-<p>Follow <a href="https://core.telegram.org/bots/faq#how-do-i-create-a-bot"><strong>this guide</strong></a> to generate your API token and put it to the <code>~/osmedeus-base/token/osm-default.rc</code>.
-Then reload your config with the command <code>osmedeus config reload</code> to load the API key.</p>
-<p><img alt="intro" loading="lazy" src="../../static/noti/telegram-noti-1.png" /></p>
-<p><img alt="intro" loading="lazy" src="../../static/noti/telegram-noti-2.png" /></p>
-<p>You can now using <strong><a href="/workflow/noti-scripts/">Notification Scripts</a></strong> in your Workflow. </p>
-<hr />
-<p>You can search <code>TeleMessByFile</code> script in the workflow which will send the message as the content of a file to a specific channel.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Content of the file `~/osmedeus-base/token/osm-default.rc` is represent for specific channel name as below</span>
-<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_CHANNEL=-100XXXXX           --&gt;</span> <span class="c1">#general</span>
-<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_STATUS_CHANNEL=-100XXXXX    --&gt;</span> <span class="c1">#status</span>
-<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_REPORT_CHANNEL=-100XXXXX    --&gt;</span> <span class="c1">#report</span>
-<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_SENSITIVE_CHANNEL=-100XXXXX --&gt;</span> <span class="c1">#sensitive</span>
-<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_DIRB_CHANNEL=-100XXXXX      --&gt;</span> <span class="c1">#dirb</span>
-<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_MICS_CHANNEL=-100XXXXX      --&gt;</span> <span class="c1">#mics</span>
-
-<span class="c1"># this will send the file &#39;{{.Output}}/vuln/sensitive/sensitivescan-{{.Workspace}}-{{.TS}}.txt&#39; to the channel TELEGRAM_SENSITIVE_CHANNEL above</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TeleMessByFile(&quot;#sensitive&quot;, &quot;{{.Output}}/vuln/sensitive/sensitivescan-{{.Workspace}}-{{.TS}}.txt&quot;)</span>
-
-
-<span class="c1"># this will send the file &#39;Start the scan {{.Target}}&#39; to the channel TELEGRAM_MICS_CHANNEL above </span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TeleMess(&quot;#mics&quot;, &quot;Start the scan {{.Target}}&quot;)</span>
 </code></pre></div>
 
               
@@ -1279,7 +1238,7 @@ Then reload your config with the command <code>osmedeus config reload</code> to 
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../web-ui/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Web UI (Experimental)" rel="prev">
+        <a href="../using-docker/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Using Docker" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1288,20 +1247,20 @@ Then reload your config with the command <code>osmedeus config reload</code> to 
               <span class="md-footer__direction">
                 Previous
               </span>
-              Web UI (Experimental)
+              Using Docker
             </div>
           </div>
         </a>
       
       
         
-        <a href="../install-note/" class="md-footer__link md-footer__link--next" aria-label="Next: Installation Notes" rel="next">
+        <a href="../notification/" class="md-footer__link md-footer__link--next" aria-label="Next: Setup Notification" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Installation Notes
+              Setup Notification
             </div>
           </div>
           <div class="md-footer__button md-icon">

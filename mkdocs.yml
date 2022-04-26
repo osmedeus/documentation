@@ -84,11 +84,12 @@ nav:
   - Getting Started:
     - Installation: installation.md
     - Using Docker: installation/using-docker.md
-    - Practical Usage: installation/practical-usage.md
+    - Setup Token & API Key: installation/token.md
+    - Setup Notification: installation/notification.md
+    - Installation Notes: installation/install-note.md
     - Usage: installation/usage.md
     - Web UI (Experimental): installation/web-ui.md
-    - Setup Token & API Key: installation/token.md
-    - Installation Notes: installation/install-note.md
+    - Practical Usage: installation/practical-usage.md
   - Architecture:
     - Overview: architecture.md
     - Detail Structure of Osmedeus: structure.md

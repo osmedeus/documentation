@@ -3,9 +3,6 @@
 ???+ question "How to setup the Osmedeus?"
     Please check out **[installation guide here](/installation/)**
 
-???+ info "Does Osmedeus Support Windows or ARM based processor?"
-    Unfortunately, Osmedeus does not support Windows or ARM based processor. Please consider using WSL, Docker or Virtualization software to able to use Osmedeus on your machine.
-
 ???+ success "I love the Osmedeus Community version. Is there any premium subscription?"
     Please check out **[the premium package here](/premium/)**
 
@@ -24,8 +21,14 @@
 ???+ info "Where can I get the private Jaeles signatures and the custom wordlists?"
     **[The premium package page](/premium/)** already included everything from my private Jaeles signatures and the custom wordlists.
 
+???+ info "Where is your **private signatures** and **wordlists** in the premium package?"
+    It's all included in the package. The install script will download it all for you. You can also see the details structure [**here**](https://docs.osmedeus.org/premium/#support-distributed-scan).
+
 ???+ info "How can I upgrade from Osmedeus Community to Premium Package?"
     Just run `rm -rf ~/osmedeus-base` first then run a install script from the premium package download page.
+
+???+ info "Does Osmedeus Support Windows or ARM based processor?"
+    Unfortunately, Osmedeus does not support Windows or ARM based processor. Please consider using WSL, Docker or Virtualization software to able to use Osmedeus on your machine.
 
 ???+ info "I got some error while installing Osmedeus on my machine. How can I fix it?"
     Maybe run `sudo su` first and then run `rm -rf ~/osmedeus-base ~/.osmedeus` and then run the install script again to have a clean installation.
@@ -42,8 +45,7 @@
 ???+ question "Where can I find the result after the scan done?"
     All of your scan data store at `~/.osmedeus/workspaces/`
 
-???+ info "I got some error while running the scan?"
-    ![having-error-with-some-tools](/static/faq/having-error-with-some-tools.png){ loading=lazy }
+???+ info "I got some errors while running the scan, what should I do?"
     You can use `osmedeus health` command to check if the install is okay or not.
 
 ???+ question "Where I can get a live support?"
@@ -73,6 +75,9 @@
 ???+ question "Where should I put my token (Github, Shodan, etc)?"
     All you need to do is follow [**this guide to setup the token**](/installation/token/)
 
+???+ success "How can I setup to send notification?"
+    All you need to do is follow [**this guide to setup notification**](/installation/notification/)
+
 ???+ info "I found a new tool that is pretty awesome. Can you add it in Osmedeus?"
     Yes, just follow [**this guide**](/workflow/customize-your-own-workflow/) to add it to your workflow.
 
@@ -100,9 +105,6 @@
     2. Seriously, read the flow and module files.
     3. Remember that you were warned twice about reading the flow and module files.
     4. Just search your tool command in the workflow folder.
-
-???+ info "Where is your **private signatures** and **wordlists** in the premium package?"
-    It's all included in the package. The install script will download it all for you. You can also see the details structure [**here**](https://docs.osmedeus.org/premium/#support-distributed-scan).
 
 !!! question "What is the `{{.Binaries}}` in the workflow?"
     `{{.Binaries}}` will be replaced with `~/osmedeus/binaries/` where I store all the binaries for running the workflow . If you already install it in your $PATH environment variable then you can just use the tool directly like `your-tool -t {{.Target}}` instead of  `{{.Binaries}}/your-tool -t {{.Target}}`

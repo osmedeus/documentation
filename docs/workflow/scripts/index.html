@@ -419,6 +419,8 @@ a,a:hover,a:click, a:visited{
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2">
@@ -467,8 +469,36 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../../installation/practical-usage/" class="md-nav__link">
-        Practical Usage
+      <a href="../../installation/token/" class="md-nav__link">
+        Setup Token & API Key
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/notification/" class="md-nav__link">
+        Setup Notification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/install-note/" class="md-nav__link">
+        Installation Notes
       </a>
     </li>
   
@@ -509,22 +539,8 @@ a,a:hover,a:click, a:visited{
   
   
     <li class="md-nav__item">
-      <a href="../../installation/token/" class="md-nav__link">
-        Setup Token & API Key
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../installation/install-note/" class="md-nav__link">
-        Installation Notes
+      <a href="../../installation/practical-usage/" class="md-nav__link">
+        Practical Usage
       </a>
     </li>
   
@@ -1195,14 +1211,49 @@ A Script is an alias for the Golang function that you can call from YAML Workflo
 </div>
 <div class="highlight"><pre><span></span><code><span class="cm">/* File to store all the script for better reference */</span>
 
+
+<span class="kd">const</span> <span class="p">(</span>
+    <span class="nx">Cleaning</span>         <span class="p">=</span> <span class="s">&quot;Cleaning&quot;</span>
+    <span class="nx">CleanAmass</span>       <span class="p">=</span> <span class="s">&quot;CleanAmass&quot;</span>
+    <span class="nx">CleanRustScan</span>    <span class="p">=</span> <span class="s">&quot;CleanRustScan&quot;</span>
+    <span class="nx">CleanGoBuster</span>    <span class="p">=</span> <span class="s">&quot;CleanGoBuster&quot;</span>
+    <span class="nx">CleanMassdns</span>     <span class="p">=</span> <span class="s">&quot;CleanMassdns&quot;</span>
+    <span class="nx">CleanSWebanalyze</span> <span class="p">=</span> <span class="s">&quot;CleanSWebanalyze&quot;</span>
+    <span class="nx">CleanJSONDnsx</span>    <span class="p">=</span> <span class="s">&quot;CleanJSONDnsx&quot;</span>
+    <span class="nx">CleanWebanalyze</span>  <span class="p">=</span> <span class="s">&quot;CleanWebanalyze&quot;</span>
+    <span class="nx">CleanArjun</span>       <span class="p">=</span> <span class="s">&quot;CleanArjun&quot;</span>
+    <span class="nx">GenNucleiReport</span>  <span class="p">=</span> <span class="s">&quot;GenNucleiReport&quot;</span>
+    <span class="nx">CleanJSONHttpx</span>   <span class="p">=</span> <span class="s">&quot;CleanJSONHttpx&quot;</span>
+    <span class="nx">CleanFFUFJson</span>    <span class="p">=</span> <span class="s">&quot;CleanFFUFJson&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">const</span> <span class="p">(</span>
+    <span class="c1">// noti for slack</span>
+    <span class="nx">StartNoti</span>   <span class="p">=</span> <span class="s">&quot;StartNoti&quot;</span>
+    <span class="nx">DoneNoti</span>    <span class="p">=</span> <span class="s">&quot;DoneNoti&quot;</span>
+    <span class="nx">ReportNoti</span>  <span class="p">=</span> <span class="s">&quot;ReportNoti&quot;</span>
+    <span class="nx">DiffNoti</span>    <span class="p">=</span> <span class="s">&quot;DiffNoti&quot;</span>
+    <span class="nx">CustomNoti</span>  <span class="p">=</span> <span class="s">&quot;CustomNoti&quot;</span>
+    <span class="nx">NotiFile</span>    <span class="p">=</span> <span class="s">&quot;NotiFile&quot;</span>
+    <span class="nx">WebHookNoti</span> <span class="p">=</span> <span class="s">&quot;WebHookNoti&quot;</span>
+    <span class="c1">// noti for telegram</span>
+    <span class="nx">TeleMess</span>       <span class="p">=</span> <span class="s">&quot;TeleMess&quot;</span>
+    <span class="nx">TeleMessWrap</span>   <span class="p">=</span> <span class="s">&quot;TeleMessWrap&quot;</span>
+    <span class="nx">TeleMessByFile</span> <span class="p">=</span> <span class="s">&quot;TeleMessByFile&quot;</span>
+    <span class="nx">TeleSendFile</span>   <span class="p">=</span> <span class="s">&quot;TeleSendFile&quot;</span>
+<span class="p">)</span>
+
 <span class="kd">const</span> <span class="p">(</span>
     <span class="nx">ExecCmd</span>           <span class="p">=</span> <span class="s">&quot;ExecCmd&quot;</span>
     <span class="nx">ExecCmdB</span>          <span class="p">=</span> <span class="s">&quot;ExecCmdB&quot;</span>
     <span class="nx">ExecCmdWithOutput</span> <span class="p">=</span> <span class="s">&quot;ExecCmdWithOutput&quot;</span>
     <span class="nx">ExecContain</span>       <span class="p">=</span> <span class="s">&quot;ExecContain&quot;</span>
-<span class="p">)</span>
-
-<span class="kd">const</span> <span class="p">(</span>
+    <span class="nx">Sleep</span>           <span class="p">=</span> <span class="s">&quot;Sleep&quot;</span>
+    <span class="nx">Exit</span>            <span class="p">=</span> <span class="s">&quot;Exit&quot;</span>
+    <span class="nx">CastToInt</span>       <span class="p">=</span> <span class="s">&quot;CastToInt&quot;</span>
+    <span class="nx">StripSlash</span>      <span class="p">=</span> <span class="s">&quot;StripSlash&quot;</span>
+    <span class="nx">Printf</span>          <span class="p">=</span> <span class="s">&quot;Printf&quot;</span>
+    <span class="nx">Cat</span>             <span class="p">=</span> <span class="s">&quot;Cat&quot;</span>
     <span class="nx">SortU</span>           <span class="p">=</span> <span class="s">&quot;SortU&quot;</span>
     <span class="nx">SplitFile</span>       <span class="p">=</span> <span class="s">&quot;SplitFile&quot;</span>
     <span class="nx">Append</span>          <span class="p">=</span> <span class="s">&quot;Append&quot;</span>
@@ -1219,22 +1270,15 @@ A Script is an alias for the Golang function that you can call from YAML Workflo
 <span class="p">)</span>
 
 <span class="kd">const</span> <span class="p">(</span>
-    <span class="nx">SetVar</span>   <span class="p">=</span> <span class="s">&quot;SetVar&quot;</span>
-    <span class="nx">GetOSEnv</span> <span class="p">=</span> <span class="s">&quot;GetOSEnv&quot;</span>
-<span class="p">)</span>
-
-<span class="kd">const</span> <span class="p">(</span>
-    <span class="nx">Cleaning</span>         <span class="p">=</span> <span class="s">&quot;Cleaning&quot;</span>
-    <span class="nx">CleanAmass</span>       <span class="p">=</span> <span class="s">&quot;CleanAmass&quot;</span>
-    <span class="nx">CleanRustScan</span>    <span class="p">=</span> <span class="s">&quot;CleanRustScan&quot;</span>
-    <span class="nx">CleanGoBuster</span>    <span class="p">=</span> <span class="s">&quot;CleanGoBuster&quot;</span>
-    <span class="nx">CleanMassdns</span>     <span class="p">=</span> <span class="s">&quot;CleanMassdns&quot;</span>
-    <span class="nx">CleanSWebanalyze</span> <span class="p">=</span> <span class="s">&quot;CleanSWebanalyze&quot;</span>
-    <span class="nx">CleanJSONDnsx</span>    <span class="p">=</span> <span class="s">&quot;CleanJSONDnsx&quot;</span>
-    <span class="nx">CleanWebanalyze</span>  <span class="p">=</span> <span class="s">&quot;CleanWebanalyze&quot;</span>
-    <span class="nx">CleanArjun</span>       <span class="p">=</span> <span class="s">&quot;CleanArjun&quot;</span>
-    <span class="nx">GenNucleiReport</span>  <span class="p">=</span> <span class="s">&quot;GenNucleiReport&quot;</span>
-    <span class="nx">CleanJSONHttpx</span>   <span class="p">=</span> <span class="s">&quot;CleanJSONHttpx&quot;</span>
+    <span class="nx">TotalSubdomain</span>     <span class="p">=</span> <span class="s">&quot;TotalSubdomain&quot;</span>
+    <span class="nx">TotalDns</span>           <span class="p">=</span> <span class="s">&quot;TotalDns&quot;</span>
+    <span class="nx">TotalScreenShot</span>    <span class="p">=</span> <span class="s">&quot;TotalScreenShot&quot;</span>
+    <span class="nx">TotalTech</span>          <span class="p">=</span> <span class="s">&quot;TotalTech&quot;</span>
+    <span class="nx">TotalVulnerability</span> <span class="p">=</span> <span class="s">&quot;TotalVulnerability&quot;</span>
+    <span class="nx">TotalArchive</span>       <span class="p">=</span> <span class="s">&quot;TotalArchive&quot;</span>
+    <span class="nx">TotalLink</span>          <span class="p">=</span> <span class="s">&quot;TotalLink&quot;</span>
+    <span class="nx">TotalDirb</span>          <span class="p">=</span> <span class="s">&quot;TotalDirb&quot;</span>
+    <span class="nx">CreateReport</span>       <span class="p">=</span> <span class="s">&quot;CreateReport&quot;</span>
 <span class="p">)</span>
 </code></pre></div>
 
