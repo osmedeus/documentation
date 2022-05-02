@@ -1245,6 +1245,8 @@ The reason it won't find any vulnerability on the intentionally vulnerable app i
 <p class="admonition-title">What is the <code>{{.Binaries}}</code> in the workflow?</p>
 <p><code>{{.Binaries}}</code> will be replaced with <code>~/osmedeus/binaries/</code> where I store all the binaries for running the workflow . If you already install it in your $PATH environment variable then you can just use the tool directly like <code>your-tool -t {{.Target}}</code> instead of  <code>{{.Binaries}}/your-tool -t {{.Target}}</code></p>
 </div>
+<details class="info" open="open"><summary>I already setup my notification, How do I know it will work?</summary><p>Please run the command here <code>osmedeus scan -m ~/osmedeus-base/workflow/test/noti.yaml -t sample.com</code> to test your notification setup. If you received a message in your channel then it works.</p>
+</details>
 
               
             </article>

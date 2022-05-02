@@ -1258,8 +1258,7 @@ a,a:hover,a:click, a:visited{
 <p><img alt="create-bot" src="/static/noti/send-sample-text-to-get-channel-ID.png" /></p>
 </figure>
 <p>run the command below to get your channel ID (make sure you replace the <code>&lt;your-token&gt;</code> and <code>&lt;your-bot-URL-at-step-1&gt;</code> with your own):</p>
-<div class="highlight"><pre><span></span><code>```bash
-curl &#39;https://api.telegram.org/bot5321597600:&lt;your-token&gt;/sendMessage?chat_id=@&lt;your-bot-URL-at-step-1&gt;&amp;text=hello&#39;
+<div class="highlight"><pre><span></span><code>curl <span class="s1">&#39;https://api.telegram.org/bot5321597600:&lt;your-token&gt;/sendMessage?chat_id=@&lt;your-bot-URL-at-step-1&gt;&amp;text=hello&#39;</span>
 </code></pre></div>
 <p>the output will look like this</p>
 <p><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;ok&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;result&quot;</span><span class="p">:{</span><span class="nt">&quot;message_id&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;sender_chat&quot;</span><span class="p">:{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">-1001353928111</span><span class="p">,</span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;your-osm-channel&quot;</span><span class="p">,</span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="s2">&quot;yourOsmChannel&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;channel&quot;</span><span class="p">},</span><span class="nt">&quot;chat&quot;</span><span class="p">:{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">-1001353928111</span><span class="p">,</span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;your-osm-channel&quot;</span><span class="p">,</span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="s2">&quot;yourOsmChannel&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;channel&quot;</span><span class="p">},</span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="mi">1650958729</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;hello&quot;</span><span class="p">}}</span>
@@ -1308,6 +1307,7 @@ cat ~/.osmedeus/config.yaml <span class="p">|</span> grep <span class="s1">&#39;
 <div class="admonition success">
 <p class="admonition-title">By default the notification script already setup in the workflow, you will automatically see the notification when the scan is done.</p>
 </div>
+<p>You can also search <code>TeleMessByFile</code> script in the workflow which will send the message as the content of a file to a specific channel.</p>
 <figure>
 <p><img alt="Usage" src="/static/noti/telegram-noti-1.png" />
    <br/>
@@ -1315,7 +1315,6 @@ cat ~/.osmedeus/config.yaml <span class="p">|</span> grep <span class="s1">&#39;
   Here is how the real results looks like.</p>
 </figure>
 <p>You can see more usage of <strong><a href="/workflow/noti-scripts/">notification scripts here</a></strong> </p>
-<p>You can also search <code>TeleMessByFile</code> script in the workflow which will send the message as the content of a file to a specific channel.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Content of the file `~/osmedeus-base/token/osm-default.rc` is represent for specific channel name as below</span>
 <span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_CHANNEL=-100XXXXX           --&gt;</span> <span class="c1">#general</span>
 <span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_STATUS_CHANNEL=-100XXXXX    --&gt;</span> <span class="c1">#status</span>

@@ -109,3 +109,5 @@
 !!! question "What is the `{{.Binaries}}` in the workflow?"
     `{{.Binaries}}` will be replaced with `~/osmedeus/binaries/` where I store all the binaries for running the workflow . If you already install it in your $PATH environment variable then you can just use the tool directly like `your-tool -t {{.Target}}` instead of  `{{.Binaries}}/your-tool -t {{.Target}}`
 
+???+ info "I already setup my notification, How do I know it will work?"
+    Please run the command here `osmedeus scan -m ~/osmedeus-base/workflow/test/noti.yaml -t sample.com` to test your notification setup. If you received a message in your channel then it works.

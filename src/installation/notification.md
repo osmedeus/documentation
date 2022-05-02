@@ -33,7 +33,6 @@
 
 run the command below to get your channel ID (make sure you replace the `<your-token>` and `<your-bot-URL-at-step-1>` with your own):
 
-```
 
 ```bash
 curl 'https://api.telegram.org/bot5321597600:<your-token>/sendMessage?chat_id=@<your-bot-URL-at-step-1>&text=hello'
@@ -106,7 +105,8 @@ Check your telegram channel to see any message is sent.
 ## 7. See what noti scripts use in the workflow.
 
 !!! success "By default the notification script already setup in the workflow, you will automatically see the notification when the scan is done."
-    
+
+You can also search `TeleMessByFile` script in the workflow which will send the message as the content of a file to a specific channel.
 
 <figure markdown> 
   ![Usage](/static/noti/telegram-noti-1.png)
@@ -117,7 +117,6 @@ Check your telegram channel to see any message is sent.
 
 You can see more usage of **[notification scripts here](/workflow/noti-scripts/)** 
 
-You can also search `TeleMessByFile` script in the workflow which will send the message as the content of a file to a specific channel.
 
 ```yaml
 
