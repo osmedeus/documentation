@@ -1247,6 +1247,10 @@ The reason it won't find any vulnerability on the intentionally vulnerable app i
 </div>
 <details class="info" open="open"><summary>I already setup my notification, How do I know it will work?</summary><p>Please run the command here <code>osmedeus scan -m ~/osmedeus-base/workflow/test/noti.yaml -t sample.com</code> to test your notification setup. If you received a message in your channel then it works.</p>
 </details>
+<details class="question" open="open"><summary>Why my home router crashed when running Osmedeus?</summary><p>Again, I'm always recommend to run Osmedeus with vps to avoid these issue. If you really want to change the amass config then go to <code>~/osmedeus-base/data/configs/amass.ini</code> and edit the <code>maximum_dns_queries</code>, and also change some massdns rate on the probing module.</p>
+</details>
+<details class="info" open="open"><summary>Where can I find the password for the Web UI?</summary><p>Please refer to <a href="" title="installation/web-ui/#start-a-web-server">this page</a> to start a web server and get credentials. You may need to run this command <code>cat ~/.osmedeus/config.yaml | grep password</code></p>
+</details>
 
               
             </article>

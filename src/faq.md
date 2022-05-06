@@ -111,3 +111,9 @@
 
 ???+ info "I already setup my notification, How do I know it will work?"
     Please run the command here `osmedeus scan -m ~/osmedeus-base/workflow/test/noti.yaml -t sample.com` to test your notification setup. If you received a message in your channel then it works.
+
+???+ question "Why my home router crashed when running Osmedeus?"
+    Again, I'm always recommend to run Osmedeus with vps to avoid these issue. If you really want to change the amass config then go to `~/osmedeus-base/data/configs/amass.ini` and edit the `maximum_dns_queries`, and also change some massdns rate on the probing module.
+
+???+ info "Where can I find the password for the Web UI?"
+    Please refer to [this page]("installation/web-ui/#start-a-web-server") to start a web server and get credentials. You may need to run this command `cat ~/.osmedeus/config.yaml | grep password`
