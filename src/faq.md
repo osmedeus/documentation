@@ -116,4 +116,4 @@
     Again, I'm always recommend to run Osmedeus with vps to avoid these issue. If you really want to change the amass config then go to `~/osmedeus-base/data/configs/amass.ini` and edit the `maximum_dns_queries`, and also change some massdns rate on the probing module.
 
 ???+ info "Where can I find the password for the Web UI?"
-    Please refer to [**this page**]("installation/web-ui/#start-a-web-server") to start a web server and get credentials. You may need to run this command `cat ~/.osmedeus/config.yaml | grep password`
+    Please refer to [**this page**]("/installation/web-ui/#start-a-web-server") to start a web server and get credentials. You may need to run this command `cat ~/.osmedeus/config.yaml | grep password`
