@@ -1188,7 +1188,7 @@ a,a:hover,a:click, a:visited{
 </details>
 <details class="info" open="open"><summary>I got some error while installing Osmedeus on my machine. How can I fix it?</summary><p>Maybe run <code>sudo su</code> first and then run <code>rm -rf ~/osmedeus-base ~/.osmedeus</code> and then run the install script again to have a clean installation.</p>
 </details>
-<details class="info" open="open"><summary>I got some <code>Permission denied</code> errors while installing Osmedeus on my machine even with <code>sudo</code>. How can I fix it?</summary><p>Please run <code>sudo su</code> first then run the install script again to have a clean installation.</p>
+<details class="info" open="open"><summary>I got some <code>Permission denied</code> errors while installing Osmedeus on my machine even with <code>sudo</code>. How can I fix it?</summary><p>Please run <code>rm -rf ~/osmedeus-base ~/.osmedeus</code> to clean up the old installation. Then run <code>sudo su</code> first and run the install script again.</p>
 </details>
 <details class="question" open="open"><summary>What is the specification required to run Osmedeus?</summary><p>I recommend using VPS since it takes a lot of network bandwidth, the minimum spec would be 1 CPU 2GB RAM. You can of course increase or decrease the threads in the workflow to make it work in any spec</p>
 </details>

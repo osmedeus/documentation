@@ -38,7 +38,7 @@
 
 
 ???+ info "I got some `Permission denied` errors while installing Osmedeus on my machine even with `sudo`. How can I fix it?"
-    Please run `sudo su` first then run the install script again to have a clean installation.
+    Please run `rm -rf ~/osmedeus-base ~/.osmedeus` to clean up the old installation. Then run `sudo su` first and run the install script again.
 
 ???+ question "What is the specification required to run Osmedeus?"
     I recommend using VPS since it takes a lot of network bandwidth, the minimum spec would be 1 CPU 2GB RAM. You can of course increase or decrease the threads in the workflow to make it work in any spec
