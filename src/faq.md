@@ -30,11 +30,15 @@
 ???+ info "Does Osmedeus Support Windows or ARM based processor?"
     Unfortunately, Osmedeus does not support Windows or ARM based processor. Please consider using WSL, Docker or Virtualization software to able to use Osmedeus on your machine.
 
+???+ info "What are the donation tiers and how much should I donate to be eligible for the premium package?"
+    You can join the [**Patreon here**](https://www.patreon.com/j3ssie) or [**here**](https://docs.osmedeus.org/donation/) to see a private post that contains a download link for premium packages. After that you will be invited to the backer channel to get direct support then
+
 ???+ info "I got some error while installing Osmedeus on my machine. How can I fix it?"
     Maybe run `sudo su` first and then run `rm -rf ~/osmedeus-base ~/.osmedeus` and then run the install script again to have a clean installation.
 
-???+ info "What are the donation tiers and how much should I donate to be eligible for the premium package?"
-    You can join the [**Patreon here**](https://www.patreon.com/j3ssie) or [**here**](https://docs.osmedeus.org/donation/) to see a private post that contains a download link for premium packages. After that you will be invited to the backer channel to get direct support then
+
+???+ info "I got some `Permission denied` errors while installing Osmedeus on my machine even with `sudo`. How can I fix it?"
+    Please run `sudo su` first then run the install script again to have a clean installation.
 
 ???+ question "What is the specification required to run Osmedeus?"
     I recommend using VPS since it takes a lot of network bandwidth, the minimum spec would be 1 CPU 2GB RAM. You can of course increase or decrease the threads in the workflow to make it work in any spec
@@ -94,8 +98,14 @@
 ???+ info "I accidentally terminated the scan. How can I restart or resume it?"
     Just run the command again to start a fresh scan or run the same command with `--resume` flag to resume the scan if any reports file exist.
 
+???+ info "How can I stop the scan? Is there any way to resume it?"
+    Yes, just press `Crtl + C` to stop the scan. To resume the scan you can run the same command with additional `--resume` flag but it's depend on `reports:` section in previous module complete or not to actually resume the scan.
+
 ???+ question "I stop the scan with `Ctrl+C` in the middle of it. Is it possible to create a summary report?"
     Yes, you can the `osmedeus report` command will check the runtime file in workspace and will show what store in there.
+
+???+ question "How can I delete a workspace?"
+    Just delete the workspace folder which is located at `~/.osmedeus/workspaces/<target-name-here>` or run the command `osmedeus config delete -w <workspace-name-here>`.
 
 ???+ info "Why you use multiple tools for the same purpose in your workflow?"
     I choose some tools over the others because they gave more accurate results. You can always manually test to see the result then decide which one is better. Of course, you are always welcome to customize your workflow to do so.

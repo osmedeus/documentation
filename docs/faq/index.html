@@ -1184,9 +1184,11 @@ a,a:hover,a:click, a:visited{
 </details>
 <details class="info" open="open"><summary>Does Osmedeus Support Windows or ARM based processor?</summary><p>Unfortunately, Osmedeus does not support Windows or ARM based processor. Please consider using WSL, Docker or Virtualization software to able to use Osmedeus on your machine.</p>
 </details>
+<details class="info" open="open"><summary>What are the donation tiers and how much should I donate to be eligible for the premium package?</summary><p>You can join the <a href="https://www.patreon.com/j3ssie"><strong>Patreon here</strong></a> or <a href="https://docs.osmedeus.org/donation/"><strong>here</strong></a> to see a private post that contains a download link for premium packages. After that you will be invited to the backer channel to get direct support then</p>
+</details>
 <details class="info" open="open"><summary>I got some error while installing Osmedeus on my machine. How can I fix it?</summary><p>Maybe run <code>sudo su</code> first and then run <code>rm -rf ~/osmedeus-base ~/.osmedeus</code> and then run the install script again to have a clean installation.</p>
 </details>
-<details class="info" open="open"><summary>What are the donation tiers and how much should I donate to be eligible for the premium package?</summary><p>You can join the <a href="https://www.patreon.com/j3ssie"><strong>Patreon here</strong></a> or <a href="https://docs.osmedeus.org/donation/"><strong>here</strong></a> to see a private post that contains a download link for premium packages. After that you will be invited to the backer channel to get direct support then</p>
+<details class="info" open="open"><summary>I got some <code>Permission denied</code> errors while installing Osmedeus on my machine even with <code>sudo</code>. How can I fix it?</summary><p>Please run <code>sudo su</code> first then run the install script again to have a clean installation.</p>
 </details>
 <details class="question" open="open"><summary>What is the specification required to run Osmedeus?</summary><p>I recommend using VPS since it takes a lot of network bandwidth, the minimum spec would be 1 CPU 2GB RAM. You can of course increase or decrease the threads in the workflow to make it work in any spec</p>
 </details>
@@ -1230,7 +1232,11 @@ The reason it won't find any vulnerability on the intentionally vulnerable app i
 </details>
 <details class="info" open="open"><summary>I accidentally terminated the scan. How can I restart or resume it?</summary><p>Just run the command again to start a fresh scan or run the same command with <code>--resume</code> flag to resume the scan if any reports file exist.</p>
 </details>
+<details class="info" open="open"><summary>How can I stop the scan? Is there any way to resume it?</summary><p>Yes, just press <code>Crtl + C</code> to stop the scan. To resume the scan you can run the same command with additional <code>--resume</code> flag but it's depend on <code>reports:</code> section in previous module complete or not to actually resume the scan.</p>
+</details>
 <details class="question" open="open"><summary>I stop the scan with <code>Ctrl+C</code> in the middle of it. Is it possible to create a summary report?</summary><p>Yes, you can the <code>osmedeus report</code> command will check the runtime file in workspace and will show what store in there.</p>
+</details>
+<details class="question" open="open"><summary>How can I delete a workspace?</summary><p>Just delete the workspace folder which is located at <code>~/.osmedeus/workspaces/&lt;target-name-here&gt;</code> or run the command <code>osmedeus config delete -w &lt;workspace-name-here&gt;</code>.</p>
 </details>
 <details class="info" open="open"><summary>Why you use multiple tools for the same purpose in your workflow?</summary><p>I choose some tools over the others because they gave more accurate results. You can always manually test to see the result then decide which one is better. Of course, you are always welcome to customize your workflow to do so.</p>
 </details>
