@@ -1180,13 +1180,13 @@ a,a:hover,a:click, a:visited{
 </details>
 <details class="info" open="open"><summary>Where is your <strong>private signatures</strong> and <strong>wordlists</strong> in the premium package?</summary><p>It's all included in the package. The install script will download it all for you. You can also see the details structure <a href="https://docs.osmedeus.org/premium/#support-distributed-scan"><strong>here</strong></a>.</p>
 </details>
-<details class="info" open="open"><summary>How can I upgrade from Osmedeus Community to Premium Package?</summary><p>Just run <code>rm -rf ~/osmedeus-base</code> first then run a install script from the premium package download page.</p>
+<details class="question" open="open"><summary>How can I upgrade from Osmedeus Community to Premium Package?</summary><p>Just run <code>rm -rf ~/osmedeus-base</code> first then run a install script from the premium package download page.</p>
 </details>
 <details class="info" open="open"><summary>Does Osmedeus Support Windows or ARM based processor?</summary><p>Unfortunately, Osmedeus does not support Windows or ARM based processor. Please consider using WSL, Docker or Virtualization software to able to use Osmedeus on your machine.</p>
 </details>
 <details class="info" open="open"><summary>What are the donation tiers and how much should I donate to be eligible for the premium package?</summary><p>You can join the <a href="https://www.patreon.com/j3ssie"><strong>Patreon here</strong></a> or <a href="https://docs.osmedeus.org/donation/"><strong>here</strong></a> to see a private post that contains a download link for premium packages. After that you will be invited to the backer channel to get direct support then</p>
 </details>
-<details class="info" open="open"><summary>I got some error while installing Osmedeus on my machine. How can I fix it?</summary><p>Maybe run <code>sudo su</code> first and then run <code>rm -rf ~/osmedeus-base ~/.osmedeus</code> and then run the install script again to have a clean installation.</p>
+<details class="question" open="open"><summary>I got some error while installing Osmedeus on my machine. How can I fix it?</summary><p>Maybe run <code>sudo su</code> first and then run <code>rm -rf ~/osmedeus-base ~/.osmedeus</code> and then run the install script again to have a clean installation.</p>
 </details>
 <details class="info" open="open"><summary>I got some <code>Permission denied</code> errors while installing Osmedeus on my machine even with <code>sudo</code>. How can I fix it?</summary><p>Please run <code>rm -rf ~/osmedeus-base ~/.osmedeus</code> to clean up the old installation. Then run <code>sudo su</code> first and run the install script again.</p>
 </details>
@@ -1253,9 +1253,13 @@ The reason it won't find any vulnerability on the intentionally vulnerable app i
 </div>
 <details class="info" open="open"><summary>I already setup my notification, How do I know it will work?</summary><p>Please run the command here <code>osmedeus scan -m ~/osmedeus-base/workflow/test/noti.yaml -t sample.com</code> to test your notification setup. If you received a message in your channel then it works.</p>
 </details>
+<details class="question" open="open"><summary>My test notification is working fine, but I still didn't get any noti on the real scan?</summary><p>It won't show any noti vuln data in your channel simply mean it's not found any vuln. Try to grab some urls with you know is for sure vulnerablie like Jenkins or Jira then run it with urls workflow like this <code>osmedeus scan -f urls -t list-of-vulnerable-url.txt</code> and you will see.</p>
+</details>
 <details class="question" open="open"><summary>Why my home router crashed when running Osmedeus?</summary><p>Again, I'm always recommend to run Osmedeus with vps to avoid these issue. If you really want to change the amass config then go to <code>~/osmedeus-base/data/configs/amass.ini</code> and edit the <code>maximum_dns_queries</code>, and also change some massdns rate on the probing module.</p>
 </details>
 <details class="info" open="open"><summary>Where can I find the password for the Web UI?</summary><p>Please refer to <a href="" title="/installation/web-ui/#start-a-web-server"><strong>this page</strong></a> to start a web server and get credentials. You may need to run this command <code>cat ~/.osmedeus/config.yaml | grep password</code></p>
+</details>
+<details class="question" open="open"><summary>How can I keep the scan or the web UI running in the background?</summary><p>The simplest way to do it is running the process under <a href="https://tmuxcheatsheet.com/">tmux session</a>.</p>
 </details>
 
               

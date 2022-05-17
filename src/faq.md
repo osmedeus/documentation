@@ -24,7 +24,7 @@
 ???+ info "Where is your **private signatures** and **wordlists** in the premium package?"
     It's all included in the package. The install script will download it all for you. You can also see the details structure [**here**](https://docs.osmedeus.org/premium/#support-distributed-scan).
 
-???+ info "How can I upgrade from Osmedeus Community to Premium Package?"
+???+ question "How can I upgrade from Osmedeus Community to Premium Package?"
     Just run `rm -rf ~/osmedeus-base` first then run a install script from the premium package download page.
 
 ???+ info "Does Osmedeus Support Windows or ARM based processor?"
@@ -33,9 +33,8 @@
 ???+ info "What are the donation tiers and how much should I donate to be eligible for the premium package?"
     You can join the [**Patreon here**](https://www.patreon.com/j3ssie) or [**here**](https://docs.osmedeus.org/donation/) to see a private post that contains a download link for premium packages. After that you will be invited to the backer channel to get direct support then
 
-???+ info "I got some error while installing Osmedeus on my machine. How can I fix it?"
+???+ question "I got some error while installing Osmedeus on my machine. How can I fix it?"
     Maybe run `sudo su` first and then run `rm -rf ~/osmedeus-base ~/.osmedeus` and then run the install script again to have a clean installation.
-
 
 ???+ info "I got some `Permission denied` errors while installing Osmedeus on my machine even with `sudo`. How can I fix it?"
     Please run `rm -rf ~/osmedeus-base ~/.osmedeus` to clean up the old installation. Then run `sudo su` first and run the install script again.
@@ -122,8 +121,14 @@
 ???+ info "I already setup my notification, How do I know it will work?"
     Please run the command here `osmedeus scan -m ~/osmedeus-base/workflow/test/noti.yaml -t sample.com` to test your notification setup. If you received a message in your channel then it works.
 
+???+ question "My test notification is working fine, but I still didn't get any noti on the real scan?"
+    It won't show any noti vuln data in your channel simply mean it's not found any vuln. Try to grab some urls with you know is for sure vulnerablie like Jenkins or Jira then run it with urls workflow like this `osmedeus scan -f urls -t list-of-vulnerable-url.txt` and you will see.
+
 ???+ question "Why my home router crashed when running Osmedeus?"
     Again, I'm always recommend to run Osmedeus with vps to avoid these issue. If you really want to change the amass config then go to `~/osmedeus-base/data/configs/amass.ini` and edit the `maximum_dns_queries`, and also change some massdns rate on the probing module.
 
 ???+ info "Where can I find the password for the Web UI?"
     Please refer to [**this page**]("/installation/web-ui/#start-a-web-server") to start a web server and get credentials. You may need to run this command `cat ~/.osmedeus/config.yaml | grep password`
+
+???+ question "How can I keep the scan or the web UI running in the background?"
+    The simplest way to do it is running the process under [tmux session](https://tmuxcheatsheet.com/).
