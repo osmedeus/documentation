@@ -52,10 +52,10 @@
     You can use `osmedeus health` command to check if the install is okay or not.
 
 ???+ question "Where I can get a live support?"
-    You can Join **[Discord Server here](https://discord.gg/gy4SWhpaPU)** to see if anyone can help
+    You can Join **[Discord Server here](https://discord.gg/mtQG2FQsYA)** to see if anyone can help
 
 ???+ info "I have an awesome idea, How can I implement it in Osmedeus?"
-    You can Join **[Discord Server here](https://discord.gg/gy4SWhpaPU)** or contact me via **[:material-twitter: here](https://twitter.com/OsmedeusEngine)** to see if it worth to add.
+    You can Join **[Discord Server here](https://discord.gg/mtQG2FQsYA)** or contact me via **[:material-twitter: here](https://twitter.com/OsmedeusEngine)** to see if it worth to add.
 
 ???+ question "I ran the scan but there's no vulnerability found?"
     It's simply that there's no vulnerability. It very much depends on your target.
