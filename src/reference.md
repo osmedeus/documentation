@@ -5,3 +5,5 @@
 * **[[tl;dr sec] #115: Build your own reconnaissance system with Osmedeus Engine](https://tldrsec.com/blog/tldr-sec-115/)**
 
 * **[Learn with @j3ssiejjj - Automating Recon at scale using Osmedeus](https://www.youtube.com/watch?v=ohi0fsLTesw)**
+
+* **[Osmedeus on hakin9.org](https://hakin9.org/osmedeus-is-a-workflow-engine-for-offensive-security/)**
