@@ -60,6 +60,9 @@
 ???+ question "I ran the scan but there's no vulnerability found?"
     It's simply that there's no vulnerability. It very much depends on your target.
 
+???+ question "How can I update the vulnerability database of Jaeles or Nuclei?"
+    Just run the command `osmedeus update --vuln`.
+
 ???+ info "How can I update my premium package?"
     Just run the install script for the premium package again and it will be updated.
 
