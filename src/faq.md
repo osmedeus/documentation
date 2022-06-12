@@ -135,3 +135,6 @@
 
 ???+ question "How can I keep the scan or the web UI running in the background?"
     The simplest way to do it is running the process under [tmux session](https://tmuxcheatsheet.com/).
+
+???+ info "How can I run osmedeus in my home network without killing my Internet?"
+    It is always recommended to run Osmedeus in VPS, but you can use [**gently-general**](https://github.com/osmedeus/osmedeus-workflow/blob/main/gently-general.yaml) flow with the command `osmedeus scan -f gently-general -t target.com` or always customize the workflow to lower the threads of some module 

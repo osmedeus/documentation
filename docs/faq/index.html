@@ -1350,6 +1350,10 @@ The reason it won't find any vulnerability on the intentionally vulnerable app i
 <summary>How can I keep the scan or the web UI running in the background?</summary>
 <p>The simplest way to do it is running the process under <a href="https://tmuxcheatsheet.com/">tmux session</a>.</p>
 </details>
+<details class="info" open="open">
+<summary>How can I run osmedeus in my home network without killing my Internet?</summary>
+<p>It is always recommended to run Osmedeus in VPS, but you can use <a href="https://github.com/osmedeus/osmedeus-workflow/blob/main/gently-general.yaml"><strong>gently-general</strong></a> flow with the command <code>osmedeus scan -f gently-general -t target.com</code> or always customize the workflow to lower the threads of some module </p>
+</details>
 
               
             </article>
