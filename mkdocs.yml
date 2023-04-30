@@ -1,0 +1,121 @@
+site_name: Osmedeus Next Generation - A Workflow Engine for Offensive Security
+site_url: https://docs.osmedeus.org/
+site_description: Osmedeus Next Generation
+docs_dir: src
+repo_url: https://github.com/j3ssie/osmedeus
+repo_name: j3ssie/osmedeus
+
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/git-alt
+  logo: static/images/favicon.png
+  favicon: static/images/favicon.png
+  font:
+    code: Roboto Mono
+  extra:
+    homepage: https://docs.osmedeus.org/
+  features:
+    - navigation.tabs
+    - announce.dismiss
+    - announce.autohide
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.tracking
+    - navigation.instant
+    - navigation.top
+    - content.tabs.link
+    - toc.integrate
+    - pymdownx.snippets
+
+extra_css:
+    - static/stylesheets/extra.css
+
+copyright: <a href="https://twitter.com/j3ssiejjj">Copyright &copy; 2021 Ai Ho (a.k.a j3ssie)</a>
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/osmedeus
+      name: Osmedeus on Github
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/OsmedeusEngine
+      name: Osmedeus on Twitter
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/ai-ho/
+      name: j3ssie on linkedin
+    - icon: fontawesome/brands/patreon
+      link: https://www.patreon.com/j3ssie
+      name: j3ssie on patreon
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/mtQG2FQsYA
+      name: Osmedeus on discord
+  analytics:
+    provider: google
+    property: UA-109222024-1
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - def_list
+  - toc:
+      permalink: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: installation.md
+    - Using Docker: installation/using-docker.md
+    - Setup Token & API Key: installation/token.md
+    - Setup Notification: installation/notification.md
+    - Installation Notes: installation/install-note.md
+    - Web UI (Experimental): installation/web-ui.md
+    - Running Your First Scan:
+      - How do you determine which workflow to run?: installation/running-your-first-scan.md
+      - Practical Scan Usage Cheatshet: installation/practical-usage.md
+      - Full Usage: installation/usage.md
+
+  - Architecture:
+    - Overview: architecture.md
+  - Write Your Own Workflow: 
+    - Understand the Workflow:
+      - Overview: workflow.md
+      - Default Community workflow: workflow/default-workflow.md
+      - Parameters: workflow/parameters.md
+      - Other Fields: workflow/other-fields.md
+    - Write Your Own Workflow:
+      - Customize your own Workflow: workflow/customize-your-own-workflow.md
+      - Use Your Own wordlists: workflow/use-your-own-wordlists.md
+    - Scripts:
+      - Defination: workflow/scripts.md
+      - IO Scripts: workflow/io-utils.md
+      - Git Scripts: workflow/git-scripts.md
+      - Notification Scripts: workflow/noti-scripts.md
+  - Premium Package: 
+    - What is Premium Package?: premium.md
+    - Sponsor & Donation: donation.md
+    - How to Install the Premium Package?: premium/install-premium-package.md
+    - Setup for Distributed Scan: premium/cloud-setup.md
+    - Git Setup for Premium Package: premium/git-setup.md
+  - References & FAQ: 
+    - Frequently Asked Questions: faq.md
+    - Mentions: reference.md
+
