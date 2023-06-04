@@ -507,6 +507,13 @@ a,a:hover,a:click, a:visited{
 </li>
       
         <li class="md-nav__item">
+  <a href="#install-from-source" class="md-nav__link">
+     Install from source
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#install-from-a-build-release" class="md-nav__link">
     Install from a build release
   </a>
@@ -1307,6 +1314,16 @@ a,a:hover,a:click, a:visited{
 </code></pre></div>
 <p><strong><a href="/installation/install-note/#when-install-on-macos">Some other changes</a></strong> you might need to make if you're really want to use Osmedeus on MacOS</p>
 <hr />
+<h2 id="install-from-source"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4Z"/></svg></span> Install from source<a class="headerlink" href="#install-from-source" title="Permanent link">&para;</a></h2>
+<p>You will need to configured <code>Go &gt;= 1.8</code> environment.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install the base folder first, this will install some third party as well as golang </span>
+bash<span class="w"> </span>&lt;<span class="o">(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/osmedeus/osmedeus-base/master/install-macos.sh<span class="o">)</span>
+
+<span class="c1"># clone the source code to your $GOPATH and build the golang project</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$GOPATH</span>/src/github.com/<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>j3ssie
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/j3ssie/osmedeus
+go<span class="w"> </span>install
+</code></pre></div>
 <h2 id="install-from-a-build-release"><img alt="📦" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f4e6.svg" title=":package:" /> Install from a build release<a class="headerlink" href="#install-from-a-build-release" title="Permanent link">&para;</a></h2>
 <p>Make sure you login as <strong>root</strong> otherwise run <code>sudo su</code> first then put <code>build-osm.zip</code> to any folder (e.g: <code>/opt/</code>)</p>
 <div class="highlight"><pre><span></span><code>unzip<span class="w"> </span>-q<span class="w"> </span>build-osm.zip<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build-osm

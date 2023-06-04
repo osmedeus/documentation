@@ -28,6 +28,21 @@ bash <(curl -fsSL https://raw.githubusercontent.com/osmedeus/osmedeus-base/maste
 
 ***
 
+## :material-code-tags: Install from source
+
+You will need to configured `Go >= 1.8` environment.
+
+```shell
+# Install the base folder first, this will install some third party as well as golang 
+bash <(curl -fsSL https://raw.githubusercontent.com/osmedeus/osmedeus-base/master/install-macos.sh)
+
+# clone the source code to your $GOPATH and build the golang project
+cd $GOPATH/src/github.com/ && mkdir -p j3ssie
+git clone https://github.com/j3ssie/osmedeus
+go install
+
+```
+
 ## :package: Install from a build release
 
 Make sure you login as **root** otherwise run `sudo su` first then put `build-osm.zip` to any folder (e.g: `/opt/`)
