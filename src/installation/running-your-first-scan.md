@@ -6,7 +6,7 @@
 
     for example: `osmedeus scan --threads-hold=10 -t example.com`
 
-!!! example "Running the command `osmedeus workflow ls` to show full workflow and `osmedeus scan -hh` to see the full help of the scan command"
+!!! example "Running the command `osmedeus workflow ls` to show full workflow, `osmedeus workflow view -f general` to show the detailed about the workflow and `osmedeus scan -hh` to see the full help of the scan command"
 
 !!! danger "To avoid encountering errors, it is important to ensure that the scan is executed using the correct input format."
 
@@ -58,7 +58,7 @@ osmedeus scan -f vuln -t example.com
 
 :fontawesome-solid-scroll: __Example inputs__: Your input is **a file** that includes a catalog of URLs or IP addresses, along with subdomains such as `https://sub.example.com` , `internal.app.example.com`, `https://evil.com/path`, `https://1.2.3.4`, `3.4.5.6`, etc
 
-:warning: The workflows listed below solely permit input in the form of a file. If your input is not in the file format, kindly arrange it in a file prior to execution.
+!!! danger "The workflows listed below solely permit input in the form of a file. If your input is not in the file format, kindly arrange it in a file prior to execution."
 
 :fontawesome-solid-terminal: __Example commands__
 
@@ -106,3 +106,7 @@ osmedeus scan -m repo-scan -t /tmp/source-code-folder
 osmedeus scan -m repo-scan -T list-of-repos.txt
 
 ```
+
+## :material-details: View of all toggleable and skippable parameters in the workflow.
+
+![osmedeus-workflow-view](/static/images/osmedeus-workflow-view.png){ loading=lazy }

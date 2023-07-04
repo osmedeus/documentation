@@ -30,4 +30,4 @@ Even though you can use Git Storages by writing your workflow. The premium workf
 
 ## Details structure of the package
 
-![details](static/architecture/osmedeus-details-folder.png){ loading=lazy }
+![osm-structure](static/architecture/osm-structure.png){ loading=lazy }

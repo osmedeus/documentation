@@ -109,6 +109,7 @@ nav:
       - IO Scripts: workflow/io-utils.md
       - Git Scripts: workflow/git-scripts.md
       - Notification Scripts: workflow/noti-scripts.md
+    - Markdown Report: workflow/markdown-report.md
   - Premium Package: 
     - What is Premium Package?: premium.md
     - Sponsor & Donation: donation.md

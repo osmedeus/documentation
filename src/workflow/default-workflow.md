@@ -7,49 +7,48 @@
 ## List all flow available
 
 ```shell
-$ osmedeus utils workflow
+$ osmedeus workflow ls
 
-Found 19 available workflows at: /Users/j3ssie/osmedeus-base/workflow
+Found 11 available workflows at: /Users/j3ssie/osmedeus-base/workflow
 
-+------------------+------------------------------------------------------------------------------+
-|    Flow Name     |                                 Description                                  |
-+------------------+------------------------------------------------------------------------------+
-| cidr             | Scan for CIDR File                                                           |
-| domains          | run normal routine but without subdomain scan                                |
-| evuln            | run fast routine with vuln scan + portscan                                   |
-| extensive-vuln   | run extensive vuln scan                                                      |
-| extensive        | run extensive routine with more in-depth module                              |
-| fast             | run fast routine for summary data                                            |
-| general          | run normal routine                                                           |
-| gently-cidr      | Scan for CIDR File                                                           |
-| gently-extensive | run extensive routine but with very low threads                              |
-| gently-general   | run normal routine but with very low threads                                 |
-| gently-host      | Scan for List of Hosts file (e.g: 1.2.3.4:443)                               |
-| gently-urls      | Scan for List of URLs                                                        |
-| ossub            | run extensive routine with only subdomain enumeration and subdomain takeover |
-| osub             | run general routine with only subdomain enumeration                          |
-| quick-cidr       | Scan for CIDR File but focus on common HTTP Ports                            |
-| sync             | Sync result based on git                                                     |
-| urls             | Scan for List of URLs                                                        |
-| vuln-and-dirb    | directly run on vuln scan and directory scan on list of domains              |
-| vuln             | run fast routine with vuln scan                                              |
-+------------------+------------------------------------------------------------------------------+
++----------------+-------------------------------------------------------------------------------------------------------+
+|   Flow Name    |                                              Description                                              |
++----------------+-------------------------------------------------------------------------------------------------------+
+| cidr           | Scanning for CIDR File                                                                                |
+| domains        | Performing the default routine using the provided list of domains, but skipping subdomain enumeration |
+| extensive-vuln | Running extensive vuln scan                                                                           |
+| extensive      | Running extensive reconnaissance routine with in-depth module + bigger wordlists                      |
+| fast           | Performing a quick summary data analysis                                                              |
+| general        | Running default reconnaissance routine                                                                |
+| quick-cidr     | Scanning for CIDR file but focus on common HTTP Ports and skip banner grabbing                        |
+| subdomain-enum | Running subdomain enumeration and dns resolving only                                                  |
+| urls           | Performing vulnerability scan and directory scan using the provided Domains, URLs or IP Address       |
+| vuln-and-dirb  | Running vulnerability scan and directory scan on list of provded domains                              |
+| vuln           | Performing a rapid routine and conducting a vulnerability scan on it                                  |
++----------------+-------------------------------------------------------------------------------------------------------+
 
 Usage:
  osmedeus scan -f [flowName] -t [target]
 
 ------------------------------------------------------------
 
-Found 3 default modules at: /Users/j3ssie/osmedeus-base/workflow/default-modules
+Found 8 default modules at: /Users/j3ssie/osmedeus-base/workflow/default-modules
 
-+-------------+-------------------------------+
-| Module Name |          Description          |
-+-------------+-------------------------------+
-| dirbscan    | Run Dirbscan                  |
-| probing     | mostly for testing chunk mode |
-| vulnscan    | Run common Jaeles Signature   |
-+-------------+-------------------------------+
++-----------------------+-------------------------------------------------------------------------------------------------------------------+
+|      Module Name      |                                                    Description                                                    |
++-----------------------+-------------------------------------------------------------------------------------------------------------------+
+| brutefocing-subdomain | Running Subdomain Brutefocing on provided domain                                                                  |
+| cidr-probing          | Conducting common Port scanning then doing HTTP fingerprint technology and response with the supplied CIDR inputs |
+| content-discovery     | Running content discovery with the supplied inputs                                                                |
+| http-probing          | Running HTTP fingerprint technology and response with the supplied inputs                                         |
+| repo-scan             | Performing static vulnerability scan and secret scan on a git repo                                                |
+| spidering             | Crawling links in http site + scanning for secrets with trufflehog                                                |
+| subdomain-enum        | Running subdomain enumeration                                                                                     |
+| vuln-scan             | Run quick vulnerability scan with provided inputs                                                                 |
++-----------------------+-------------------------------------------------------------------------------------------------------------------+
 
 Module Usage:
  osmedeus scan -m [moduleName] -t [target]
+
+💡 For full help message, please run: osmedeus --hh or osmedeus scan --hh
 ```

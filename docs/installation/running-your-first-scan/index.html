@@ -643,6 +643,13 @@ a,a:hover,a:click, a:visited{
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#view-of-all-toggleable-and-skippable-parameters-in-the-workflow" class="md-nav__link">
+     View of all toggleable and skippable parameters in the workflow.
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -766,6 +773,8 @@ a,a:hover,a:click, a:visited{
       <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
       
       
+        
+          
         
           
         
@@ -1067,6 +1076,20 @@ a,a:hover,a:click, a:visited{
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/markdown-report/" class="md-nav__link">
+        Markdown Report
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1289,7 +1312,7 @@ a,a:hover,a:click, a:visited{
 <p>for example: <code>osmedeus scan --threads-hold=10 -t example.com</code></p>
 </div>
 <div class="admonition example">
-<p class="admonition-title">Running the command <code>osmedeus workflow ls</code> to show full workflow and <code>osmedeus scan -hh</code> to see the full help of the scan command</p>
+<p class="admonition-title">Running the command <code>osmedeus workflow ls</code> to show full workflow, <code>osmedeus workflow view -f general</code> to show the detailed about the workflow and <code>osmedeus scan -hh</code> to see the full help of the scan command</p>
 </div>
 <div class="admonition danger">
 <p class="admonition-title">To avoid encountering errors, it is important to ensure that the scan is executed using the correct input format.</p>
@@ -1326,7 +1349,9 @@ osmedeus<span class="w"> </span>scan<span class="w"> </span>-m<span class="w"> <
 
 <h2 id="if-you-workflow-is-a-url-or-a-list-of-urls"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.803 14.817a.966.966 0 1 1 1.933 0 .966.966 0 0 1-1.933 0m2.736 0c0-.196-.053-.376-.112-.553-.234-.702-.876-1.216-1.657-1.216-.125 0-.235.046-.353.07C.615 13.286 0 13.965 0 14.817a1.77 1.77 0 0 0 3.539 0m-1.77-7.149a.967.967 0 1 1 0 1.934.967.967 0 0 1 0-1.934m0 2.736a1.77 1.77 0 0 0 1.77-1.77c0-.195-.053-.376-.112-.552-.234-.702-.877-1.217-1.657-1.217-.125 0-.235.047-.353.072C.615 7.104 0 7.782 0 8.634c0 .977.792 1.77 1.77 1.77M14.99 4.71a.966.966 0 0 1-.966-.967.966.966 0 0 1 .967-.966.966.966 0 1 1 0 1.933m-9.6 16.513a.967.967 0 0 1 0-1.933.966.966 0 0 1 .966.967.966.966 0 0 1-.966.966m9.6-19.249c-.978 0-1.77.792-1.77 1.77 0 .208.053.402.119.588L5.039 18.558c-.803.168-1.418.846-1.418 1.699a1.77 1.77 0 0 0 3.539 0 1.74 1.74 0 0 0-.111-.553l8.343-14.273c.778-.186 1.368-.853 1.368-1.688a1.77 1.77 0 0 0-1.77-1.769m7.24 2.736a.966.966 0 0 1-.966-.967.966.966 0 0 1 .967-.966.966.966 0 1 1 0 1.933m-9.6 16.513a.966.966 0 0 1-.966-.967.966.966 0 0 1 .966-.966.966.966 0 0 1 0 1.933m9.6-19.249a1.77 1.77 0 0 0-1.77 1.77c0 .208.053.402.119.588l-8.301 14.226c-.802.168-1.417.846-1.417 1.699a1.77 1.77 0 0 0 3.538 0c0-.197-.053-.376-.111-.553l8.343-14.273C23.409 5.245 24 4.578 24 3.743a1.77 1.77 0 0 0-1.77-1.769"/></svg></span>  If you workflow is a URL or a list of URLs<a class="headerlink" href="#if-you-workflow-is-a-url-or-a-list-of-urls" title="Permanent link">&para;</a></h2>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 80v48c0 17.7 14.3 32 32 32h64V80c0-26.5-21.5-48-48-48S0 53.5 0 80zm112-48c10 13.4 16 30 16 48v304c0 35.3 28.7 64 64 64s64-28.7 64-64v-5.3c0-32.4 26.3-58.7 58.7-58.7H480V128c0-53-43-96-96-96H112zm352 448c61.9 0 112-50.1 112-112 0-8.8-7.2-16-16-16H314.7c-14.7 0-26.7 11.9-26.7 26.7v5.3c0 53-43 96-96 96h272z"/></svg></span> <strong>Example inputs</strong>: Your input is <strong>a file</strong> that includes a catalog of URLs or IP addresses, along with subdomains such as <code>https://sub.example.com</code> , <code>internal.app.example.com</code>, <code>https://evil.com/path</code>, <code>https://1.2.3.4</code>, <code>3.4.5.6</code>, etc</p>
-<p><img alt="⚠" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/26a0.svg" title=":warning:" /> The workflows listed below solely permit input in the form of a file. If your input is not in the file format, kindly arrange it in a file prior to execution.</p>
+<div class="admonition danger">
+<p class="admonition-title">The workflows listed below solely permit input in the form of a file. If your input is not in the file format, kindly arrange it in a file prior to execution.</p>
+</div>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M41.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 41.4 86.6zM288 416h288c17.7 0 32 14.3 32 32s-14.3 32-32 32H288c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg></span> <strong>Example commands</strong></p>
 <div class="highlight"><pre><span></span><code>osmedeus<span class="w"> </span>scan<span class="w"> </span>-f<span class="w"> </span>urls<span class="w"> </span>-t<span class="w"> </span>list-of-urls.txt
 
@@ -1358,6 +1383,8 @@ osmedeus<span class="w"> </span>scan<span class="w"> </span>-m<span class="w"> <
 
 osmedeus<span class="w"> </span>scan<span class="w"> </span>-m<span class="w"> </span>repo-scan<span class="w"> </span>-T<span class="w"> </span>list-of-repos.txt
 </code></pre></div>
+<h2 id="view-of-all-toggleable-and-skippable-parameters-in-the-workflow"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.38 6h11.25L12 16 6.38 6M3 4l9 16 9-16H3Z"/></svg></span> View of all toggleable and skippable parameters in the workflow.<a class="headerlink" href="#view-of-all-toggleable-and-skippable-parameters-in-the-workflow" title="Permanent link">&para;</a></h2>
+<p><img alt="osmedeus-workflow-view" loading="lazy" src="/static/images/osmedeus-workflow-view.png" /></p>
 
 
   
