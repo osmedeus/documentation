@@ -12,7 +12,7 @@ If you or your organization are interested in sponsoring my projects or displayi
 
 <a href="https://patreon.com/j3ssie"><img src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dj3ssie%26type%3Dpatrons&style=for-the-badge"></a>   
  
-<a href="https://www.buymeacoffee.com/j3ssie" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+<a href='https://ko-fi.com/j3ssie' target='_blank'><img height='35' style='border:0px;height:46px;' src='https://az743702.vo.msecnd.net/cdn/kofi3.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' />
 
 ***
 
