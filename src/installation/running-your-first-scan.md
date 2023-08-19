@@ -12,7 +12,6 @@
 
 <!-- # :information_source:  Some tips before you start the scan -->
 
-
 ## :octicons-globe-24: If you workflow is a domain or a list of subdomains
 
 :fontawesome-solid-scroll: __Example inputs__: `example.com` , `target.co.uk`
@@ -65,6 +64,9 @@ osmedeus scan -f vuln -t example.com
 ```bash
 osmedeus scan -f urls -t list-of-urls.txt
 
+# This will automatically convert the input into a file named http-sub.example.com.txt
+osmedeus scan -f urls -t https://sub.example.com/
+
 osmedeus scan -f domains -t list-of-domains.txt
 
 # using with module
@@ -83,9 +85,11 @@ osmedeus scan -m content-discovery -t list-of-urls.txt
 :fontawesome-solid-terminal: __Example commands__
 
 ```bash
+osmedeus scan -f cidr -t list-of-cidr.txt
+
+# This will automatically convert the input into a file named 1.2.3.4/24_random.txt
 osmedeus scan -f cidr -t 1.2.3.4/24
 
-osmedeus scan -f cidr -t list-of-cidr.txt
 
 osmedeus scan -f cidr-probing -t 3.4.5.6/24
 

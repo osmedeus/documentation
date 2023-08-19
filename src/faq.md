@@ -27,7 +27,7 @@
     Just run `rm -rf ~/osmedeus-base` first then run a install script from the premium package download page.
 
 ???+ info "Does Osmedeus Support Windows or ARM based processor (M1 Macbook, Kali Nethunter, etc)?"
-    Unfortunately, Osmedeus does not support Windows or ARM based processor. Please consider using WSL, Docker or Virtualization software to able to use Osmedeus on your machine.
+    Unfortunately, Osmedeus does not support Windows or ARM based processor. Please consider using WSL, Docker or Virtualization software to able to use Osmedeus on your machine. You can see the docker for ARM [**here**](https://hub.docker.com/r/j3ssie/osmedeus/tags)
 
 ???+ info "What are the donation tiers and how much should I donate to be eligible for the premium package?"
     You can join the [**Patreon here**](https://www.patreon.com/j3ssie) or [**here**](https://docs.osmedeus.org/donation/) to see a private post that contains a download link for premium packages. After that you will be invited to the backer channel to get direct support then
@@ -44,10 +44,10 @@
 ## General Questions 
 
 ???+ question "How to setup the Osmedeus?"
-    Please check out **[installation guide here](/installation/)**
+    Please check out **[installation guide here](/installation/)** 
 
-???+ info "How can I determine which workflow to run for my target?
-    Please check out **[running your first scan here](/running-your-first-scan/)**
+???+ info "How can I determine which workflow to run for my target?"
+    Please check out **[running your first scan here](/running-your-first-scan/)** 
 
 ???+ question "I got some error while installing Osmedeus on my machine. How can I fix it?"
     Maybe run `sudo su` first and then run `rm -rf ~/osmedeus-base ~/.osmedeus` and then run the install script again to have a clean installation.
@@ -58,11 +58,23 @@
 ???+ question "What is the specification required to run Osmedeus?"
     I recommend using VPS since it takes a lot of network bandwidth, the minimum spec would be 1 CPU 2GB RAM. You can of course increase or decrease the threads in the workflow to make it work in any spec
 
-???+ info "How can I update my Osmedeus?"
-    Just run the install script again and it will be updated. Run `rm -rf /root/osmedeus-base /root/.osmedeus` first if you want to have a fresh install.
+???+ info "How can I update my Osmedeus? Or having a clean install?"
+    Just run the install script again and it will be updated. Or run `rm -rf /root/osmedeus-base /root/.osmedeus` first then run the install script if you want to have a fresh install.
 
 ???+ question "Where can I find the result after the scan done?"
     All of your scan data store at `~/workspaces-osmedeus/`
+
+???+ info "How do I know which workflow to run?"
+    You can follow **[this page](/installation/running-your-first-scan/)** to see what workflow is fit to your workflow.
+
+???+ question "How can I conduct a standard scan while excluding specific domains that are considered out of scope?"
+    Currently, I don't have any Out of scope handle but you can run the flow that discovery the subdomain first with these commands
+    ```
+    osmedeus scan -f fast -t google.com
+    osmedeus scan -f subdomain-enum -t google.com
+    ```
+    then get the list of subdomain, filtering OOS by yourself then store it in a file like list-of-domains.txt
+    finally run the scan on with a list of domains `osmedeus scan -f domains -t list-of-domains.txt`
 
 ???+ info "I got some errors while running the scan, what should I do?"
     You can use `osmedeus health` command to check if the install is okay or not.
@@ -79,11 +91,16 @@
 ???+ question "How can I update the vulnerability database of Jaeles or Nuclei?"
     Just run the command `osmedeus update --vuln`.
 
+???+ info "How do I halt my scan and ensure that all the smaller tasks within it have been stopped?"
+    Just press `Crtl + C` to stop the scan. Then run `osmedeus utils ps --osm --kill` to kill all the sub process.
+
 ???+ question "Why was my scan stuck at portscan?"
     It will stay there because it got a sudo password prompt. Some special tools require *root* permission to run like **nmap**. Make sure you allow **nmap** can be run without sudo password prompt.
 
-???+ question "Why was my scan portscan take so long?"
-    It's probably because your cloud provider or your home network limit your portscan or just simply your input is too big. Try to run with `--debug` then you can manually check with the raw command that the portscan module actually running.
+???+ question "Why did my scan such as vulnerability scanning, port scanning, or content discovery take so long?"
+    It's probably because the thing you put in was really big. Think about trying to run the content discovery againt **2000 different hosts**. That's why it takes a long time.
+
+    It's probably because your cloud provider or your home network limit your portscan. Try to run with `--debug` then you can manually check with the raw command that the portscan module actually running.
 
 ???+ info "What is the difference between this flow/module to other flow/module?"
     1. Read the flow/module files to see what difference in them.

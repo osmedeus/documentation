@@ -1319,7 +1319,7 @@ a,a:hover,a:click, a:visited{
 </details>
 <details class="info" open="open">
 <summary>Does Osmedeus Support Windows or ARM based processor (M1 Macbook, Kali Nethunter, etc)?</summary>
-<p>Unfortunately, Osmedeus does not support Windows or ARM based processor. Please consider using WSL, Docker or Virtualization software to able to use Osmedeus on your machine.</p>
+<p>Unfortunately, Osmedeus does not support Windows or ARM based processor. Please consider using WSL, Docker or Virtualization software to able to use Osmedeus on your machine. You can see the docker for ARM <a href="https://hub.docker.com/r/j3ssie/osmedeus/tags"><strong>here</strong></a></p>
 </details>
 <details class="info" open="open">
 <summary>What are the donation tiers and how much should I donate to be eligible for the premium package?</summary>
@@ -1340,10 +1340,12 @@ a,a:hover,a:click, a:visited{
 <h2 id="general-questions">General Questions<a class="headerlink" href="#general-questions" title="Permanent link">&para;</a></h2>
 <details class="question" open="open">
 <summary>How to setup the Osmedeus?</summary>
-<p>Please check out <strong><a href="/installation/">installation guide here</a></strong></p>
+<p>Please check out <strong><a href="/installation/">installation guide here</a></strong> </p>
 </details>
-<p>???+ info "How can I determine which workflow to run for my target?
-    Please check out <strong><a href="/running-your-first-scan/">running your first scan here</a></strong></p>
+<details class="info" open="open">
+<summary>How can I determine which workflow to run for my target?</summary>
+<p>Please check out <strong><a href="/running-your-first-scan/">running your first scan here</a></strong> </p>
+</details>
 <details class="question" open="open">
 <summary>I got some error while installing Osmedeus on my machine. How can I fix it?</summary>
 <p>Maybe run <code>sudo su</code> first and then run <code>rm -rf ~/osmedeus-base ~/.osmedeus</code> and then run the install script again to have a clean installation.</p>
@@ -1357,12 +1359,25 @@ a,a:hover,a:click, a:visited{
 <p>I recommend using VPS since it takes a lot of network bandwidth, the minimum spec would be 1 CPU 2GB RAM. You can of course increase or decrease the threads in the workflow to make it work in any spec</p>
 </details>
 <details class="info" open="open">
-<summary>How can I update my Osmedeus?</summary>
-<p>Just run the install script again and it will be updated. Run <code>rm -rf /root/osmedeus-base /root/.osmedeus</code> first if you want to have a fresh install.</p>
+<summary>How can I update my Osmedeus? Or having a clean install?</summary>
+<p>Just run the install script again and it will be updated. Or run <code>rm -rf /root/osmedeus-base /root/.osmedeus</code> first then run the install script if you want to have a fresh install.</p>
 </details>
 <details class="question" open="open">
 <summary>Where can I find the result after the scan done?</summary>
 <p>All of your scan data store at <code>~/workspaces-osmedeus/</code></p>
+</details>
+<details class="info" open="open">
+<summary>How do I know which workflow to run?</summary>
+<p>You can follow <strong><a href="/installation/running-your-first-scan/">this page</a></strong> to see what workflow is fit to your workflow.</p>
+</details>
+<details class="question" open="open">
+<summary>How can I conduct a standard scan while excluding specific domains that are considered out of scope?</summary>
+<p>Currently, I don't have any Out of scope handle but you can run the flow that discovery the subdomain first with these commands
+<div class="highlight"><pre><span></span><code>osmedeus scan -f fast -t google.com
+osmedeus scan -f subdomain-enum -t google.com
+</code></pre></div>
+then get the list of subdomain, filtering OOS by yourself then store it in a file like list-of-domains.txt
+finally run the scan on with a list of domains <code>osmedeus scan -f domains -t list-of-domains.txt</code></p>
 </details>
 <details class="info" open="open">
 <summary>I got some errors while running the scan, what should I do?</summary>
@@ -1384,13 +1399,18 @@ a,a:hover,a:click, a:visited{
 <summary>How can I update the vulnerability database of Jaeles or Nuclei?</summary>
 <p>Just run the command <code>osmedeus update --vuln</code>.</p>
 </details>
+<details class="info" open="open">
+<summary>How do I halt my scan and ensure that all the smaller tasks within it have been stopped?</summary>
+<p>Just press <code>Crtl + C</code> to stop the scan. Then run <code>osmedeus utils ps --osm --kill</code> to kill all the sub process.</p>
+</details>
 <details class="question" open="open">
 <summary>Why was my scan stuck at portscan?</summary>
 <p>It will stay there because it got a sudo password prompt. Some special tools require <em>root</em> permission to run like <strong>nmap</strong>. Make sure you allow <strong>nmap</strong> can be run without sudo password prompt.</p>
 </details>
 <details class="question" open="open">
-<summary>Why was my scan portscan take so long?</summary>
-<p>It's probably because your cloud provider or your home network limit your portscan or just simply your input is too big. Try to run with <code>--debug</code> then you can manually check with the raw command that the portscan module actually running.</p>
+<summary>Why did my scan such as vulnerability scanning, port scanning, or content discovery take so long?</summary>
+<p>It's probably because the thing you put in was really big. Think about trying to run the content discovery againt <strong>2000 different hosts</strong>. That's why it takes a long time.</p>
+<p>It's probably because your cloud provider or your home network limit your portscan. Try to run with <code>--debug</code> then you can manually check with the raw command that the portscan module actually running.</p>
 </details>
 <details class="info" open="open">
 <summary>What is the difference between this flow/module to other flow/module?</summary>

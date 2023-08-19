@@ -1355,6 +1355,9 @@ osmedeus<span class="w"> </span>scan<span class="w"> </span>-m<span class="w"> <
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M41.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 41.4 86.6zM288 416h288c17.7 0 32 14.3 32 32s-14.3 32-32 32H288c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg></span> <strong>Example commands</strong></p>
 <div class="highlight"><pre><span></span><code>osmedeus<span class="w"> </span>scan<span class="w"> </span>-f<span class="w"> </span>urls<span class="w"> </span>-t<span class="w"> </span>list-of-urls.txt
 
+<span class="c1"># This will automatically convert the input into a file named http-sub.example.com.txt</span>
+osmedeus<span class="w"> </span>scan<span class="w"> </span>-f<span class="w"> </span>urls<span class="w"> </span>-t<span class="w"> </span>https://sub.example.com/
+
 osmedeus<span class="w"> </span>scan<span class="w"> </span>-f<span class="w"> </span>domains<span class="w"> </span>-t<span class="w"> </span>list-of-domains.txt
 
 <span class="c1"># using with module</span>
@@ -1368,9 +1371,11 @@ osmedeus<span class="w"> </span>scan<span class="w"> </span>-m<span class="w"> <
 <h2 id="if-you-workflow-is-a-cidr-or-a-list-of-cidrs"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 11h-2V9h2v2M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5m7 2H8v10h2V7m2 10h2v-4h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-4v10Z"/></svg></span>  If you workflow is a CIDR or a list of CIDRs<a class="headerlink" href="#if-you-workflow-is-a-cidr-or-a-list-of-cidrs" title="Permanent link">&para;</a></h2>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 80v48c0 17.7 14.3 32 32 32h64V80c0-26.5-21.5-48-48-48S0 53.5 0 80zm112-48c10 13.4 16 30 16 48v304c0 35.3 28.7 64 64 64s64-28.7 64-64v-5.3c0-32.4 26.3-58.7 58.7-58.7H480V128c0-53-43-96-96-96H112zm352 448c61.9 0 112-50.1 112-112 0-8.8-7.2-16-16-16H314.7c-14.7 0-26.7 11.9-26.7 26.7v5.3c0 53-43 96-96 96h272z"/></svg></span> <strong>Example inputs</strong>: Your input is <strong>a file</strong> that includes a catalog of IP addresses, CIDR such as <code>1.2.3.4/24</code> , <code>3.4.5.6</code>, etc or a simple CIDR like <code>1.2.3.4/24</code></p>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M41.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 41.4 86.6zM288 416h288c17.7 0 32 14.3 32 32s-14.3 32-32 32H288c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg></span> <strong>Example commands</strong></p>
-<div class="highlight"><pre><span></span><code>osmedeus<span class="w"> </span>scan<span class="w"> </span>-f<span class="w"> </span>cidr<span class="w"> </span>-t<span class="w"> </span><span class="m">1</span>.2.3.4/24
+<div class="highlight"><pre><span></span><code>osmedeus<span class="w"> </span>scan<span class="w"> </span>-f<span class="w"> </span>cidr<span class="w"> </span>-t<span class="w"> </span>list-of-cidr.txt
 
-osmedeus<span class="w"> </span>scan<span class="w"> </span>-f<span class="w"> </span>cidr<span class="w"> </span>-t<span class="w"> </span>list-of-cidr.txt
+<span class="c1"># This will automatically convert the input into a file named 1.2.3.4/24_random.txt</span>
+osmedeus<span class="w"> </span>scan<span class="w"> </span>-f<span class="w"> </span>cidr<span class="w"> </span>-t<span class="w"> </span><span class="m">1</span>.2.3.4/24
+
 
 osmedeus<span class="w"> </span>scan<span class="w"> </span>-f<span class="w"> </span>cidr-probing<span class="w"> </span>-t<span class="w"> </span><span class="m">3</span>.4.5.6/24
 </code></pre></div>
