@@ -159,7 +159,7 @@ steps:
       - "{{Binaries}}/assetfinder"
       - "{{Binaries}}/findomain"
     commands:
-      - "timeout -k 1m {{amassTimeout}} {{Binaries}}/amass enum -config {{Data}}/configs/amass.ini -d {{Target}} -o {{Output}}/subdomain/{{Workspace}}-amass.txt > /dev/null 2>&1"
+      - "timeout -k 1m {{amassTimeout}} {{Binaries}}/amass enum -config {{amassConfig}} -silent -nocolor -d {{Target}} -o {{Output}}/subdomain/{{Workspace}}-raw-amass.txt > /dev/null 2>&1"
       - "{{Binaries}}/assetfinder -subs-only {{Target}} > {{Output}}/subdomain/{{Workspace}}-assetfinder.txt"
   # these 3 commands will run in parallels
   - commands:

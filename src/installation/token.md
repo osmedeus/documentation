@@ -5,20 +5,15 @@
 
 There are some places that tokens will store in Osmedeus below
 
-- [x] Amass config files `amass.ini` and `amass-extensive.ini` at  **`~/osmedeus-base/data/configs/`** which is mainly responsible for the subdomain enumeration.
+- [x] Amass config files `~/osmedeus-base/data/amass-config/datasources.yaml` at  **`~/osmedeus-base/data/configs/`** which is mainly responsible for the subdomain enumeration.
 
 - [x] Main config file **`~/osmedeus-base/token/osm-default.rc`** 
 
 
 ## Amass config 
 
-
-The **amass.ini** use for the general flow (default) when you run the scan with this command `osmedeus scan -t sample.com`
-
-The **amass-extensive.ini** use for the extentive flow when you run the scan with this command `osmedeus scan -f extentive -t sample.com`
-
-All of your token like Shodan, Censys, SecurityTrails and others should be store there.
-
+All your tokens, such as Shodan, Censys, SecurityTrails, and others are store in `~/osmedeus-base/data/amass-config/datasources.yaml`. 
+You can begin making modifications to the configuration there to utilize third-party services while using Osmedeus.
 
 ## Some other tokens
 

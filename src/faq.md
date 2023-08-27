@@ -161,7 +161,7 @@
     It won't show any noti vuln data in your channel simply mean it's not found any vuln. Try to grab some urls with you know is for sure vulnerablie like Jenkins or Jira then run it with urls workflow like this `osmedeus scan -f urls -t list-of-vulnerable-url.txt` and you will see.
 
 ???+ question "Why my home router crashed when running Osmedeus?"
-    Again, I'm always recommend to run Osmedeus with vps to avoid these issue. If you really want to change the amass config then go to `~/osmedeus-base/data/configs/amass.ini` and edit the `maximum_dns_queries`, and also change some massdns rate on the probing module.
+    Again, I'm always recommend to run Osmedeus with vps to avoid these issue. If you really want to change the amass config then go to `~/osmedeus-base/data/amass-config/basic-config.yaml` and edit the `maximum_dns_queries`, and also change some massdns rate on the probing module.
 
 ???+ info "Where can I find the password for the Web UI?"
     Please refer to [**this page**]("/installation/web-ui/#start-a-web-server") to start a web server and get credentials. You may need to run this command `cat ~/.osmedeus/config.yaml | grep password`

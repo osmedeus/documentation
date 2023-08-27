@@ -149,6 +149,7 @@ pre_run:
 params:
   - subthreads: "50"
   - amassTimeout: "3h"
+  - amassConfig: "{{Data}}/amass-config/basic-config.yaml"
 
 steps:
   - required:
@@ -157,7 +158,7 @@ steps:
       - "{{Binaries}}/assetfinder"
       - "{{Binaries}}/findomain"
     commands: # these two commands will run in parallels
-      - "timeout -k 1m {{amassTimeout}} {{Binaries}}/amass enum -config {{Data}}/configs/amass.ini -d {{Target}} -o {{Output}}/subdomain/{{Workspace}}-amass.txt > /dev/null 2>&1"
+      - "timeout -k 1m {{amassTimeout}} {{Binaries}}/amass enum -config {{amassConfig}} -silent -nocolor -d {{Target}} -o {{Output}}/subdomain/{{Workspace}}-raw-amass.txt > /dev/null 2>&1"
       - "{{Binaries}}/assetfinder -subs-only {{Target}} > {{Output}}/subdomain/{{Workspace}}-assetfinder.txt"
   # these two commands will run in parallels
   - commands:
