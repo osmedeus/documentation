@@ -1174,22 +1174,15 @@ a,a:hover,a:click, a:visited{
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-modify-the-content-of-storages-config-file-at-osmedeus-basetokenstorages-aliasrc" class="md-nav__link">
-    1. Modify the content of Storages Config file at ~/osmedeus-base/token/storages-alias.rc
+  <a href="#1-modify-the-content-of-storages-config-file-at-osmedeus-basetokenosm-varyaml" class="md-nav__link">
+    1. Modify the content of Storages Config file at ~/osmedeus-base/token/osm-var.yaml
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-load-the-storages-variables-to-osmedeus-config" class="md-nav__link">
-    2. Load the storages variables to Osmedeus config
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-reload-the-config-to-clone-repo" class="md-nav__link">
-    3. Reload the config to clone repo
+  <a href="#2-reload-the-config-to-clone-repo" class="md-nav__link">
+    2. Reload the config to clone repo
   </a>
   
 </li>
@@ -1312,46 +1305,38 @@ a,a:hover,a:click, a:visited{
 </div>
 <h2 id="setup-storages">Setup Storages<a class="headerlink" href="#setup-storages" title="Permanent link">&para;</a></h2>
 <p>Check out <strong>the Private Playlist</strong> on the <strong>#backer</strong> channel in Discord to see a Video Instruction.</p>
-<h3 id="1-modify-the-content-of-storages-config-file-at-osmedeus-basetokenstorages-aliasrc">1. Modify the content of Storages Config file at <code>~/osmedeus-base/token/storages-alias.rc</code><a class="headerlink" href="#1-modify-the-content-of-storages-config-file-at-osmedeus-basetokenstorages-aliasrc" title="Permanent link">&para;</a></h3>
-<p>Please change your username and repository name from <code>your_gitlab_username</code> is your gitlab username and <code>dosm-*</code> are your Gitlab repo names.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">ENABLE_GIT_STORAGES</span><span class="o">=</span>TRUE
-<span class="nb">export</span><span class="w"> </span><span class="nv">GIT_SSH_COMMAND</span><span class="o">=</span><span class="s1">&#39;ssh -o StrictHostKeyChecking=no -i ~/.osmedeus/storages_key&#39;</span>
-
-<span class="c1"># for storages</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">SECRET_KEY</span><span class="o">=</span>~/.osmedeus/storages_key
-
-<span class="c1"># core one</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">SUMMARY_REPO</span><span class="o">=</span>git@gitlab.com:your_gitlab_username/dosm-summary
-<span class="nb">export</span><span class="w"> </span><span class="nv">VULN_REPO</span><span class="o">=</span>git@gitlab.com:your_gitlab_username/dosm-vuln
-<span class="nb">export</span><span class="w"> </span><span class="nv">PATHS_REPO</span><span class="o">=</span>git@gitlab.com:your_gitlab_username/dosm-paths
-<span class="nb">export</span><span class="w"> </span><span class="nv">HTTP_REPO</span><span class="o">=</span>git@gitlab.com:your_gitlab_username/dosm-http
-
-<span class="c1"># mics one</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">ASSETS_REPO</span><span class="o">=</span>git@gitlab.com:your_gitlab_username/dosm-assets
-<span class="nb">export</span><span class="w"> </span><span class="nv">PORTS_REPO</span><span class="o">=</span>git@gitlab.com:your_gitlab_username/dosm-ports
-<span class="nb">export</span><span class="w"> </span><span class="nv">MICS_REPO</span><span class="o">=</span>git@gitlab.com:your_gitlab_username/dosm-cloud
-<span class="nb">export</span><span class="w"> </span><span class="nv">SUBDOMAIN_REPO</span><span class="o">=</span>git@gitlab.com:your_gitlab_username/dosm-subdomain
-</code></pre></div>
-<h3 id="2-load-the-storages-variables-to-osmedeus-config">2. Load the storages variables to Osmedeus config<a class="headerlink" href="#2-load-the-storages-variables-to-osmedeus-config" title="Permanent link">&para;</a></h3>
+<h3 id="1-modify-the-content-of-storages-config-file-at-osmedeus-basetokenosm-varyaml">1. Modify the content of Storages Config file at <code>~/osmedeus-base/token/osm-var.yaml</code><a class="headerlink" href="#1-modify-the-content-of-storages-config-file-at-osmedeus-basetokenosm-varyaml" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Run these commands below if you not using git before</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;your_gitlab_user&quot;</span>
 git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;your_gitlab_uid@users.noreply.gitlab.com&quot;</span>
 </code></pre></div>
 </div>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;source $HOME/osmedeus-base/token/storages-alias.rc&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.bashrc
-
-<span class="c1"># reload config to osmedeus</span>
-osmedeus<span class="w"> </span>config<span class="w"> </span>reload
+<p>Please change your username and repository name from <code>your_gitlab_username</code> is your gitlab username and <code>dosm-*</code> are your Gitlab repo names.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">storages</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secret_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SECRET_KEY</span>
+<span class="w">    </span><span class="nt">assets_repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ASSETS_REPO</span>
+<span class="w">    </span><span class="nt">assets_storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.osmedeus/storages/assets</span>
+<span class="w">    </span><span class="nt">http_repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTTP_REPO</span>
+<span class="w">    </span><span class="nt">http_storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.osmedeus/storages/http</span>
+<span class="w">    </span><span class="nt">mics_repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MICS_REPO</span>
+<span class="w">    </span><span class="nt">mics_storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.osmedeus/storages/mics</span>
+<span class="w">    </span><span class="nt">paths_repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PATHS_REPO</span>
+<span class="w">    </span><span class="nt">paths_storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.osmedeus/storages/paths</span>
+<span class="w">    </span><span class="nt">ports_repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PORTS_REPO</span>
+<span class="w">    </span><span class="nt">ports_storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.osmedeus/storages/ports</span>
+<span class="w">    </span><span class="nt">subdomain_repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SUBDOMAIN_REPO</span>
+<span class="w">    </span><span class="nt">subdomain_storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.osmedeus/storages/subdomain</span>
+<span class="w">    </span><span class="nt">summary_repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SUMMARY_REPO</span>
+<span class="w">    </span><span class="nt">summary_storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.osmedeus/storages/summary</span>
+<span class="w">    </span><span class="nt">vuln_repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VULN_REPO</span>
+<span class="w">    </span><span class="nt">vuln_storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.osmedeus/storages/vuln</span>
 </code></pre></div>
-<p>This will generate the public key at <code>/root/.osmedeus/storages_key.pub</code>. Please add this public key at to your gitlab profile.</p>
-<p>You can also check if the config was loaded or not </p>
-<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>~/.osmedeus/config.yaml<span class="w">  </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;secret_key&#39;</span>
-</code></pre></div>
-<h3 id="3-reload-the-config-to-clone-repo">3. Reload the config to clone repo<a class="headerlink" href="#3-reload-the-config-to-clone-repo" title="Permanent link">&para;</a></h3>
+<p>Change the <code>SECRET_KEY</code> to the path of your secret key that can do the push/pull to your git repo.</p>
+<h3 id="2-reload-the-config-to-clone-repo">2. Reload the config to clone repo<a class="headerlink" href="#2-reload-the-config-to-clone-repo" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">#reload config to cloning the repo</span>
 
-osmedeus<span class="w"> </span>config<span class="w"> </span>reload<span class="w"> </span>--debug
+osmedeus<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--threads-hold<span class="o">=</span><span class="m">10</span>
 
 <span class="c1"># then check out your storages folder at `~/.osmedeus/storages/summary`</span>
 ls<span class="w"> </span>~/.osmedeus/storages/summary/<span class="w"> </span>

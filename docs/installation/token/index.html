@@ -524,8 +524,8 @@ a,a:hover,a:click, a:visited{
 </li>
       
         <li class="md-nav__item">
-  <a href="#some-other-tokens" class="md-nav__link">
-    Some other tokens
+  <a href="#any-other-tokens" class="md-nav__link">
+    Any other tokens
   </a>
   
 </li>
@@ -1290,17 +1290,22 @@ a,a:hover,a:click, a:visited{
 <p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Amass config files <code>~/osmedeus-base/data/amass-config/datasources.yaml</code> at  <strong><code>~/osmedeus-base/data/configs/</code></strong> which is mainly responsible for the subdomain enumeration.</p>
 </li>
 <li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Main config file <strong><code>~/osmedeus-base/token/osm-default.rc</code></strong> </p>
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Main tokens file <strong><code>~/osmedeus-base/token/osm-var.yaml</code></strong> </p>
 </li>
 </ul>
 <h2 id="amass-config">Amass config<a class="headerlink" href="#amass-config" title="Permanent link">&para;</a></h2>
 <p>All your tokens, such as Shodan, Censys, SecurityTrails, and others are store in <code>~/osmedeus-base/data/amass-config/datasources.yaml</code>. 
 You can begin making modifications to the configuration there to utilize third-party services while using Osmedeus.</p>
-<h2 id="some-other-tokens">Some other tokens<a class="headerlink" href="#some-other-tokens" title="Permanent link">&para;</a></h2>
-<p>Other API Keys that require to change to get more information is <code>GITHUB_TOKEN</code> at <code>~/osmedeus-base/token/osm-default.rc</code>. This token used by <code>github-subdomains</code> tools to get more subdomains.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Set github token for run github scan</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">GITHUB_TOKEN</span><span class="o">=</span>xxx,xxxx
+<h2 id="any-other-tokens">Any other tokens<a class="headerlink" href="#any-other-tokens" title="Permanent link">&para;</a></h2>
+<p>Any other config that require to change to get more is store <code>~/osmedeus-base/token/osm-var.yaml</code>.</p>
+<p>The primary section for storing your API keys can be found in the <code>token:</code> section, as shown below. When you run the Osmedeus scan, it will automatically load these keys into your operating system environment</p>
+<div class="highlight"><pre><span></span><code><span class="nt">tokens</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">GITHUB_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GITHUB_TOKEN</span>
+<span class="w">    </span><span class="nt">GITLAB_API_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GITLAB_API_TOKEN</span>
+<span class="w">    </span><span class="nt">SLACK_API_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SLACK_API_TOKEN</span>
+<span class="w">    </span><span class="nt">TELEGRAM_API_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TELEGRAM_API_TOKEN</span>
 </code></pre></div>
+<p>For example <code>GITHUB_TOKEN</code> used by github-subdomains tools to get more subdomains.</p>
 
 
   

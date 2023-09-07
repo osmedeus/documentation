@@ -4,7 +4,7 @@
 
 
 !!! warning ""
-    You should only store your token in the `osm-default.rc` file. Modify the `~/.osmedeus/config.yaml` will work but you will lose your token when the next time you run the reload command.
+    You should only store your token in the `$HOME/osmedeus-base/token/osm-var.yaml` file. Modify the `~/.osmedeus/config.yaml` will work but you will lose your token when the next time you run the reload command.
 
 # Notification with Telegram
 
@@ -47,53 +47,40 @@ grab your channel ID from the `id` field. In this case, it should be `-100135392
 
 
 
-## 4. Put your bot API key and channel ID in the `osm-default.rc` file
+## 4. Put your bot API key and channel ID in the `$HOME/osmedeus-base/token/osm-var.yaml` file
 
-Now add the API Key and channel ID to the `~/osmedeus-base/token/osm-default.rc` file.
+Now add the API Key and channel ID to the `$HOME/osmedeus-base/token/osm-var.yaml` file.
 
-```shell
-# for telegram
-export TELEGRAM_API_TOKEN=1111111100:AAGx
+```yaml
 ## run this command to get channel ID: curl 'https://api.telegram.org/bot$TELEGRAM_API_TOKEN/sendMessage?chat_id=@osmpReports&text=hello'
 ## {"ok":true,"result":{"message_id":2,"sender_chat":{"id":-1001353928111,"title":"your-osm-channel","username":"yourOsmChannel","type":"channel"},"chat":{"id":-1001353928111,"title":"your-osm-channel","username":"yourOsmChannel","type":"channel"},"date":1650958729,"text":"hello"}}
 ## --> your channel ID is '-1001353928111'
 
-export TELEGRAM_CHANNEL=-100XXXXX
-export TELEGRAM_STATUS_CHANNEL=-100XXXXX
-export TELEGRAM_REPORT_CHANNEL=-100XXXXX
-export TELEGRAM_SENSITIVE_CHANNEL=-100XXXXX
-export TELEGRAM_DIRB_CHANNEL=-100XXXXX
-export TELEGRAM_MICS_CHANNEL=-100XXXXX
+notification:
+    client_name: CLIENT_NAME
+    slack_diff_channel: SLACK_DIFF_CHANNEL
+    slack_report_channel: SLACK_REPORT_CHANNEL
+    slack_status_channel: SLACK_STATUS_CHANNEL
+    slack_webhook: SLACK_WEBHOOK
+    telegram_channel: TELEGRAM_CHANNEL
+    telegram_dirb_channel: TELEGRAM_DIRB_CHANNEL
+    telegram_mics_channel: TELEGRAM_MICS_CHANNEL
+    telegram_report_channel: TELEGRAM_REPORT_CHANNEL
+    telegram_sensitive_channel: TELEGRAM_SENSITIVE_CHANNEL
+    telegram_status_channel: TELEGRAM_STATUS_CHANNEL
+
+tokens:
+    GITHUB_TOKEN: GITHUB_TOKEN
+    GITLAB_API_TOKEN: GITLAB_API_TOKEN
+    SLACK_API_TOKEN: SLACK_API_TOKEN
+    TELEGRAM_API_TOKEN: 1111111100:AAGx
 ```
 
-You may also noticed that there are some telegram channels in the `osm-default.rc` file. You can set all of them to the same channel ID for simplicity. 
+You may also noticed that there are some telegram channels in the `osm-var.yaml` file. You can set all of them to the same channel ID for simplicity. 
 
-But if you want to have more visibility, repeat steps 2 and 3 above to have more channel ID and add it to the `osm-default.rc` file.
+But if you want to have more visibility, repeat steps 2 and 3 above to have more channel ID and add it to the `osm-var.yaml` file.
 
-## 5. Reload the config and check if everything is working
-
-After modified the tokens, then run commands below to reload token to the osmedeus config.yaml
-
-```shell
-# or edit file osm-default.rc
-# add osmedeus-base/token/osm-default.rc to your ~/.bashrc file
-echo 'source $HOME/osmedeus-base/token/osm-default.rc' >> ~/.bashrc && source ~/.bashrc
-
-# reload config to osmedeus
-osmedeus config reload
-
-# check if config is loaded to osmedeus config yet or not
-cat ~/.osmedeus/config.yaml | grep 'telegram_'
-  telegram_channel: "-100XXXXX"
-  telegram_dirb_channel: "-100XXXXX" # this should show your channel ID
-  telegram_mics_channel: "-100XXXXX" 
-  telegram_report_channel: "-100XXXXX"
-  telegram_sensitive_channel: "-100XXXXX"
-  telegram_status_channel: "-100XXXXX"
-```
-
-
-## 6. Run the test workflow to see everything is working fine
+## 5. Run the test workflow to see everything is working fine
 
 ```shell
 osmedeus scan -m ~/osmedeus-base/workflow/test/noti.yaml -t sample.com
@@ -102,7 +89,7 @@ osmedeus scan -m ~/osmedeus-base/workflow/test/noti.yaml -t sample.com
 Check your telegram channel to see any message is sent.
 
 
-## 7. See what noti scripts use in the workflow.
+## 6. See what noti scripts use in the workflow.
 
 !!! success "By default the notification script already setup in the workflow, you will automatically see the notification when the scan is done."
 
@@ -119,14 +106,16 @@ You can see more usage of **[notification scripts here](/workflow/noti-scripts/)
 
 
 ```yaml
+notification:
+    client_name: CLIENT_NAME
+    telegram_channel: TELEGRAM_CHANNEL
+    telegram_dirb_channel: TELEGRAM_DIRB_CHANNEL
+    telegram_mics_channel: TELEGRAM_MICS_CHANNEL
+    telegram_report_channel: TELEGRAM_REPORT_CHANNEL
+    telegram_sensitive_channel: TELEGRAM_SENSITIVE_CHANNEL
+    telegram_status_channel: TELEGRAM_STATUS_CHANNEL
 
-# Content of the file `~/osmedeus-base/token/osm-default.rc` is represent for specific channel name as below
-export TELEGRAM_CHANNEL=-100XXXXX           --> #general
-export TELEGRAM_STATUS_CHANNEL=-100XXXXX    --> #status
-export TELEGRAM_REPORT_CHANNEL=-100XXXXX    --> #report
-export TELEGRAM_SENSITIVE_CHANNEL=-100XXXXX --> #sensitive
-export TELEGRAM_DIRB_CHANNEL=-100XXXXX      --> #dirb
-export TELEGRAM_MICS_CHANNEL=-100XXXXX      --> #mics
+
 
 # this will send the file '{{Output}}/vuln/sensitive/sensitivescan-{{Workspace}}-{{TS}}.txt' to the channel TELEGRAM_SENSITIVE_CHANNEL above
 - TeleMessByFile("#sensitive", "{{Output}}/vuln/sensitive/sensitivescan-{{Workspace}}-{{TS}}.txt")

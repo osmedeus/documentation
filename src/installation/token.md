@@ -7,7 +7,7 @@ There are some places that tokens will store in Osmedeus below
 
 - [x] Amass config files `~/osmedeus-base/data/amass-config/datasources.yaml` at  **`~/osmedeus-base/data/configs/`** which is mainly responsible for the subdomain enumeration.
 
-- [x] Main config file **`~/osmedeus-base/token/osm-default.rc`** 
+- [x] Main tokens file **`~/osmedeus-base/token/osm-var.yaml`** 
 
 
 ## Amass config 
@@ -15,13 +15,18 @@ There are some places that tokens will store in Osmedeus below
 All your tokens, such as Shodan, Censys, SecurityTrails, and others are store in `~/osmedeus-base/data/amass-config/datasources.yaml`. 
 You can begin making modifications to the configuration there to utilize third-party services while using Osmedeus.
 
-## Some other tokens
+## Any other tokens
 
-Other API Keys that require to change to get more information is `GITHUB_TOKEN` at `~/osmedeus-base/token/osm-default.rc`. This token used by `github-subdomains` tools to get more subdomains.
+Any other config that require to change to get more is store `~/osmedeus-base/token/osm-var.yaml`.
 
-```shell
-# Set github token for run github scan
-export GITHUB_TOKEN=xxx,xxxx
+The primary section for storing your API keys can be found in the `token:` section, as shown below. When you run the Osmedeus scan, it will automatically load these keys into your operating system environment
 
+```yaml
+tokens:
+    GITHUB_TOKEN: GITHUB_TOKEN
+    GITLAB_API_TOKEN: GITLAB_API_TOKEN
+    SLACK_API_TOKEN: SLACK_API_TOKEN
+    TELEGRAM_API_TOKEN: TELEGRAM_API_TOKEN
 ```
 
+For example `GITHUB_TOKEN` used by github-subdomains tools to get more subdomains.

@@ -556,29 +556,22 @@ a,a:hover,a:click, a:visited{
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-put-your-bot-api-key-and-channel-id-in-the-osm-defaultrc-file" class="md-nav__link">
-    4. Put your bot API key and channel ID in the osm-default.rc file
+  <a href="#4-put-your-bot-api-key-and-channel-id-in-the-homeosmedeus-basetokenosm-varyaml-file" class="md-nav__link">
+    4. Put your bot API key and channel ID in the $HOME/osmedeus-base/token/osm-var.yaml file
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-reload-the-config-and-check-if-everything-is-working" class="md-nav__link">
-    5. Reload the config and check if everything is working
+  <a href="#5-run-the-test-workflow-to-see-everything-is-working-fine" class="md-nav__link">
+    5. Run the test workflow to see everything is working fine
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-run-the-test-workflow-to-see-everything-is-working-fine" class="md-nav__link">
-    6. Run the test workflow to see everything is working fine
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-see-what-noti-scripts-use-in-the-workflow" class="md-nav__link">
-    7. See what noti scripts use in the workflow.
+  <a href="#6-see-what-noti-scripts-use-in-the-workflow" class="md-nav__link">
+    6. See what noti scripts use in the workflow.
   </a>
   
 </li>
@@ -1322,7 +1315,7 @@ a,a:hover,a:click, a:visited{
 <p>Note that this setup is <strong>Optional</strong>. You can still use the tool perfectly fine without it!</p>
 </div>
 <div class="admonition warning">
-<p>You should only store your token in the <code>osm-default.rc</code> file. Modify the <code>~/.osmedeus/config.yaml</code> will work but you will lose your token when the next time you run the reload command.</p>
+<p>You should only store your token in the <code>$HOME/osmedeus-base/token/osm-var.yaml</code> file. Modify the <code>~/.osmedeus/config.yaml</code> will work but you will lose your token when the next time you run the reload command.</p>
 </div>
 <h1 id="notification-with-telegram">Notification with Telegram<a class="headerlink" href="#notification-with-telegram" title="Permanent link">&para;</a></h1>
 <h2 id="1-create-a-telegram-bot">1. Create a Telegram Bot<a class="headerlink" href="#1-create-a-telegram-bot" title="Permanent link">&para;</a></h2>
@@ -1346,46 +1339,38 @@ a,a:hover,a:click, a:visited{
 <p><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;ok&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;result&quot;</span><span class="p">:{</span><span class="nt">&quot;message_id&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;sender_chat&quot;</span><span class="p">:{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">-1001353928111</span><span class="p">,</span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;your-osm-channel&quot;</span><span class="p">,</span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="s2">&quot;yourOsmChannel&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;channel&quot;</span><span class="p">},</span><span class="nt">&quot;chat&quot;</span><span class="p">:{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">-1001353928111</span><span class="p">,</span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;your-osm-channel&quot;</span><span class="p">,</span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="s2">&quot;yourOsmChannel&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;channel&quot;</span><span class="p">},</span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="mi">1650958729</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;hello&quot;</span><span class="p">}}</span>
 </code></pre></div>
 grab your channel ID from the <code>id</code> field. In this case, it should be <code>-1001353928111</code>.</p>
-<h2 id="4-put-your-bot-api-key-and-channel-id-in-the-osm-defaultrc-file">4. Put your bot API key and channel ID in the <code>osm-default.rc</code> file<a class="headerlink" href="#4-put-your-bot-api-key-and-channel-id-in-the-osm-defaultrc-file" title="Permanent link">&para;</a></h2>
-<p>Now add the API Key and channel ID to the <code>~/osmedeus-base/token/osm-default.rc</code> file.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># for telegram</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">TELEGRAM_API_TOKEN</span><span class="o">=</span><span class="m">1111111100</span>:AAGx
-<span class="c1">## run this command to get channel ID: curl &#39;https://api.telegram.org/bot$TELEGRAM_API_TOKEN/sendMessage?chat_id=@osmpReports&amp;text=hello&#39;</span>
+<h2 id="4-put-your-bot-api-key-and-channel-id-in-the-homeosmedeus-basetokenosm-varyaml-file">4. Put your bot API key and channel ID in the <code>$HOME/osmedeus-base/token/osm-var.yaml</code> file<a class="headerlink" href="#4-put-your-bot-api-key-and-channel-id-in-the-homeosmedeus-basetokenosm-varyaml-file" title="Permanent link">&para;</a></h2>
+<p>Now add the API Key and channel ID to the <code>$HOME/osmedeus-base/token/osm-var.yaml</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">## run this command to get channel ID: curl &#39;https://api.telegram.org/bot$TELEGRAM_API_TOKEN/sendMessage?chat_id=@osmpReports&amp;text=hello&#39;</span>
 <span class="c1">## {&quot;ok&quot;:true,&quot;result&quot;:{&quot;message_id&quot;:2,&quot;sender_chat&quot;:{&quot;id&quot;:-1001353928111,&quot;title&quot;:&quot;your-osm-channel&quot;,&quot;username&quot;:&quot;yourOsmChannel&quot;,&quot;type&quot;:&quot;channel&quot;},&quot;chat&quot;:{&quot;id&quot;:-1001353928111,&quot;title&quot;:&quot;your-osm-channel&quot;,&quot;username&quot;:&quot;yourOsmChannel&quot;,&quot;type&quot;:&quot;channel&quot;},&quot;date&quot;:1650958729,&quot;text&quot;:&quot;hello&quot;}}</span>
 <span class="c1">## --&gt; your channel ID is &#39;-1001353928111&#39;</span>
 
-<span class="nb">export</span><span class="w"> </span><span class="nv">TELEGRAM_CHANNEL</span><span class="o">=</span>-100XXXXX
-<span class="nb">export</span><span class="w"> </span><span class="nv">TELEGRAM_STATUS_CHANNEL</span><span class="o">=</span>-100XXXXX
-<span class="nb">export</span><span class="w"> </span><span class="nv">TELEGRAM_REPORT_CHANNEL</span><span class="o">=</span>-100XXXXX
-<span class="nb">export</span><span class="w"> </span><span class="nv">TELEGRAM_SENSITIVE_CHANNEL</span><span class="o">=</span>-100XXXXX
-<span class="nb">export</span><span class="w"> </span><span class="nv">TELEGRAM_DIRB_CHANNEL</span><span class="o">=</span>-100XXXXX
-<span class="nb">export</span><span class="w"> </span><span class="nv">TELEGRAM_MICS_CHANNEL</span><span class="o">=</span>-100XXXXX
-</code></pre></div>
-<p>You may also noticed that there are some telegram channels in the <code>osm-default.rc</code> file. You can set all of them to the same channel ID for simplicity. </p>
-<p>But if you want to have more visibility, repeat steps 2 and 3 above to have more channel ID and add it to the <code>osm-default.rc</code> file.</p>
-<h2 id="5-reload-the-config-and-check-if-everything-is-working">5. Reload the config and check if everything is working<a class="headerlink" href="#5-reload-the-config-and-check-if-everything-is-working" title="Permanent link">&para;</a></h2>
-<p>After modified the tokens, then run commands below to reload token to the osmedeus config.yaml</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># or edit file osm-default.rc</span>
-<span class="c1"># add osmedeus-base/token/osm-default.rc to your ~/.bashrc file</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;source $HOME/osmedeus-base/token/osm-default.rc&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.bashrc
+<span class="nt">notification</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">client_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CLIENT_NAME</span>
+<span class="w">    </span><span class="nt">slack_diff_channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SLACK_DIFF_CHANNEL</span>
+<span class="w">    </span><span class="nt">slack_report_channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SLACK_REPORT_CHANNEL</span>
+<span class="w">    </span><span class="nt">slack_status_channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SLACK_STATUS_CHANNEL</span>
+<span class="w">    </span><span class="nt">slack_webhook</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SLACK_WEBHOOK</span>
+<span class="w">    </span><span class="nt">telegram_channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TELEGRAM_CHANNEL</span>
+<span class="w">    </span><span class="nt">telegram_dirb_channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TELEGRAM_DIRB_CHANNEL</span>
+<span class="w">    </span><span class="nt">telegram_mics_channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TELEGRAM_MICS_CHANNEL</span>
+<span class="w">    </span><span class="nt">telegram_report_channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TELEGRAM_REPORT_CHANNEL</span>
+<span class="w">    </span><span class="nt">telegram_sensitive_channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TELEGRAM_SENSITIVE_CHANNEL</span>
+<span class="w">    </span><span class="nt">telegram_status_channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TELEGRAM_STATUS_CHANNEL</span>
 
-<span class="c1"># reload config to osmedeus</span>
-osmedeus<span class="w"> </span>config<span class="w"> </span>reload
-
-<span class="c1"># check if config is loaded to osmedeus config yet or not</span>
-cat<span class="w"> </span>~/.osmedeus/config.yaml<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;telegram_&#39;</span>
-<span class="w">  </span>telegram_channel:<span class="w"> </span><span class="s2">&quot;-100XXXXX&quot;</span>
-<span class="w">  </span>telegram_dirb_channel:<span class="w"> </span><span class="s2">&quot;-100XXXXX&quot;</span><span class="w"> </span><span class="c1"># this should show your channel ID</span>
-<span class="w">  </span>telegram_mics_channel:<span class="w"> </span><span class="s2">&quot;-100XXXXX&quot;</span><span class="w"> </span>
-<span class="w">  </span>telegram_report_channel:<span class="w"> </span><span class="s2">&quot;-100XXXXX&quot;</span>
-<span class="w">  </span>telegram_sensitive_channel:<span class="w"> </span><span class="s2">&quot;-100XXXXX&quot;</span>
-<span class="w">  </span>telegram_status_channel:<span class="w"> </span><span class="s2">&quot;-100XXXXX&quot;</span>
+<span class="nt">tokens</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">GITHUB_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GITHUB_TOKEN</span>
+<span class="w">    </span><span class="nt">GITLAB_API_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GITLAB_API_TOKEN</span>
+<span class="w">    </span><span class="nt">SLACK_API_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SLACK_API_TOKEN</span>
+<span class="w">    </span><span class="nt">TELEGRAM_API_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1111111100:AAGx</span>
 </code></pre></div>
-<h2 id="6-run-the-test-workflow-to-see-everything-is-working-fine">6. Run the test workflow to see everything is working fine<a class="headerlink" href="#6-run-the-test-workflow-to-see-everything-is-working-fine" title="Permanent link">&para;</a></h2>
+<p>You may also noticed that there are some telegram channels in the <code>osm-var.yaml</code> file. You can set all of them to the same channel ID for simplicity. </p>
+<p>But if you want to have more visibility, repeat steps 2 and 3 above to have more channel ID and add it to the <code>osm-var.yaml</code> file.</p>
+<h2 id="5-run-the-test-workflow-to-see-everything-is-working-fine">5. Run the test workflow to see everything is working fine<a class="headerlink" href="#5-run-the-test-workflow-to-see-everything-is-working-fine" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>osmedeus<span class="w"> </span>scan<span class="w"> </span>-m<span class="w"> </span>~/osmedeus-base/workflow/test/noti.yaml<span class="w"> </span>-t<span class="w"> </span>sample.com
 </code></pre></div>
 <p>Check your telegram channel to see any message is sent.</p>
-<h2 id="7-see-what-noti-scripts-use-in-the-workflow">7. See what noti scripts use in the workflow.<a class="headerlink" href="#7-see-what-noti-scripts-use-in-the-workflow" title="Permanent link">&para;</a></h2>
+<h2 id="6-see-what-noti-scripts-use-in-the-workflow">6. See what noti scripts use in the workflow.<a class="headerlink" href="#6-see-what-noti-scripts-use-in-the-workflow" title="Permanent link">&para;</a></h2>
 <div class="admonition success">
 <p class="admonition-title">By default the notification script already setup in the workflow, you will automatically see the notification when the scan is done.</p>
 </div>
@@ -1397,13 +1382,16 @@ cat<span class="w"> </span>~/.osmedeus/config.yaml<span class="w"> </span><span 
   Here is how the real results looks like.</p>
 </figure>
 <p>You can see more usage of <strong><a href="/workflow/noti-scripts/">notification scripts here</a></strong> </p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Content of the file `~/osmedeus-base/token/osm-default.rc` is represent for specific channel name as below</span>
-<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_CHANNEL=-100XXXXX           --&gt;</span><span class="w"> </span><span class="c1">#general</span>
-<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_STATUS_CHANNEL=-100XXXXX    --&gt;</span><span class="w"> </span><span class="c1">#status</span>
-<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_REPORT_CHANNEL=-100XXXXX    --&gt;</span><span class="w"> </span><span class="c1">#report</span>
-<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_SENSITIVE_CHANNEL=-100XXXXX --&gt;</span><span class="w"> </span><span class="c1">#sensitive</span>
-<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_DIRB_CHANNEL=-100XXXXX      --&gt;</span><span class="w"> </span><span class="c1">#dirb</span>
-<span class="l l-Scalar l-Scalar-Plain">export TELEGRAM_MICS_CHANNEL=-100XXXXX      --&gt;</span><span class="w"> </span><span class="c1">#mics</span>
+<div class="highlight"><pre><span></span><code><span class="nt">notification</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">client_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CLIENT_NAME</span>
+<span class="w">    </span><span class="nt">telegram_channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TELEGRAM_CHANNEL</span>
+<span class="w">    </span><span class="nt">telegram_dirb_channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TELEGRAM_DIRB_CHANNEL</span>
+<span class="w">    </span><span class="nt">telegram_mics_channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TELEGRAM_MICS_CHANNEL</span>
+<span class="w">    </span><span class="nt">telegram_report_channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TELEGRAM_REPORT_CHANNEL</span>
+<span class="w">    </span><span class="nt">telegram_sensitive_channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TELEGRAM_SENSITIVE_CHANNEL</span>
+<span class="w">    </span><span class="nt">telegram_status_channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TELEGRAM_STATUS_CHANNEL</span>
+
+
 
 <span class="c1"># this will send the file &#39;{{Output}}/vuln/sensitive/sensitivescan-{{Workspace}}-{{TS}}.txt&#39; to the channel TELEGRAM_SENSITIVE_CHANNEL above</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TeleMessByFile(&quot;#sensitive&quot;, &quot;{{Output}}/vuln/sensitive/sensitivescan-{{Workspace}}-{{TS}}.txt&quot;)</span>

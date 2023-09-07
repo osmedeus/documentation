@@ -9,33 +9,8 @@
 
 Check out **the Private Playlist** on the **#backer** channel in Discord to see a Video Instruction.
 
-### 1. Modify the content of Storages Config file at `~/osmedeus-base/token/storages-alias.rc`
+### 1. Modify the content of Storages Config file at `~/osmedeus-base/token/osm-var.yaml`
 
-Please change your username and repository name from `your_gitlab_username` is your gitlab username and `dosm-*` are your Gitlab repo names.
-
-
-```shell
-export ENABLE_GIT_STORAGES=TRUE
-export GIT_SSH_COMMAND='ssh -o StrictHostKeyChecking=no -i ~/.osmedeus/storages_key'
-
-# for storages
-export SECRET_KEY=~/.osmedeus/storages_key
-
-# core one
-export SUMMARY_REPO=git@gitlab.com:your_gitlab_username/dosm-summary
-export VULN_REPO=git@gitlab.com:your_gitlab_username/dosm-vuln
-export PATHS_REPO=git@gitlab.com:your_gitlab_username/dosm-paths
-export HTTP_REPO=git@gitlab.com:your_gitlab_username/dosm-http
-
-# mics one
-export ASSETS_REPO=git@gitlab.com:your_gitlab_username/dosm-assets
-export PORTS_REPO=git@gitlab.com:your_gitlab_username/dosm-ports
-export MICS_REPO=git@gitlab.com:your_gitlab_username/dosm-cloud
-export SUBDOMAIN_REPO=git@gitlab.com:your_gitlab_username/dosm-subdomain
-```
-
-
-### 2. Load the storages variables to Osmedeus config
 
 !!! warning "Run these commands below if you not using git before"
 
@@ -44,27 +19,37 @@ export SUBDOMAIN_REPO=git@gitlab.com:your_gitlab_username/dosm-subdomain
     git config --global user.email "your_gitlab_uid@users.noreply.gitlab.com"
     ```
 
-```shell
-echo 'source $HOME/osmedeus-base/token/storages-alias.rc' >> ~/.bashrc && source ~/.bashrc
+Please change your username and repository name from `your_gitlab_username` is your gitlab username and `dosm-*` are your Gitlab repo names.
 
-# reload config to osmedeus
-osmedeus config reload
+```yaml
+storages:
+    secret_key: SECRET_KEY
+    assets_repo: ASSETS_REPO
+    assets_storage: ~/.osmedeus/storages/assets
+    http_repo: HTTP_REPO
+    http_storage: ~/.osmedeus/storages/http
+    mics_repo: MICS_REPO
+    mics_storage: ~/.osmedeus/storages/mics
+    paths_repo: PATHS_REPO
+    paths_storage: ~/.osmedeus/storages/paths
+    ports_repo: PORTS_REPO
+    ports_storage: ~/.osmedeus/storages/ports
+    subdomain_repo: SUBDOMAIN_REPO
+    subdomain_storage: ~/.osmedeus/storages/subdomain
+    summary_repo: SUMMARY_REPO
+    summary_storage: ~/.osmedeus/storages/summary
+    vuln_repo: VULN_REPO
+    vuln_storage: ~/.osmedeus/storages/vuln
 ```
 
-This will generate the public key at `/root/.osmedeus/storages_key.pub`. Please add this public key at to your gitlab profile.
+Change the `SECRET_KEY` to the path of your secret key that can do the push/pull to your git repo.
 
-You can also check if the config was loaded or not 
-
-```shell
-cat ~/.osmedeus/config.yaml  | grep 'secret_key'
-```
-
-### 3. Reload the config to clone repo
+### 2. Reload the config to clone repo
 
 ```shell
 #reload config to cloning the repo
 
-osmedeus config reload --debug
+osmedeus config set --threads-hold=10
 
 # then check out your storages folder at `~/.osmedeus/storages/summary`
 ls ~/.osmedeus/storages/summary/ 
