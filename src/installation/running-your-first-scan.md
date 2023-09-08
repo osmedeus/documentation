@@ -97,12 +97,12 @@ osmedeus scan -f cidr-probing -t 3.4.5.6/24
 
 ## :simple-git: If you workflow is a github/gitlab repo or a folder of source
 
-:fontawesome-solid-scroll: __Example inputs__: `https://github.com/juice-shop/juice-shop`, `/tmp/source-code-folder`
+:fontawesome-solid-scroll: __Example inputs__: `https://github.com/juice-shop/juice-shop` (only apply for GitHub or GitLab link), `/tmp/source-code-folder`
 
 :fontawesome-solid-terminal: __Example commands__
 
 ```bash
-
+# Please be aware that this functionality only operates with repository URLs such as those from GitHub or GitLab.
 osmedeus scan -m repo-scan -t https://github.com/juice-shop/juice-shop
 
 osmedeus scan -m repo-scan -t /tmp/source-code-folder
