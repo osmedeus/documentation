@@ -30,15 +30,15 @@ storages:
     http_storage: ~/.osmedeus/storages/http
     mics_repo: MICS_REPO
     mics_storage: ~/.osmedeus/storages/mics
-    paths_repo: PATHS_REPO
+    paths_repo: git@gitlab.com:your_gitlab_username/dosm-paths.git
     paths_storage: ~/.osmedeus/storages/paths
-    ports_repo: PORTS_REPO
+    ports_repo: git@gitlab.com:your_gitlab_username/dosm-ports.git
     ports_storage: ~/.osmedeus/storages/ports
-    subdomain_repo: SUBDOMAIN_REPO
+    subdomain_repo: git@gitlab.com:your_gitlab_username/dosm-subdomain.git
     subdomain_storage: ~/.osmedeus/storages/subdomain
-    summary_repo: SUMMARY_REPO
+    summary_repo: git@gitlab.com:your_gitlab_username/dosm-summary.git
     summary_storage: ~/.osmedeus/storages/summary
-    vuln_repo: VULN_REPO
+    vuln_repo: git@gitlab.com:your_gitlab_username/dosm-vuln.git
     vuln_storage: ~/.osmedeus/storages/vuln
 ```
 
