@@ -1141,60 +1141,9 @@ a,a:hover,a:click, a:visited{
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Git Setup for Premium Package
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         Git Setup for Premium Package
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#setup-storages" class="md-nav__link">
-    Setup Storages
-  </a>
-  
-    <nav class="md-nav" aria-label="Setup Storages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-modify-the-content-of-storages-config-file-at-osmedeus-basetokenosm-varyaml" class="md-nav__link">
-    1. Modify the content of Storages Config file at ~/osmedeus-base/token/osm-var.yaml
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-reload-the-config-to-clone-repo" class="md-nav__link">
-    2. Reload the config to clone repo
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1303,40 +1252,57 @@ a,a:hover,a:click, a:visited{
 <div class="admonition help">
 <p>Note that this setup is <strong>Optional</strong>. You can still use the tool perfectly fine without it!</p>
 </div>
-<h2 id="setup-storages">Setup Storages<a class="headerlink" href="#setup-storages" title="Permanent link">&para;</a></h2>
+<h1 id="setup-storages">Setup Storages<a class="headerlink" href="#setup-storages" title="Permanent link">&para;</a></h1>
 <p>Check out <strong>the Private Playlist</strong> on the <strong>#backer</strong> channel in Discord to see a Video Instruction.</p>
-<h3 id="1-modify-the-content-of-storages-config-file-at-osmedeus-basetokenosm-varyaml">1. Modify the content of Storages Config file at <code>~/osmedeus-base/token/osm-var.yaml</code><a class="headerlink" href="#1-modify-the-content-of-storages-config-file-at-osmedeus-basetokenosm-varyaml" title="Permanent link">&para;</a></h3>
+<h2 id="1-modify-the-storages-section-in-the-token-file-at-osmedeus-basetokenosm-varyaml">1. Modify the <code>storages:</code> section in the token file at <code>~/osmedeus-base/token/osm-var.yaml</code><a class="headerlink" href="#1-modify-the-storages-section-in-the-token-file-at-osmedeus-basetokenosm-varyaml" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Run these commands below if you not using git before</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;your_gitlab_user&quot;</span>
 git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;your_gitlab_uid@users.noreply.gitlab.com&quot;</span>
 </code></pre></div>
 </div>
-<p>Please change your username and repository name from <code>your_gitlab_username</code> is your gitlab username and <code>dosm-*</code> are your Gitlab repo names.</p>
+<h3 id="the-content-of-storages-looks-like-below">The content of storages looks like below<a class="headerlink" href="#the-content-of-storages-looks-like-below" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nt">storages</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">secret_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SECRET_KEY</span>
 <span class="w">    </span><span class="nt">assets_repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ASSETS_REPO</span>
 <span class="w">    </span><span class="nt">assets_storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.osmedeus/storages/assets</span>
 <span class="w">    </span><span class="nt">http_repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTTP_REPO</span>
 <span class="w">    </span><span class="nt">http_storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.osmedeus/storages/http</span>
 <span class="w">    </span><span class="nt">mics_repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MICS_REPO</span>
 <span class="w">    </span><span class="nt">mics_storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.osmedeus/storages/mics</span>
-<span class="w">    </span><span class="nt">paths_repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git@gitlab.com:your_gitlab_username/dosm-paths.git</span>
+<span class="w">    </span><span class="nt">paths_repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PATHS_REPO</span>
 <span class="w">    </span><span class="nt">paths_storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.osmedeus/storages/paths</span>
-<span class="w">    </span><span class="nt">ports_repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git@gitlab.com:your_gitlab_username/dosm-ports.git</span>
+<span class="w">    </span><span class="nt">ports_repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PORTS_REPO</span>
 <span class="w">    </span><span class="nt">ports_storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.osmedeus/storages/ports</span>
-<span class="w">    </span><span class="nt">subdomain_repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git@gitlab.com:your_gitlab_username/dosm-subdomain.git</span>
+<span class="w">    </span><span class="nt">secret_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SECRET_KEY</span>
+<span class="w">    </span><span class="nt">subdomain_repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SUBDOMAIN_REPO</span>
 <span class="w">    </span><span class="nt">subdomain_storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.osmedeus/storages/subdomain</span>
 <span class="w">    </span><span class="nt">summary_repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git@gitlab.com:your_gitlab_username/dosm-summary.git</span>
 <span class="w">    </span><span class="nt">summary_storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.osmedeus/storages/summary</span>
-<span class="w">    </span><span class="nt">vuln_repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git@gitlab.com:your_gitlab_username/dosm-vuln.git</span>
+<span class="w">    </span><span class="nt">vuln_repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VULN_REPO</span>
 <span class="w">    </span><span class="nt">vuln_storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.osmedeus/storages/vuln</span>
 </code></pre></div>
-<p>Change the <code>SECRET_KEY</code> to the path of your secret key that can do the push/pull to your git repo.</p>
-<h3 id="2-reload-the-config-to-clone-repo">2. Reload the config to clone repo<a class="headerlink" href="#2-reload-the-config-to-clone-repo" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1">#reload config to cloning the repo</span>
-
-osmedeus<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--threads-hold<span class="o">=</span><span class="m">10</span>
+<div class="admonition info">
+<p class="admonition-title">Kindly note that you are not required to configure all the repositories and destinations for this. Typically, I only utilize three repositories: summary_repo, paths_repo, and vuln_repo.</p>
+</div>
+<p>You'll be required to make adjustments to certain values listed below.
+- [x] Change the <code>SECRET_KEY</code> to the path of your secret key that can do the push/pull to your git repo.
+- [x] Change the <code>your_gitlab_username</code> to your Gitlab user name
+- [x] Change the <code>SUMMARY_REPO</code> or <code>git@gitlab.com:your_gitlab_username/dosm-summary.git</code> to your Gitlab repo.</p>
+<hr />
+<h3 id="understand-the-storages-config-pair">Understand the storages config pair<a class="headerlink" href="#understand-the-storages-config-pair" title="Permanent link">&para;</a></h3>
+<p>The <code>summary_repo</code> and <code>summary_storage</code> are closely linked, and the same concept applies to the other pairs, such as <code>vuln_repo</code> and <code>vuln_storage</code>.
+- <code>summary_storage</code> is a local folder in your instance and in this case it will be <code>~/.osmedeus/storages/summary</code>
+- <code>summary_repo</code> is your gitlab repository and in this case <code>git@gitlab.com:your_gitlab_username/dosm-summary.git</code>. This repo will be clone to the your local machine and after you put everything in that folder </p>
+<p>Once you've configured the Git storages, the workflow will manage how data is copied/appended to the local folder and subsequently push the latest changes to your repository.</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">scripts</span><span class="p">:</span>
+<span class="w">      </span><span class="c1"># This will copy the the output of probing module to </span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExecCmd(&quot;cp {{Output}}/probing/dns-{{Workspace}}.txt {{Storages}}/summary/{{Workspace}}/dns-{{Workspace}}.txt&quot;)</span>
+<span class="w">      </span><span class="c1"># This will do a git push to `git@gitlab.com:your_gitlab_username/dosm-summary.git` repository</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PushFolder(&quot;{{Storages}}/summary/&quot;)</span>
+</code></pre></div>
+<h2 id="2-reload-the-config-to-clone-repo">2. Reload the config to clone repo<a class="headerlink" href="#2-reload-the-config-to-clone-repo" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># reload config to cloning the repo</span>
+osmedeus<span class="w"> </span>config<span class="w"> </span>check
 
 <span class="c1"># then check out your storages folder at `~/.osmedeus/storages/summary`</span>
 ls<span class="w"> </span>~/.osmedeus/storages/summary/<span class="w"> </span>
