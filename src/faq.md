@@ -186,3 +186,6 @@
 
 ???+ info "Osmedeus found some vulnerable subdomains, but I am unable to access them?"
     It is often the case that the availability of a subdomain found during a scan may not be the same when you attempt to manually verify it. This depends on the target and can vary.
+
+???+ question "I consistently encounter the error message `bash: /root/osmedeus-base/token/osm-default.rc: No such file or directory`"
+    please remove the line `$HOME/osmedeus-base/token/osm-default.rc` in your `~/.bashrc` or `~/.zshrc` file as the token config now has been move to `$HOME/osmedeus-base/token/osm-var.yaml` since **v4.6.0**
