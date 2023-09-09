@@ -12,9 +12,9 @@
 
 ***
 
-## :fontawesome-solid-wand-magic-sparkles: Please review the input example and select the workflow that best suits it in order to achieve optimal scanning results
+> ### :fontawesome-solid-wand-magic-sparkles: Please review the input example and select the workflow that best suits it in order to achieve optimal scanning results
 
-## :octicons-globe-24: a domain or a list of subdomains
+## :octicons-globe-24: If your input is a domain or a list of subdomains
 
 :fontawesome-solid-scroll: __Example inputs__: `example.com` , `target.co.uk`
 
@@ -45,7 +45,7 @@ osmedeus scan -f subdomain-enum -t example.com
 osmedeus scan -m brutefocing-subdomain -t example.com
 ```
 
-**3. If you desire to perform a rapid routine and conducting a vulnerability scan on ity**
+**3. If you desire to perform a rapid routine and conducting a vulnerability scan on it**
 
 :fontawesome-solid-terminal: __Example commands__
 
@@ -55,7 +55,7 @@ osmedeus scan -f vuln -t example.com
 
 <hr>
 
-## :simple-curl:  If you workflow is a URL or a list of URLs
+## :simple-curl: If your input is a URL or a list of URLs
 
 :fontawesome-solid-scroll: __Example inputs__: Your input is **a file** that includes a catalog of URLs or IP addresses, along with subdomains such as `https://sub.example.com` , `internal.app.example.com`, `https://evil.com/path`, `https://1.2.3.4`, `3.4.5.6`, etc
 
@@ -80,7 +80,7 @@ osmedeus scan -m content-discovery -t list-of-domains.txt
 osmedeus scan -m content-discovery -t list-of-urls.txt
 ```
 
-## :material-ip: CIDR or a list of CIDRs
+## :material-ip: If your input is a CIDR or a list of CIDRs
 
 :fontawesome-solid-scroll: __Example inputs__: Your input is **a file** that includes a catalog of IP addresses, CIDR such as `1.2.3.4/24` , `3.4.5.6`, etc or a simple CIDR like `1.2.3.4/24`
 
@@ -97,7 +97,7 @@ osmedeus scan -f cidr-probing -t 3.4.5.6/24
 
 ```
 
-## :simple-git: a URL, a GitHub/GitLab repository, or a directory containing source files
+## :simple-git: If your input a URL, a GitHub/GitLab repository, or a directory containing source files
 
 :fontawesome-solid-scroll: __Example inputs__: `https://github.com/juice-shop/juice-shop` (only apply for GitHub or GitLab link), `/tmp/source-code-folder`
 
