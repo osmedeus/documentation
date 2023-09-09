@@ -188,7 +188,7 @@
     It is often the case that the availability of a subdomain found during a scan may not be the same when you attempt to manually verify it. This depends on the target and can vary.
 
 ???+ question "I consistently encounter the error message `bash: /root/osmedeus-base/token/osm-default.rc: No such file or directory`"
-    please remove the line `$HOME/osmedeus-base/token/osm-default.rc` in your `~/.bashrc` or `~/.zshrc` file as the token config now has been move to `$HOME/osmedeus-base/token/osm-var.yaml` since **v4.6.0**
+    please remove the line `$HOME/osmedeus-base/token/osm-default.rc` in your `~/.bashrc` or `~/.zshrc` and `~/.bash_profile` file as the token config now has been move to `$HOME/osmedeus-base/token/osm-var.yaml` since **v4.6.0**
 
 ???+ info "When I run with the `--debug` flag, I've noticed that certain commands are returning errors with exit statuses such as 128, 255, or -1. Is this to be expected?"
     Yes, it's normal for certain commands to exhibit expected exit statuses, as they may succeed under specific conditions. However, if you're confident that the raw bash command should succeed but is failing, please try copying the raw bash command and investigate why it's encountering issues.

@@ -1527,7 +1527,7 @@ osmedeus scan --threads-hold=30 -f cidr -t 1.2.3.4/24
 </details>
 <details class="question" open="open">
 <summary>I consistently encounter the error message <code>bash: /root/osmedeus-base/token/osm-default.rc: No such file or directory</code></summary>
-<p>please remove the line <code>$HOME/osmedeus-base/token/osm-default.rc</code> in your <code>~/.bashrc</code> or <code>~/.zshrc</code> file as the token config now has been move to <code>$HOME/osmedeus-base/token/osm-var.yaml</code> since <strong>v4.6.0</strong></p>
+<p>please remove the line <code>$HOME/osmedeus-base/token/osm-default.rc</code> in your <code>~/.bashrc</code> or <code>~/.zshrc</code> and <code>~/.bash_profile</code> file as the token config now has been move to <code>$HOME/osmedeus-base/token/osm-var.yaml</code> since <strong>v4.6.0</strong></p>
 </details>
 <details class="info" open="open">
 <summary>When I run with the <code>--debug</code> flag, I've noticed that certain commands are returning errors with exit statuses such as 128, 255, or -1. Is this to be expected?</summary>
