@@ -18,7 +18,7 @@
 
 :fontawesome-solid-scroll: __Example inputs__: `example.com` , `target.co.uk`
 
-!!! example "If your input is `sub.example.com` and you are aware that there are **NOT** many subdomains associated with it (such as `another.sub.example.com`), then it may not approriate to run the `general` workflow."
+!!! warning "If your input is `sub.example.com` and you are aware that there are **NOT** many subdomains associated with it (such as `another.sub.example.com`), then it may not approriate to run the `general` workflow."
 
 
 **1. If you desire a comprehensive scan that encompasses subdomain enumeration, DNS probing, and vulnerability scanning**
