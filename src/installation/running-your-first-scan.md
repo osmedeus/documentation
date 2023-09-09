@@ -10,13 +10,15 @@
 
 !!! danger "To avoid encountering errors, it is important to ensure that the scan is executed using the correct input format."
 
-<!-- # :information_source:  Some tips before you start the scan -->
+***
 
-## :octicons-globe-24: If you workflow is a domain or a list of subdomains
+# :fontawesome-solid-wand-magic-sparkles: Please review the input example and select the workflow that best suits it in order to achieve optimal scanning results
+
+## :octicons-globe-24: a domain or a list of subdomains
 
 :fontawesome-solid-scroll: __Example inputs__: `example.com` , `target.co.uk`
 
-> If your input is `sub.example.com` and you are aware that there are not many subdomains associated with it (such as `another.sub.example.com`), then it may be more advantageous to employ a different workflow.
+!!! example "If your input is `sub.example.com` and you are aware that there are **NOT** many subdomains associated with it (such as `another.sub.example.com`), then it may not approriate to run the `general` workflow."
 
 
 **1. If you desire a comprehensive scan that encompasses subdomain enumeration, DNS probing, and vulnerability scanning**
@@ -78,7 +80,7 @@ osmedeus scan -m content-discovery -t list-of-domains.txt
 osmedeus scan -m content-discovery -t list-of-urls.txt
 ```
 
-## :material-ip:  If you workflow is a CIDR or a list of CIDRs
+## :material-ip: CIDR or a list of CIDRs
 
 :fontawesome-solid-scroll: __Example inputs__: Your input is **a file** that includes a catalog of IP addresses, CIDR such as `1.2.3.4/24` , `3.4.5.6`, etc or a simple CIDR like `1.2.3.4/24`
 
@@ -95,7 +97,7 @@ osmedeus scan -f cidr-probing -t 3.4.5.6/24
 
 ```
 
-## :simple-git: If you workflow is a github/gitlab repo or a folder of source
+## :simple-git: a URL, a GitHub/GitLab repository, or a directory containing source files
 
 :fontawesome-solid-scroll: __Example inputs__: `https://github.com/juice-shop/juice-shop` (only apply for GitHub or GitLab link), `/tmp/source-code-folder`
 
