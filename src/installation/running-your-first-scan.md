@@ -12,7 +12,7 @@
 
 ***
 
-# :fontawesome-solid-wand-magic-sparkles: Please review the input example and select the workflow that best suits it in order to achieve optimal scanning results
+## :fontawesome-solid-wand-magic-sparkles: Please review the input example and select the workflow that best suits it in order to achieve optimal scanning results
 
 ## :octicons-globe-24: a domain or a list of subdomains
 
@@ -104,7 +104,6 @@ osmedeus scan -f cidr-probing -t 3.4.5.6/24
 :fontawesome-solid-terminal: __Example commands__
 
 ```bash
-# Please be aware that this functionality only operates with repository URLs such as those from GitHub or GitLab.
 osmedeus scan -m repo-scan -t https://github.com/juice-shop/juice-shop
 
 osmedeus scan -m repo-scan -t /tmp/source-code-folder
