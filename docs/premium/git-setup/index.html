@@ -1284,15 +1284,19 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 <div class="admonition info">
 <p class="admonition-title">Kindly note that you are not required to configure all the repositories and destinations for this. Typically, I only utilize three repositories: summary_repo, paths_repo, and vuln_repo.</p>
 </div>
-<p>You'll be required to make adjustments to certain values listed below.
-- [x] Change the <code>SECRET_KEY</code> to the path of your secret key that can do the push/pull to your git repo.
-- [x] Change the <code>your_gitlab_username</code> to your Gitlab user name
-- [x] Change the <code>SUMMARY_REPO</code> or <code>git@gitlab.com:your_gitlab_username/dosm-summary.git</code> to your Gitlab repo.</p>
+<p>You'll be required to make adjustments to certain values listed below</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Change the <code>SECRET_KEY</code> to the path of your secret key that can do the push/pull to your git repo.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Change the <code>your_gitlab_username</code> to your Gitlab user name</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Change the <code>SUMMARY_REPO</code> or <code>git@gitlab.com:your_gitlab_username/dosm-summary.git</code> to your Gitlab repo.</li>
+</ul>
 <hr />
 <h3 id="understand-the-storages-config-pair">Understand the storages config pair<a class="headerlink" href="#understand-the-storages-config-pair" title="Permanent link">&para;</a></h3>
-<p>The <code>summary_repo</code> and <code>summary_storage</code> are closely linked, and the same concept applies to the other pairs, such as <code>vuln_repo</code> and <code>vuln_storage</code>.
-- <code>summary_storage</code> is a local folder in your instance and in this case it will be <code>~/.osmedeus/storages/summary</code>
-- <code>summary_repo</code> is your gitlab repository and in this case <code>git@gitlab.com:your_gitlab_username/dosm-summary.git</code>. This repo will be clone to the your local machine and after you put everything in that folder </p>
+<p>The <code>summary_repo</code> and <code>summary_storage</code> are closely linked, and the same concept applies to the other pairs, such as <code>vuln_repo</code> and <code>vuln_storage</code>.</p>
+<ul>
+<li><code>summary_storage</code> is a local folder in your instance and in this case it will be <code>~/.osmedeus/storages/summary</code></li>
+<li><code>summary_repo</code> is your gitlab repository and in this case <code>git@gitlab.com:your_gitlab_username/dosm-summary.git</code>. This repo will be clone to the your local machine and after you put everything in that folder </li>
+</ul>
 <p>Once you've configured the Git storages, the workflow will manage how data is copied/appended to the local folder and subsequently push the latest changes to your repository.</p>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">scripts</span><span class="p">:</span>
 <span class="w">      </span><span class="c1"># This will copy the the output of probing module to </span>

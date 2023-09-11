@@ -43,7 +43,8 @@ storages:
 
 !!! info "Kindly note that you are not required to configure all the repositories and destinations for this. Typically, I only utilize three repositories: summary_repo, paths_repo, and vuln_repo."
 
-You'll be required to make adjustments to certain values listed below.
+You'll be required to make adjustments to certain values listed below
+
 - [x] Change the `SECRET_KEY` to the path of your secret key that can do the push/pull to your git repo.
 - [x] Change the `your_gitlab_username` to your Gitlab user name
 - [x] Change the `SUMMARY_REPO` or `git@gitlab.com:your_gitlab_username/dosm-summary.git` to your Gitlab repo.
@@ -53,6 +54,7 @@ You'll be required to make adjustments to certain values listed below.
 ### Understand the storages config pair
 
 The `summary_repo` and `summary_storage` are closely linked, and the same concept applies to the other pairs, such as `vuln_repo` and `vuln_storage`.
+
 - `summary_storage` is a local folder in your instance and in this case it will be `~/.osmedeus/storages/summary`
 - `summary_repo` is your gitlab repository and in this case `git@gitlab.com:your_gitlab_username/dosm-summary.git`. This repo will be clone to the your local machine and after you put everything in that folder 
 
