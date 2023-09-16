@@ -1282,7 +1282,7 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 <span class="w">    </span><span class="nt">vuln_storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.osmedeus/storages/vuln</span>
 </code></pre></div>
 <div class="admonition info">
-<p class="admonition-title">Kindly note that you are not required to configure all the repositories and destinations for this. Typically, I only utilize three repositories: summary_repo, paths_repo, and vuln_repo.</p>
+<p class="admonition-title">Kindly note that you are not required to configure all the repositories and destinations for this. Typically, I only utilize three repositories: <code>summary_repo, paths_repo, and vuln_repo</code></p>
 </div>
 <p>You'll be required to make adjustments to certain values listed below</p>
 <ul class="task-list">
@@ -1290,6 +1290,12 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Change the <code>your_gitlab_username</code> to your Gitlab user name</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Change the <code>SUMMARY_REPO</code> or <code>git@gitlab.com:your_gitlab_username/dosm-summary.git</code> to your Gitlab repo.</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">If you lack the <code>SECRET_KEY</code> needed for cloning a Git repository, you can utilize the following command to create the keypair and then place it in the desired location, such as <code>~/.osmedeus/storages_key</code></p>
+<div class="highlight"><pre><span></span><code>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-f<span class="w"> </span>storages_key<span class="w"> </span>-q<span class="w"> </span>-N<span class="w"> </span><span class="s1">&#39;&#39;</span>
+<span class="c1"># then add your key to the gitlab/github account e.g: https://gitlab.com/-/profile/keys</span>
+</code></pre></div>
+</div>
 <hr />
 <h3 id="understand-the-storages-config-pair">Understand the storages config pair<a class="headerlink" href="#understand-the-storages-config-pair" title="Permanent link">&para;</a></h3>
 <p>The <code>summary_repo</code> and <code>summary_storage</code> are closely linked, and the same concept applies to the other pairs, such as <code>vuln_repo</code> and <code>vuln_storage</code>.</p>

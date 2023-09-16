@@ -41,13 +41,19 @@ storages:
     vuln_storage: ~/.osmedeus/storages/vuln
 ```
 
-!!! info "Kindly note that you are not required to configure all the repositories and destinations for this. Typically, I only utilize three repositories: summary_repo, paths_repo, and vuln_repo."
+!!! info "Kindly note that you are not required to configure all the repositories and destinations for this. Typically, I only utilize three repositories: `summary_repo, paths_repo, and vuln_repo`"
 
 You'll be required to make adjustments to certain values listed below
 
 - [x] Change the `SECRET_KEY` to the path of your secret key that can do the push/pull to your git repo.
 - [x] Change the `your_gitlab_username` to your Gitlab user name
 - [x] Change the `SUMMARY_REPO` or `git@gitlab.com:your_gitlab_username/dosm-summary.git` to your Gitlab repo.
+
+!!! example "If you lack the `SECRET_KEY` needed for cloning a Git repository, you can utilize the following command to create the keypair and then place it in the desired location, such as `~/.osmedeus/storages_key`"
+    ```bash
+    ssh-keygen -t ed25519 -f storages_key -q -N ''
+    # then add your key to the gitlab/github account e.g: https://gitlab.com/-/profile/keys
+    ```
 
 ***
 
