@@ -31,11 +31,15 @@
   ![create-bot](/static/noti/send-sample-text-to-get-channel-ID.png)
 </figure>
 
-run the command below to get your channel ID (make sure you replace the `<your-token>` and `<your-bot-URL-at-step-1>` with your own):
+run the command below to get your channel ID (make sure you replace the `<your-telegram-token>` and `<your-bot-URL-at-step-1>` with your own):
 
 
 ```bash
-curl 'https://api.telegram.org/bot5321597600:<your-token>/sendMessage?chat_id=@<your-bot-URL-at-step-1>&text=hello'
+
+export TELEGRAM_API_TOKEN=<your-telegram-token>
+export BOT_URL=<your-bot-URL-at-step-1>
+curl 'https://api.telegram.org/bot5321597600:$TELEGRAM_API_TOKEN/sendMessage?chat_id=@$BOT_URL&text=hello'
+
 ```
 
 the output will look like this
