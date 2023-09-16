@@ -53,8 +53,7 @@ the output should look like this
 ```json
 {"ok":true,"result":{"message_id":2,"sender_chat":{"id":-1001353928111,"title":"your-osm-channel","username":"yourOsmChannel","type":"channel"},"chat":{"id":-1001353928111,"title":"your-osm-channel","username":"yourOsmChannel","type":"channel"},"date":1650958729,"text":"hello"}}
 ```
-grab your channel ID from the `id` field. In this case, it should be `-1001353928111`.
-
+grab your channel ID from the `id` field. In this case, it should be `-1001353928111`. Make sure you include the `-` in front of the channel as well.
 
 
 ## 4. Put your bot API key and channel ID in the `$HOME/osmedeus-base/token/osm-var.yaml` file
@@ -62,7 +61,7 @@ grab your channel ID from the `id` field. In this case, it should be `-100135392
 Now add the API Key and channel ID to the `$HOME/osmedeus-base/token/osm-var.yaml` file.
 
 ```yaml
-## run this command to get channel ID: curl 'https://api.telegram.org/bot$TELEGRAM_API_TOKEN/sendMessage?chat_id=@osmpReports&text=hello'
+## run this command to get channel ID: curl 'https://api.telegram.org/bot$TELEGRAM_API_TOKEN/sendMessage?chat_id=@osmChannelName&text=hello'
 ## {"ok":true,"result":{"message_id":2,"sender_chat":{"id":-1001353928111,"title":"your-osm-channel","username":"yourOsmChannel","type":"channel"},"chat":{"id":-1001353928111,"title":"your-osm-channel","username":"yourOsmChannel","type":"channel"},"date":1650958729,"text":"hello"}}
 ## --> your channel ID is '-1001353928111'
 
