@@ -40,9 +40,15 @@ export TELEGRAM_API_TOKEN=<your-telegram-token>
 export BOT_URL=<your-bot-URL-at-step-1>
 curl 'https://api.telegram.org/bot5321597600:$TELEGRAM_API_TOKEN/sendMessage?chat_id=@$BOT_URL&text=hello'
 
+# or you can use this command if you have the channel ID already where `1001270311111` is your channel ID
+curl -X POST \
+     -H 'Content-Type: application/json' \
+     -d '{"chat_id": "-1001270311111", "text": "hello"}' \
+     https://api.telegram.org/bot$TELEGRAM_API_TOKEN/sendMessage
+
 ```
 
-the output will look like this
+the output should look like this
 
 ```json
 {"ok":true,"result":{"message_id":2,"sender_chat":{"id":-1001353928111,"title":"your-osm-channel","username":"yourOsmChannel","type":"channel"},"chat":{"id":-1001353928111,"title":"your-osm-channel","username":"yourOsmChannel","type":"channel"},"date":1650958729,"text":"hello"}}
