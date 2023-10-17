@@ -38,12 +38,19 @@ docker exec -it <container-id> /bin/bash
 
 ## Run the Web UI
 
-Note that `osmedeus-scanner` is just the name, you can use anything you want
+Please be aware that the term `osmedeus-scanner`` is merely a placeholder, and you are free to choose any name you prefer. Additionally, if you wish to retain your data even after shutting down the Docker, simply attach a volume to it.
+
 
 ```shell
-## Start the web server
-docker run -d --name osmedeus-scanner -v osmws:/root/.osmedeus/workspaces -p 8000:8000 j3ssie/osmedeus:latest server
+# Create a volumn with the command `docker volume create osmws`
+# Add the this string to your command '-v osmws:/root/workspaces-osmedeus' 
+# if you want to retain your data
 
-## grepping for password
-docker exec -it osmedeus-scanner -v osmws:/root/.osmedeus/workspaces grep password /root/.osmedeus/config.yaml | head -1
+## Start the web server
+docker run -d --name osmedeus-scanner \
+  -p 8000:8000 j3ssie/osmedeus:latest server
+
+## grepping for the password to logging in the webserver which is `https://localhost:8000/ui/`
+docker exec -it osmedeus-scanner \
+   grep password /root/.osmedeus/config.yaml | head -1
 ```

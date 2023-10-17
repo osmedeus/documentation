@@ -67,6 +67,11 @@
 ???+ info "How do I know which workflow to run?"
     You can follow **[this page](/installation/running-your-first-scan/)** to see what workflow is fit to your workflow.
 
+???+ question "Is there any new or exclusive workflow in premium package compare to the publiic version?"
+    Basically, the count of workflows is similar in both the premium and community versions. The main difference lies in the specific parts of each workflow. 
+    For instance, there are many filters and additional techniques in the premium version to find more valuable assets and get rid of unnecessary ones.
+    Lastly, I personally perform manual verification on the premium version and it also receives more frequent updates.
+
 ???+ question "How can I conduct a standard scan while excluding specific domains that are considered out of scope?"
     Currently, I don't have any Out of scope handle but you can run the flow that discovery the subdomain first with these commands
     ```

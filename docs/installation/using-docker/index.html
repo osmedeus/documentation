@@ -1317,12 +1317,18 @@ docker<span class="w"> </span>ps
 docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;container-id&gt;<span class="w"> </span>/bin/bash
 </code></pre></div>
 <h2 id="run-the-web-ui">Run the Web UI<a class="headerlink" href="#run-the-web-ui" title="Permanent link">&para;</a></h2>
-<p>Note that <code>osmedeus-scanner</code> is just the name, you can use anything you want</p>
-<div class="highlight"><pre><span></span><code><span class="c1">## Start the web server</span>
-docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>osmedeus-scanner<span class="w"> </span>-v<span class="w"> </span>osmws:/root/.osmedeus/workspaces<span class="w"> </span>-p<span class="w"> </span><span class="m">8000</span>:8000<span class="w"> </span>j3ssie/osmedeus:latest<span class="w"> </span>server
+<p>Please be aware that the term `osmedeus-scanner`` is merely a placeholder, and you are free to choose any name you prefer. Additionally, if you wish to retain your data even after shutting down the Docker, simply attach a volume to it.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create a volumn with the command `docker volume create osmws`</span>
+<span class="c1"># Add the this string to your command &#39;-v osmws:/root/workspaces-osmedeus&#39; </span>
+<span class="c1"># if you want to retain your data</span>
 
-<span class="c1">## grepping for password</span>
-docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>osmedeus-scanner<span class="w"> </span>-v<span class="w"> </span>osmws:/root/.osmedeus/workspaces<span class="w"> </span>grep<span class="w"> </span>password<span class="w"> </span>/root/.osmedeus/config.yaml<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-1
+<span class="c1">## Start the web server</span>
+docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>osmedeus-scanner<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span><span class="m">8000</span>:8000<span class="w"> </span>j3ssie/osmedeus:latest<span class="w"> </span>server
+
+<span class="c1">## grepping for the password to logging in the webserver which is `https://localhost:8000/ui/`</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>osmedeus-scanner<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>grep<span class="w"> </span>password<span class="w"> </span>/root/.osmedeus/config.yaml<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-1
 </code></pre></div>
 
 
