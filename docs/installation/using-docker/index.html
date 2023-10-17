@@ -1302,7 +1302,7 @@ docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </
 </code></pre></div>
 <h2 id="running-the-scan">Running the scan<a class="headerlink" href="#running-the-scan" title="Permanent link">&para;</a></h2>
 <figure>
-<p><img alt="crypto-donate" src="/static/architecture/using-docker.png" /></p>
+<p><img alt="using-docker" src="/static/architecture/using-docker.png" /></p>
 </figure>
 <div class="highlight"><pre><span></span><code><span class="c1"># create a volume with name `osmws` first, if you want to keep workspace data</span>
 docker<span class="w"> </span>volume<span class="w"> </span>create<span class="w"> </span>osmws
@@ -1330,6 +1330,9 @@ docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </sp
 docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>osmedeus-scanner<span class="w"> </span><span class="se">\</span>
 <span class="w">   </span>grep<span class="w"> </span>password<span class="w"> </span>/root/.osmedeus/config.yaml<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-1
 </code></pre></div>
+<figure>
+<p><img alt="docker-webserver" src="/static/architecture/using-docker-webserver.png" /></p>
+</figure>
 
 
   

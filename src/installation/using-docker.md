@@ -17,7 +17,7 @@ docker build -t j3ssie/osmedeus:latest .
 ## Running the scan
 
 <figure markdown> 
-  ![crypto-donate](/static/architecture/using-docker.png)
+  ![using-docker](/static/architecture/using-docker.png)
 </figure>
 
 ```shell
@@ -54,3 +54,7 @@ docker run -d --name osmedeus-scanner \
 docker exec -it osmedeus-scanner \
    grep password /root/.osmedeus/config.yaml | head -1
 ```
+
+<figure markdown> 
+  ![docker-webserver](/static/architecture/using-docker-webserver.png)
+</figure>
