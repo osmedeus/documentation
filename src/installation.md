@@ -15,7 +15,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/osmedeus/osmedeus-base/maste
 
 ***
 
-## :material-apple: Install for MacOS or ARM based machine (experimental)
+## :material-apple: Install for MacOS or ARM based machine
 
 !!! warning ""
     **NOTE** that you need to install **[homebrew](https://brew.sh/)** first.
