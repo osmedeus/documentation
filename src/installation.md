@@ -18,7 +18,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/osmedeus/osmedeus-base/maste
 ## :material-apple: Install for MacOS or ARM based machine
 
 !!! warning ""
-    **NOTE** that you need to install **[homebrew](https://brew.sh/)** first.
+    **NOTE** that you need to install **[homebrew](https://brew.sh/)** first if you're running on MacOS.
 
 ```shell
 bash <(curl -fsSL https://raw.githubusercontent.com/osmedeus/osmedeus-base/master/install-arm.sh)
@@ -37,7 +37,8 @@ You will need to configured `Go >= 1.8` environment.
 bash <(curl -fsSL https://raw.githubusercontent.com/osmedeus/osmedeus-base/master/install-macos.sh)
 
 # clone the source code to your $GOPATH and build the golang project
-cd $GOPATH/src/github.com/ && mkdir -p j3ssie
+mkdir -p $GOPATH/src/github.com/j3ssie
+cd $GOPATH/src/github.com/j3ssie
 git clone https://github.com/j3ssie/osmedeus
 go install
 

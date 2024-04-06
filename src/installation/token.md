@@ -5,14 +5,15 @@
 
 There are some places that tokens will store in Osmedeus below
 
-- [x] Amass config files `~/osmedeus-base/data/amass-config/datasources.yaml` at  **`~/osmedeus-base/data/configs/`** which is mainly responsible for the subdomain enumeration.
+- [x] Amass config files `~/osmedeus-base/data/external-configs/amass-datasources.yaml` at  **`~/osmedeus-base/data/configs/`** which is mainly responsible for the subdomain enumeration.
+
+- [x] Subfinder config files `~/osmedeus-base/data/external-configs/subfinder-provider.yaml` at  **`~/osmedeus-base/data/external-configs/`** which is mainly responsible for the subdomain enumeration.
 
 - [x] Main tokens file **`~/osmedeus-base/token/osm-var.yaml`** 
 
-
 ## Amass config 
 
-All your tokens, such as Shodan, Censys, SecurityTrails, and others are store in `~/osmedeus-base/data/amass-config/datasources.yaml`. 
+All your tokens, such as Shodan, Censys, SecurityTrails, and others are store in `~/osmedeus-base/data/external-configs/amass-datasources.yaml`. 
 You can begin making modifications to the configuration there to utilize third-party services while using Osmedeus.
 
 ## Any other tokens

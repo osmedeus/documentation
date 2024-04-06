@@ -6,8 +6,7 @@
 !!! warning ""
     You should only store your token in the `$HOME/osmedeus-base/token/osm-var.yaml` file. Modify the `~/.osmedeus/config.yaml` will work but you will lose your token when the next time you run the reload command.
 
-# Notification with Telegram
-
+# Notification with Telegram with Osmedeus Script
 
 ## 1. Create a Telegram Bot
 
@@ -133,4 +132,17 @@ notification:
 # this will send the file 'Start the scan {{Target}}' to the channel TELEGRAM_MICS_CHANNEL above 
 - TeleMess("#mics", "Start the scan {{Target}}")
 
+```
+
+
+# Notification with CLI tool
+
+Another method to integrate notifications into the workflow involves utilizing a notification CLI such as [notify](https://github.com/projectdiscovery/notify) developed by projectdiscovery.
+
+The configuration file for notify will be stored at `$HOME/osmedeus-base/data/external-configs/notify-provider.yaml`.
+
+In your workflow, you can include something similar to the following, which will transmit the data to your designated channel.
+
+```
+- ExecCmd("{{Binaries}}/notify -pc {{Data}}/external-configs/notify-provider.yaml -silent -bulk -data {{Output}}/vuln/active/activescan-{{Workspace}}-{{TS}}.txt > /dev/null 2>&1 ")
 ```
