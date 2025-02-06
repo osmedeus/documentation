@@ -1710,11 +1710,13 @@ git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="o">=
 <span class="nb">cd</span><span class="w"> </span>osmedeus-base/
 docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>j3ssie/osmedeus:latest<span class="w"> </span>.
 
+<span class="c1"># @NOTE: if you&#39;re using Mac Apple Silicon</span>
 <span class="c1"># run `docker build --platform linux/arm64 --no-cache -t j3ssie/osmedeus:latest-arm .`</span>
-<span class="c1"># if you&#39;re using MacOS ARM</span>
 </code></pre></div>
 <p>or pulling the pre-built image from <a href="https://hub.docker.com/repository/docker/j3ssie/osmedeus/tags">Docker hub here</a>.</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>pull<span class="w"> </span>j3ssie/osmedeus:latest
+<span class="c1"># @NOTE: if you&#39;re using Mac Apple Silicon</span>
+<span class="c1"># run `docker pull j3ssie/osmedeus:latest-arm`</span>
 </code></pre></div>
 <h2 id="running-the-scan">Running the scan<a class="headerlink" href="#running-the-scan" title="Permanent link">&para;</a></h2>
 <figure>

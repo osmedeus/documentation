@@ -14,14 +14,16 @@ git clone --depth=1 http://github.com/osmedeus/osmedeus-base
 cd osmedeus-base/
 docker build -t j3ssie/osmedeus:latest .
 
+# @NOTE: if you're using Mac Apple Silicon
 # run `docker build --platform linux/arm64 --no-cache -t j3ssie/osmedeus:latest-arm .`
-# if you're using MacOS ARM
 ```
 
 or pulling the pre-built image from [Docker hub here](https://hub.docker.com/repository/docker/j3ssie/osmedeus/tags).
 
 ```shell
 docker pull j3ssie/osmedeus:latest
+# @NOTE: if you're using Mac Apple Silicon
+# run `docker pull j3ssie/osmedeus:latest-arm`
 ```
 
 
