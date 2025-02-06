@@ -9,10 +9,21 @@
 
 
 ```shell
-git clone --depth=1 git@github.com:osmedeus/osmedeus-base.git
+# build it from the source
+git clone --depth=1 http://github.com/osmedeus/osmedeus-base
 cd osmedeus-base/
 docker build -t j3ssie/osmedeus:latest .
+
+# run `docker build --platform linux/arm64 --no-cache -t j3ssie/osmedeus:latest-arm .`
+# if you're using MacOS ARM
 ```
+
+or pulling the pre-built image from [Docker hub here](https://hub.docker.com/repository/docker/j3ssie/osmedeus/tags).
+
+```shell
+docker pull j3ssie/osmedeus:latest
+```
+
 
 ## Running the scan
 
@@ -26,7 +37,6 @@ docker volume create osmws
 
 # run the scan
 docker run -it --rm -v osmws:/root/.osmedeus/workspaces j3ssie/osmedeus:latest scan -f fast -t sample.com
-
 
 # access the docker via bash if you want to see a raw result of the previous or current scan
 docker ps
