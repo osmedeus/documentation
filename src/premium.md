@@ -18,11 +18,9 @@ You can also choose some  **[:small_blue_diamond: donation methods here :small_b
     What is it running behind the scene?
 </figure>
 
-## Git Storages natively supported
-
-Even though you can use Git Storages by writing your workflow. The premium workflow also comes with the storages script. All you need to do is set up your [Gitlab repository](/premium/git-setup/).
-
 ## Support Distributed Scan
+
+!!! Warning "The Cloud Distributed Scan has now been deprecated. You can consider using [**attacksurge/ax**](https://github.com/attacksurge/ax) if you're looking for a distributed scanning solution."
 
 ![cloud-scan](static/premium/cloud-scan.png){ loading=lazy }
 
